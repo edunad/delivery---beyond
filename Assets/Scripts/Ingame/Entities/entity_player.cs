@@ -92,6 +92,8 @@ public class entity_player : MonoBehaviour {
 				if(!this.hasItem()) return;
 				if(place.placeItem(this.holdingItem)) this.holdingItem = null;
 			}
+		} else {
+			obj.BroadcastMessage("onPlayerUse", this, SendMessageOptions.DontRequireReceiver);
 		}
 	}
 

@@ -2,19 +2,16 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Collider))]
-[RequireComponent(typeof(Rigidbody))]
 public class entity_item : MonoBehaviour {
 
     [Header("Settings")]
     public string id;
 
     private GameObject _owner;
-    private Rigidbody _body;
     private Collider _collision;
 
     public void Awake() {
         this._collision = GetComponent<Collider>();
-        this._body = GetComponent<Rigidbody>();
 
         this.gameObject.layer = 2;
         this.name = "itm-" + this.id;
