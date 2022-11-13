@@ -1,0 +1,159 @@
+# Decompiled with VMF2OBJ v2.0.0 by Dylancyclone
+
+
+newmtl tile/tilefloor005a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/tile/tilefloor005a.tga
+map_Kd materials/tile/tilefloor005a.tga
+
+
+newmtl dev/dev_blendmeasure
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/dev/dev_measuregeneric01b.tga
+map_Kd materials/dev/dev_measuregeneric01b.tga
+
+
+newmtl dev/dev_measuregeneric01
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/dev/dev_measuregeneric01.tga
+map_Kd materials/dev/dev_measuregeneric01.tga
+
+
+newmtl cable/cable_back
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/cable/dx8cable.tga
+map_Kd materials/cable/dx8cable.tga
+map_bump materials/cable/cablenormalmap.tga
+illum 4
+
+
+newmtl halflife/black
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/halflife/black.tga
+map_Kd materials/halflife/black.tga
+
+
+newmtl dev/dev_blendmeasure2
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/dev/dev_measurewall01d.tga
+map_Kd materials/dev/dev_measurewall01d.tga
+
+
+newmtl metal/metalcombinegrate001a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/metal/metalcombinegrate001a.tga
+map_Kd materials/metal/metalcombinegrate001a.tga
+illum 4
+
+
+newmtl metal/metalwall061f
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/metal/metalwall061f.tga
+map_Kd materials/metal/metalwall061f.tga
+
+
+newmtl wood/woodstair002c
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/wood/woodstair002c.tga
+map_Kd materials/wood/woodstair002c.tga
+
+
+newmtl metal/metalfloor005a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/metal/metalfloor005a.tga
+map_Kd materials/metal/metalfloor005a.tga
+
+
+newmtl dev/graygrid
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/dev/graygrid.tga
+map_Kd materials/dev/graygrid.tga
+
+
+newmtl metal/metaldoor005a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/metal/metaldoor005a.tga
+map_Kd materials/metal/metaldoor005a.tga
+map_bump materials/metal/metaldoor005a_normal.tga
+
+
+newmtl dev/dev_measureice01
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/dev/dev_measureice01.tga
+map_Kd materials/dev/dev_measureice01.tga
+
+
+newmtl dev/dev_cratewood01a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/dev/dev_cratewood01a.tga
+map_Kd materials/dev/dev_cratewood01a.tga
+
+
+newmtl metal/metalrail013c
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/metal/metalrail013c.tga
+map_Kd materials/metal/metalrail013c.tga
+illum 4
+
+
+newmtl dev/dev_hazzardstripe01a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/dev/dev_hazzardstripe01a.tga
+map_Kd materials/dev/dev_hazzardstripe01a.tga
+
+
+newmtl metal/metalgrate017a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/metal/metalgrate017a.tga
+map_Kd materials/metal/metalgrate017a.tga
+
+
+newmtl dev/dev_measurecomputer01
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/dev/dev_measurecomputer01.tga
+map_Kd materials/dev/dev_measurecomputer01.tga
+
+
+newmtl props/carpetfloor008a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/props/carpetfloor008a.tga
+map_Kd materials/props/carpetfloor008a.tga
+

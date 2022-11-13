@@ -131,8 +131,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cfuStatus: PSXEffects v1.18.4 - version ahead?!
   sections: 01010101
-  customRes: {x: 367, y: 265}
-  resolutionFactor: 2
+  customRes: {x: 747, y: 532}
+  resolutionFactor: 1
   limitFramerate: 60
   skipFrames: 0
   affineMapping: 0
@@ -142,25 +142,25 @@ MonoBehaviour:
   vertexInaccuracy: 80
   polygonInaccuracy: 0
   colorDepth: 5
-  scanlines: 0
+  scanlines: 1
   scanlineIntensity: 2
   ditherTexture: {fileID: 0}
   dithering: 1
   ditherThreshold: 1
-  ditherIntensity: 6
+  ditherIntensity: 10
   maxDarkness: 10
   subtractFade: 0
   favorRed: 1
   worldSpaceSnapping: 0
   postProcessing: 1
-  verticalScanlines: 1
+  verticalScanlines: 0
   shadowIntensity: 0.5
   downscale: 0
   snapCamera: 0
   camInaccuracy: 0.05
   camSnapping: 1
   shadowType: 0
-  ditherSky: 0
+  ditherSky: 1
   ditherType: 0
 --- !u!114 &852850677
 MonoBehaviour:
@@ -209,7 +209,7 @@ Transform:
   - {fileID: 1732401391858592875}
   - {fileID: 1476811596}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1732401392186208437
 MeshFilter:
@@ -298,3 +298,4 @@ MonoBehaviour:
     m_Bits: 64
   holdSpot: {fileID: 1476811595}
   sensitivity: 6
+  holdingItem: {fileID: 0}

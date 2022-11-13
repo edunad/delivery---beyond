@@ -1902,38 +1902,6 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1732401391858592872, guid: 86272605e8f040542916e9502103df5a, type: 3}
-      propertyPath: ditherSky
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1732401391858592872, guid: 86272605e8f040542916e9502103df5a, type: 3}
-      propertyPath: scanlines
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1732401391858592872, guid: 86272605e8f040542916e9502103df5a, type: 3}
-      propertyPath: ditherType
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1732401391858592872, guid: 86272605e8f040542916e9502103df5a, type: 3}
-      propertyPath: customRes.x
-      value: 747
-      objectReference: {fileID: 0}
-    - target: {fileID: 1732401391858592872, guid: 86272605e8f040542916e9502103df5a, type: 3}
-      propertyPath: customRes.y
-      value: 532
-      objectReference: {fileID: 0}
-    - target: {fileID: 1732401391858592872, guid: 86272605e8f040542916e9502103df5a, type: 3}
-      propertyPath: ditherIntensity
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1732401391858592872, guid: 86272605e8f040542916e9502103df5a, type: 3}
-      propertyPath: resolutionFactor
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1732401391858592872, guid: 86272605e8f040542916e9502103df5a, type: 3}
-      propertyPath: verticalScanlines
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1732401392186208426, guid: 86272605e8f040542916e9502103df5a, type: 3}
       propertyPath: m_RootOrder
       value: 1
