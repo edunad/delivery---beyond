@@ -15,6 +15,13 @@ public class entity_placeable : MonoBehaviour {
     [EditorButton("Setup")]
     public void Setup() => setup();
 
+    public delegate void onItemPickup(entity_item item);
+    public event onItemPickup OnItemPickup;
+
+    public delegate void onItemDrop(entity_item item);
+    public event onItemDrop OnItemDrop;
+
+
     private BoxCollider _trigger;
 
     public void Awake() {
@@ -37,6 +44,8 @@ public class entity_placeable : MonoBehaviour {
 
         entity_item itm = this.item;
         this.item = null;
+
+        if(OnItemPickup != null) OnItemPickup(itm);
         return itm;
     }
 
@@ -46,6 +55,7 @@ public class entity_placeable : MonoBehaviour {
         itm.setOwner(this.gameObject, this.transform.rotation, this.glue.transform);
         this.item = itm;
 
+        if(OnItemDrop != null) OnItemDrop(itm);
         return true;
     }
 

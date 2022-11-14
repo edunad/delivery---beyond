@@ -5,7 +5,9 @@ public enum MoveDirection {
     UP = 0,
     DOWN,
     LEFT,
-    RIGHT
+    RIGHT,
+    FRONT,
+    BACK
 }
 
 [RequireComponent(typeof(AudioSource))]
@@ -61,6 +63,12 @@ public class entity_button : MonoBehaviour {
                 break;
             case MoveDirection.RIGHT:
                 ps.x += -distance;
+                break;
+            case MoveDirection.FRONT:
+                ps.z += distance;
+                break;
+            case MoveDirection.BACK:
+                ps.z += -distance;
                 break;
         }
 

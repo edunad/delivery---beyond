@@ -9,7 +9,8 @@ public class entity_player : MonoBehaviour {
 	public float maxGrabDistance = 1f;
 
 	public LayerMask usableMask = 1 << 6;
-	public GameObject holdSpot;
+	public GameObject big_item_position;
+	public GameObject small_item_position;
 
 	[Header("Camera")]
 	public float sensitivity = 10f;
@@ -75,7 +76,11 @@ public class entity_player : MonoBehaviour {
 		if(pick == null || this.hasItem()) return;
 
 		this.holdingItem = pick;
-		this.holdingItem.setOwner(this.gameObject, this.holdSpot.transform.localRotation, this.holdSpot.transform);
+
+		Transform pos = small_item_position.transform;
+		if(pick.isBig) pos = big_item_position.transform;
+
+		this.holdingItem.setOwner(this.gameObject, this.big_item_position.transform.localRotation, this.big_item_position.transform);
 	}
 
 	public void onUse(GameObject obj) {

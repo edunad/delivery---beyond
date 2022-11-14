@@ -6,6 +6,7 @@ public class entity_item : MonoBehaviour {
 
     [Header("Settings")]
     public string id;
+    public bool isBig = false;
 
     private GameObject _owner;
     private Collider _collision;
