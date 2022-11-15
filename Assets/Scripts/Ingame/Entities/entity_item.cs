@@ -15,7 +15,7 @@ public class entity_item : MonoBehaviour {
         this._collision = GetComponent<Collider>();
 
         this.gameObject.layer = 2;
-        this.name = "itm-" + this.id;
+        if(!this.name.StartsWith("itm-")) this.name = "itm-" + this.id + "-" + this.name;
     }
 
     public GameObject getOwner() { return this._owner; }

@@ -93,6 +93,15 @@ map_Kd materials/metal/metalrail013c.tga
 illum 4
 
 
+newmtl decals/decalsigncaution001c
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/decals/decalsigncaution001c.tga
+map_Kd materials/decals/decalsigncaution001c.tga
+illum 4
+
+
 newmtl dev/dev_measureice01
 Ka 1.000 1.000 1.000
 Kd 1.000 1.000 1.000
@@ -141,13 +150,12 @@ map_Ka materials/props/metalcomputerpanel001a.tga
 map_Kd materials/props/metalcomputerpanel001a.tga
 
 
-newmtl decals/decalsigncaution001c
+newmtl tools/toolsnodraw
 Ka 1.000 1.000 1.000
 Kd 1.000 1.000 1.000
 Ks 0.000 0.000 0.000
-map_Ka materials/decals/decalsigncaution001c.tga
-map_Kd materials/decals/decalsigncaution001c.tga
-illum 4
+map_Ka materials/tools/toolsnodraw.tga
+map_Kd materials/tools/toolsnodraw.tga
 
 
 newmtl lights/white001
@@ -164,4 +172,12 @@ Kd 1.000 1.000 1.000
 Ks 0.000 0.000 0.000
 map_Ka materials/dev/dev_measurecomputer01.tga
 map_Kd materials/dev/dev_measurecomputer01.tga
+
+
+newmtl nature/trash01a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/nature/trash01a.tga
+map_Kd materials/nature/trash01a.tga
 

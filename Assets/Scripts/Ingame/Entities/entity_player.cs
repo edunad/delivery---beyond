@@ -22,6 +22,7 @@ public class entity_player : MonoBehaviour {
     private CharacterController _controller;
     private Camera _camera;
 	private float _camRotationY;
+	private bool _frozen;
 
     // Use this for initialization
 	public void Awake () {
@@ -36,6 +37,8 @@ public class entity_player : MonoBehaviour {
 	}
 
 	public void Update() {
+		if(this._frozen) return;
+
 		if(this._controller != null) {
 			this._controller.Move((transform.forward * Input.GetAxisRaw("Vertical") + transform.right * Input.GetAxisRaw("Horizontal")).normalized * moveSpeed * Time.deltaTime);
 			if (!this._controller.isGrounded) this._controller.Move(Vector3.up * Time.deltaTime * Physics.gravity.y);
@@ -68,37 +71,56 @@ public class entity_player : MonoBehaviour {
 		}
 	}
 
-	public bool hasItem() {
+	public void freeze(bool set) {
+		this._frozen = set;
+	}
+
+	public bool isHoldingItem() {
 		return this.holdingItem != null;
 	}
 
 	private void holdObject(entity_item pick) {
-		if(pick == null || this.hasItem()) return;
+		if(pick == null || this.isHoldingItem()) return;
 
 		this.holdingItem = pick;
 
 		Transform pos = small_item_position.transform;
 		if(pick.isBig) pos = big_item_position.transform;
 
-		this.holdingItem.setOwner(this.gameObject, this.big_item_position.transform.localRotation, this.big_item_position.transform);
+		this.holdingItem.setOwner(this.gameObject, pos.localRotation, pos);
 	}
 
 	public void onUse(GameObject obj) {
 		if(obj == null) return;
 
-		if(obj.name.StartsWith("place-")) {
-			entity_placeable place = obj.GetComponent<entity_placeable>();
-			if(place == null) throw new System.Exception("Invalid entity_placeable");
+		if(obj.name.StartsWith("itm-spot-")) {
+			entity_item_spot spot = obj.GetComponent<entity_item_spot>();
+			if(spot == null) throw new System.Exception("Invalid entity_item_spot");
 
-			if(place.hasItem()) {
-				if(this.hasItem()) return;
-				this.holdObject(place.takeItem());
+			if(spot.hasItem()) {
+				if(this.isHoldingItem()) return;
+				this.holdObject(spot.takeItem());
 			} else {
-				if(!this.hasItem()) return;
-				if(place.placeItem(this.holdingItem)) this.holdingItem = null;
+				if(!this.isHoldingItem()) return;
+				if(spot.placeItem(this.holdingItem)) this.holdingItem = null;
 			}
+		} else if(obj.name.StartsWith("itm-spawner-")) {
+			if(this.isHoldingItem()) return;
+
+			entity_item_spawner spawner = obj.GetComponent<entity_item_spawner>();
+			if(spawner == null) throw new System.Exception("Invalid entity_item_spawner");
+			if(!spawner.canTakeItem(this.gameObject)) return;
+
+			if(spawner.canSpawnItem()) this.holdObject(spawner.takeItem(this.gameObject));
+		} else if(obj.name.StartsWith("itm-trash-")) {
+			if(!this.isHoldingItem()) return;
+
+			entity_item_trash trash = obj.GetComponent<entity_item_trash>();
+			if(trash == null) throw new System.Exception("Invalid entity_item_trash");
+
+			if(trash.canTrash(this.holdingItem.id)) trash.trashItem(this.holdingItem);
 		} else {
-			obj.BroadcastMessage("onPlayerUse", this, SendMessageOptions.DontRequireReceiver);
+			obj.BroadcastMessage("onPlayerUse", this, SendMessageOptions.RequireReceiver);
 		}
 	}
 

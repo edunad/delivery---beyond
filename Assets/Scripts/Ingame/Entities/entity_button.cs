@@ -2,7 +2,8 @@
 using UnityEngine;
 
 public enum MoveDirection {
-    UP = 0,
+    NONE = 0,
+    UP,
     DOWN,
     LEFT,
     RIGHT,
@@ -14,21 +15,24 @@ public enum MoveDirection {
 [RequireComponent(typeof(Collider))]
 public class entity_button : MonoBehaviour {
 
-    [Header("Settings")]
     public GameObject reciever;
+
+    [Header("Sound")]
+    public string buttonLocked = "btn_locked";
+    public string buttonOK = "btn_ok";
 
     [Header("Settings")]
     public bool locked;
-
     public MoveDirection moveDirection = MoveDirection.DOWN;
     public float moveDistance = 0.4f;
 
     public float resetCooldown = 2f;
 
+    // PRIVATE ---
+
     private Collider _collision;
     private AudioSource _audioSource;
     private AudioClip[] _audioClips;
-
     private Vector3 _originalPos;
 
     public void Awake() {
@@ -43,8 +47,8 @@ public class entity_button : MonoBehaviour {
         this._audioSource.volume = 0.4f;
 
         this._audioClips = new AudioClip[] {
-            AssetsController.GetResource<AudioClip>("Sounds/Ingame/Objects/Button/btn_locked"),
-            AssetsController.GetResource<AudioClip>("Sounds/Ingame/Objects/Button/btn_ok")
+            AssetsController.GetResource<AudioClip>("Sounds/Ingame/Objects/Button/" + this.buttonLocked),
+            AssetsController.GetResource<AudioClip>("Sounds/Ingame/Objects/Button/" + this.buttonOK)
         };
     }
 
@@ -85,7 +89,7 @@ public class entity_button : MonoBehaviour {
         }
 
         this.locked = true;
-        this.reciever.BroadcastMessage("onButtonPress", SendMessageOptions.DontRequireReceiver);
+        this.reciever.BroadcastMessage("onButtonPress", ply);
 
         this._originalPos = transform.localPosition;
         this.moveButton(this.moveDirection, this.moveDistance);

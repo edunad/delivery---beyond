@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "6440"
-	"mapversion" "199"
+	"mapversion" "200"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -20,7 +20,7 @@ viewsettings
 world
 {
 	"id" "1"
-	"mapversion" "199"
+	"mapversion" "200"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -1243,33 +1243,39 @@ world
 		}
 	}
 }
-entity
+hidden
 {
-	"id" "10"
-	"classname" "info_player_start"
-	"angles" "0 0 0"
-	"origin" "41 -71 2"
-	editor
+	entity
 	{
-		"color" "0 255 0"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[0 1000]"
+		"id" "10"
+		"classname" "info_player_start"
+		"angles" "0 0 0"
+		"origin" "41 -71 2"
+		editor
+		{
+			"color" "0 255 0"
+			"visgroupshown" "1"
+			"visgroupautoshown" "0"
+			"logicalpos" "[0 1000]"
+		}
 	}
 }
-entity
+hidden
 {
-	"id" "3702"
-	"classname" "func_instance"
-	"angles" "-0 0 0"
-	"file" "office_props.vmf"
-	"origin" "0 0 0"
-	editor
+	entity
 	{
-		"color" "220 30 220"
-		"visgroupshown" "1"
-		"visgroupautoshown" "1"
-		"logicalpos" "[0 1500]"
+		"id" "3702"
+		"classname" "func_instance"
+		"angles" "-0 0 0"
+		"file" "office_props.vmf"
+		"origin" "0 0 0"
+		editor
+		{
+			"color" "220 30 220"
+			"visgroupshown" "1"
+			"visgroupautoshown" "0"
+			"logicalpos" "[0 1500]"
+		}
 	}
 }
 cameras
