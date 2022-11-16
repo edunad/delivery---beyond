@@ -118,14 +118,6 @@ map_Ka materials/dev/dev_cratewood01a.tga
 map_Kd materials/dev/dev_cratewood01a.tga
 
 
-newmtl tile/tilefloor005a
-Ka 1.000 1.000 1.000
-Kd 1.000 1.000 1.000
-Ks 0.000 0.000 0.000
-map_Ka materials/tile/tilefloor005a.tga
-map_Kd materials/tile/tilefloor005a.tga
-
-
 newmtl metal/metalgrate017a
 Ka 1.000 1.000 1.000
 Kd 1.000 1.000 1.000

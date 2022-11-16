@@ -1,6 +1,7 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public enum AlignSpot {
@@ -65,9 +66,10 @@ public class entity_item_spot : MonoBehaviour {
 
     public bool placeItem(entity_item itm) {
         if(!this.canAcceptItem(itm) || this.isLocked()) return false;
-        this.alignItem(itm);
 
-        itm.setOwner(this.gameObject, this.transform.rotation, this.glue.transform);
+        itm.setOwner(this.gameObject, this.glue.transform);
+
+        this.alignItem(itm);
         this.item = itm;
 
         if(OnItemDrop != null) OnItemDrop(itm);
@@ -78,7 +80,6 @@ public class entity_item_spot : MonoBehaviour {
         Collider collider = itm.gameObject.GetComponent<Collider>();
         if(collider == null) throw new System.Exception("Invalid entity_item, missing a collider");
 
-        this.glue.transform.localRotation = this.placementAngle;
         StartCoroutine(this.positionFix(collider)); // Do it next tick, so affects bounds.extends
     }
 
@@ -86,6 +87,7 @@ public class entity_item_spot : MonoBehaviour {
         yield return new WaitForFixedUpdate();
 
         Vector3 triggerCenter = this._trigger.center;
+
         switch(this.placementPosition) {
             case AlignSpot.CENTER:
                 this.glue.transform.localPosition = triggerCenter;
@@ -128,10 +130,13 @@ public class entity_item_spot : MonoBehaviour {
         }
 
         this.glue.transform.localPosition = this._trigger.center;
+        this.glue.transform.localRotation = this.placementAngle;
 
         if(this.item != null) {
+            Undo.RegisterCompleteObjectUndo(this.item, "Undo setup");
+
+            this.item.setOwner(this.gameObject, this.glue.transform);
             this.alignItem(this.item);
-            this.item.setOwner(this.gameObject, this.transform.rotation, this.glue.transform);
         }
     }
 }

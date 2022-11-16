@@ -87,7 +87,7 @@ public class entity_player : MonoBehaviour {
 		Transform pos = small_item_position.transform;
 		if(pick.isBig) pos = big_item_position.transform;
 
-		this.holdingItem.setOwner(this.gameObject, pos.localRotation, pos);
+		this.holdingItem.setOwner(this.gameObject, pos);
 	}
 
 	public void onUse(GameObject obj) {

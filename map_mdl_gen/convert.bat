@@ -15,6 +15,8 @@ set models=%models%;office_collision.vmf
 REM PROPS------
 set models=%models%;props/box.vmf
 set models=%models%;props/box_flat.vmf
+set models=%models%;props/screen.vmf
+set models=%models%;props/screen_large.vmf
 
 for %%a in (%models%) do (
 	echo "Parsing map %%a"

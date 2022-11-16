@@ -19,7 +19,7 @@ public class entity_item : MonoBehaviour {
     }
 
     public GameObject getOwner() { return this._owner; }
-    public void setOwner(GameObject owner, Quaternion rotation, Transform obj = null) {
+    public void setOwner(GameObject owner, Transform obj = null) {
         this._owner = owner;
 
         if(owner != null) {
@@ -27,7 +27,7 @@ public class entity_item : MonoBehaviour {
 
             this.transform.parent = obj != null ? obj : owner.transform; // Equip it
             this.transform.localPosition = Vector3.zero;
-            this.transform.localRotation = rotation;
+            this.transform.localRotation = Quaternion.identity;
         } else {
             this.gameObject.layer = 6;
             this.transform.parent = null;
