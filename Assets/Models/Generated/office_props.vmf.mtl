@@ -76,14 +76,6 @@ map_Ka materials/dev/graygrid.tga
 map_Kd materials/dev/graygrid.tga
 
 
-newmtl dev/dev_blendmeasure
-Ka 1.000 1.000 1.000
-Kd 1.000 1.000 1.000
-Ks 0.000 0.000 0.000
-map_Ka materials/dev/dev_measuregeneric01b.tga
-map_Kd materials/dev/dev_measuregeneric01b.tga
-
-
 newmtl metal/metalrail013c
 Ka 1.000 1.000 1.000
 Kd 1.000 1.000 1.000
@@ -93,6 +85,14 @@ map_Kd materials/metal/metalrail013c.tga
 illum 4
 
 
+newmtl dev/dev_blendmeasure
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/dev/dev_measuregeneric01b.tga
+map_Kd materials/dev/dev_measuregeneric01b.tga
+
+
 newmtl decals/decalsigncaution001c
 Ka 1.000 1.000 1.000
 Kd 1.000 1.000 1.000
@@ -100,22 +100,6 @@ Ks 0.000 0.000 0.000
 map_Ka materials/decals/decalsigncaution001c.tga
 map_Kd materials/decals/decalsigncaution001c.tga
 illum 4
-
-
-newmtl dev/dev_measureice01
-Ka 1.000 1.000 1.000
-Kd 1.000 1.000 1.000
-Ks 0.000 0.000 0.000
-map_Ka materials/dev/dev_measureice01.tga
-map_Kd materials/dev/dev_measureice01.tga
-
-
-newmtl dev/dev_cratewood01a
-Ka 1.000 1.000 1.000
-Kd 1.000 1.000 1.000
-Ks 0.000 0.000 0.000
-map_Ka materials/dev/dev_cratewood01a.tga
-map_Kd materials/dev/dev_cratewood01a.tga
 
 
 newmtl metal/metalgrate017a
@@ -150,14 +134,6 @@ map_Ka materials/tools/toolsnodraw.tga
 map_Kd materials/tools/toolsnodraw.tga
 
 
-newmtl lights/white001
-Ka 1.000 1.000 1.000
-Kd 1.000 1.000 1.000
-Ks 0.000 0.000 0.000
-map_Ka materials/lights/white002.tga
-map_Kd materials/lights/white002.tga
-
-
 newmtl dev/dev_measurecomputer01
 Ka 1.000 1.000 1.000
 Kd 1.000 1.000 1.000
@@ -172,4 +148,108 @@ Kd 1.000 1.000 1.000
 Ks 0.000 0.000 0.000
 map_Ka materials/nature/trash01a.tga
 map_Kd materials/nature/trash01a.tga
+
+
+newmtl dev/dev_cratewood01a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/dev/dev_cratewood01a.tga
+map_Kd materials/dev/dev_cratewood01a.tga
+
+
+newmtl props/woodcrate004b
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/props/woodcrate004b.tga
+map_Kd materials/props/woodcrate004b.tga
+
+
+newmtl props/woodcrate004a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/props/woodcrate004a.tga
+map_Kd materials/props/woodcrate004a.tga
+
+
+newmtl props/woodcrate003d
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/props/woodcrate003d.tga
+map_Kd materials/props/woodcrate003d.tga
+
+
+newmtl dev/dev_measuregeneric01b
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/dev/dev_measuregeneric01b.tga
+map_Kd materials/dev/dev_measuregeneric01b.tga
+
+
+newmtl vgui/black
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/vgui/black.tga
+map_Kd materials/vgui/black.tga
+
+
+newmtl props/woodcrate001a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/props/woodcrate001a.tga
+map_Kd materials/props/woodcrate001a.tga
+
+
+newmtl props/metalcrate010a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/props/metalcrate010a.tga
+map_Kd materials/props/metalcrate010a.tga
+
+
+newmtl props/woodcrate003a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/props/woodcrate003a.tga
+map_Kd materials/props/woodcrate003a.tga
+
+
+newmtl props/woodcrate003b
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/props/woodcrate003b.tga
+map_Kd materials/props/woodcrate003b.tga
+
+
+newmtl props/woodcrate005a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/props/woodcrate005a.tga
+map_Kd materials/props/woodcrate005a.tga
+
+
+newmtl metal/metalvent002a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/metal/metalvent002a.tga
+map_Kd materials/metal/metalvent002a.tga
+
+
+newmtl props/metalduct003a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/props/metalduct003a.tga
+map_Kd materials/props/metalduct003a.tga
 

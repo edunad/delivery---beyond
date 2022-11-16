@@ -33,8 +33,7 @@ public class entity_counter : MonoBehaviour {
     }
 
     private void updateText() {
-        if(this._count < 10) this.text.text = "00" + this._count;
-        if(this._count >= 10 && this._count < 100) this.text.text = "0" + this._count;
-        else if(this._count >= 100) this.text.text = this._count.ToString();
+        if(this._count < 10) this.text.text = "0" + this._count;
+        else this.text.text = this._count.ToString();
     }
 }

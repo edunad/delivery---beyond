@@ -17,6 +17,7 @@ set models=%models%;props/box.vmf
 set models=%models%;props/box_flat.vmf
 set models=%models%;props/screen.vmf
 set models=%models%;props/screen_large.vmf
+set models=%models%;props/box_gate.vmf
 
 for %%a in (%models%) do (
 	echo "Parsing map %%a"

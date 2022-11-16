@@ -1,12 +1,12 @@
 # Decompiled with VMF2OBJ v2.0.0 by Dylancyclone
 
 
-newmtl tile/tilefloor005a
+newmtl dev/dev_interiorfloorlinoleum01f
 Ka 1.000 1.000 1.000
 Kd 1.000 1.000 1.000
 Ks 0.000 0.000 0.000
-map_Ka materials/tile/tilefloor005a.tga
-map_Kd materials/tile/tilefloor005a.tga
+map_Ka materials/dev/dev_interiorfloorlinoleum01f.tga
+map_Kd materials/dev/dev_interiorfloorlinoleum01f.tga
 
 
 newmtl dev/dev_blendmeasure
@@ -34,10 +34,10 @@ map_Ka materials/halflife/black.tga
 map_Kd materials/halflife/black.tga
 
 
-newmtl dev/dev_measuregeneric01
+newmtl dev/graygrid
 Ka 1.000 1.000 1.000
 Kd 1.000 1.000 1.000
 Ks 0.000 0.000 0.000
-map_Ka materials/dev/dev_measuregeneric01.tga
-map_Kd materials/dev/dev_measuregeneric01.tga
+map_Ka materials/dev/graygrid.tga
+map_Kd materials/dev/graygrid.tga
 

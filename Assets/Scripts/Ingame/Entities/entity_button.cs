@@ -79,13 +79,15 @@ public class entity_button : MonoBehaviour {
         transform.localPosition = ps;
     }
 
-    public bool onPlayerUse(entity_player ply) {
+    public void onPlayerUse(entity_player ply) {
+        if(ply.isHoldingItem()) return;
+
         if(this.reciever == null) throw new System.Exception("Invalid reciever");
         if(this.locked) {
             this._audioSource.clip = this._audioClips[0];
             this._audioSource.Play();
 
-            return false;
+            return;
         }
 
         this.locked = true;
@@ -102,6 +104,6 @@ public class entity_button : MonoBehaviour {
             transform.localPosition = this._originalPos;
         });
 
-        return true;
+        return;
     }
 }
