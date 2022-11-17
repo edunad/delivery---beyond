@@ -1,0 +1,75 @@
+# Decompiled with VMF2OBJ v2.0.0 by Dylancyclone
+
+
+newmtl dev/dev_measuregeneric01
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/dev/dev_measuregeneric01.tga
+map_Kd materials/dev/dev_measuregeneric01.tga
+
+
+newmtl metal/metalgrate002a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/metal/metalgrate002a.tga
+map_Kd materials/metal/metalgrate002a.tga
+illum 4
+
+
+newmtl dev/dev_blendmeasure
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/dev/dev_measuregeneric01b.tga
+map_Kd materials/dev/dev_measuregeneric01b.tga
+
+
+newmtl halflife/black
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/halflife/black.tga
+map_Kd materials/halflife/black.tga
+
+
+newmtl props/woodcrate003a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/props/woodcrate003a.tga
+map_Kd materials/props/woodcrate003a.tga
+
+
+newmtl props/woodcrate005a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/props/woodcrate005a.tga
+map_Kd materials/props/woodcrate005a.tga
+
+
+newmtl props/woodcrate003d
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/props/woodcrate003d.tga
+map_Kd materials/props/woodcrate003d.tga
+
+
+newmtl props/woodcrate001a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/props/woodcrate001a.tga
+map_Kd materials/props/woodcrate001a.tga
+
+
+newmtl props/metalcrate010a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/props/metalcrate010a.tga
+map_Kd materials/props/metalcrate010a.tga
+

@@ -52,6 +52,15 @@ public class entity_item_spot : MonoBehaviour {
         return pick != null && this.item == null && this.whitelist.Contains(pick.id);
     }
 
+    public void deleteItem() {
+        if(this.item == null) return;
+
+        DestroyImmediate(this.item.gameObject);
+        if(OnItemPickup != null) OnItemPickup(this.item);
+
+        this.item = null;
+    }
+
     public bool isLocked() { return this.locked; }
     public bool hasItem() { return this.item != null; }
     public entity_item getItem() { return this.item; }
@@ -82,14 +91,14 @@ public class entity_item_spot : MonoBehaviour {
         itm.setOwner(this.gameObject, this.glue.transform);
         yield return new WaitForFixedUpdate();
 
-        Vector3 triggerCenter = this._trigger.center;
+        Vector3 placementPos = Vector3.zero;
         switch(this.placementPosition) {
             case AlignSpot.CENTER:
-                this.glue.transform.localPosition = triggerCenter;
+                this.glue.transform.localPosition = placementPos;
                 break;
             case AlignSpot.BOTTOM:
                 Vector3 size = collider.bounds.extents;
-                this.glue.transform.localPosition = new Vector3(triggerCenter.x, size.y + triggerCenter.y, triggerCenter.z);
+                this.glue.transform.localPosition = new Vector3(placementPos.x, size.y + placementPos.y, placementPos.z);
                 break;
         }
     }
@@ -110,8 +119,8 @@ public class entity_item_spot : MonoBehaviour {
             Gizmos.DrawCube(Vector3.zero, this._trigger.size);
             Gizmos.color = new Color(1f, 0.2f, 0, 1f);
 
-            Gizmos.DrawCube(Vector3.zero, new Vector3(0.1f, 0.1f, 0.1f));
             Gizmos.matrix = original;
+            Gizmos.DrawCube(this.transform.position, new Vector3(0.1f, 0.1f, 0.1f));
         }
 
         private void setup() {
@@ -123,7 +132,7 @@ public class entity_item_spot : MonoBehaviour {
                 this.glue.name = "hold";
             }
 
-            this.glue.transform.localPosition = this._trigger.center;
+            this.glue.transform.localPosition = Vector3.zero;
             this.glue.transform.localRotation = this.placementAngle;
 
             if(this.item != null) {

@@ -30,9 +30,10 @@ public class entity_button : MonoBehaviour {
 
     // PRIVATE ---
 
-    private Collider _collision;
     private AudioSource _audioSource;
     private AudioClip[] _audioClips;
+
+    private Collider _collision;
     private Vector3 _originalPos;
 
     public void Awake() {
@@ -46,14 +47,52 @@ public class entity_button : MonoBehaviour {
         this._audioSource.playOnAwake = false;
         this._audioSource.volume = 0.4f;
 
+        this._originalPos = transform.localPosition;
+
+        this.setButtonLocked(this.locked, true);
+
         this._audioClips = new AudioClip[] {
             AssetsController.GetResource<AudioClip>("Sounds/Ingame/Objects/Button/" + this.buttonLocked),
             AssetsController.GetResource<AudioClip>("Sounds/Ingame/Objects/Button/" + this.buttonOK)
         };
     }
 
+    public void setButtonLocked(bool locked, bool force = false) {
+        if(!force && this.locked == locked) return;
+
+        if(!locked){
+            this.locked = false;
+            this.transform.localPosition = this._originalPos;
+        } else {
+            this.locked = true;
+            this.moveButton(this.moveDirection, this.moveDistance);
+        }
+    }
+
+    public void onPlayerUse(entity_player ply) {
+        if(ply.isHoldingItem()) return;
+
+        if(this.reciever == null) throw new System.Exception("Invalid reciever");
+        if(this.locked) {
+            this._audioSource.clip = this._audioClips[0];
+            this._audioSource.Play();
+
+            return;
+        }
+
+        this.setButtonLocked(true);
+        this.reciever.BroadcastMessage("onButtonPress", ply);
+
+        this._audioSource.clip = this._audioClips[1];
+        this._audioSource.Play();
+
+        if(this.resetCooldown > 0) util_timer.Simple(this.resetCooldown, () => {
+            this.setButtonLocked(false);
+        });
+    }
+
     private void moveButton(MoveDirection direction, float distance) {
-        Vector3 ps = transform.localPosition;
+        Vector3 ps = this.transform.localPosition;
 
         switch(direction) {
             case MoveDirection.DOWN:
@@ -76,34 +115,7 @@ public class entity_button : MonoBehaviour {
                 break;
         }
 
-        transform.localPosition = ps;
+        this.transform.localPosition = ps;
     }
 
-    public void onPlayerUse(entity_player ply) {
-        if(ply.isHoldingItem()) return;
-
-        if(this.reciever == null) throw new System.Exception("Invalid reciever");
-        if(this.locked) {
-            this._audioSource.clip = this._audioClips[0];
-            this._audioSource.Play();
-
-            return;
-        }
-
-        this.locked = true;
-        this.reciever.BroadcastMessage("onButtonPress", ply);
-
-        this._originalPos = transform.localPosition;
-        this.moveButton(this.moveDirection, this.moveDistance);
-
-        this._audioSource.clip = this._audioClips[1];
-        this._audioSource.Play();
-
-        util_timer.Simple(this.resetCooldown, () => {
-            this.locked = false;
-            transform.localPosition = this._originalPos;
-        });
-
-        return;
-    }
 }

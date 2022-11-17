@@ -102,6 +102,62 @@ map_Kd materials/decals/decalsigncaution001c.tga
 illum 4
 
 
+newmtl props/woodcrate003a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/props/woodcrate003a.tga
+map_Kd materials/props/woodcrate003a.tga
+
+
+newmtl props/woodcrate003d
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/props/woodcrate003d.tga
+map_Kd materials/props/woodcrate003d.tga
+
+
+newmtl props/woodcrate003b
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/props/woodcrate003b.tga
+map_Kd materials/props/woodcrate003b.tga
+
+
+newmtl props/woodcrate005a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/props/woodcrate005a.tga
+map_Kd materials/props/woodcrate005a.tga
+
+
+newmtl props/woodcrate001a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/props/woodcrate001a.tga
+map_Kd materials/props/woodcrate001a.tga
+
+
+newmtl metal/metalvent002a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/metal/metalvent002a.tga
+map_Kd materials/metal/metalvent002a.tga
+
+
+newmtl dev/dev_measuregeneric01b
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/dev/dev_measuregeneric01b.tga
+map_Kd materials/dev/dev_measuregeneric01b.tga
+
+
 newmtl metal/metalgrate017a
 Ka 1.000 1.000 1.000
 Kd 1.000 1.000 1.000
@@ -142,14 +198,6 @@ map_Ka materials/dev/dev_measurecomputer01.tga
 map_Kd materials/dev/dev_measurecomputer01.tga
 
 
-newmtl nature/trash01a
-Ka 1.000 1.000 1.000
-Kd 1.000 1.000 1.000
-Ks 0.000 0.000 0.000
-map_Ka materials/nature/trash01a.tga
-map_Kd materials/nature/trash01a.tga
-
-
 newmtl dev/dev_cratewood01a
 Ka 1.000 1.000 1.000
 Kd 1.000 1.000 1.000
@@ -174,36 +222,12 @@ map_Ka materials/props/woodcrate004a.tga
 map_Kd materials/props/woodcrate004a.tga
 
 
-newmtl props/woodcrate003d
-Ka 1.000 1.000 1.000
-Kd 1.000 1.000 1.000
-Ks 0.000 0.000 0.000
-map_Ka materials/props/woodcrate003d.tga
-map_Kd materials/props/woodcrate003d.tga
-
-
-newmtl dev/dev_measuregeneric01b
-Ka 1.000 1.000 1.000
-Kd 1.000 1.000 1.000
-Ks 0.000 0.000 0.000
-map_Ka materials/dev/dev_measuregeneric01b.tga
-map_Kd materials/dev/dev_measuregeneric01b.tga
-
-
 newmtl vgui/black
 Ka 1.000 1.000 1.000
 Kd 1.000 1.000 1.000
 Ks 0.000 0.000 0.000
 map_Ka materials/vgui/black.tga
 map_Kd materials/vgui/black.tga
-
-
-newmtl props/woodcrate001a
-Ka 1.000 1.000 1.000
-Kd 1.000 1.000 1.000
-Ks 0.000 0.000 0.000
-map_Ka materials/props/woodcrate001a.tga
-map_Kd materials/props/woodcrate001a.tga
 
 
 newmtl props/metalcrate010a
@@ -214,42 +238,58 @@ map_Ka materials/props/metalcrate010a.tga
 map_Kd materials/props/metalcrate010a.tga
 
 
-newmtl props/woodcrate003a
-Ka 1.000 1.000 1.000
-Kd 1.000 1.000 1.000
-Ks 0.000 0.000 0.000
-map_Ka materials/props/woodcrate003a.tga
-map_Kd materials/props/woodcrate003a.tga
-
-
-newmtl props/woodcrate003b
-Ka 1.000 1.000 1.000
-Kd 1.000 1.000 1.000
-Ks 0.000 0.000 0.000
-map_Ka materials/props/woodcrate003b.tga
-map_Kd materials/props/woodcrate003b.tga
-
-
-newmtl props/woodcrate005a
-Ka 1.000 1.000 1.000
-Kd 1.000 1.000 1.000
-Ks 0.000 0.000 0.000
-map_Ka materials/props/woodcrate005a.tga
-map_Kd materials/props/woodcrate005a.tga
-
-
-newmtl metal/metalvent002a
-Ka 1.000 1.000 1.000
-Kd 1.000 1.000 1.000
-Ks 0.000 0.000 0.000
-map_Ka materials/metal/metalvent002a.tga
-map_Kd materials/metal/metalvent002a.tga
-
-
 newmtl props/metalduct003a
 Ka 1.000 1.000 1.000
 Kd 1.000 1.000 1.000
 Ks 0.000 0.000 0.000
 map_Ka materials/props/metalduct003a.tga
 map_Kd materials/props/metalduct003a.tga
+
+
+newmtl wood/woodshelf001a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/wood/woodshelf001a.tga
+map_Kd materials/wood/woodshelf001a.tga
+
+
+newmtl props/metallockers003b
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/props/metallockers003b.tga
+map_Kd materials/props/metallockers003b.tga
+
+
+newmtl props/metallockers003a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/props/metallockers003a.tga
+map_Kd materials/props/metallockers003a.tga
+
+
+newmtl dev/dev_interiorfloorlinoleum01f
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/dev/dev_interiorfloorlinoleum01f.tga
+map_Kd materials/dev/dev_interiorfloorlinoleum01f.tga
+
+
+newmtl metal/metaldoor010a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/metal/metaldoor010a.tga
+map_Kd materials/metal/metaldoor010a.tga
+
+
+newmtl halflife/stripes2
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/halflife/stripes2.tga
+map_Kd materials/halflife/stripes2.tga
 
