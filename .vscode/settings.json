@@ -52,5 +52,9 @@
         "temp/":true,
         "Temp/":true
     },
-	"omnisharp.useModernNet": false
+	"omnisharp.useModernNet": false,
+
+    "regionHighlighter.allowLanguageIDs": "*",
+    "regionHighlighter.ignoreFlag": "!",
+    "regionHighlighter.decorationStyle": "background"
 }

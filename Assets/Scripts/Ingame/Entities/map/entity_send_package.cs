@@ -39,8 +39,8 @@ public class entity_send_package : MonoBehaviour {
         this._elevatorGate.start();
     }
 
-    private void onGateMovementFinish() {
-        if(this._isSending) return;
+    private void onGateMovementFinish(bool reverse) {
+        if(this._isSending || reverse) return;
 
         this._isSending = true;
         util_timer.UniqueSimple("elevator_reset", 2f, () => {

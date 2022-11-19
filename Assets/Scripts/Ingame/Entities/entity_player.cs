@@ -1,6 +1,14 @@
 
 using UnityEngine;
 
+public enum ShakeMode {
+    SHAKE_UP = 1,
+    SHAKE_DOWN = 2,
+    SHAKE_LEFT = 3,
+    SHAKE_RIGHT = 4,
+    SHAKE_ALL = 5
+}
+
 [RequireComponent(typeof(CharacterController))]
 public class entity_player : MonoBehaviour {
 
@@ -9,20 +17,37 @@ public class entity_player : MonoBehaviour {
 	public float maxGrabDistance = 1f;
 
 	public LayerMask usableMask = 1 << 6;
-	public GameObject big_item_position;
-	public GameObject small_item_position;
+	public Transform big_item_position;
+	public Transform small_item_position;
 
 	[Header("Camera")]
 	public float sensitivity = 10f;
 
-	[Header("Other")]
+	[HideInInspector]
 	public entity_item holdingItem; // TODO: Support multiple items?
 
+	// PRIVATE ---
+	#region PRIVATE
+		#region SHAKE
+			private bool _isCameraShaking;
+			private ShakeMode _shakemode;
+			private float _shakePower;
+		#endregion
 
-    private CharacterController _controller;
-    private Camera _camera;
-	private float _camRotationY;
-	private bool _frozen;
+		#region OBJS
+			private CharacterController _controller;
+			private Camera _camera;
+		#endregion
+
+		#region CAMERA
+			private float _camRotationY;
+		#endregion
+
+		#region OTHER
+			private bool _frozen;
+		#endregion
+	#endregion
+
 
     // Use this for initialization
 	public void Awake () {
@@ -68,7 +93,46 @@ public class entity_player : MonoBehaviour {
 				}
 			}
 			// --------------
+
+			if (this._isCameraShaking) {
+       			Vector3 final = this._camera.transform.localPosition;
+
+				switch (_shakemode) {
+					case ShakeMode.SHAKE_ALL:
+						final.z += Random.value * this._shakePower * 2 - this._shakePower;
+						final.x += Random.value * this._shakePower * 2 - this._shakePower;
+					break;
+					case ShakeMode.SHAKE_UP:
+						final.z += Random.value * this._shakePower * 2 - this._shakePower;
+					break;
+					case ShakeMode.SHAKE_DOWN:
+						final.z -= Random.value * this._shakePower * 2 - this._shakePower;
+					break;
+					case ShakeMode.SHAKE_LEFT:
+						final.x += Random.value * this._shakePower * 2 - this._shakePower;
+					break;
+					case ShakeMode.SHAKE_RIGHT:
+						final.x -= Random.value * this._shakePower * 2 - this._shakePower;
+					break;
+
+					default:
+					break;
+				}
+
+       			this._camera.transform.localPosition = final;
+			}
 		}
+	}
+
+	public void shakeCamera(float time, float power = 0.005f, ShakeMode shakemode = ShakeMode.SHAKE_ALL) {
+		this._isCameraShaking = true;
+		this._shakePower = power;
+		this._shakemode = shakemode;
+
+		util_timer.Simple(time, () => {
+			this._isCameraShaking = false;
+			this._camera.transform.localPosition = Vector3.zero;
+		});
 	}
 
 	public void freeze(bool set) {
@@ -84,8 +148,8 @@ public class entity_player : MonoBehaviour {
 
 		this.holdingItem = pick;
 
-		Transform pos = small_item_position.transform;
-		if(pick.isBig) pos = big_item_position.transform;
+		Transform pos = small_item_position;
+		if(pick.isBig) pos = big_item_position;
 
 		this.holdingItem.setOwner(this.gameObject, pos);
 	}

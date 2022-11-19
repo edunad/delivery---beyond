@@ -11,7 +11,6 @@ public enum MoveDirection {
     BACK
 }
 
-[RequireComponent(typeof(AudioSource))]
 [RequireComponent(typeof(Collider))]
 public class entity_button : MonoBehaviour {
 
@@ -29,8 +28,6 @@ public class entity_button : MonoBehaviour {
     public float resetCooldown = 2f;
 
     // PRIVATE ---
-
-    private AudioSource _audioSource;
     private AudioClip[] _audioClips;
 
     private Collider _collision;
@@ -42,10 +39,6 @@ public class entity_button : MonoBehaviour {
 
         this.name = "entity_button";
         this.gameObject.layer = 6;
-
-        this._audioSource = GetComponent<AudioSource>();
-        this._audioSource.playOnAwake = false;
-        this._audioSource.volume = 0.4f;
 
         this._originalPos = transform.localPosition;
 
@@ -74,17 +67,14 @@ public class entity_button : MonoBehaviour {
 
         if(this.reciever == null) throw new System.Exception("Invalid reciever");
         if(this.locked) {
-            this._audioSource.clip = this._audioClips[0];
-            this._audioSource.Play();
-
+            SoundController.Instance.Play3DSound(this._audioClips[0], this.transform);
             return;
         }
 
         this.setButtonLocked(true);
         this.reciever.BroadcastMessage("onButtonPress", ply);
 
-        this._audioSource.clip = this._audioClips[1];
-        this._audioSource.Play();
+        SoundController.Instance.Play3DSound(this._audioClips[1], this.transform);
 
         if(this.resetCooldown > 0) util_timer.Simple(this.resetCooldown, () => {
             this.setButtonLocked(false);

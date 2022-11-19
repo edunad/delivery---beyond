@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(AudioSource))]
 public class entity_movement : MonoBehaviour {
     public GameObject obj;
 
@@ -14,18 +13,18 @@ public class entity_movement : MonoBehaviour {
     public bool loop = false;
 
     [Header("Sound")]
-    public string moveSound = "silent";
     public string stopSound = "silent";
+    public string startSound = "silent";
 
-    public delegate void onMovementFinish();
+    public delegate void onMovementFinish(bool reverse);
     public event onMovementFinish OnMovementFinish;
 
     // PRIVATE ---
-
-    private int _pointIndex = 0;
-    private float _time = 0;
-    private AudioSource _audioSource;
-    private AudioClip[] _audioClips;
+    #region PRIVATE
+        private int _pointIndex = 0;
+        private float _time = 0;
+        private AudioClip[] _audioClips;
+    #endregion
 
     #if UNITY_EDITOR
         [EditorButton("Fix")]
@@ -36,24 +35,18 @@ public class entity_movement : MonoBehaviour {
         if(this.obj == null) throw new System.Exception("Missing game object");
         if(this.points.Count < 2) throw new System.Exception("At least 2 points are needed");
 
-        this.reset();
-
-        this._audioSource = GetComponent<AudioSource>();
-        this._audioSource.playOnAwake = false;
-        this._audioSource.volume = 0.4f;
         this._audioClips = new AudioClip[] {
-            AssetsController.GetResource<AudioClip>("Sounds/Ingame/Objects/" + this.moveSound),
+            AssetsController.GetResource<AudioClip>("Sounds/Ingame/Objects/" + this.startSound),
             AssetsController.GetResource<AudioClip>("Sounds/Ingame/Objects/" + this.stopSound)
         };
+
+        this.reset();
     }
 
     public void start() {
         this.isActive = true;
 
-        this._audioSource.clip = this._audioClips[0];
-        this._audioSource.loop = true;
-        this._audioSource.Play();
-
+        SoundController.Instance.Play3DSound(this._audioClips[0], this.transform);
         this.reset();
     }
 
@@ -64,14 +57,11 @@ public class entity_movement : MonoBehaviour {
         this.setPosition(this.points[this._pointIndex]);
     }
 
-    private void onFinish() {
+    private void onFinish(bool reverse) {
+        SoundController.Instance.Play3DSound(this._audioClips[1], this.transform);
+
         this.isActive = false;
-
-        this._audioSource.clip = this._audioClips[1];
-        this._audioSource.loop = false;
-        this._audioSource.Play();
-
-        if(OnMovementFinish != null) OnMovementFinish();
+        if(OnMovementFinish != null) OnMovementFinish(reverse);
     }
 
     public void FixedUpdate() {
@@ -89,10 +79,10 @@ public class entity_movement : MonoBehaviour {
             this._pointIndex += reverse ? -1 : 1;
 
             if(reverse && this._pointIndex <= 0){
-                if(!loop) this.onFinish();
+                if(!loop) this.onFinish(true);
                 this._pointIndex = this.points.Count - 1;
             } else if(this._pointIndex >= this.points.Count - 1) {
-                if(!loop) this.onFinish();
+                if(!loop) this.onFinish(false);
                 this._pointIndex = 0;
             }
 
@@ -119,8 +109,4 @@ public class entity_movement : MonoBehaviour {
             Gizmos.DrawLine(p1, p2);
         }
     }
-
-    #if UNITY_EDITOR
-    public void onButtonPress(){ this.start(); }
-    #endif
 }
