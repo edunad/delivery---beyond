@@ -663,7 +663,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 826213289}
   textBG: {fileID: 1896697079}
-  talkSnd: []
-  talkSpeed: 0
-  cooldown: 0
+  talkSnd:
+  - {fileID: 8300000, guid: 2a840dd60c1c23049a3152588a5b8da4, type: 3}
+  - {fileID: 8300000, guid: 24876597a81a34f42817d2d780bb8be6, type: 3}
+  - {fileID: 8300000, guid: e52df828207f1c8438800a1dc7c77aa6, type: 3}
+  - {fileID: 8300000, guid: 9e7ad7d9172972443bf586fd2037ca2c, type: 3}
+  - {fileID: 8300000, guid: 7b024c6bfd4b84b4387a16121f82b1d0, type: 3}
+  - {fileID: 8300000, guid: faa5d84b58211674b9c4bb6dfb486741, type: 3}
+  - {fileID: 8300000, guid: 94662bde0069b024d811a25ce1d53e33, type: 3}
+  - {fileID: 8300000, guid: ab4255e113c343f4aa8d4ba98aa3c6be, type: 3}
+  - {fileID: 8300000, guid: 385fdb902e9343340a8661239e68c667, type: 3}
+  - {fileID: 8300000, guid: 58a7b44ce3f3dbc4fb971cefa716b0c0, type: 3}
+  talkSpeed: 0.07
+  cooldown: 2
   speakerPosition: {fileID: 0}
