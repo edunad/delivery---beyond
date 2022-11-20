@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Inspector
+  m_Title: Game
   m_RootView: {fileID: 7}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -39,9 +39,9 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 787
+    x: 946
     y: 0
-    width: 738
+    width: 579
     height: 653
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
@@ -74,7 +74,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 119
+  controlID: 60
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -119,7 +119,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 252
+    width: 306
     height: 653
   m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
@@ -292,9 +292,9 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 252
+    x: 306
     y: 0
-    width: 535
+    width: 640
     height: 653
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
@@ -333,7 +333,7 @@ MonoBehaviour:
     m_SaveData: []
   progressMessageClearTime: -1
   notificationClearTime: -1
-  timeSinceLastRotation: -1
+  timeSinceLastRotation: 17361.5094733
   currentBranchAndRemoteHasUpdate: 0
   currentTrackingStatusHasUpdate: 0
   currentStatusEntriesHasUpdate: 1
@@ -433,11 +433,90 @@ MonoBehaviour:
     treeChanges:
       assets:
         keys:
-        - 0000000000000000e100000000000000
+        - 00000000000000001000000000000000
+        - 0a64d011155d3ad4590854a36f6589cc
+        - 4b64d6cb58b693240bd1771c884df9ca
+        - 7a2cc8b59ef944f4492901a5becc15d8
+        - 832c17d40a99e2f4b8f85c45eeeb1967
+        - e8730331cdef81e45939199904ce65ac
+        - d1a719e28f0d77142ae3c9151ffb63ea
+        - e2773d33f3bb9f044a11bfc04e3bd7d6
         values:
-        - path: ProjectSettings\ProjectVersion.txt
-          label: ProjectVersion.txt
+        - path: Assets
+          label: Assets
+          level: 0
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Scripts
+          label: Scripts
           level: 1
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Scripts\Ingame
+          label: Ingame
+          level: 2
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Scripts\Ingame\Controllers
+          label: Controllers
+          level: 3
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Scripts\Ingame\Controllers\ConversationController.cs
+          label: ConversationController.cs
+          level: 4
           isFolder: 0
           isContainer: 0
           isCollapsed: 0
@@ -447,21 +526,76 @@ MonoBehaviour:
           checkState: 0
           isLocked: 0
           gitStatusEntry:
-            path: ProjectSettings\ProjectVersion.txt
-            fullPath: D:\delivery---beyond\ProjectSettings\ProjectVersion.txt
-            projectPath: ProjectSettings\ProjectVersion.txt
+            path: Assets\Scripts\Ingame\Controllers\ConversationController.cs
+            fullPath: D:\delivery---beyond\Assets\Scripts\Ingame\Controllers\ConversationController.cs
+            projectPath: Assets\Scripts\Ingame\Controllers\ConversationController.cs
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 3
+        - path: Assets\Scripts\Ingame\Controllers\SoundController.cs
+          label: SoundController.cs
+          level: 4
+          isFolder: 0
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\Scripts\Ingame\Controllers\SoundController.cs
+            fullPath: D:\delivery---beyond\Assets\Scripts\Ingame\Controllers\SoundController.cs
+            projectPath: Assets\Scripts\Ingame\Controllers\SoundController.cs
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 3
+        - path: Assets\Scripts\Ingame\Entities
+          label: Entities
+          level: 3
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Scripts\Ingame\Entities\entity_sound.cs
+          label: entity_sound.cs
+          level: 4
+          isFolder: 0
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\Scripts\Ingame\Entities\entity_sound.cs
+            fullPath: D:\delivery---beyond\Assets\Scripts\Ingame\Entities\entity_sound.cs
+            projectPath: Assets\Scripts\Ingame\Entities\entity_sound.cs
             originalPath: 
             indexStatus: 0
             workTreeStatus: 3
       folders:
         keys:
-        - Packages
-        - ProjectSettings
-        - UserSettings
-        - UserSettings\Layouts
+        - Assets
+        - Assets\Scripts
+        - Assets\Scripts\Ingame
+        - Assets\Scripts\Ingame\Controllers
+        - Assets\Scripts\Ingame\Entities
         values:
-        - path: Packages
-          label: Packages
+        - path: Assets
+          label: Assets
           level: 0
           isFolder: 1
           isContainer: 0
@@ -478,45 +612,63 @@ MonoBehaviour:
             originalPath: 
             indexStatus: 0
             workTreeStatus: 0
-        - path: ProjectSettings
-          label: ProjectSettings
-          level: 0
-          isFolder: 1
-          isContainer: 0
-          isCollapsed: 0
-          isHidden: 0
-          isActive: 0
-          treeIsCheckable: 1
-          checkState: 0
-          isLocked: 0
-          gitStatusEntry:
-            path: 
-            fullPath: 
-            projectPath: 
-            originalPath: 
-            indexStatus: 0
-            workTreeStatus: 0
-        - path: UserSettings
-          label: UserSettings
-          level: 0
-          isFolder: 1
-          isContainer: 0
-          isCollapsed: 0
-          isHidden: 0
-          isActive: 0
-          treeIsCheckable: 1
-          checkState: 0
-          isLocked: 0
-          gitStatusEntry:
-            path: 
-            fullPath: 
-            projectPath: 
-            originalPath: 
-            indexStatus: 0
-            workTreeStatus: 0
-        - path: UserSettings\Layouts
-          label: Layouts
+        - path: Assets\Scripts
+          label: Scripts
           level: 1
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Scripts\Ingame
+          label: Ingame
+          level: 2
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Scripts\Ingame\Controllers
+          label: Controllers
+          level: 3
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Scripts\Ingame\Entities
+          label: Entities
+          level: 3
           isFolder: 1
           isContainer: 0
           isCollapsed: 0
@@ -560,8 +712,8 @@ MonoBehaviour:
           originalPath: 
           indexStatus: 0
           workTreeStatus: 0
-      - path: Packages
-        label: Packages
+      - path: Assets
+        label: Assets
         level: 0
         isFolder: 1
         isContainer: 0
@@ -578,98 +730,8 @@ MonoBehaviour:
           originalPath: 
           indexStatus: 0
           workTreeStatus: 0
-      - path: Packages\packages-lock.json
-        label: packages-lock.json
-        level: 1
-        isFolder: 0
-        isContainer: 0
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 1
-        checkState: 0
-        isLocked: 0
-        gitStatusEntry:
-          path: Packages\packages-lock.json
-          fullPath: D:\delivery---beyond\Packages\packages-lock.json
-          projectPath: Packages\packages-lock.json
-          originalPath: 
-          indexStatus: 0
-          workTreeStatus: 3
-      - path: ProjectSettings
-        label: ProjectSettings
-        level: 0
-        isFolder: 1
-        isContainer: 0
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 1
-        checkState: 0
-        isLocked: 0
-        gitStatusEntry:
-          path: 
-          fullPath: 
-          projectPath: 
-          originalPath: 
-          indexStatus: 0
-          workTreeStatus: 0
-      - path: ProjectSettings\ProjectVersion.txt
-        label: ProjectVersion.txt
-        level: 1
-        isFolder: 0
-        isContainer: 0
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 1
-        checkState: 0
-        isLocked: 0
-        gitStatusEntry:
-          path: ProjectSettings\ProjectVersion.txt
-          fullPath: D:\delivery---beyond\ProjectSettings\ProjectVersion.txt
-          projectPath: ProjectSettings\ProjectVersion.txt
-          originalPath: 
-          indexStatus: 0
-          workTreeStatus: 3
-      - path: UserSettings
-        label: UserSettings
-        level: 0
-        isFolder: 1
-        isContainer: 0
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 1
-        checkState: 0
-        isLocked: 0
-        gitStatusEntry:
-          path: 
-          fullPath: 
-          projectPath: 
-          originalPath: 
-          indexStatus: 0
-          workTreeStatus: 0
-      - path: UserSettings\EditorUserSettings.asset
-        label: EditorUserSettings.asset
-        level: 1
-        isFolder: 0
-        isContainer: 0
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 1
-        checkState: 0
-        isLocked: 0
-        gitStatusEntry:
-          path: UserSettings\EditorUserSettings.asset
-          fullPath: D:\delivery---beyond\UserSettings\EditorUserSettings.asset
-          projectPath: UserSettings\EditorUserSettings.asset
-          originalPath: 
-          indexStatus: 0
-          workTreeStatus: 3
-      - path: UserSettings\Layouts
-        label: Layouts
+      - path: Assets\Scripts
+        label: Scripts
         level: 1
         isFolder: 1
         isContainer: 0
@@ -686,9 +748,45 @@ MonoBehaviour:
           originalPath: 
           indexStatus: 0
           workTreeStatus: 0
-      - path: UserSettings\Layouts\default-2022.dwlt
-        label: default-2022.dwlt
+      - path: Assets\Scripts\Ingame
+        label: Ingame
         level: 2
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\Scripts\Ingame\Controllers
+        label: Controllers
+        level: 3
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\Scripts\Ingame\Controllers\ConversationController.cs
+        label: ConversationController.cs
+        level: 4
         isFolder: 0
         isContainer: 0
         isCollapsed: 0
@@ -698,9 +796,63 @@ MonoBehaviour:
         checkState: 0
         isLocked: 0
         gitStatusEntry:
-          path: UserSettings\Layouts\default-2022.dwlt
-          fullPath: D:\delivery---beyond\UserSettings\Layouts\default-2022.dwlt
-          projectPath: UserSettings\Layouts\default-2022.dwlt
+          path: Assets\Scripts\Ingame\Controllers\ConversationController.cs
+          fullPath: D:\delivery---beyond\Assets\Scripts\Ingame\Controllers\ConversationController.cs
+          projectPath: Assets\Scripts\Ingame\Controllers\ConversationController.cs
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 3
+      - path: Assets\Scripts\Ingame\Controllers\SoundController.cs
+        label: SoundController.cs
+        level: 4
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Scripts\Ingame\Controllers\SoundController.cs
+          fullPath: D:\delivery---beyond\Assets\Scripts\Ingame\Controllers\SoundController.cs
+          projectPath: Assets\Scripts\Ingame\Controllers\SoundController.cs
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 3
+      - path: Assets\Scripts\Ingame\Entities
+        label: Entities
+        level: 3
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\Scripts\Ingame\Entities\entity_sound.cs
+        label: entity_sound.cs
+        level: 4
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Scripts\Ingame\Entities\entity_sound.cs
+          fullPath: D:\delivery---beyond\Assets\Scripts\Ingame\Entities\entity_sound.cs
+          projectPath: Assets\Scripts\Ingame\Entities\entity_sound.cs
           originalPath: 
           indexStatus: 0
           workTreeStatus: 3
@@ -724,39 +876,33 @@ MonoBehaviour:
           indexStatus: 0
           workTreeStatus: 0
     gitStatusEntries:
-    - path: Packages\packages-lock.json
-      fullPath: D:\delivery---beyond\Packages\packages-lock.json
-      projectPath: Packages\packages-lock.json
+    - path: Assets\Scripts\Ingame\Controllers\ConversationController.cs
+      fullPath: D:\delivery---beyond\Assets\Scripts\Ingame\Controllers\ConversationController.cs
+      projectPath: Assets\Scripts\Ingame\Controllers\ConversationController.cs
       originalPath: 
       indexStatus: 0
       workTreeStatus: 3
-    - path: ProjectSettings\ProjectVersion.txt
-      fullPath: D:\delivery---beyond\ProjectSettings\ProjectVersion.txt
-      projectPath: ProjectSettings\ProjectVersion.txt
+    - path: Assets\Scripts\Ingame\Controllers\SoundController.cs
+      fullPath: D:\delivery---beyond\Assets\Scripts\Ingame\Controllers\SoundController.cs
+      projectPath: Assets\Scripts\Ingame\Controllers\SoundController.cs
       originalPath: 
       indexStatus: 0
       workTreeStatus: 3
-    - path: UserSettings\EditorUserSettings.asset
-      fullPath: D:\delivery---beyond\UserSettings\EditorUserSettings.asset
-      projectPath: UserSettings\EditorUserSettings.asset
+    - path: Assets\Scripts\Ingame\Entities\entity_sound.cs
+      fullPath: D:\delivery---beyond\Assets\Scripts\Ingame\Entities\entity_sound.cs
+      projectPath: Assets\Scripts\Ingame\Entities\entity_sound.cs
       originalPath: 
       indexStatus: 0
       workTreeStatus: 3
-    - path: UserSettings\Layouts\default-2022.dwlt
-      fullPath: D:\delivery---beyond\UserSettings\Layouts\default-2022.dwlt
-      projectPath: UserSettings\Layouts\default-2022.dwlt
-      originalPath: 
-      indexStatus: 0
-      workTreeStatus: 3
-    changedFilesText: 4 changed files
+    changedFilesText: 3 changed files
     lastCurrentBranchChangedEvent:
-      updatedTimeString: 2022-11-18T18:03:45.221+01:00
+      updatedTimeString: 2022-11-20T19:20:29.123+01:00
       cacheType: 1
     lastStatusEntriesChangedEvent:
-      updatedTimeString: 2022-11-18T22:37:54.188+01:00
+      updatedTimeString: 2022-11-20T19:27:15.680+01:00
       cacheType: 6
     lastLocksChangedEvent:
-      updatedTimeString: 2022-11-18T18:29:47.590+01:00
+      updatedTimeString: 2022-11-20T19:27:16.173+01:00
       cacheType: 7
   historyView:
     currentLogHasUpdate: 0
@@ -6315,7 +6461,7 @@ MonoBehaviour:
   currentRemoteName: origin
   currentBranch: master
   currentRemoteUrl: https://github.com/edunad/delivery---beyond.git
-  statusAhead: 0
+  statusAhead: 2
   statusBehind: 0
   hasItemsToCommit: 1
   isTrackingRemoteBranch: 1
@@ -6331,10 +6477,10 @@ MonoBehaviour:
     updatedTimeString: 2022-11-16T18:00:08.795+01:00
     cacheType: 1
   lastTrackingStatusChangedEvent:
-    updatedTimeString: 2022-11-16T18:00:09.020+01:00
+    updatedTimeString: 2022-11-19T15:23:10.832+01:00
     cacheType: 5
   lastStatusEntriesChangedEvent:
-    updatedTimeString: 2022-11-16T18:01:24.307+01:00
+    updatedTimeString: 2022-11-19T15:37:01.839+01:00
     cacheType: 6
   pullButtonContent:
     m_Text: Pull
@@ -6398,22 +6544,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/TextMesh Pro/Fonts
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
-  m_StartGridSize: 64
+  m_StartGridSize: 96
   m_LastFolders:
-  - Assets/Scenes
-  m_LastFoldersGridSize: -1
+  - Assets/TextMesh Pro/Fonts
+  m_LastFoldersGridSize: 96
   m_LastProjectPath: D:\delivery---beyond
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 207}
-    m_SelectedIDs: a04c0000
-    m_LastClickedID: 19616
-    m_ExpandedIDs: 00000000d04b0000d24b0000d44b0000d64b0000d84b0000da4b0000de4b0000e04b0000e24b0000e44b0000e64b00009e4c0000a44c0000ae4c000000ca9a3b
+    scrollPos: {x: 0, y: 531}
+    m_SelectedIDs: 4a640000
+    m_LastClickedID: 25674
+    m_ExpandedIDs: 00000000e04d0000e24d0000e44d0000e64d0000e84d0000ea4d0000ec4d0000ee4d0000f04d0000f24d0000f44d00005c4e0000644e0000664e0000684e00006a4e0000764e00007a4e00006471000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -6441,7 +6587,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000d04b0000d24b0000d44b0000d64b0000d84b0000da4b0000dc4b0000de4b0000e04b0000e24b0000e44b0000e64b0000e84b0000
+    m_ExpandedIDs: 00000000e04d0000e24d0000e44d0000e64d0000e84d0000ea4d0000ec4d0000ee4d0000f04d0000f24d0000f44d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -6493,8 +6639,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
-    m_GridSize: 64
+    m_ScrollPosition: {x: 0, y: 45}
+    m_GridSize: 96
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 207
 --- !u!114 &15
@@ -6560,7 +6706,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 73
-    width: 251
+    width: 305
     height: 632
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
@@ -6568,24 +6714,24 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: eefaffff
-      m_LastClickedID: -1298
-      m_ExpandedIDs: b8f9ffffd6f9ffff06faffff12faffff26faffff3cfaffff44faffff72faffff96faffffa2faffffb6faffffbafaffffeefaffff32fbffff34fbffff
+      scrollPos: {x: 0, y: 109}
+      m_SelectedIDs: 00faffff
+      m_LastClickedID: -1536
+      m_ExpandedIDs: 4825fcff7a28fcff5e03fdff325cfeff345cfeff06f8feff08f8feff0af8feffecf8ffff00f9ffff20f9ffff2af9ffff3cf9ffffd0f9ffffe8f9ffff00faffff04faffff5efaffff64faffff7afaffffa8faffff22fbffff28fbffff34fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: computer_camera
-        m_OriginalName: computer_camera
+        m_Name: txt (1)
+        m_OriginalName: txt (1)
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -1536
+        m_UserData: -286902
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 4
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 5}
       m_SearchString: 
@@ -6615,9 +6761,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 252
+    x: 306
     y: 73
-    width: 533
+    width: 638
     height: 632
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
@@ -6672,7 +6818,7 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 0, y: 0}
+      snapOffset: {x: 0, y: 25}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: unity-transform-toolbar
@@ -6853,9 +6999,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 53.429333, y: -7.8147197, z: -7.1915474}
+    m_Target: {x: -3.1652732, y: 1.5206945, z: -4.419541}
     speed: 2
-    m_Value: {x: 53.429333, y: -7.8147197, z: -7.1915474}
+    m_Value: {x: -3.1652732, y: 1.5206945, z: -4.419541}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -6896,18 +7042,18 @@ MonoBehaviour:
         m_Value: 0
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
-      m_Size: {x: 0, y: 0}
+      m_Size: {x: 0.0051, y: 0.0051}
     m_ShowGrid: 1
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.07525148, y: 0.7260116, z: -0.080472834, w: 0.6787877}
+    m_Target: {x: 0.116797, y: -0.760473, z: 0.1426205, w: 0.62268806}
     speed: 2
-    m_Value: {x: 0.07525207, y: 0.7260173, z: -0.08047347, w: 0.6787931}
+    m_Value: {x: 0.116794564, y: -0.76045716, z: 0.14261752, w: 0.62267506}
   m_Size:
-    m_Target: 22.4279
+    m_Target: 0.9938051
     speed: 2
-    m_Value: 22.4279
+    m_Value: 0.9938051
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -6925,7 +7071,7 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 1
     m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: 0, y: 0, z: 0, w: 0}
+  m_LastSceneViewRotation: {x: -0.0055685197, y: -0.5898749, z: 0.004073019, w: -0.8074826}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
@@ -6952,9 +7098,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 787
+    x: 946
     y: 73
-    width: 736
+    width: 577
     height: 632
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
@@ -6966,7 +7112,7 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-  m_TargetSize: {x: 736, y: 611}
+  m_TargetSize: {x: 577, y: 611}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -6986,8 +7132,8 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -368
-    m_HBaseRangeMax: 368
+    m_HBaseRangeMin: -288.5
+    m_HBaseRangeMax: 288.5
     m_VBaseRangeMin: -305.5
     m_VBaseRangeMax: 305.5
     m_HAllowExceedBaseRangeMin: 1
@@ -7007,23 +7153,23 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
-      width: 736
+      width: 577
       height: 611
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 368, y: 305.5}
+    m_Translation: {x: 288.5, y: 305.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -368
+      x: -288.5
       y: -305.5
-      width: 736
+      width: 577
       height: 611
     m_MinimalGUI: 1
   m_defaultScale: 1
-  m_LastWindowPixelSize: {x: 736, y: 632}
+  m_LastWindowPixelSize: {x: 577, y: 632}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000

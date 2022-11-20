@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 722803292}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -211,14 +211,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 2.6
-  m_fontSizeBase: 2.6
+  m_fontSize: 2.5
+  m_fontSizeBase: 2.5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 17
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 32
   m_VerticalAlignment: 4096
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -417,14 +417,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 2.6
-  m_fontSizeBase: 2.6
+  m_fontSize: 2.5
+  m_fontSizeBase: 2.5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 17
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 32
   m_VerticalAlignment: 4096
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -509,10 +509,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   customerTemplates:
-  - {fileID: 0}
+  - {fileID: 1677978819928395105, guid: 62e247122fec7de4b9edaaa22f1298fa, type: 3}
   maxMistakes: 3
   patienceMult: 1
   maxNPCS: 10
+  client_spot: {fileID: 0}
+  delivery_spot: {fileID: 0}
+  clientProp: {fileID: 0}
+  computer: {fileID: 0}
+  boxTemplate: {fileID: 554951128833370733, guid: 03ae5d88848d36541a5cb1f242100f55, type: 3}
 --- !u!1 &4391608973706984441
 GameObject:
   m_ObjectHideFlags: 0
@@ -674,6 +679,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ab4255e113c343f4aa8d4ba98aa3c6be, type: 3}
   - {fileID: 8300000, guid: 385fdb902e9343340a8661239e68c667, type: 3}
   - {fileID: 8300000, guid: 58a7b44ce3f3dbc4fb971cefa716b0c0, type: 3}
-  talkSpeed: 0.07
+  talkSpeed: 0.05
   cooldown: 2
   speakerPosition: {fileID: 0}

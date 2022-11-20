@@ -76,7 +76,7 @@ public class entity_button : MonoBehaviour {
 
         SoundController.Instance.Play3DSound(this._audioClips[1], this.transform);
 
-        if(this.resetCooldown > 0) util_timer.Simple(this.resetCooldown, () => {
+        if(this.resetCooldown > 0) util_timer.simple(this.resetCooldown, () => {
             this.setButtonLocked(false);
         });
     }

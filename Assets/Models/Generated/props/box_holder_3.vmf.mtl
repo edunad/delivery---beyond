@@ -1,0 +1,18 @@
+# Decompiled with VMF2OBJ v2.0.0 by Dylancyclone
+
+
+newmtl dev/graygrid
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/dev/graygrid.tga
+map_Kd materials/dev/graygrid.tga
+
+
+newmtl delivery_beyond/cardboard_box
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/delivery_beyond/cardboard_box.tga
+map_Kd materials/delivery_beyond/cardboard_box.tga
+

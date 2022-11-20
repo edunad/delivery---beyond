@@ -46,5 +46,7 @@ public class entity_flat_box : MonoBehaviour {
             default:
                 throw new System.Exception("Invalid box size");
         }
+
+        this.name = "box_flat-" + size.ToString().Replace("_", "");
     }
 }

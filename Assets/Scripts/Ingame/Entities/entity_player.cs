@@ -15,6 +15,7 @@ public class entity_player : MonoBehaviour {
 	[Header("Player")]
 	public float moveSpeed = 10f;
 	public float maxGrabDistance = 1f;
+	public float maxZoom = 0.25f;
 
 	public LayerMask usableMask = 1 << 6;
 	public Transform big_item_position;
@@ -41,6 +42,7 @@ public class entity_player : MonoBehaviour {
 
 		#region CAMERA
 			private float _camRotationY;
+			private float _originalCamZoom;
 		#endregion
 
 		#region OTHER
@@ -52,7 +54,9 @@ public class entity_player : MonoBehaviour {
     // Use this for initialization
 	public void Awake () {
 		this._controller = GetComponent<CharacterController>();
+
 		this._camera = GetComponentInChildren<Camera>();
+		this._originalCamZoom = this._camera.fieldOfView;
 
 		// Hide cursor
 		Cursor.lockState = CursorLockMode.Locked;
@@ -88,9 +92,13 @@ public class entity_player : MonoBehaviour {
 			if(this.holdingItem != null){
 				if(Input.GetMouseButton(0)) {
 					this.holdingItem.gameObject.BroadcastMessage("onPrimaryUse", this, SendMessageOptions.DontRequireReceiver);
-				} else if(Input.GetMouseButton(1)) {
-					this.holdingItem.gameObject.BroadcastMessage("onSecondaryUse", this, SendMessageOptions.DontRequireReceiver);
 				}
+			}
+
+			if(Input.GetMouseButton(1)) {
+				this._camera.fieldOfView = this._originalCamZoom - this.maxZoom;
+			} else {
+				this._camera.fieldOfView = this._originalCamZoom;
 			}
 			// --------------
 
@@ -129,7 +137,7 @@ public class entity_player : MonoBehaviour {
 		this._shakePower = power;
 		this._shakemode = shakemode;
 
-		util_timer.Simple(time, () => {
+		util_timer.simple(time, () => {
 			this._isCameraShaking = false;
 			this._camera.transform.localPosition = Vector3.zero;
 		});
@@ -173,8 +181,6 @@ public class entity_player : MonoBehaviour {
 
 			entity_item_spawner spawner = obj.GetComponent<entity_item_spawner>();
 			if(spawner == null) throw new System.Exception("Invalid entity_item_spawner");
-			if(!spawner.canTakeItem(this.gameObject)) return;
-
 			if(spawner.canSpawnItem()) this.holdObject(spawner.takeItem(this.gameObject));
 		} else if(obj.name.StartsWith("itm-trash-")) {
 			if(!this.isHoldingItem()) return;

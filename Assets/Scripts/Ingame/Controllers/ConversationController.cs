@@ -3,12 +3,18 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+
+
 public class Conversation {
+    public string id;
+
     public string text;
     public float maxPitch;
     public float minPitch;
 
-    public Conversation(string author, string text, float minPitch = 1f, float maxPitch = 1f) {
+    public Conversation(string id, string author, string text, float minPitch = 1f, float maxPitch = 1f) {
+        this.id = id;
+
         this.text = author + ": " + text;
         this.minPitch = minPitch;
         this.maxPitch = maxPitch;
@@ -16,6 +22,7 @@ public class Conversation {
 }
 
 [DisallowMultipleComponent]
+[DefaultExecutionOrder(-1)]
 public class ConversationController : MonoBehaviour {
 	public static ConversationController Instance;
 
@@ -30,36 +37,36 @@ public class ConversationController : MonoBehaviour {
     [Header("Speaker")]
     public Transform speakerPosition;
 
+    #region EVENTS
+        public delegate void onConversationCompleted(string id);
+        public event onConversationCompleted OnConversationCompleted;
+
+        public delegate void onSingleConversationCompleted(string id);
+        public event onSingleConversationCompleted OnSingleConversationCompleted;
+    #endregion
 
     #region PRIVATE
         private Queue<Conversation> _talkQueue = new Queue<Conversation>();
         private Conversation _currentChat;
         private int _chatIndx;
-
-        private util_timer charTimer;
-        private util_timer cdTimer;
+        private bool _started = false;
+        private string _currentChatID = "default";
     #endregion
 
-    public void Awake() {
-		if (Instance == null) {
-            Instance = this;
-        } else {
-            Destroy(gameObject);
-        }
-
-        /*this.queueConversation(new Conversation("KEK", "AAAAAAAA ALLALALALALA1"));
-        this.queueConversation(new Conversation("MEOW", "MEOW MEMEMWE MEWMEOWMOW", 1.4f, 1.8f));
-        this.queueConversation(new Conversation("WOOF", "BARK BBARKBARK AWOO BARK", 0.6f, 0.8f));*/
-	}
+    public ConversationController() { Instance = this; }
 
     public void clear() {
         this._talkQueue.Clear();
         this.reset();
     }
 
+    public void setConversationID(string id) {
+        this._currentChatID = id;
+    }
+
     public void queueConversation(Conversation conv) {
         this._talkQueue.Enqueue(conv);
-        if(this.charTimer == null && this.cdTimer == null) this.getNextConv(); // Start conversation
+        if(!this._started) this.getNextConv(); // Start conversation
     }
 
     private void reset() {
@@ -68,35 +75,41 @@ public class ConversationController : MonoBehaviour {
 
         this._chatIndx = 0;
         this._currentChat = null;
-
-        if (this.charTimer != null) this.charTimer.Stop();
-        if (this.cdTimer != null) this.cdTimer.Stop();
-
-        this.charTimer = null;
-        this.cdTimer = null;
     }
 
     private void getNextConv() {
         this.reset();
 
-        if (this._talkQueue == null || this._talkQueue.Count <= 0) return;
+        if (this._talkQueue == null || this._talkQueue.Count <= 0) {
+            if(OnConversationCompleted != null) OnConversationCompleted.Invoke(this._currentChatID);
+
+            this._currentChatID = "default";
+            this._started = false;
+
+            return;
+        }
+
+        this._started = true;
         this._currentChat = this._talkQueue.Dequeue();
 
         int strSize = this._currentChat.text.Length;
-        this.charTimer = util_timer.Create(strSize, talkSpeed, () => {
+        util_timer.create(strSize, talkSpeed, () => {
             if(this._currentChat == null) return;
 
             this.text.text += this._currentChat.text[this._chatIndx];
             this.textBG.text = "<mark=#000000 padding=\"10, 10, 10, 0\">"+this.text.text+"</mark>";
 
-            SoundController.Instance.Play3DSound(this.talkSnd[Random.Range(0, this.talkSnd.Count)], this.speakerPosition, Random.Range(this._currentChat.minPitch, this._currentChat.maxPitch));
+            SoundController.Instance.Play3DSound(
+                this.talkSnd[Random.Range(0, this.talkSnd.Count)],
+                this.speakerPosition,
+                Random.Range(this._currentChat.minPitch, this._currentChat.maxPitch),
+                5f);
 
             if (this._chatIndx < strSize - 1){
                 this._chatIndx += 1;
             } else {
-                this.cdTimer = util_timer.UniqueSimple("chat_cooldown", this.cooldown, () => {
-                    this.getNextConv();
-                });
+                if(OnSingleConversationCompleted != null) OnSingleConversationCompleted.Invoke(this._currentChat.id);
+                util_timer.simple(this.cooldown, () => this.getNextConv());
             }
         });
     }

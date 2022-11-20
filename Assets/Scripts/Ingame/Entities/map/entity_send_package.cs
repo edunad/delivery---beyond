@@ -43,7 +43,7 @@ public class entity_send_package : MonoBehaviour {
         if(this._isSending || reverse) return;
 
         this._isSending = true;
-        util_timer.UniqueSimple("elevator_reset", 2f, () => {
+        util_timer.simple(2f, () => {
             this.spot.deleteItem();
 
             this._elevatorGate.reverse = true;

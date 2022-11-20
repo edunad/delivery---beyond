@@ -43,7 +43,7 @@ public class entity_elevator : MonoBehaviour {
             button.setButtonLocked(false);
             this._ply = null;
         } else {
-            util_timer.UniqueSimple("elevator_effect_2", 0.25f, () => {
+            util_timer.simple(0.25f, () => {
                 //elevator move sound
 
                 this._ply.shakeCamera(12f);
@@ -52,7 +52,7 @@ public class entity_elevator : MonoBehaviour {
                 SoundController.Instance.Play3DSound(this._audioClips[0], this._teleport.teleportDest);
                 SoundController.Instance.Play3DSound(this._audioClips[1], this._teleport.teleportDest);
 
-                util_timer.UniqueSimple("elevator_effect_3", 12f, () => {
+                util_timer.simple(12f, () => {
                     // elevator DING sound
                     SoundController.Instance.Play3DSound(this._audioClips[2], this._teleport.teleportDest);
                     SoundController.Instance.Play3DSound(this._audioClips[3], this._teleport.teleportDest);

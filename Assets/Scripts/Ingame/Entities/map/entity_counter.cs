@@ -13,7 +13,7 @@ public class entity_counter : MonoBehaviour {
 
     public void Awake() {
         this._audioClips = new AudioClip[] {
-            AssetsController.GetResource<AudioClip>("Sounds/Ingame/Objects/Counter/nextNumber")
+            AssetsController.GetResource<AudioClip>("Sounds/Ingame/Objects/Counter/255156__jmayoff__bell-ding")
         };
     }
 
@@ -23,6 +23,8 @@ public class entity_counter : MonoBehaviour {
 
         this._count = Mathf.Clamp(this._count + 1, 0, 99);
         this.updateText();
+
+        CoreController.Instance.requestNextClient();
     }
 
     private void updateText() {

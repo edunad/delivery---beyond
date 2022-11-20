@@ -62,7 +62,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a1df9efd2fd9e9a47bf2545dd8c55478, type: 3}
       propertyPath: m_Name
-      value: box_flat_3x2x3 Variant
+      value: box_flat-3x2x3
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a1df9efd2fd9e9a47bf2545dd8c55478, type: 3}
       propertyPath: m_IsActive

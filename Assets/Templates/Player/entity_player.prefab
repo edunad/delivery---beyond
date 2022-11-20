@@ -194,7 +194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cfuStatus: PSXEffects v1.18.4 - version ahead?!
   sections: 01010101
-  customRes: {x: 347, y: 305}
+  customRes: {x: 288, y: 305}
   resolutionFactor: 2
   limitFramerate: 60
   skipFrames: 0
@@ -357,6 +357,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   maxGrabDistance: 1.5
+  maxZoom: 20
   usableMask:
     serializedVersion: 2
     m_Bits: 64

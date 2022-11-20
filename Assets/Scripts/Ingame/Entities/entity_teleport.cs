@@ -17,8 +17,7 @@ public class entity_teleport : MonoBehaviour {
         Collider[] objs = Physics.OverlapBox(this.transform.position, this._trigger.size, Quaternion.identity, this.mask);
         if(objs.Length <= 0) return;
 
-        for(int i = 0; i < objs.Length; i++){
-            Debug.Log("teleporting: " + objs[i].name);
+        for(int i = 0; i < objs.Length; i++) {
             Vector3 localPos = this.transform.InverseTransformPoint(objs[i].transform.position);
             objs[i].transform.position = localPos + this.teleportDest.position;
             Physics.SyncTransforms();

@@ -74,6 +74,12 @@ public class entity_item_spot : MonoBehaviour {
         return itm;
     }
 
+    public bool placeItem(GameObject ent) {
+        entity_item itm = ent.GetComponent<entity_item>();
+        if(itm == null) throw new System.Exception("Invalid game object, missing entity_item");
+        return this.placeItem(itm);
+    }
+
     public bool placeItem(entity_item itm) {
         if(!this.canAcceptItem(itm) || this.isLocked()) return false;
 

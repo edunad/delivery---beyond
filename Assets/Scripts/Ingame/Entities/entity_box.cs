@@ -6,6 +6,7 @@ using UnityEngine;
 public class entity_box : MonoBehaviour {
 
     public BoxSize size = BoxSize._5x5x5;
+    public int weight;
 
     private entity_item _item;
     public void Awake() {
@@ -15,6 +16,15 @@ public class entity_box : MonoBehaviour {
 
     public void OnValidate() {
         this.scaleBox();
+    }
+
+    public void setSize(BoxSize size) {
+        this.size = size;
+        this.scaleBox();
+    }
+
+    public void setWeight(int weight) {
+        this.weight = weight;
     }
 
     private void scaleBox() {

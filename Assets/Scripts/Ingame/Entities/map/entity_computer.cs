@@ -1,46 +1,93 @@
 
+using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class entity_computer : MonoBehaviour {
-    [Header("Settings")]
-    public Camera screenCamera;
+    [Header("Command line Settings")]
+    public TextMeshPro cmdLineText;
+    public float writeSpeed;
+    public float writeCooldown;
 
-    private entity_player _user;
+
+    #region PRIVATE
+        private AudioClip[] _audioClips;
+
+        #region CMD LINE
+            private Queue<string> _cmds = new Queue<string>();
+            private string _currentCMD;
+            private int _chatIndx;
+            private bool _started = false;
+        #endregion
+    #endregion
 
     public void Awake() {
-        this.screenCamera.enabled = false;
+        this._audioClips = new AudioClip[] {
+            AssetsController.GetResource<AudioClip>("Sounds/Ingame/Objects/Computer/beep_single")
+        };
+
+        this.clear();
     }
 
-    public bool isInUse() {return this._user != null;}
-    public void onButtonPress(entity_player ply) { this.enter(ply); }
-    private void enter(entity_player ply) {
-        if(this.isInUse()) return;
-
-        this.screenCamera.enabled = true;
-
-        Cursor.lockState = CursorLockMode.Confined;
-		Cursor.visible = true;
-
-        this._user = ply;
-        this._user.freeze(true);
+    public void queueCmd(string cmd) {
+        this._cmds.Enqueue(cmd);
+        if(!this._started) this.getNextCMD();
     }
 
-    private void exit() {
-        if(!this.isInUse()) return;
-
-        this.screenCamera.enabled = false;
-
-        Cursor.lockState = CursorLockMode.Locked;
-		Cursor.visible = false;
-
-        this._user.freeze(false);
-        this._user = null;
+    public void clear() {
+        this.cmdLineText.text = "";
+        this.reset();
     }
 
-    public void Update() {
-        if(this.isInUse() && Input.GetKeyDown(KeyCode.Escape)) {
-            this.exit();
+    private void reset() {
+        this._chatIndx = 0;
+        this._currentCMD = null;
+    }
+
+    private void getNextCMD() {
+        this.reset();
+
+        if (this._cmds == null || this._cmds.Count <= 0) {
+            this._started = false; // Queue Done
             return;
+        }
+
+        this._started = true;
+
+        string cmd = this._cmds.Dequeue();
+        this._currentCMD = cmd.Replace("$", "");
+
+        if(cmd.StartsWith("$")) {
+            int strSize = this._currentCMD.Length;
+
+            util_timer.create(strSize, this.writeSpeed, () => {
+                if(this._currentCMD == null) return;
+
+                this.cmdLineText.text += this._currentCMD[this._chatIndx];
+
+                SoundController.Instance.Play3DSound(
+                    this._audioClips[0],
+                    this.transform,
+                    Random.Range(1f, 1.1f),
+                    3f, 0.2f);
+
+                if (this._chatIndx < strSize - 1){
+                    this._chatIndx += 1;
+                } else {
+                    this.cmdLineText.text += "\n\n";
+                    util_timer.simple(this.writeCooldown, () => this.getNextCMD());
+                }
+            });
+        } else {
+            this.cmdLineText.text += this._currentCMD + "\n";
+
+            SoundController.Instance.Play3DSound(
+                    this._audioClips[0],
+                    this.transform,
+                    1.5f,
+                    3f, 0.2f);
+
+            util_timer.simple(this.writeCooldown, () => this.getNextCMD());
         }
     }
 }

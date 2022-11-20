@@ -6,7 +6,6 @@ using UnityEngine;
 public class entity_item_spawner : MonoBehaviour {
 
     [Header("Settings")]
-    public GameObject controller;
     public bool disabled = false;
     public int count = -1;
 
@@ -20,18 +19,16 @@ public class entity_item_spawner : MonoBehaviour {
         this._trigger.isTrigger = true;
 
         if(this.template == null) throw new System.Exception("Missing item template");
-        this.template.gameObject.SetActive(false); // Hide it
-
         if(!this.name.StartsWith("itm-spawner-")) this.name = "itm-spawner-" + this.template.name + "-" + this.name;
         this.gameObject.layer = 6;
     }
 
     public bool isInfinite() { return this.count == -1; }
     public bool canSpawnItem() { return this.disabled || this.isInfinite() || this.count > 0; }
-    public bool canTakeItem(GameObject taker) { return this.controller == null || this.controller == taker; }
+    public void setDisabled(bool disabled) { this.disabled = disabled; }
 
     public entity_item takeItem(GameObject taker) {
-        if(!this.canTakeItem(taker) || !this.canSpawnItem()) return null;
+        if(!this.canSpawnItem()) return null;
 
         GameObject instance = GameObject.Instantiate(this.template);
         instance.SetActive(true);

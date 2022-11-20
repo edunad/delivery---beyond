@@ -4,99 +4,80 @@ using System.Linq;
 using UnityEngine;
 
 public class util_timer {
-    private static Dictionary<string, util_timer> _timers;
-    private static int MxTimer = 0;
 
-    private float _fCreationTime;
-    private float _fNextIteration;
+    #region PRIVATE
+        private static Dictionary<string, util_timer> _timers = new Dictionary<string, util_timer>();
+        private static int ID = 0;
 
-    public static Dictionary<string, util_timer> GetTimers {
-        get { return _timers ?? (_timers = new Dictionary<string, util_timer>()); }
-    }
+        #region TIMER
+            private string _id;
+            private float _nextTick;
+            private float _delay;
+            private int _iterations;
+            private Action _func;
 
-    private float FElapsed {
-        get { return (float)Time.time - _fCreationTime; }
-    }
+            private bool _infinite;
+        #endregion
+    #endregion
 
-    private int Iterations { get; set; }
-    private float Delay { get; set; }
-    private Action Func { get; set; }
-    private string UniqueName { get; set; }
+    public static void update() {
+        if(_timers == null || _timers.Count <= 0) return;
 
-    public static void Update() {
         try {
-            if (_timers == null || _timers.Count < 0) {
-                if (MxTimer > 0) MxTimer = 0; // Reset unique
-                return;
-            }
-
-            for (int I = 0; I < _timers.Count; I++) {
-                string name = _timers.Keys.ElementAt(I);
-                if (_timers[name] != null)
-                    _timers[name].UpdateTimer();
+            foreach (util_timer timer in _timers.Values.ToList()) {
+                if (timer != null) timer.tick();
+                else _timers.Remove(timer._id);
             }
         } catch (Exception err) {
-            // TODO : ERROR SEND
-            Debug.Log(err.StackTrace);
+            Debug.LogError(err);
         }
     }
 
-    public static util_timer Simple(float delay, Action func) {
-        return Create(1, delay, func);
+    public static util_timer simple(float delay, Action func) {
+        return create(1, delay, func);
     }
 
-    public static util_timer UniqueSimple(string name, float delay, Action func) {
-        return Create(1, delay, func, name);
-    }
+    public static util_timer create(int reps, float delay, Action func) {
+        util_timer t = new util_timer {
+            _iterations = reps,
+            _delay = delay,
+            _func = func,
+            _id = (ID++).ToString(),
+            _infinite = reps < 0
+        };
 
-    public static util_timer Create(int reps, float delay, Action func, string uniqueName = "") {
-        if (String.IsNullOrEmpty(uniqueName)) {
-            uniqueName = MxTimer.ToString();
-            MxTimer++;
-        }
-
-        var t = new util_timer { Iterations = reps, Delay = delay, Func = func, UniqueName = uniqueName };
-
-        // Check if timer already exists
-        if (GetTimers.ContainsKey(uniqueName))
-            if (GetTimers[uniqueName] != null)
-                t = GetTimers[uniqueName];
-
-        t.Start();
+        t.start();
         return t;
     }
 
-    public void Start() {
-        if (!GetTimers.ContainsKey(this.UniqueName))
-            GetTimers.Add(this.UniqueName, this);
+    public static void clear() {
+        foreach (util_timer timer in _timers.Values.ToList())
+            if (timer != null) timer.stop();
 
-        _fCreationTime = (float)Time.time;
-        _fNextIteration = _fCreationTime + Delay;
+        _timers.Clear();
+        ID = 0;
     }
 
-    public void Stop() {
-        if (GetTimers.ContainsKey(this.UniqueName))
-            GetTimers.Remove(this.UniqueName);
+    public void tick() {
+        float currTime = Time.time;
+        if (currTime < this._nextTick) return;
+
+        if (this._func != null) this._func.Invoke();
+        if (!this._infinite) this._iterations--;
+
+        if (this._iterations == 0) this.stop();
+        else this._nextTick = currTime + this._delay;
     }
 
-    private void UpdateTimer() {
-        var t = (float)Time.time;
-        if (t >= _fNextIteration) {
-            if (Func != null)
-                Func();
-            _fNextIteration = t + Delay;
-            if (Iterations > 0) {
-                Iterations--;
-                if (Iterations == 0) Stop();
-            }
-        }
+    public void stop() {
+        if(!_timers.ContainsKey(this._id)) return;
+        _timers.Remove(this._id);
     }
 
-    public static void Clear() {
-        foreach (util_timer timer in GetTimers.Values.ToList())
-            if (timer != null)
-                timer.Stop();
+    public void start() {
+        if(_timers.ContainsKey(this._id)) throw new Exception("Timer already started");
+        this._nextTick = Time.time + this._delay;
 
-        GetTimers.Clear();
+        _timers.Add(this._id, this);
     }
 }

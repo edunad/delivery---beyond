@@ -30,7 +30,7 @@ public class entity_sound : MonoBehaviour {
     }
 
     public void Set3DTarget(Transform parent, float maxDistance = 10f, float minDistance = 1f) {
-        this.speaker.spatialBlend = 0.45f; // 3d sound
+        this.speaker.spatialBlend = 1f; // 3d sound
         this.speaker.maxDistance = maxDistance;
         this.speaker.minDistance = minDistance;
         this.speaker.rolloffMode = AudioRolloffMode.Linear;
@@ -46,6 +46,9 @@ public class entity_sound : MonoBehaviour {
         this.speaker.pitch = pitch;
     }
 
+    public void SetVolume(float volume) {
+        this.speaker.volume = volume;
+    }
 
     public void PlayOnce() {
         if (this.speaker.clip == null) return;

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 
 [DisallowMultipleComponent]
+[DefaultExecutionOrder(-1)]
 public class SoundController : MonoBehaviour {
 	public static SoundController Instance;
 
@@ -13,28 +14,24 @@ public class SoundController : MonoBehaviour {
 
 	private Queue<entity_sound> _soundPool = new Queue<entity_sound>();
 
-	public void Awake() {
-		if (Instance == null) {
-            Instance = this;
-        } else {
-            Destroy(gameObject);
-        }
-	}
+    public SoundController() { Instance = this; }
 
-    public void Play3DSound(AudioClip clip, Transform position, float pitch = 1f) {
+    public void Play3DSound(AudioClip clip, Transform position, float pitch = 1f, float maxDistance = 10, float volume = 1f) {
         entity_sound snd = this.CreateSound();
         snd.SetClip(clip);
-        snd.Set3DTarget(position);
+        snd.Set3DTarget(position, maxDistance);
         snd.SetPitch(pitch);
+        snd.SetVolume(volume);
 
         snd.PlayOnce();
     }
 
-    public void PlaySound(AudioClip clip, float pitch = 1f) {
+    public void PlaySound(AudioClip clip, float pitch = 1f, float volume = 1f) {
         entity_sound snd = this.CreateSound();
         snd.SetClip(clip);
         snd.Set2D();
         snd.SetPitch(pitch);
+        snd.SetVolume(volume);
 
         snd.PlayOnce();
     }

@@ -13,10 +13,22 @@ set models=%models%;office_props.vmf
 set models=%models%;office_collision.vmf
 
 REM PROPS------
+
 set models=%models%;props/box.vmf
 set models=%models%;props/box_flat.vmf
+set models=%models%;props/box_holder.vmf
+set models=%models%;props/box_holder_2.vmf
+set models=%models%;props/box_holder_3.vmf
+set models=%models%;props/box_holder_big.vmf
+set models=%models%;props/box_holder_big_2.vmf
+
+set models=%models%;props/floppy_holder.vmf
+
+set models=%models%;props/poster_colors.vmf
+
 set models=%models%;props/screen.vmf
 set models=%models%;props/screen_large.vmf
+
 set models=%models%;props/box_gate.vmf
 set models=%models%;props/trash.vmf
 
@@ -25,5 +37,5 @@ set models=%models%;props/elevator_collisions.vmf
 
 for %%a in (%models%) do (
 	echo "Parsing map %%a"
-	java -jar %root%/VMF2OBJ.jar %root%/vmfs/%%a -o %ASSET_FOLDER%/Generated/%%a -r "%GAME_ROOT%/hl2/hl2_misc_dir.vpk;%GAME_ROOT%/hl2/hl2_textures_dir.vpk;%GAME_ROOT%/platform/platform_misc_dir.vpk"
+	java -jar %root%/VMF2OBJ.jar %root%/vmfs/%%a -o %ASSET_FOLDER%/Generated/%%a -r "%GAME_ROOT%/hl2/hl2_misc_dir.vpk;%GAME_ROOT%/hl2/hl2_textures_dir.vpk;%GAME_ROOT%/platform/platform_misc_dir.vpk;%root%/vpk/delivery_beyond.vpk"
 )

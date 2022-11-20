@@ -18,22 +18,6 @@ map_Kd materials/metal/metalgrate002a.tga
 illum 4
 
 
-newmtl dev/dev_blendmeasure
-Ka 1.000 1.000 1.000
-Kd 1.000 1.000 1.000
-Ks 0.000 0.000 0.000
-map_Ka materials/dev/dev_measuregeneric01b.tga
-map_Kd materials/dev/dev_measuregeneric01b.tga
-
-
-newmtl halflife/black
-Ka 1.000 1.000 1.000
-Kd 1.000 1.000 1.000
-Ks 0.000 0.000 0.000
-map_Ka materials/halflife/black.tga
-map_Kd materials/halflife/black.tga
-
-
 newmtl props/woodcrate003a
 Ka 1.000 1.000 1.000
 Kd 1.000 1.000 1.000
@@ -56,6 +40,22 @@ Kd 1.000 1.000 1.000
 Ks 0.000 0.000 0.000
 map_Ka materials/props/woodcrate003d.tga
 map_Kd materials/props/woodcrate003d.tga
+
+
+newmtl dev/dev_blendmeasure
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/dev/dev_measuregeneric01b.tga
+map_Kd materials/dev/dev_measuregeneric01b.tga
+
+
+newmtl halflife/black
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/halflife/black.tga
+map_Kd materials/halflife/black.tga
 
 
 newmtl props/woodcrate001a

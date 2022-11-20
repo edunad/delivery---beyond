@@ -158,84 +158,12 @@ map_Ka materials/dev/dev_measuregeneric01b.tga
 map_Kd materials/dev/dev_measuregeneric01b.tga
 
 
-newmtl metal/metalgrate017a
+newmtl wood/woodshelf001a
 Ka 1.000 1.000 1.000
 Kd 1.000 1.000 1.000
 Ks 0.000 0.000 0.000
-map_Ka materials/metal/metalgrate017a.tga
-map_Kd materials/metal/metalgrate017a.tga
-
-
-newmtl metal/metalfloor010a
-Ka 1.000 1.000 1.000
-Kd 1.000 1.000 1.000
-Ks 0.000 0.000 0.000
-map_Ka materials/metal/metalfloor010a.tga
-map_Kd materials/metal/metalfloor010a.tga
-
-
-newmtl props/metalcomputerpanel001a
-Ka 1.000 1.000 1.000
-Kd 1.000 1.000 1.000
-Ks 0.000 0.000 0.000
-map_Ka materials/props/metalcomputerpanel001a.tga
-map_Kd materials/props/metalcomputerpanel001a.tga
-
-
-newmtl tools/toolsnodraw
-Ka 1.000 1.000 1.000
-Kd 1.000 1.000 1.000
-Ks 0.000 0.000 0.000
-map_Ka materials/tools/toolsnodraw.tga
-map_Kd materials/tools/toolsnodraw.tga
-
-
-newmtl dev/dev_measurecomputer01
-Ka 1.000 1.000 1.000
-Kd 1.000 1.000 1.000
-Ks 0.000 0.000 0.000
-map_Ka materials/dev/dev_measurecomputer01.tga
-map_Kd materials/dev/dev_measurecomputer01.tga
-
-
-newmtl dev/dev_cratewood01a
-Ka 1.000 1.000 1.000
-Kd 1.000 1.000 1.000
-Ks 0.000 0.000 0.000
-map_Ka materials/dev/dev_cratewood01a.tga
-map_Kd materials/dev/dev_cratewood01a.tga
-
-
-newmtl props/woodcrate004b
-Ka 1.000 1.000 1.000
-Kd 1.000 1.000 1.000
-Ks 0.000 0.000 0.000
-map_Ka materials/props/woodcrate004b.tga
-map_Kd materials/props/woodcrate004b.tga
-
-
-newmtl props/woodcrate004a
-Ka 1.000 1.000 1.000
-Kd 1.000 1.000 1.000
-Ks 0.000 0.000 0.000
-map_Ka materials/props/woodcrate004a.tga
-map_Kd materials/props/woodcrate004a.tga
-
-
-newmtl vgui/black
-Ka 1.000 1.000 1.000
-Kd 1.000 1.000 1.000
-Ks 0.000 0.000 0.000
-map_Ka materials/vgui/black.tga
-map_Kd materials/vgui/black.tga
-
-
-newmtl props/metalcrate010a
-Ka 1.000 1.000 1.000
-Kd 1.000 1.000 1.000
-Ks 0.000 0.000 0.000
-map_Ka materials/props/metalcrate010a.tga
-map_Kd materials/props/metalcrate010a.tga
+map_Ka materials/wood/woodshelf001a.tga
+map_Kd materials/wood/woodshelf001a.tga
 
 
 newmtl props/metalduct003a
@@ -244,14 +172,6 @@ Kd 1.000 1.000 1.000
 Ks 0.000 0.000 0.000
 map_Ka materials/props/metalduct003a.tga
 map_Kd materials/props/metalduct003a.tga
-
-
-newmtl wood/woodshelf001a
-Ka 1.000 1.000 1.000
-Kd 1.000 1.000 1.000
-Ks 0.000 0.000 0.000
-map_Ka materials/wood/woodshelf001a.tga
-map_Kd materials/wood/woodshelf001a.tga
 
 
 newmtl props/metallockers003b
@@ -292,4 +212,85 @@ Kd 1.000 1.000 1.000
 Ks 0.000 0.000 0.000
 map_Ka materials/halflife/stripes2.tga
 map_Kd materials/halflife/stripes2.tga
+
+
+newmtl metal/metalgrate017a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/metal/metalgrate017a.tga
+map_Kd materials/metal/metalgrate017a.tga
+
+
+newmtl metal/metalfloor010a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/metal/metalfloor010a.tga
+map_Kd materials/metal/metalfloor010a.tga
+
+
+newmtl props/metalcomputerpanel001a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/props/metalcomputerpanel001a.tga
+map_Kd materials/props/metalcomputerpanel001a.tga
+
+
+newmtl tools/toolsnodraw
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/tools/toolsnodraw.tga
+map_Kd materials/tools/toolsnodraw.tga
+
+
+newmtl dev/dev_measurecomputer01
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/dev/dev_measurecomputer01.tga
+map_Kd materials/dev/dev_measurecomputer01.tga
+
+
+newmtl props/woodcrate004b
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/props/woodcrate004b.tga
+map_Kd materials/props/woodcrate004b.tga
+
+
+newmtl props/woodcrate004a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/props/woodcrate004a.tga
+map_Kd materials/props/woodcrate004a.tga
+
+
+newmtl vgui/black
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/vgui/black.tga
+map_Kd materials/vgui/black.tga
+
+
+newmtl props/metalcrate010a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/props/metalcrate010a.tga
+map_Kd materials/props/metalcrate010a.tga
+
+
+newmtl tools/toolsskip
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/tools/toolsskip.tga
+map_Kd materials/tools/toolsskip.tga
+illum 4
 
