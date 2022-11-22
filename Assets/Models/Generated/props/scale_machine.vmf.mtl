@@ -1,0 +1,61 @@
+# Decompiled with VMF2OBJ v2.0.0 by Dylancyclone
+
+
+newmtl dev/graygrid
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/dev/graygrid.tga
+map_Kd materials/dev/graygrid.tga
+
+
+newmtl dev/dev_measuregeneric01
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/dev/dev_measuregeneric01.tga
+map_Kd materials/dev/dev_measuregeneric01.tga
+
+
+newmtl cable/cable_back
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/cable/dx8cable.tga
+map_Kd materials/cable/dx8cable.tga
+map_bump materials/cable/cablenormalmap.tga
+illum 4
+
+
+newmtl props/metalcomputerpanel001a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/props/metalcomputerpanel001a.tga
+map_Kd materials/props/metalcomputerpanel001a.tga
+
+
+newmtl tools/toolsskip
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/tools/toolsskip.tga
+map_Kd materials/tools/toolsskip.tga
+illum 4
+
+
+newmtl dev/dev_blendmeasure
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/dev/dev_measuregeneric01b.tga
+map_Kd materials/dev/dev_measuregeneric01b.tga
+
+
+newmtl halflife/black
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/halflife/black.tga
+map_Kd materials/halflife/black.tga
+

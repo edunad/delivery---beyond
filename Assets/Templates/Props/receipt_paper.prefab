@@ -110,5 +110,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b46c8e1fe60c0094e9a911adf3bdf2d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: itm-receipt
+  id: item_receipt_paper
   isBig: 0

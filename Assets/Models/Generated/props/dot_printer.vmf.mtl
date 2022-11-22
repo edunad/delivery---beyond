@@ -1,0 +1,42 @@
+# Decompiled with VMF2OBJ v2.0.0 by Dylancyclone
+
+
+newmtl metal/metaltrack001a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/metal/metaltrack001a.tga
+map_Kd materials/metal/metaltrack001a.tga
+
+
+newmtl dev/dev_blendmeasure
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/dev/dev_measuregeneric01b.tga
+map_Kd materials/dev/dev_measuregeneric01b.tga
+
+
+newmtl dev/graygrid
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/dev/graygrid.tga
+map_Kd materials/dev/graygrid.tga
+
+
+newmtl halflife/black
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/halflife/black.tga
+map_Kd materials/halflife/black.tga
+
+
+newmtl metal/metalwall030a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/metal/metalwall030a.tga
+map_Kd materials/metal/metalwall030a.tga
+

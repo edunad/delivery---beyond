@@ -4,7 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(MeshRenderer))]
 [RequireComponent(typeof(entity_item))]
 public class entity_floppy : MonoBehaviour {
-    public GAME_COUNTRIES country;
+    public GAME_REGIONS region;
 
     private entity_item _item;
     private MeshRenderer _renderer;
@@ -14,8 +14,8 @@ public class entity_floppy : MonoBehaviour {
         this._renderer = GetComponent<MeshRenderer>();
     }
 
-    public void setCountry(GAME_COUNTRIES country, Color cl) {
-        this.country = country;
-        this._renderer.material.color = cl;
+    public void setRegion(GAME_REGIONS region, Color cl) {
+        this.region = region;
+        this._renderer.material.SetColor("_FloppyColor", cl);
     }
 }

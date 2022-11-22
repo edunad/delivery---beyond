@@ -6,8 +6,9 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 
 public enum RequestType {
-    SEND_ITEM = 0,
-    WANT_ITEM
+    SEND_BOX,
+    WANT_BOX,
+    WANT_MAGAZINES
 }
 
 public enum ChatType {
@@ -18,10 +19,18 @@ public enum ChatType {
     DONE_ITEM,
 }
 
+public class RequestItems {
+    public string id;
+}
+
+public class BoxRequest: RequestItems {
+    public int boxWeight;
+    public BoxSize boxSize;
+}
 
 public class entity_customer : MonoBehaviour {
     [Header("Request settings")]
-    public RequestType type;
+    public List<RequestType> requestTemplate = new List<RequestType>();
 
     [Header("Chat settings")]
     public List<string> chatINTRO = new List<string>();
@@ -31,11 +40,13 @@ public class entity_customer : MonoBehaviour {
     public List<string> chatDONE_ITEM = new List<string>();
 
     [HideInInspector]
-    public GAME_COUNTRIES country;
+    public Dictionary<string, object> settings = new Dictionary<string, object>();
+
     [HideInInspector]
-    public BoxSize boxSize;
+    public RequestType currentRequest;
+
     [HideInInspector]
-    public int boxWeight;
+    public float voice;
 
     #region GENERATORS
         private readonly static List<string> names = new List<string>() {
@@ -67,20 +78,47 @@ public class entity_customer : MonoBehaviour {
     #endregion
 
     #region PRIVATE
-        private float _voice;
+        private Queue<RequestType> _requests;
     #endregion
 
     public void init() {
         this.name = names[Random.Range(0, names.Count)];
+        this.voice = Random.Range(0.25f, 1.85f);
+        this._requests = new Queue<RequestType>(this.requestTemplate);
 
-        Array countries = Enum.GetValues(typeof(GAME_COUNTRIES));
-        this.country = (GAME_COUNTRIES)countries.GetValue(Random.Range(0, countries.Length));
+        this.generateRequests();
+    }
 
-        Array sizes = Enum.GetValues(typeof(BoxSize));
-        this.boxSize = (BoxSize)sizes.GetValue(Random.Range(0, sizes.Length));
-        this.boxWeight = Random.Range(2, 100);
+    public T getSetting<T>(string id) {
+        if(!this.settings.ContainsKey(id)) return default(T);
+        return (T)this.settings[id];
+    }
 
-        this._voice = Random.Range(0.25f, 1.85f);
+    private void generateRequests() {
+        this.settings.Clear();
+
+        foreach (RequestType request in this.requestTemplate) {
+            if(request == RequestType.SEND_BOX) {
+                Array countries = Enum.GetValues(typeof(GAME_COUNTRIES));
+                Array sizes = Enum.GetValues(typeof(BoxSize));
+
+                this.settings.Add("send_country", (GAME_COUNTRIES)countries.GetValue(Random.Range(0, countries.Length)));
+                this.settings.Add("send_box_size", (BoxSize)sizes.GetValue(Random.Range(0, sizes.Length)));
+                this.settings.Add("send_box_weight", Random.Range(2, 100));
+            } else if(request == RequestType.WANT_MAGAZINES) {
+                Array magazines = Enum.GetValues(typeof(MAGAZINE_TYPE));
+                this.settings.Add("magazine_type", (MAGAZINE_TYPE)magazines.GetValue(Random.Range(0, magazines.Length)));
+            } else if(request == RequestType.WANT_BOX) {
+                //this.settings.Add("box_request_id", Random.Range(2, 100));
+            }
+        }
+    }
+
+    public bool hasRequest(RequestType type) { return this.requestTemplate.Contains(type); }
+    public bool hasRequestsRemaining() { return this._requests != null && this._requests.Count > 0; }
+    public void getRequest() {
+        if(!this.hasRequestsRemaining()) return;
+        this.currentRequest = this._requests.Dequeue();
     }
 
     public void chat(ChatType type) {
@@ -105,11 +143,12 @@ public class entity_customer : MonoBehaviour {
 
         if(list == null || list.Count <= 0) throw new System.Exception("Customer template missing chat templates for " + type + "!");
         list.ForEach((chat) => {
-            string fixedChat = chat.Replace("%LOCATION%", this.country.ToString().Replace("_", " "));
-            fixedChat = fixedChat.Replace("%BOX_SIZE%", this.boxSize.ToString().Replace("_", ""));
+            string fixedChat = chat.Replace("%send_country%", this.getSetting<GAME_COUNTRIES>("send_country").ToString().Replace("_", " "));
+            fixedChat = fixedChat.Replace("%send_box_size%", this.getSetting<BoxSize>("send_box_size").ToString().Replace("_", ""));
+            fixedChat = fixedChat.Replace("%magazine_type%", this.getSetting<MAGAZINE_TYPE>("magazine_type").ToString());
 
             ConversationController.Instance.setConversationID(type.ToString());
-            ConversationController.Instance.queueConversation(new Conversation(type.ToString(), this.name, fixedChat, this._voice - 0.10f, this._voice + 0.10f));
+            ConversationController.Instance.queueConversation(new Conversation(type.ToString(), this.name, fixedChat, this.voice - 0.10f, this.voice + 0.10f));
         });
     }
 }

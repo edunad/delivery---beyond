@@ -44,11 +44,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c169d463612923f489de8c7d8c3edb36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
+  requestTemplate: 0200000000000000
   chatINTRO:
   - Hey there
-  - I want to deliver an item to %LOCATION%
-  - Can i get a %BOX_SIZE% box?
+  - Can i get a %magazine_type% magazine?
+  - I also want to deliver an item to %send_country%
+  - Can i get a %send_box_size% box?
   chatWRONG_ITEM:
   - Uhh, that's not the item i requested
   chatOK_ITEM:
@@ -57,6 +58,5 @@ MonoBehaviour:
   - Bye
   chatDONE_ITEM:
   - I've placed the package on the machine
-  country: 1
-  boxSize: 3
-  boxWeight: 97
+  currentRequest: 0
+  voice: 1.4225345

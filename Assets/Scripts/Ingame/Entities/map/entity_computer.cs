@@ -7,8 +7,11 @@ public class entity_computer : MonoBehaviour {
     [Header("Command line Settings")]
     public TextMeshPro cmdLineText;
     public float writeSpeed;
+    public float slowWriteSpeed;
     public float writeCooldown;
 
+    public delegate void onCMDCompleted(string cmd);
+    public event onCMDCompleted OnCMDCompleted;
 
     #region PRIVATE
         private AudioClip[] _audioClips;
@@ -23,7 +26,8 @@ public class entity_computer : MonoBehaviour {
 
     public void Awake() {
         this._audioClips = new AudioClip[] {
-            AssetsController.GetResource<AudioClip>("Sounds/Ingame/Objects/Computer/beep_single")
+            AssetsController.GetResource<AudioClip>("Sounds/Ingame/Objects/Computer/beep_single"),
+            AssetsController.GetResource<AudioClip>("Sounds/Ingame/Objects/Computer/142608__autistic-lucario__error")
         };
 
         this.clear();
@@ -55,39 +59,66 @@ public class entity_computer : MonoBehaviour {
         this._started = true;
 
         string cmd = this._cmds.Dequeue();
-        this._currentCMD = cmd.Replace("$", "");
+        this._currentCMD = cmd.Replace("$", "").Replace("@", "").Replace("#", "");
 
-        if(cmd.StartsWith("$")) {
-            int strSize = this._currentCMD.Length;
-
-            util_timer.create(strSize, this.writeSpeed, () => {
-                if(this._currentCMD == null) return;
-
-                this.cmdLineText.text += this._currentCMD[this._chatIndx];
+        if(cmd.StartsWith("#")) {
+                this.cmdLineText.text += "<mark=#ff000007><color=\"red\">>  " + this._currentCMD + "  </color></mark>\n";
 
                 SoundController.Instance.Play3DSound(
-                    this._audioClips[0],
-                    this.transform,
-                    Random.Range(1f, 1.1f),
-                    3f, 0.2f);
-
-                if (this._chatIndx < strSize - 1){
-                    this._chatIndx += 1;
-                } else {
-                    this.cmdLineText.text += "\n\n";
-                    util_timer.simple(this.writeCooldown, () => this.getNextCMD());
-                }
-            });
-        } else {
-            this.cmdLineText.text += this._currentCMD + "\n";
-
-            SoundController.Instance.Play3DSound(
-                    this._audioClips[0],
+                    this._audioClips[1],
                     this.transform,
                     1.5f,
                     3f, 0.2f);
 
-            util_timer.simple(this.writeCooldown, () => this.getNextCMD());
+                util_timer.simple(this.writeCooldown, () => {
+                    if(this.OnCMDCompleted != null) OnCMDCompleted.Invoke(this._currentCMD);
+                    this.getNextCMD();
+                });
+        } else {
+            if(cmd.StartsWith("$") || cmd.StartsWith("@")) {
+                int strSize = this._currentCMD.Length;
+
+                // PREFIX
+                this.cmdLineText.text += "> ";
+                // ---
+
+                util_timer.create(strSize, cmd.StartsWith("@") ? this.slowWriteSpeed : this.writeSpeed, () => {
+                    if(this._currentCMD == null) return;
+
+                    this.cmdLineText.text += this._currentCMD[this._chatIndx];
+
+                    SoundController.Instance.Play3DSound(
+                        this._audioClips[0],
+                        this.transform,
+                        Random.Range(1f, 1.1f),
+                        3f, 0.2f);
+
+                    if (this._chatIndx < strSize - 1){
+                        this._chatIndx += 1;
+                    } else {
+                        this.cmdLineText.text += "\n";
+                        util_timer.simple(this.writeCooldown, () => {
+                            if(this.OnCMDCompleted != null) OnCMDCompleted.Invoke(this._currentCMD);
+                            this.getNextCMD();
+                        });
+                    }
+                });
+            } else {
+                this.cmdLineText.text += this._currentCMD + "\n";
+
+                if(this._currentCMD != "\n") {
+                    SoundController.Instance.Play3DSound(
+                            this._audioClips[0],
+                            this.transform,
+                            1.5f,
+                            3f, 0.2f);
+                }
+
+                util_timer.simple(this.writeCooldown, () => {
+                    if(this.OnCMDCompleted != null) OnCMDCompleted.Invoke(this._currentCMD);
+                    this.getNextCMD();
+                });
+            }
         }
     }
 }

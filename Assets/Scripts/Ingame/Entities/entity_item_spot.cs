@@ -19,7 +19,7 @@ public class entity_item_spot : MonoBehaviour {
 
     [Header("Placement")]
     public AlignSpot placementPosition = AlignSpot.CENTER;
-    public Quaternion placementAngle = Quaternion.identity;
+    public Vector3 placementAngle = Vector3.zero;
 
     [Header("Item")]
     public entity_item item;
@@ -45,7 +45,7 @@ public class entity_item_spot : MonoBehaviour {
         this._trigger.isTrigger = true;
 
         if(!this.name.StartsWith("itm-spot-")) this.name = "itm-spot-" + string.Join(",", this.whitelist.ToArray()) + "-" + this.name;
-        this.gameObject.layer = 6;
+        this.gameObject.layer = locked ? 2 : 6;
     }
 
     public bool canAcceptItem(entity_item pick) {
@@ -56,12 +56,15 @@ public class entity_item_spot : MonoBehaviour {
         if(this.item == null) return;
 
         DestroyImmediate(this.item.gameObject);
-        if(OnItemPickup != null) OnItemPickup(this.item);
-
         this.item = null;
     }
 
     public bool isLocked() { return this.locked; }
+    public void setLocked(bool locked) {
+        this.gameObject.layer = locked ? 2 : 6;
+        this.locked = locked;
+    }
+
     public bool hasItem() { return this.item != null; }
     public entity_item getItem() { return this.item; }
     public entity_item takeItem() {
@@ -74,19 +77,19 @@ public class entity_item_spot : MonoBehaviour {
         return itm;
     }
 
-    public bool placeItem(GameObject ent) {
+    public bool placeItem(GameObject ent, bool systemSpawn = false) {
         entity_item itm = ent.GetComponent<entity_item>();
         if(itm == null) throw new System.Exception("Invalid game object, missing entity_item");
-        return this.placeItem(itm);
+        return this.placeItem(itm, systemSpawn);
     }
 
-    public bool placeItem(entity_item itm) {
-        if(!this.canAcceptItem(itm) || this.isLocked()) return false;
+    public bool placeItem(entity_item itm, bool systemSpawn = false) {
+        if(!this.canAcceptItem(itm) || (!systemSpawn && this.isLocked())) return false;
 
         this.item = itm;
         StartCoroutine(this.setItemToGlue(this.item)); // Do it next tick, so affects bounds.extends
 
-        if(OnItemDrop != null) OnItemDrop(itm);
+        if(!systemSpawn && OnItemDrop != null) OnItemDrop(itm);
         return true;
     }
 
@@ -139,7 +142,7 @@ public class entity_item_spot : MonoBehaviour {
             }
 
             this.glue.transform.localPosition = Vector3.zero;
-            this.glue.transform.localRotation = this.placementAngle;
+            this.glue.transform.localRotation = Quaternion.Euler(this.placementAngle);
 
             if(this.item != null) {
                 Undo.RegisterCompleteObjectUndo(this.item, "Undo setup");

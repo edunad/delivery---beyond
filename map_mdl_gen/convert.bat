@@ -22,7 +22,16 @@ set models=%models%;props/box_holder_3.vmf
 set models=%models%;props/box_holder_big.vmf
 set models=%models%;props/box_holder_big_2.vmf
 
+set models=%models%;props/magazine_holder_1.vmf
+set models=%models%;props/magazine_holder_2.vmf
+set models=%models%;props/magazine_holder_3.vmf
+set models=%models%;props/magazine_holder_4.vmf
+
 set models=%models%;props/floppy_holder.vmf
+
+set models=%models%;props/scale_machine.vmf
+
+set models=%models%;props/dot_printer.vmf
 
 set models=%models%;props/poster_colors.vmf
 

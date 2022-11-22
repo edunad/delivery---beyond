@@ -4,13 +4,25 @@ using UnityEngine;
 [ExecuteInEditMode]
 [RequireComponent(typeof(entity_item))]
 public class entity_box : MonoBehaviour {
-
+    [Header("Settings")]
     public BoxSize size = BoxSize._5x5x5;
     public int weight;
 
-    private entity_item _item;
+    [HideInInspector]
+    public GAME_REGIONS region;
+
+    [Header("Objects")]
+    public GameObject paper;
+
+    #region PRIVATE
+        private entity_item _item;
+        private Vector3 _paperScale;
+    #endregion
     public void Awake() {
         this._item = GetComponent<entity_item>();
+        this._paperScale = this.paper.transform.localScale;
+
+        this.setHasPaper(false);
         this.scaleBox();
     }
 
@@ -18,9 +30,19 @@ public class entity_box : MonoBehaviour {
         this.scaleBox();
     }
 
+    public void setHasPaper(bool paper) {
+        this.paper.SetActive(paper);
+    }
+
+    public void setRegion(GAME_REGIONS region) {
+        this.region = region;
+    }
+
     public void setSize(BoxSize size) {
         this.size = size;
         this.scaleBox();
+
+        this.paper.transform.localScale = this._paperScale;
     }
 
     public void setWeight(int weight) {

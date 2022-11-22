@@ -190,6 +190,14 @@ map_Ka materials/props/metallockers003a.tga
 map_Kd materials/props/metallockers003a.tga
 
 
+newmtl props/woodcrate004b
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/props/woodcrate004b.tga
+map_Kd materials/props/woodcrate004b.tga
+
+
 newmtl dev/dev_interiorfloorlinoleum01f
 Ka 1.000 1.000 1.000
 Kd 1.000 1.000 1.000
@@ -212,6 +220,22 @@ Kd 1.000 1.000 1.000
 Ks 0.000 0.000 0.000
 map_Ka materials/halflife/stripes2.tga
 map_Kd materials/halflife/stripes2.tga
+
+
+newmtl wood/woodwall005a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/wood/woodwall005a.tga
+map_Kd materials/wood/woodwall005a.tga
+
+
+newmtl wood/woodshelf008a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/wood/woodshelf008a.tga
+map_Kd materials/wood/woodshelf008a.tga
 
 
 newmtl metal/metalgrate017a
@@ -254,14 +278,6 @@ map_Ka materials/dev/dev_measurecomputer01.tga
 map_Kd materials/dev/dev_measurecomputer01.tga
 
 
-newmtl props/woodcrate004b
-Ka 1.000 1.000 1.000
-Kd 1.000 1.000 1.000
-Ks 0.000 0.000 0.000
-map_Ka materials/props/woodcrate004b.tga
-map_Kd materials/props/woodcrate004b.tga
-
-
 newmtl props/woodcrate004a
 Ka 1.000 1.000 1.000
 Kd 1.000 1.000 1.000
@@ -286,11 +302,10 @@ map_Ka materials/props/metalcrate010a.tga
 map_Kd materials/props/metalcrate010a.tga
 
 
-newmtl tools/toolsskip
+newmtl wood/woodwall002a
 Ka 1.000 1.000 1.000
 Kd 1.000 1.000 1.000
 Ks 0.000 0.000 0.000
-map_Ka materials/tools/toolsskip.tga
-map_Kd materials/tools/toolsskip.tga
-illum 4
+map_Ka materials/wood/woodwall002a.tga
+map_Kd materials/wood/woodwall002a.tga
 

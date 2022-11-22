@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.Audio;
 
 [DisallowMultipleComponent]
-[DefaultExecutionOrder(-1)]
 public class SoundController : MonoBehaviour {
 	public static SoundController Instance;
 
@@ -18,6 +17,7 @@ public class SoundController : MonoBehaviour {
 
     public void Play3DSound(AudioClip clip, Transform position, float pitch = 1f, float maxDistance = 10, float volume = 1f) {
         entity_sound snd = this.CreateSound();
+
         snd.SetClip(clip);
         snd.Set3DTarget(position, maxDistance);
         snd.SetPitch(pitch);

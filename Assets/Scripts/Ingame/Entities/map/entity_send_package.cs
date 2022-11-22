@@ -7,44 +7,71 @@ public class entity_send_package : MonoBehaviour {
     public entity_button button;
     public entity_item_spot spot;
 
-    private entity_movement _elevatorGate;
-    private bool _isSending;
+    #region PRIVATE
+        private entity_movement _elevatorGate;
+        private entity_box _box;
+    #endregion
 
     public void Awake() {
+        CoreController.Instance.OnGameStatusUpdated += this.onStatusChange;
+
         this._elevatorGate = GetComponent<entity_movement>();
         this._elevatorGate.reverse = false;
 
-        this._isSending = false;
+        this.button.OnUSE += onButtonPress;
 
         this.spot.OnItemDrop += this.enableElevator;
         this.spot.OnItemPickup += this.disableElevator;
+        this.spot.setLocked(true);
 
         this._elevatorGate.OnMovementFinish += this.onGateMovementFinish;
     }
 
-    public void disableElevator(entity_item itm) {
-        this.spot.locked = false;
-        this.button.setButtonLocked(true);
+    private void onStatusChange(GAMEPLAY_STATUS oldStatus, GAMEPLAY_STATUS newStatus) {
+        if(newStatus == GAMEPLAY_STATUS.COMPLETING) {
+            this.spot.setLocked(false);
+        } else {
+            this.spot.setLocked(true);
+            this.spot.deleteItem();
+        }
     }
 
-    public void enableElevator(entity_item itm) {
-        this._isSending = false;
-        this.button.setButtonLocked(false);
-    }
-
-    public void onButtonPress() {
-        this.spot.locked = true;
+    private void onButtonPress(entity_player ply) {
+        this.spot.setLocked(true);
 
         this._elevatorGate.reverse = false;
         this._elevatorGate.start();
     }
 
-    private void onGateMovementFinish(bool reverse) {
-        if(this._isSending || reverse) return;
+    private void enableElevator(entity_item itm) {
+        entity_box box = itm.GetComponent<entity_box>();
+        if(box == null) throw new System.Exception("Invalid item, missing entity_box");
 
-        this._isSending = true;
+        this._box = box;
+        this.button.setButtonLocked(false);
+    }
+
+    private void disableElevator(entity_item itm) {
+        this._box = null;
+        this.button.setButtonLocked(true);
+    }
+
+    private void onGateMovementFinish(bool reverse) {
+        if(reverse) return;
+        if(this._box == null) throw new System.Exception("Missing box");
+
+        GAME_REGIONS boxRegion = this._box.region;
+        GAME_COUNTRIES clientCountry = CoreController.Instance.servingClient.getSetting<GAME_COUNTRIES>("send_country");
+        bool isOK = CoreController.Instance.validateCountry(clientCountry, boxRegion);
+
+        // TODO: Play elevator sound?
+
         util_timer.simple(2f, () => {
             this.spot.deleteItem();
+            this._box = null;
+
+            if(!isOK) CoreController.Instance.penalize("Wrong region set on item");
+            CoreController.Instance.proccedEvent();
 
             this._elevatorGate.reverse = true;
             this._elevatorGate.start();

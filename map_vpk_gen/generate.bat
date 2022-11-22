@@ -10,7 +10,7 @@ set "ASSET_FOLDER=delivery_beyond"
 set "RAW_ASSET_FOLDER=raw"
 
 echo "Generating textures"
-"%root%/VTFCmd/vtfcmd.exe" -folder "%root%%RAW_ASSET_FOLDER%\*.png" -output "%root%%ASSET_FOLDER%\materials\delivery_beyond" -recurse -shader "LightmappedGeneric"
+"%root%/VTFCmd/vtfcmd.exe" -folder "%root%%RAW_ASSET_FOLDER%\*.png" -output "%root%%ASSET_FOLDER%\materials\delivery_beyond" -recurse -resize -shader "LightmappedGeneric"
 
 echo "Packing files"
 CALL "%GAME_ROOT%/bin/vpk.exe" "./%ASSET_FOLDER%"

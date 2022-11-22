@@ -22,7 +22,6 @@ public class Conversation {
 }
 
 [DisallowMultipleComponent]
-[DefaultExecutionOrder(-1)]
 public class ConversationController : MonoBehaviour {
 	public static ConversationController Instance;
 
@@ -97,7 +96,7 @@ public class ConversationController : MonoBehaviour {
             if(this._currentChat == null) return;
 
             this.text.text += this._currentChat.text[this._chatIndx];
-            this.textBG.text = "<mark=#000000 padding=\"10, 10, 10, 0\">"+this.text.text+"</mark>";
+            this.textBG.text = "<mark=#000000 padding=\"15, 15, 15, 0\">"+this.text.text+"</mark>";
 
             SoundController.Instance.Play3DSound(
                 this.talkSnd[Random.Range(0, this.talkSnd.Count)],

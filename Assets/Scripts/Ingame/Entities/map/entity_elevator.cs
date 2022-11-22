@@ -7,7 +7,6 @@ public class entity_elevator : MonoBehaviour {
 
     public entity_button button;
 
-
     #region PRIVATE
         private entity_teleport _teleport;
         private entity_movement _elevatorGate;
@@ -22,6 +21,8 @@ public class entity_elevator : MonoBehaviour {
         this._elevatorGate.reverse = false;
         this._elevatorGate.OnMovementFinish += this.onGateMovementFinish;
 
+        this.button.OnUSE += onElevatorButtonUSE;
+
         this._audioClips = new AudioClip[] {
             AssetsController.GetResource<AudioClip>("Sounds/Ingame/Objects/Elevator/elevator_start"),
             AssetsController.GetResource<AudioClip>("Sounds/Ingame/Objects/Elevator/elevator_moving"),
@@ -30,7 +31,7 @@ public class entity_elevator : MonoBehaviour {
         };
     }
 
-    public void onButtonPress(entity_player ply) {
+    public void onElevatorButtonUSE(entity_player ply) {
         this._ply = ply;
 
         this._elevatorGate.reverse = false;
