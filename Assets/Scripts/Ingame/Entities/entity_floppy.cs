@@ -6,8 +6,10 @@ using UnityEngine;
 public class entity_floppy : MonoBehaviour {
     public GAME_REGIONS region;
 
-    private entity_item _item;
-    private MeshRenderer _renderer;
+    #region PRIVATE
+        private entity_item _item;
+        private MeshRenderer _renderer;
+    #endregion
 
     public void Awake() {
         this._item = GetComponent<entity_item>();

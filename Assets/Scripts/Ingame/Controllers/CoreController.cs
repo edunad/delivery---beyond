@@ -52,12 +52,6 @@ public class CoreController : MonoBehaviour {
     public entity_computer computer_client;
     public entity_button button_next_client;
 
-    public delegate void onClientCompleted();
-    public event onClientCompleted OnClientCompleted;
-
-    public delegate void onClientRequested();
-    public event onClientRequested OnClientRequested;
-
     public delegate void onGameStatusUpdated(GAMEPLAY_STATUS oldStatus, GAMEPLAY_STATUS newStatus);
     public event onGameStatusUpdated OnGameStatusUpdated;
 
@@ -117,19 +111,20 @@ public class CoreController : MonoBehaviour {
                     this.computer_client.queueCmd("$ITEM RECEIVED");
 
                     if(!this.servingClient.hasRequestsRemaining()) {
-                        if(this.servingClient.hasRequest(RequestType.SEND_BOX)) {
-                            this.setGameStatus(GAMEPLAY_STATUS.WEIGHT_ITEM);
+                        this.completeClient();
+                    } else {
+                        this.servingClient.getRequest(); // Fulfill all client requests first
+
+                        if(this.servingClient.currentRequest == RequestType.WANT_SEND_BOX) {
+                            this.servingClient.chat(ChatType.PLACED_ITEM);
 
                             this.computer_client.queueCmd("=--=--=--=--=");
                             this.computer_client.queueCmd("PLEASE WEIGHT ITEM");
-                        } else if(this.servingClient.hasRequest(RequestType.WANT_BOX)) {
-                            // TODO: GO GET BOX FROM BASEMENT
+
+                            this.setGameStatus(GAMEPLAY_STATUS.WEIGHT_ITEM);
                         } else {
-                            this.completeClient();
+                            this.setGameStatus(GAMEPLAY_STATUS.ITEM_REQUESTED);
                         }
-                    } else {
-                        this.servingClient.getRequest(); // Fulfill all client requests first
-                        this.setGameStatus(GAMEPLAY_STATUS.ITEM_REQUESTED);
                     }
                 });
             });
@@ -140,7 +135,12 @@ public class CoreController : MonoBehaviour {
 
             this.setGameStatus(GAMEPLAY_STATUS.COMPLETING);
         }else if(status == GAMEPLAY_STATUS.COMPLETING) {
-            this.completeClient();
+            if(this.servingClient.hasRequestsRemaining()) {
+                this.setGameStatus(GAMEPLAY_STATUS.ITEM_REQUESTED);
+                this.proccedEvent();
+            } else {
+                this.completeClient();
+            }
         }
     }
 
@@ -174,18 +174,18 @@ public class CoreController : MonoBehaviour {
 
     private void onRequestNextClientBTN(entity_player ply) {
         if(this.customerQueue == null || this.customerQueue.Count <= 0) return; // Done serving clients
-        if(this.servingClient != null) return; // Already serving
+        if(this.servingClient != null) throw new Exception("Already serving a customer!");
 
         this.servingClient = this.customerQueue.Dequeue();
+
         this.servingClient.init();
+        this.servingClient.getRequest();
 
         // Move client
         this.prop_client.reverse = false;
         this.prop_client.start();
 
         this.totalClients++;
-
-        if(OnClientRequested != null) OnClientRequested.Invoke();
         this.setGameStatus(GAMEPLAY_STATUS.SERVING);
     }
 
@@ -257,17 +257,25 @@ public class CoreController : MonoBehaviour {
 
             List<string> dt = new List<string>();
             foreach(RequestType request in this.servingClient.requestTemplate) {
-                if(request == RequestType.SEND_BOX) {
-                    dt.Add("BOX SIZE '" + this.servingClient.getSetting<BoxSize>("send_box_size").ToString().Replace("_", "") + "'");
+                if(request == RequestType.WANT_FLAT_BOX) {
+                    dt.Add("BOX SIZE '" + this.servingClient.getSetting<BoxSize>("box_size").ToString().Replace("_", "") + "'");
                 } else if(request == RequestType.WANT_MAGAZINES) {
                     dt.Add("MAGAZINE '" + this.servingClient.getSetting<MAGAZINE_TYPE>("magazine_type").ToString() + "'");
-                } else if(request == RequestType.WANT_BOX) {
+                } else if(request == RequestType.WANT_SEND_BOX) {
+                    dt.Add("SHIP BOX TO '" + this.servingClient.getSetting<GAME_COUNTRIES>("country").ToString().Replace("_", " ") + "'");
+                } else if(request == RequestType.WANT_RECIEVE_BOX) {
                     // TODO
                 }
             }
 
             for(int i = 0; i < dt.Count; i++) this.computer_client.queueCmd("   "+(i+1)+". " + dt[i]);
-            this.setGameStatus(GAMEPLAY_STATUS.ITEM_REQUESTED);
+
+            if(this.servingClient.currentRequest == RequestType.WANT_SEND_BOX) {
+                this.servingClient.chat(ChatType.PLACED_ITEM);
+                this.setGameStatus(GAMEPLAY_STATUS.WEIGHT_ITEM);
+            } else {
+                this.setGameStatus(GAMEPLAY_STATUS.ITEM_REQUESTED);
+            }
         }
     }
 }

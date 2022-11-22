@@ -61,7 +61,7 @@ public class entity_send_package : MonoBehaviour {
         if(this._box == null) throw new System.Exception("Missing box");
 
         GAME_REGIONS boxRegion = this._box.region;
-        GAME_COUNTRIES clientCountry = CoreController.Instance.servingClient.getSetting<GAME_COUNTRIES>("send_country");
+        GAME_COUNTRIES clientCountry = CoreController.Instance.servingClient.getSetting<GAME_COUNTRIES>("country");
         bool isOK = CoreController.Instance.validateCountry(clientCountry, boxRegion);
 
         // TODO: Play elevator sound?

@@ -39,7 +39,7 @@ public class entity_client_deliver_spot : MonoBehaviour {
         this._spot.setLocked(newStatus != GAMEPLAY_STATUS.WEIGHT_ITEM);
         if(newStatus == GAMEPLAY_STATUS.WEIGHT_ITEM) {
             entity_customer customer = CoreController.Instance.servingClient;
-            this.createItemBox(customer.getSetting<BoxSize>("send_box_size"), customer.getSetting<int>("send_box_weight"));
+            this.createItemBox(customer.getSetting<BoxSize>("box_size"), customer.getSetting<int>("box_weight"));
         }
     }
 }

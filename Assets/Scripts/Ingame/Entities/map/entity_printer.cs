@@ -19,6 +19,8 @@ public class entity_printer : MonoBehaviour {
         this._audioClips = new AudioClip[] {
             AssetsController.GetResource<AudioClip>("Sounds/Ingame/Objects/Printer/181420__viertelnachvier__old-dot-matrix-printer"),
         };
+
+        util_timer.simple(2f, () => print());
     }
 
     public void print() {
@@ -32,7 +34,7 @@ public class entity_printer : MonoBehaviour {
         Vector3 startPos = new Vector3(0.0452f, -0.0435f, -0.095f);
         float endPosY = 0.15f;
 
-        GameObject paperInstance = GameObject.Instantiate(this.paperTemplate, startPos, Quaternion.Euler(0, 0, 0), this.transform);
+        GameObject paperInstance = GameObject.Instantiate(this.paperTemplate, startPos, Quaternion.Euler(this.transform.eulerAngles), this.transform);
         SoundController.Instance.Play3DSound(this._audioClips[0], this.transform);
 
         int p = 0;

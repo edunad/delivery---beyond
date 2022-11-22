@@ -698,9 +698,33 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 955543107535893176, guid: cebb5c45630ea9b4795d6492e5e5b361, type: 3}
+      propertyPath: whitelist.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 955543107535893176, guid: cebb5c45630ea9b4795d6492e5e5b361, type: 3}
+      propertyPath: whitelist.Array.data[1]
+      value: item_magazine
+      objectReference: {fileID: 0}
+    - target: {fileID: 955543107535893176, guid: cebb5c45630ea9b4795d6492e5e5b361, type: 3}
+      propertyPath: whitelist.Array.data[2]
+      value: itm_miss_paper
+      objectReference: {fileID: 0}
+    - target: {fileID: 955543107535893176, guid: cebb5c45630ea9b4795d6492e5e5b361, type: 3}
+      propertyPath: whitelist.Array.data[3]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5809027038708995461, guid: cebb5c45630ea9b4795d6492e5e5b361, type: 3}
       propertyPath: m_Name
       value: WORLD
+      objectReference: {fileID: 0}
+    - target: {fileID: 6593750418106296701, guid: cebb5c45630ea9b4795d6492e5e5b361, type: 3}
+      propertyPath: whitelist.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6593750418106296701, guid: cebb5c45630ea9b4795d6492e5e5b361, type: 3}
+      propertyPath: whitelist.Array.data[1]
+      value: item_magazine
       objectReference: {fileID: 0}
     - target: {fileID: 6922553006053415523, guid: cebb5c45630ea9b4795d6492e5e5b361, type: 3}
       propertyPath: m_Material

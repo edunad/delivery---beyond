@@ -44,19 +44,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c169d463612923f489de8c7d8c3edb36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requestTemplate: 0200000000000000
+  requestTemplate: 020000000000000003000000
   chatINTRO:
   - Hey there
-  - Can i get a %magazine_type% magazine?
-  - I also want to deliver an item to %send_country%
-  - Can i get a %send_box_size% box?
+  - Can i get a %box_size% box?
+  - I also want to deliver an item to %country%
+  - And can i get a %magazine_type% magazine?
   chatWRONG_ITEM:
   - Uhh, that's not the item i requested
   chatOK_ITEM:
   - Awesome, thanks!
   chatOUTRO:
   - Bye
-  chatDONE_ITEM:
+  chatPLACED_ITEM:
   - I've placed the package on the machine
-  currentRequest: 0
-  voice: 1.4225345
+  currentRequest: 2
+  voice: 1.0291528
+  customerName: Kama

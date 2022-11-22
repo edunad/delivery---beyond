@@ -19,9 +19,9 @@ public class entity_client_spot : MonoBehaviour {
         entity_customer customer = CoreController.Instance.servingClient;
 
         bool isOK = false;
-        if(customer.currentRequest == RequestType.WANT_BOX && itm.id == "item_flat_box") {
+        if(customer.currentRequest == RequestType.WANT_FLAT_BOX && itm.id == "item_flat_box") {
             entity_flat_box box = itm.GetComponent<entity_flat_box>();
-            if(box != null && box.size == customer.getSetting<BoxSize>("send_box_size")) {
+            if(box != null && box.size == customer.getSetting<BoxSize>("box_size")) {
                 isOK = true;
             }
         } else if(customer.currentRequest == RequestType.WANT_MAGAZINES && itm.id == "item_magazine") {

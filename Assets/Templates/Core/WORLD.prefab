@@ -3464,6 +3464,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6471654091010829560, guid: 6f047a42e5281734d8a1c444d2953b9c, type: 3}
+      propertyPath: template
+      value: 
+      objectReference: {fileID: 3384408489581294820, guid: 1ea8e4801020a69428f058ad27b9ad37, type: 3}
     - target: {fileID: 6471654091010829561, guid: 6f047a42e5281734d8a1c444d2953b9c, type: 3}
       propertyPath: m_Name
       value: itm-spawner-magazine-games
@@ -3889,6 +3893,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 8422109401420389341, guid: 15b65d26874b7f943b9f9911967b9412, type: 3}
+      propertyPath: template
+      value: 
+      objectReference: {fileID: 1410554177482462788, guid: 3940595ceca963546b316f125c220300, type: 3}
     - target: {fileID: 8422109401420389347, guid: 15b65d26874b7f943b9f9911967b9412, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -4013,6 +4021,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 8825611909306795691, guid: 4ee923e6ea2f4e3408266fbf8b24c755, type: 3}
+      propertyPath: template
+      value: 
+      objectReference: {fileID: 3095678195583642605, guid: 37f09da48154b584bb82622ffb67978a, type: 3}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ee923e6ea2f4e3408266fbf8b24c755, type: 3}
@@ -5629,6 +5641,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 8873350210211561505, guid: 7c197f24f3458684092beebf1c541bd5, type: 3}
+      propertyPath: template
+      value: 
+      objectReference: {fileID: 5605393519095441772, guid: 19501ec72caeb0942873c770fa5865c0, type: 3}
     - target: {fileID: 8873350210253242536, guid: 7c197f24f3458684092beebf1c541bd5, type: 3}
       propertyPath: m_text
       value: NEWS

@@ -13,7 +13,8 @@ public enum ShakeMode {
 public class entity_player : MonoBehaviour {
 
 	[Header("Player")]
-	public float moveSpeed = 10f;
+	public float moveSpeed = 3f;
+	public float runSpeed = 5f;
 	public float maxGrabDistance = 1f;
 	public float maxZoom = 0.25f;
 
@@ -69,7 +70,8 @@ public class entity_player : MonoBehaviour {
 		if(this._frozen) return;
 
 		if(this._controller != null) {
-			this._controller.Move((transform.forward * Input.GetAxisRaw("Vertical") + transform.right * Input.GetAxisRaw("Horizontal")).normalized * moveSpeed * Time.deltaTime);
+			float speed = Input.GetKey(KeyCode.LeftShift) ? runSpeed : moveSpeed;
+			this._controller.Move((transform.forward * Input.GetAxisRaw("Vertical") + transform.right * Input.GetAxisRaw("Horizontal")).normalized * speed * Time.deltaTime);
 			if (!this._controller.isGrounded) this._controller.Move(Vector3.up * Time.deltaTime * Physics.gravity.y);
 		}
 
@@ -87,12 +89,6 @@ public class entity_player : MonoBehaviour {
 			if (Physics.Raycast(this._camera.ScreenPointToRay(Input.mousePosition), out hit, maxGrabDistance, usableMask)) {
 				if(Input.GetKeyDown(KeyCode.E)) this.onUse(hit.collider.gameObject); // USE
 				// TODO: Draw highlight on shader
-			}
-
-			if(this.holdingItem != null){
-				if(Input.GetMouseButton(0)) {
-					this.holdingItem.gameObject.BroadcastMessage("onPrimaryUse", this, SendMessageOptions.DontRequireReceiver);
-				}
 			}
 
 			if(Input.GetMouseButton(1)) {
@@ -189,8 +185,12 @@ public class entity_player : MonoBehaviour {
 			if(trash == null) throw new System.Exception("Invalid entity_item_trash");
 
 			if(trash.canTrash(this.holdingItem.id)) trash.trashItem(this.holdingItem);
-		} else {
-			obj.BroadcastMessage("onPlayerUse", this, SendMessageOptions.RequireReceiver);
+		} else if(obj.name.StartsWith("btn-")) {
+			if(this.isHoldingItem()) return;
+			entity_button btn = obj.GetComponent<entity_button>();
+			if(btn == null) throw new System.Exception("Invalid entity_button");
+
+			btn.onPlayerUse(this);
 		}
 	}
 

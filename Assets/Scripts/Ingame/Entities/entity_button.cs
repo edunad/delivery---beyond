@@ -38,11 +38,10 @@ public class entity_button : MonoBehaviour {
         this._collision = GetComponent<Collider>();
         this._collision.isTrigger = true;
 
-        this.name = "entity_button";
+        if(!this.name.StartsWith("btn-")) this.name = "btn-" + this.name;
         this.gameObject.layer = 6;
 
         this._originalPos = transform.localPosition;
-
         this.setButtonLocked(this.locked, true);
 
         this._audioClips = new AudioClip[] {
@@ -65,6 +64,7 @@ public class entity_button : MonoBehaviour {
 
     public void onPlayerUse(entity_player ply) {
         if(ply.isHoldingItem()) return;
+
         if(this.locked) {
             SoundController.Instance.Play3DSound(this._audioClips[0], this.transform);
             return;
