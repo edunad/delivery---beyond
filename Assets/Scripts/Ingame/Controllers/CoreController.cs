@@ -10,6 +10,7 @@ public enum GAMEPLAY_STATUS {
     IDLE,
     SERVING,
     ITEM_REQUESTED,
+    ITEM_RETRIEVE,
     THINKING,
     WEIGHT_ITEM,
     COMPLETING
@@ -134,7 +135,10 @@ public class CoreController : MonoBehaviour {
             this.computer_client.queueCmd("PLEASE PLACE ITEM ON THE SHIPPING ELEVATOR");
 
             this.setGameStatus(GAMEPLAY_STATUS.COMPLETING);
-        }else if(status == GAMEPLAY_STATUS.COMPLETING) {
+        } else if(status == GAMEPLAY_STATUS.ITEM_RETRIEVE) {
+            this.computer_client.queueCmd("=--=--=--=--=");
+            this.computer_client.queueCmd("$PLEASE RETRIEVE ITEM ID '"+ this.servingClient.getSetting<int>("box_id") +"'");
+        } else if(status == GAMEPLAY_STATUS.COMPLETING) {
             if(this.servingClient.hasRequestsRemaining()) {
                 this.setGameStatus(GAMEPLAY_STATUS.ITEM_REQUESTED);
                 this.proccedEvent();
@@ -149,12 +153,11 @@ public class CoreController : MonoBehaviour {
         this.servingClient.chat(ChatType.OUTRO);
         this.setGameStatus(GAMEPLAY_STATUS.IDLE);
 
-        util_timer.simple(2f, () => {
-            this.computer_client.queueCmd("CALL NEXT CLIENT");
+        this.servingClient = null;
 
-            this.servingClient = null;
-            this.button_next_client.setButtonLocked(false);
-        });
+        // Move client
+        this.prop_client.reverse = true;
+        this.prop_client.start();
     }
 
     public bool validateCountry(GAME_COUNTRIES country, GAME_REGIONS region) {
@@ -239,14 +242,19 @@ public class CoreController : MonoBehaviour {
     }
 
     private void onClientMovementFinish(bool isReverse) {
-        if(isReverse || this.servingClient == null) return;
+        if(!isReverse && this.servingClient != null) {
+            util_timer.simple(0.5f, () => {
+                this.servingClient.chat(ChatType.INTRO);
 
-        util_timer.simple(0.5f, () => {
-            this.servingClient.chat(ChatType.INTRO);
-
-            this.computer_client.clear();
-            this.computer_client.queueCmd("$CLIENT " + this.totalClients + " / " + this.maxClients);
-        });
+                this.computer_client.clear();
+                this.computer_client.queueCmd("$CLIENT " + this.totalClients + " / " + this.maxClients);
+            });
+        } else if(isReverse && this.servingClient == null) {
+            util_timer.simple(0.5f, () => {
+                this.computer_client.queueCmd("CALL NEXT CLIENT");
+                this.button_next_client.setButtonLocked(false);
+            });
+        }
     }
 
     private void onChatCompleted(string id) {
@@ -263,8 +271,8 @@ public class CoreController : MonoBehaviour {
                     dt.Add("MAGAZINE '" + this.servingClient.getSetting<MAGAZINE_TYPE>("magazine_type").ToString() + "'");
                 } else if(request == RequestType.WANT_SEND_BOX) {
                     dt.Add("SHIP BOX TO '" + this.servingClient.getSetting<GAME_COUNTRIES>("country").ToString().Replace("_", " ") + "'");
-                } else if(request == RequestType.WANT_RECIEVE_BOX) {
-                    // TODO
+                } else if(request == RequestType.WANT_RETRIEVE_BOX) {
+                    dt.Add("RETRIEVE MISSED DELIVERY");
                 }
             }
 
@@ -273,6 +281,8 @@ public class CoreController : MonoBehaviour {
             if(this.servingClient.currentRequest == RequestType.WANT_SEND_BOX) {
                 this.servingClient.chat(ChatType.PLACED_ITEM);
                 this.setGameStatus(GAMEPLAY_STATUS.WEIGHT_ITEM);
+            } else if(this.servingClient.currentRequest == RequestType.WANT_RETRIEVE_BOX) {
+                this.setGameStatus(GAMEPLAY_STATUS.ITEM_RETRIEVE);
             } else {
                 this.setGameStatus(GAMEPLAY_STATUS.ITEM_REQUESTED);
             }

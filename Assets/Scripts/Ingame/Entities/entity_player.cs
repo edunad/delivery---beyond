@@ -91,6 +91,10 @@ public class entity_player : MonoBehaviour {
 				// TODO: Draw highlight on shader
 			}
 
+			if(Input.GetMouseButtonDown(0) && this.holdingItem != null) {
+				this.holdingItem.BroadcastMessage("onPrimaryUse", this, SendMessageOptions.DontRequireReceiver);
+			}
+
 			if(Input.GetMouseButton(1)) {
 				this._camera.fieldOfView = this._originalCamZoom - this.maxZoom;
 			} else {

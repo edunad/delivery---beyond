@@ -238,6 +238,14 @@ map_Ka materials/wood/woodshelf008a.tga
 map_Kd materials/wood/woodshelf008a.tga
 
 
+newmtl wood/woodwall002a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/wood/woodwall002a.tga
+map_Kd materials/wood/woodwall002a.tga
+
+
 newmtl metal/metalgrate017a
 Ka 1.000 1.000 1.000
 Kd 1.000 1.000 1.000
@@ -300,12 +308,4 @@ Kd 1.000 1.000 1.000
 Ks 0.000 0.000 0.000
 map_Ka materials/props/metalcrate010a.tga
 map_Kd materials/props/metalcrate010a.tga
-
-
-newmtl wood/woodwall002a
-Ka 1.000 1.000 1.000
-Kd 1.000 1.000 1.000
-Ks 0.000 0.000 0.000
-map_Ka materials/wood/woodwall002a.tga
-map_Kd materials/wood/woodwall002a.tga
 

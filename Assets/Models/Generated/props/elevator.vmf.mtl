@@ -66,10 +66,12 @@ map_Ka materials/props/woodcrate001a.tga
 map_Kd materials/props/woodcrate001a.tga
 
 
-newmtl props/metalcrate010a
+newmtl cable/cable_back
 Ka 1.000 1.000 1.000
 Kd 1.000 1.000 1.000
 Ks 0.000 0.000 0.000
-map_Ka materials/props/metalcrate010a.tga
-map_Kd materials/props/metalcrate010a.tga
+map_Ka materials/cable/dx8cable.tga
+map_Kd materials/cable/dx8cable.tga
+map_bump materials/cable/cablenormalmap.tga
+illum 4
 

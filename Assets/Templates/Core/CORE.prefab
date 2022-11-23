@@ -247,7 +247,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 3.0207157, z: 0, w: 0}
+  m_margin: {x: 0, y: 2.7593405, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -453,7 +453,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 3.0207157, z: 0, w: 0}
+  m_margin: {x: 0, y: 2.7794712, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -509,15 +509,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   customerTemplates:
-  - {fileID: 1677978819928395105, guid: 62e247122fec7de4b9edaaa22f1298fa, type: 3}
+  - {fileID: 1677978819928395105, guid: 4dd966c3765175c49a0cb64ad9758029, type: 3}
   maxMistakes: 3
   patienceMult: 1
-  maxNPCS: 10
-  client_spot: {fileID: 0}
-  delivery_spot: {fileID: 0}
-  clientProp: {fileID: 0}
-  computer: {fileID: 0}
-  boxTemplate: {fileID: 554951128833370733, guid: 03ae5d88848d36541a5cb1f242100f55, type: 3}
+  maxClients: 10
+  prop_client: {fileID: 0}
+  computer_client: {fileID: 0}
+  button_next_client: {fileID: 0}
+  servingClient: {fileID: 0}
+  totalClients: 0
+  status: 0
+  totalFails: 0
 --- !u!1 &4391608973706984441
 GameObject:
   m_ObjectHideFlags: 0
@@ -679,6 +681,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ab4255e113c343f4aa8d4ba98aa3c6be, type: 3}
   - {fileID: 8300000, guid: 385fdb902e9343340a8661239e68c667, type: 3}
   - {fileID: 8300000, guid: 58a7b44ce3f3dbc4fb971cefa716b0c0, type: 3}
-  talkSpeed: 0.05
-  cooldown: 2
+  talkSpeed: 0.01
+  cooldown: 0.5
   speakerPosition: {fileID: 0}

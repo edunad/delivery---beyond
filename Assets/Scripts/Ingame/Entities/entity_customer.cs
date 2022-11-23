@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 
 public enum RequestType {
     WANT_SEND_BOX,
-    WANT_RECIEVE_BOX,
+    WANT_RETRIEVE_BOX,
     WANT_FLAT_BOX,
     WANT_MAGAZINES
 }
@@ -116,8 +116,8 @@ public class entity_customer : MonoBehaviour {
                     Array sizes = Enum.GetValues(typeof(BoxSize));
                     this.settings.Add("box_size", (BoxSize)sizes.GetValue(Random.Range(0, sizes.Length)));
                 }
-            } else if(request == RequestType.WANT_RECIEVE_BOX) {
-                //this.settings.Add("box_request_id", Random.Range(2, 100));
+            } else if(request == RequestType.WANT_RETRIEVE_BOX) {
+                this.settings.Add("box_id", Random.Range(0, 1000));
             }
         }
     }

@@ -36,7 +36,8 @@ public class entity_client_deliver_spot : MonoBehaviour {
     }
 
     private void gameStatusChange(GAMEPLAY_STATUS prevStatus, GAMEPLAY_STATUS newStatus) {
-        this._spot.setLocked(newStatus != GAMEPLAY_STATUS.WEIGHT_ITEM);
+        this._spot.setLocked(newStatus != GAMEPLAY_STATUS.WEIGHT_ITEM && newStatus != GAMEPLAY_STATUS.ITEM_RETRIEVE);
+
         if(newStatus == GAMEPLAY_STATUS.WEIGHT_ITEM) {
             entity_customer customer = CoreController.Instance.servingClient;
             this.createItemBox(customer.getSetting<BoxSize>("box_size"), customer.getSetting<int>("box_weight"));

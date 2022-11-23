@@ -7,6 +7,7 @@ public class entity_item : MonoBehaviour {
     [Header("Settings")]
     public string id;
     public bool isBig = false;
+    public Vector3 pickupAngle = Vector3.zero;
 
     private GameObject _owner;
     private Collider _collision;
@@ -27,10 +28,12 @@ public class entity_item : MonoBehaviour {
 
             this.transform.parent = obj != null ? obj : owner.transform; // Equip it
             this.transform.localPosition = Vector3.zero;
-            this.transform.localRotation = Quaternion.identity;
+            this.transform.localRotation = Quaternion.Euler(this.pickupAngle);
         } else {
             this.gameObject.layer = 6;
             this.transform.parent = null;
+            this.transform.localRotation = Quaternion.identity;
+            this.transform.rotation = Quaternion.identity;
         }
     }
 }

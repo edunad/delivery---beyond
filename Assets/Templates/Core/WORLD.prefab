@@ -2909,7 +2909,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1100389220677933389}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.061625898, y: -0.28420073, z: 0.19485545}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2978,11 +2978,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whitelist:
   - item_flat_box
-  - itm-receipt
-  - itm-miss-paper
+  - item_magazine
+  - itm_miss_paper
   locked: 1
   placementPosition: 1
-  placementAngle: {x: 0, y: 0, z: 0}
+  placementAngle: {x: 90, y: 0, z: 0}
   item: {fileID: 0}
   glue: {fileID: 1100389220677933389}
 --- !u!114 &5767417983161976019
@@ -2997,6 +2997,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b8731fc7c33d1a4ab73ac629cbb6383, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ticketTemplate: {fileID: 736118078738801561, guid: c12db04129f8cc147b9a95c98bcdddc4, type: 3}
 --- !u!1 &1819846784885325647
 GameObject:
   m_ObjectHideFlags: 0
@@ -3058,6 +3059,7 @@ MonoBehaviour:
   disabled: 0
   whitelist:
   - item_flat_box
+  - item_magazine
 --- !u!1 &2992920989328149185
 GameObject:
   m_ObjectHideFlags: 0
@@ -3322,7 +3324,7 @@ Transform:
   - {fileID: 8707510333950080868}
   - {fileID: 6597147955570416495}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8800346394335626839
 GameObject:
@@ -3467,10 +3469,14 @@ PrefabInstance:
     - target: {fileID: 6471654091010829560, guid: 6f047a42e5281734d8a1c444d2953b9c, type: 3}
       propertyPath: template
       value: 
-      objectReference: {fileID: 3384408489581294820, guid: 1ea8e4801020a69428f058ad27b9ad37, type: 3}
+      objectReference: {fileID: 6353672267366844252, guid: a1528a4670968624baaf2f3da29a8178, type: 3}
     - target: {fileID: 6471654091010829561, guid: 6f047a42e5281734d8a1c444d2953b9c, type: 3}
       propertyPath: m_Name
       value: itm-spawner-magazine-games
+      objectReference: {fileID: 0}
+    - target: {fileID: 6471654091010829561, guid: 6f047a42e5281734d8a1c444d2953b9c, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6471654091010829561, guid: 6f047a42e5281734d8a1c444d2953b9c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3658,7 +3664,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5570255086826082102, guid: a2bbb9f83515ea0438471c8089cde832, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.458
+      value: -4.563
       objectReference: {fileID: 0}
     - target: {fileID: 5570255086826082102, guid: a2bbb9f83515ea0438471c8089cde832, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3666,7 +3672,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5570255086826082102, guid: a2bbb9f83515ea0438471c8089cde832, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.989
+      value: 3.993
       objectReference: {fileID: 0}
     - target: {fileID: 5570255086826082102, guid: a2bbb9f83515ea0438471c8089cde832, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3890,13 +3896,17 @@ PrefabInstance:
       value: itm-spawner-magazine-sports
       objectReference: {fileID: 0}
     - target: {fileID: 8422109401420389340, guid: 15b65d26874b7f943b9f9911967b9412, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8422109401420389340, guid: 15b65d26874b7f943b9f9911967b9412, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8422109401420389341, guid: 15b65d26874b7f943b9f9911967b9412, type: 3}
       propertyPath: template
       value: 
-      objectReference: {fileID: 1410554177482462788, guid: 3940595ceca963546b316f125c220300, type: 3}
+      objectReference: {fileID: 8533980970141531742, guid: 3940595ceca963546b316f125c220300, type: 3}
     - target: {fileID: 8422109401420389347, guid: 15b65d26874b7f943b9f9911967b9412, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -4018,13 +4028,17 @@ PrefabInstance:
       value: itm-spawner-magazine-underworld
       objectReference: {fileID: 0}
     - target: {fileID: 8825611909306795690, guid: 4ee923e6ea2f4e3408266fbf8b24c755, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8825611909306795690, guid: 4ee923e6ea2f4e3408266fbf8b24c755, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8825611909306795691, guid: 4ee923e6ea2f4e3408266fbf8b24c755, type: 3}
       propertyPath: template
       value: 
-      objectReference: {fileID: 3095678195583642605, guid: 37f09da48154b584bb82622ffb67978a, type: 3}
+      objectReference: {fileID: 8528976827593737162, guid: 37f09da48154b584bb82622ffb67978a, type: 3}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ee923e6ea2f4e3408266fbf8b24c755, type: 3}
@@ -5638,13 +5652,17 @@ PrefabInstance:
       value: itm-spawner-magazine-news
       objectReference: {fileID: 0}
     - target: {fileID: 8873350210211561504, guid: 7c197f24f3458684092beebf1c541bd5, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8873350210211561504, guid: 7c197f24f3458684092beebf1c541bd5, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8873350210211561505, guid: 7c197f24f3458684092beebf1c541bd5, type: 3}
       propertyPath: template
       value: 
-      objectReference: {fileID: 5605393519095441772, guid: 19501ec72caeb0942873c770fa5865c0, type: 3}
+      objectReference: {fileID: 2095069746751910289, guid: 19501ec72caeb0942873c770fa5865c0, type: 3}
     - target: {fileID: 8873350210253242536, guid: 7c197f24f3458684092beebf1c541bd5, type: 3}
       propertyPath: m_text
       value: NEWS

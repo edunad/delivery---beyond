@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &71359928
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 71359929}
+  m_Layer: 0
+  m_Name: hold
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &71359929
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 71359928}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.352, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1658524583}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &108284071
 GameObject:
   m_ObjectHideFlags: 0
@@ -18,7 +49,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &108284072
 Transform:
@@ -110,13 +141,78 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 977ff6d493a51b446bf47792c829c791, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reciever: {fileID: 9119962362252488296}
   buttonLocked: btn_locked
   buttonOK: btn_ok
   locked: 0
   moveDirection: 3
   moveDistance: 0.03
   resetCooldown: -1
+--- !u!1 &1658524582
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1658524583}
+  - component: {fileID: 1658524585}
+  - component: {fileID: 1658524584}
+  m_Layer: 2
+  m_Name: itm-spot-takebox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &1658524583
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658524582}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.981, y: 0.745, z: -0.988}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 71359929}
+  m_Father: {fileID: 9119962362252488297}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1658524585
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658524582}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1658524584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658524582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14ad9f90550fd044c93fbeb029f1e0d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whitelist:
+  - item_box
+  locked: 1
+  placementPosition: 1
+  placementAngle: {x: 0, y: 0, z: 0}
+  item: {fileID: 0}
+  glue: {fileID: 71359928}
 --- !u!1 &9119962362252488296
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,7 +231,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &9119962362252488297
 Transform:
@@ -153,8 +249,9 @@ Transform:
   - {fileID: 8726326878744278591}
   - {fileID: 8726326878483553084}
   - {fileID: 108284072}
+  - {fileID: 1658524583}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &500628028
 MonoBehaviour:
@@ -169,6 +266,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 108284073}
+  teleTo: {fileID: 0}
+  elevatorGate: {fileID: 0}
 --- !u!114 &500628029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,7 +302,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c94e847f002917c479e7d3e46307a396, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  teleportDest: {fileID: 0}
   mask:
     serializedVersion: 2
     m_Bits: 256
@@ -292,6 +390,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: elevator.vmf
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6b61d9f5dd6b2a94a96d65ad44051c33, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: 6b61d9f5dd6b2a94a96d65ad44051c33, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b61d9f5dd6b2a94a96d65ad44051c33, type: 3}
@@ -376,6 +482,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: elevator_collisions.vmf
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 246682e2fa6ad9648b73b8f93df50e91, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: 246682e2fa6ad9648b73b8f93df50e91, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 246682e2fa6ad9648b73b8f93df50e91, type: 3}
@@ -459,6 +573,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 7199ed9f6b913f64faa08740833a8f53, type: 3}
       propertyPath: m_Name
       value: box_gate.vmf
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7199ed9f6b913f64faa08740833a8f53, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: 7199ed9f6b913f64faa08740833a8f53, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

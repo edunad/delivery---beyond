@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3095678195583642605
+--- !u!1 &8528976827593737162
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,12 +8,12 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3095678195583642601}
-  - component: {fileID: 3095678195583642600}
-  - component: {fileID: 3095678195583642603}
-  - component: {fileID: 3095678195583642602}
-  - component: {fileID: 3953356050366577127}
-  - component: {fileID: 318802766375483761}
+  - component: {fileID: 8528976827593737166}
+  - component: {fileID: 8528976827593737167}
+  - component: {fileID: 8528976827593737164}
+  - component: {fileID: 8528976827593737165}
+  - component: {fileID: 7671364882911039936}
+  - component: {fileID: 6397240932358738262}
   m_Layer: 0
   m_Name: entity_magazine-underworld
   m_TagString: Untagged
@@ -21,36 +21,36 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3095678195583642601
+--- !u!4 &8528976827593737166
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3095678195583642605}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.31, y: 0.01, z: 0.42}
+  m_GameObject: {fileID: 8528976827593737162}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.3284021, y: 1.071, z: -0.736}
+  m_LocalScale: {x: 0.31, y: 0.41, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!33 &3095678195583642600
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &8528976827593737167
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3095678195583642605}
+  m_GameObject: {fileID: 8528976827593737162}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &3095678195583642603
+--- !u!23 &8528976827593737164
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3095678195583642605}
+  m_GameObject: {fileID: 8528976827593737162}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -86,26 +86,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3095678195583642602
+--- !u!65 &8528976827593737165
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3095678195583642605}
+  m_GameObject: {fileID: 8528976827593737162}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3953356050366577127
+--- !u!114 &7671364882911039936
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3095678195583642605}
+  m_GameObject: {fileID: 8528976827593737162}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b46c8e1fe60c0094e9a911adf3bdf2d4, type: 3}
@@ -113,13 +113,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: item_magazine
   isBig: 0
---- !u!114 &318802766375483761
+  pickupAngle: {x: 0, y: 0, z: 0}
+--- !u!114 &6397240932358738262
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3095678195583642605}
+  m_GameObject: {fileID: 8528976827593737162}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 349dbeaa248ddd0408e8c2dfb402e473, type: 3}

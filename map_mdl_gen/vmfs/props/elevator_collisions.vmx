@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "6440"
-	"mapversion" "8"
+	"mapversion" "11"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -20,12 +20,12 @@ viewsettings
 world
 {
 	"id" "1"
-	"mapversion" "8"
+	"mapversion" "11"
 	"classname" "worldspawn"
-	"skyname" "sky_day01_01"
-	"maxpropscreenwidth" "-1"
-	"detailvbsp" "detail.vbsp"
 	"detailmaterial" "detail/detailsprites"
+	"detailvbsp" "detail.vbsp"
+	"maxpropscreenwidth" "-1"
+	"skyname" "sky_day01_01"
 	solid
 	{
 		"id" "297"
@@ -488,7 +488,7 @@ world
 		side
 		{
 			"id" "511"
-			"plane" "(-74 -28 127) (-24 -28 127) (-24 -76 127)"
+			"plane" "(-74 -76 127) (-74 -24 127) (-24 -24 127)"
 			"material" "TOOLS/TOOLSPLAYERCLIP"
 			"uaxis" "[1 0 0 0] 0.25"
 			"vaxis" "[0 -1 0 0] 0.25"
@@ -499,7 +499,7 @@ world
 		side
 		{
 			"id" "512"
-			"plane" "(-74 -76 2) (-24 -76 2) (-24 -28 2)"
+			"plane" "(-74 -24 2) (-74 -76 2) (-24 -76 2)"
 			"material" "TOOLS/TOOLSPLAYERCLIP"
 			"uaxis" "[1 0 0 0] 0.25"
 			"vaxis" "[0 -1 0 0] 0.25"
@@ -510,7 +510,7 @@ world
 		side
 		{
 			"id" "513"
-			"plane" "(-74 -28 127) (-74 -76 127) (-74 -76 2)"
+			"plane" "(-74 -76 2) (-74 -24 2) (-74 -24 127)"
 			"material" "TOOLS/TOOLSPLAYERCLIP"
 			"uaxis" "[0 1 0 0] 0.25"
 			"vaxis" "[0 0 -1 0] 0.25"
@@ -521,7 +521,7 @@ world
 		side
 		{
 			"id" "514"
-			"plane" "(-24 -28 2) (-24 -76 2) (-24 -76 127)"
+			"plane" "(-24 -24 2) (-24 -76 2) (-24 -76 127)"
 			"material" "TOOLS/TOOLSPLAYERCLIP"
 			"uaxis" "[0 1 0 0] 0.25"
 			"vaxis" "[0 0 -1 0] 0.25"
@@ -532,7 +532,7 @@ world
 		side
 		{
 			"id" "515"
-			"plane" "(-24 -28 127) (-74 -28 127) (-74 -28 2)"
+			"plane" "(-74 -24 2) (-24 -24 2) (-24 -24 127)"
 			"material" "TOOLS/TOOLSPLAYERCLIP"
 			"uaxis" "[1 0 0 0] 0.25"
 			"vaxis" "[0 0 -1 0] 0.25"
@@ -651,6 +651,21 @@ hidden
 			"visgroupautoshown" "0"
 			"logicalpos" "[0 6000]"
 		}
+	}
+}
+entity
+{
+	"id" "317"
+	"classname" "func_instance"
+	"angles" "-0 0 0"
+	"file" "elevator"
+	"origin" "0 0 1"
+	editor
+	{
+		"color" "220 30 220"
+		"visgroupshown" "1"
+		"visgroupautoshown" "1"
+		"logicalpos" "[0 500]"
 	}
 }
 cameras

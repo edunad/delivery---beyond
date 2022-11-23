@@ -54,23 +54,31 @@ public class entity_movement : MonoBehaviour {
         if(reverse) this._pointIndex = this.points.Count - 1;
         else this._pointIndex = 0;
 
+        this._time = 0f;
         this.setPosition(this.points[this._pointIndex]);
     }
 
     private void onFinish(bool reverse) {
-        SoundController.Instance.Play3DSound(this._audioClips[1], this.transform);
-
         this.isActive = false;
-        if(OnMovementFinish != null) OnMovementFinish(reverse);
+
+        SoundController.Instance.Play3DSound(this._audioClips[1], this.transform);
+        if(OnMovementFinish != null) OnMovementFinish.Invoke(reverse);
     }
 
-    public void FixedUpdate() {
+    public void Update() {
         if(!this.isActive) return;
 
         Vector3 pos = this.obj.transform.localPosition;
-
         Vector3 current = this.points[this._pointIndex];
-        Vector3 dest = this.points[this._pointIndex + (reverse ? -1 : 1)];
+
+        int nextPoint = this._pointIndex + (reverse ? -1 : 1);
+        if(nextPoint < 0 || nextPoint >= this.points.Count) {
+            this.isActive = false;
+            Debug.LogWarning("[entity_movement] Something went wrong");
+            return;
+        }
+
+        Vector3 dest = this.points[nextPoint];
 
         this._time += Mathf.Clamp(Time.fixedDeltaTime * this.speed, 0, 1f);
         this.setPosition(Vector3.Lerp(current, dest, this._time));
@@ -79,10 +87,18 @@ public class entity_movement : MonoBehaviour {
             this._pointIndex += reverse ? -1 : 1;
 
             if(reverse && this._pointIndex <= 0){
-                if(!loop) this.onFinish(true);
+                if(!loop) {
+                    this.onFinish(reverse);
+                    return;
+                }
+
                 this._pointIndex = this.points.Count - 1;
             } else if(this._pointIndex >= this.points.Count - 1) {
-                if(!loop) this.onFinish(false);
+                if(!loop) {
+                    this.onFinish(reverse);
+                    return;
+                }
+
                 this._pointIndex = 0;
             }
 

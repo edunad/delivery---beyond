@@ -98,6 +98,8 @@ public class entity_item_spot : MonoBehaviour {
         if(collider == null) throw new System.Exception("Invalid entity_item, missing a collider");
 
         itm.setOwner(this.gameObject, this.glue.transform);
+        itm.gameObject.transform.localRotation = Quaternion.identity;
+
         yield return new WaitForFixedUpdate();
 
         Vector3 placementPos = Vector3.zero;

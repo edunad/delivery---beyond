@@ -19,8 +19,6 @@ public class entity_printer : MonoBehaviour {
         this._audioClips = new AudioClip[] {
             AssetsController.GetResource<AudioClip>("Sounds/Ingame/Objects/Printer/181420__viertelnachvier__old-dot-matrix-printer"),
         };
-
-        util_timer.simple(2f, () => print());
     }
 
     public void print() {
