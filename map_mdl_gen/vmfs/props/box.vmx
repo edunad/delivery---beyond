@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "6440"
-	"mapversion" "2"
+	"mapversion" "3"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -20,7 +20,7 @@ viewsettings
 world
 {
 	"id" "1"
-	"mapversion" "2"
+	"mapversion" "3"
 	"classname" "worldspawn"
 	"skyname" "sky_day01_01"
 	"maxpropscreenwidth" "-1"
@@ -32,7 +32,7 @@ world
 		side
 		{
 			"id" "1"
-			"plane" "(-16 16 32) (16 16 32) (16 -16 32)"
+			"plane" "(-16 16 16) (16 16 16) (16 -16 16)"
 			"material" "PERFTEST/LOADER/CRATE02"
 			"uaxis" "[1 0 0 32] 0.5"
 			"vaxis" "[0 -1 0 32] 0.5"
@@ -43,7 +43,7 @@ world
 		side
 		{
 			"id" "2"
-			"plane" "(-16 -16 0) (16 -16 0) (16 16 0)"
+			"plane" "(-16 -16 -16) (16 -16 -16) (16 16 -16)"
 			"material" "PERFTEST/LOADER/CRATE02"
 			"uaxis" "[1 0 0 32] 0.5"
 			"vaxis" "[0 -1 0 32] 0.5"
@@ -54,10 +54,10 @@ world
 		side
 		{
 			"id" "3"
-			"plane" "(-16 16 32) (-16 -16 32) (-16 -16 0)"
+			"plane" "(-16 16 16) (-16 -16 16) (-16 -16 -16)"
 			"material" "PERFTEST/LOADER/CRATE02"
 			"uaxis" "[0 1 0 32] 0.5"
-			"vaxis" "[0 0 -1 0] 0.5"
+			"vaxis" "[0 0 -1 -32] 0.5"
 			"rotation" "0"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
@@ -65,10 +65,10 @@ world
 		side
 		{
 			"id" "4"
-			"plane" "(16 16 0) (16 -16 0) (16 -16 32)"
+			"plane" "(16 16 -16) (16 -16 -16) (16 -16 16)"
 			"material" "PERFTEST/LOADER/CRATE02"
 			"uaxis" "[0 1 0 32] 0.5"
-			"vaxis" "[0 0 -1 0] 0.5"
+			"vaxis" "[0 0 -1 -32] 0.5"
 			"rotation" "0"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
@@ -76,10 +76,10 @@ world
 		side
 		{
 			"id" "5"
-			"plane" "(16 16 32) (-16 16 32) (-16 16 0)"
+			"plane" "(16 16 16) (-16 16 16) (-16 16 -16)"
 			"material" "PERFTEST/LOADER/CRATE02"
 			"uaxis" "[1 0 0 32] 0.5"
-			"vaxis" "[0 0 -1 0] 0.5"
+			"vaxis" "[0 0 -1 -32] 0.5"
 			"rotation" "0"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
@@ -87,10 +87,10 @@ world
 		side
 		{
 			"id" "6"
-			"plane" "(16 -16 0) (-16 -16 0) (-16 -16 32)"
+			"plane" "(16 -16 -16) (-16 -16 -16) (-16 -16 16)"
 			"material" "PERFTEST/LOADER/CRATE02"
 			"uaxis" "[1 0 0 32] 0.5"
-			"vaxis" "[0 0 -1 0] 0.5"
+			"vaxis" "[0 0 -1 -32] 0.5"
 			"rotation" "0"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"

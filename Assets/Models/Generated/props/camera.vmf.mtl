@@ -16,3 +16,12 @@ Ks 0.000 0.000 0.000
 map_Ka materials/dev/dev_measuregeneric01b.tga
 map_Kd materials/dev/dev_measuregeneric01b.tga
 
+
+newmtl tools/toolsblockbullets
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/tools/toolsblockbullets.tga
+map_Kd materials/tools/toolsblockbullets.tga
+illum 4
+

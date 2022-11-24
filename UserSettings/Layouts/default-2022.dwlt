@@ -8,7 +8,7 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
-  m_EditorHideFlags: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 12004, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -39,15 +39,15 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 953
+    x: 898
     y: 0
-    width: 572
+    width: 621
     height: 699
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 18}
+  m_ActualView: {fileID: 20}
   m_Panes:
-  - {fileID: 18}
+  - {fileID: 20}
   m_Selected: 0
   m_LastSelected: 0
 --- !u!114 &3
@@ -74,7 +74,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 17
+  controlID: 59
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -90,18 +90,20 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 1525
+    x: 1519
     y: 0
-    width: 395
+    width: 401
     height: 947
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 15}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 17}
   m_Panes:
+  - {fileID: 17}
   - {fileID: 15}
+  - {fileID: 14}
   - {fileID: 13}
   m_Selected: 0
-  m_LastSelected: 1
+  m_LastSelected: 3
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -119,13 +121,13 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 344
+    width: 243
     height: 699
   m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 16}
+  m_ActualView: {fileID: 18}
   m_Panes:
-  - {fileID: 16}
+  - {fileID: 18}
   m_Selected: 0
   m_LastSelected: 0
 --- !u!114 &6
@@ -138,23 +140,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ProjectBrowser
+  m_Name: ConsoleWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
     x: 0
     y: 699
-    width: 1525
+    width: 1519
     height: 248
-  m_MinSize: {x: 231, y: 271}
-  m_MaxSize: {x: 10001, y: 10021}
-  m_ActualView: {fileID: 14}
+  m_MinSize: {x: 101, y: 121}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 21}
   m_Panes:
-  - {fileID: 14}
-  - {fileID: 19}
-  m_Selected: 0
-  m_LastSelected: 1
+  - {fileID: 16}
+  - {fileID: 21}
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -245,12 +247,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1525
+    width: 1519
     height: 947
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 18
+  controlID: 60
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -271,12 +273,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1525
+    width: 1519
     height: 699
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 19
+  controlID: 61
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -292,18 +294,74 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 344
+    x: 243
     y: 0
-    width: 609
+    width: 655
     height: 699
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 17}
+  m_ActualView: {fileID: 19}
   m_Panes:
-  - {fileID: 17}
+  - {fileID: 19}
   m_Selected: 0
   m_LastSelected: 0
 --- !u!114 &13
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12141, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 300, y: 360}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Navigation
+    m_Image: {fileID: 1087843850482249999, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 1519
+    y: 73
+    width: 400
+    height: 926
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+--- !u!114 &14
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12079, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 390, y: 390}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Lighting
+    m_Image: {fileID: -1347227620855488341, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 1519
+    y: 73
+    width: 400
+    height: 926
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+--- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -323,9 +381,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1525
+    x: 1519
     y: 73
-    width: 394
+    width: 400
     height: 926
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
@@ -434,10 +492,48 @@ MonoBehaviour:
       assets:
         keys:
         - 00000000000000001000000000000000
+        - 1aa03565aaeece449862efca72243766
+        - f9d58d6886342b148971fcc08f2d13d1
+        - 30449f24d1bcea24f9a75955f0894d17
+        - 384ecf38f2f9cfc4ebb1f8932881497b
+        - 2857ca3800e108c4383344114b35f613
+        - 6af0cbc1dabbd4f41afae90813364b26
+        - 0ace73aa04a1b7d49b693a53359ecbab
+        - 458f09466390ac642b7d5b98f39afb4d
+        - 1cfd03df218e96742acee82ac4e66eab
+        - 97f9283c055d19940ad08a7fab805184
+        - 03884f8033ea1474a8017436132875e3
+        - 558ef49cd71fe2742b17440a3a77687a
+        - 453f5d725c49df043b57ec1d0c35fa18
+        - c0d18c7e037e24242b508401e2aaa184
+        - 5eb0722f7a148d941a482317c6ffdd74
+        - 7d148c428a4925144adf3caebe5523ef
+        - 2461561f2e2b14d4ba89226dfc2dd218
+        - 737c611b8e23fbc4b8a4e00ff461a76b
+        - 0972e6c7329132e4ba805ddeae18b772
+        - b44d330c31e9c6d4fbcb9965f246e6e2
+        - c8952e03f92e2e44bb1d9776b84a8971
+        - 57cd57558ea8b914a8f67edc80b51143
+        - 0527a7fbebc3cf54397623820d190461
+        - 8b823e3894f955a4eafbf99d4b09d821
+        - 9017c7e3f0a2d914d87643a6e551b388
+        - 53fce00da7fff6342a16fad6b0b4053a
+        - a0cd28f2302fd124ca4cd74a26b07d00
+        - f3e5133249cab3a4985d8cc116d3bb2c
+        - dd7901584f8de54479331269fe80e449
+        - 465ccc97eace58a4b8d3a016e723dc91
+        - d3c2bd3e65607094a9d931a94e9a1444
+        - 0a64d011155d3ad4590854a36f6589cc
+        - 4b64d6cb58b693240bd1771c884df9ca
+        - d1a719e28f0d77142ae3c9151ffb63ea
+        - 906e585e641307e42a448b182c0d5e14
+        - 8b8731fc7c33d1a4ab73ac629cbb6383
+        - c61e49036f883a14b870d64bba62745a
         - 30af7af86e5b9dc468e384fa2fcd855b
+        - 4b706f0a3a4b49646812c8b08b477cc4
+        - db0bfa4a410f17e4aa3b4a8ac69aa48b
         - b6a85c09dcec047429895b7ff644fd79
-        - 914078373cf450243a138779f99c63fb
-        - 4dd966c3765175c49a0cb64ad9758029
+        - 1a897fb3ae95e0143b1f8247fb17737d
         values:
         - path: Assets
           label: Assets
@@ -457,6 +553,672 @@ MonoBehaviour:
             originalPath: 
             indexStatus: 0
             workTreeStatus: 0
+        - path: Assets\Materials
+          label: Materials
+          level: 1
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Materials\Ingame
+          label: Ingame
+          level: 2
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Materials\Ingame\camera_render_texture.renderTexture
+          label: camera_render_texture.renderTexture
+          level: 3
+          isFolder: 0
+          isContainer: 1
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\Materials\Ingame\camera_render_texture.renderTexture
+            fullPath: D:\delivery---beyond\Assets\Materials\Ingame\camera_render_texture.renderTexture
+            projectPath: Assets\Materials\Ingame\camera_render_texture.renderTexture
+            originalPath: 
+            indexStatus: 1
+            workTreeStatus: 1
+        - path: Assets\Materials\Ingame\camera_texture.mat
+          label: camera_texture.mat
+          level: 3
+          isFolder: 0
+          isContainer: 1
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\Materials\Ingame\camera_texture.mat
+            fullPath: D:\delivery---beyond\Assets\Materials\Ingame\camera_texture.mat
+            projectPath: Assets\Materials\Ingame\camera_texture.mat
+            originalPath: 
+            indexStatus: 1
+            workTreeStatus: 1
+        - path: Assets\Models
+          label: Models
+          level: 1
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Models\Generated
+          label: Generated
+          level: 2
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Models\Generated\basement.vmf.mtl
+          label: basement.vmf.mtl
+          level: 3
+          isFolder: 0
+          isContainer: 1
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\Models\Generated\basement.vmf.mtl
+            fullPath: D:\delivery---beyond\Assets\Models\Generated\basement.vmf.mtl
+            projectPath: Assets\Models\Generated\basement.vmf.mtl
+            originalPath: 
+            indexStatus: 1
+            workTreeStatus: 1
+        - path: Assets\Models\Generated\basement.vmf.obj
+          label: basement.vmf.obj
+          level: 3
+          isFolder: 0
+          isContainer: 1
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\Models\Generated\basement.vmf.obj
+            fullPath: D:\delivery---beyond\Assets\Models\Generated\basement.vmf.obj
+            projectPath: Assets\Models\Generated\basement.vmf.obj
+            originalPath: 
+            indexStatus: 1
+            workTreeStatus: 1
+        - path: Assets\Models\Generated\basement_collision.vmf.mtl
+          label: basement_collision.vmf.mtl
+          level: 3
+          isFolder: 0
+          isContainer: 1
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\Models\Generated\basement_collision.vmf.mtl
+            fullPath: D:\delivery---beyond\Assets\Models\Generated\basement_collision.vmf.mtl
+            projectPath: Assets\Models\Generated\basement_collision.vmf.mtl
+            originalPath: 
+            indexStatus: 1
+            workTreeStatus: 1
+        - path: Assets\Models\Generated\basement_collision.vmf.obj
+          label: basement_collision.vmf.obj
+          level: 3
+          isFolder: 0
+          isContainer: 1
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\Models\Generated\basement_collision.vmf.obj
+            fullPath: D:\delivery---beyond\Assets\Models\Generated\basement_collision.vmf.obj
+            projectPath: Assets\Models\Generated\basement_collision.vmf.obj
+            originalPath: 
+            indexStatus: 1
+            workTreeStatus: 1
+        - path: Assets\Models\Generated\basement_props.vmf.mtl
+          label: basement_props.vmf.mtl
+          level: 3
+          isFolder: 0
+          isContainer: 1
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\Models\Generated\basement_props.vmf.mtl
+            fullPath: D:\delivery---beyond\Assets\Models\Generated\basement_props.vmf.mtl
+            projectPath: Assets\Models\Generated\basement_props.vmf.mtl
+            originalPath: 
+            indexStatus: 1
+            workTreeStatus: 1
+        - path: Assets\Models\Generated\basement_props.vmf.obj
+          label: basement_props.vmf.obj
+          level: 3
+          isFolder: 0
+          isContainer: 1
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\Models\Generated\basement_props.vmf.obj
+            fullPath: D:\delivery---beyond\Assets\Models\Generated\basement_props.vmf.obj
+            projectPath: Assets\Models\Generated\basement_props.vmf.obj
+            originalPath: 
+            indexStatus: 1
+            workTreeStatus: 1
+        - path: Assets\Models\Generated\materials
+          label: materials
+          level: 3
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Models\Generated\materials\metal
+          label: metal
+          level: 4
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Models\Generated\materials\metal\metalfloor001a.tga
+          label: metalfloor001a.tga
+          level: 5
+          isFolder: 0
+          isContainer: 1
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\Models\Generated\materials\metal\metalfloor001a.tga
+            fullPath: D:\delivery---beyond\Assets\Models\Generated\materials\metal\metalfloor001a.tga
+            projectPath: Assets\Models\Generated\materials\metal\metalfloor001a.tga
+            originalPath: 
+            indexStatus: 1
+            workTreeStatus: 1
+        - path: Assets\Models\Generated\materials\metal\metalfloor001a_normal.tga
+          label: metalfloor001a_normal.tga
+          level: 5
+          isFolder: 0
+          isContainer: 1
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\Models\Generated\materials\metal\metalfloor001a_normal.tga
+            fullPath: D:\delivery---beyond\Assets\Models\Generated\materials\metal\metalfloor001a_normal.tga
+            projectPath: Assets\Models\Generated\materials\metal\metalfloor001a_normal.tga
+            originalPath: 
+            indexStatus: 1
+            workTreeStatus: 1
+        - path: Assets\Models\Generated\materials\metal\metalroof003a.tga
+          label: metalroof003a.tga
+          level: 5
+          isFolder: 0
+          isContainer: 1
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\Models\Generated\materials\metal\metalroof003a.tga
+            fullPath: D:\delivery---beyond\Assets\Models\Generated\materials\metal\metalroof003a.tga
+            projectPath: Assets\Models\Generated\materials\metal\metalroof003a.tga
+            originalPath: 
+            indexStatus: 1
+            workTreeStatus: 1
+        - path: Assets\Models\Generated\materials\metal\metalroof003a_normal.tga
+          label: metalroof003a_normal.tga
+          level: 5
+          isFolder: 0
+          isContainer: 1
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\Models\Generated\materials\metal\metalroof003a_normal.tga
+            fullPath: D:\delivery---beyond\Assets\Models\Generated\materials\metal\metalroof003a_normal.tga
+            projectPath: Assets\Models\Generated\materials\metal\metalroof003a_normal.tga
+            originalPath: 
+            indexStatus: 1
+            workTreeStatus: 1
+        - path: Assets\Models\Generated\office.vmf.mtl
+          label: office.vmf.mtl
+          level: 3
+          isFolder: 0
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\Models\Generated\office.vmf.mtl
+            fullPath: D:\delivery---beyond\Assets\Models\Generated\office.vmf.mtl
+            projectPath: Assets\Models\Generated\office.vmf.mtl
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 3
+        - path: Assets\Models\Generated\office.vmf.obj
+          label: office.vmf.obj
+          level: 3
+          isFolder: 0
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\Models\Generated\office.vmf.obj
+            fullPath: D:\delivery---beyond\Assets\Models\Generated\office.vmf.obj
+            projectPath: Assets\Models\Generated\office.vmf.obj
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 3
+        - path: Assets\Models\Generated\office_props.vmf.obj
+          label: office_props.vmf.obj
+          level: 3
+          isFolder: 0
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\Models\Generated\office_props.vmf.obj
+            fullPath: D:\delivery---beyond\Assets\Models\Generated\office_props.vmf.obj
+            projectPath: Assets\Models\Generated\office_props.vmf.obj
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 3
+        - path: Assets\Models\Generated\props
+          label: props
+          level: 3
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Models\Generated\props\camera.vmf.mtl
+          label: camera.vmf.mtl
+          level: 4
+          isFolder: 0
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\Models\Generated\props\camera.vmf.mtl
+            fullPath: D:\delivery---beyond\Assets\Models\Generated\props\camera.vmf.mtl
+            projectPath: Assets\Models\Generated\props\camera.vmf.mtl
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 3
+        - path: Assets\Models\Generated\props\camera.vmf.obj
+          label: camera.vmf.obj
+          level: 4
+          isFolder: 0
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\Models\Generated\props\camera.vmf.obj
+            fullPath: D:\delivery---beyond\Assets\Models\Generated\props\camera.vmf.obj
+            projectPath: Assets\Models\Generated\props\camera.vmf.obj
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 3
+        - path: Assets\Models\Generated\props\materials
+          label: materials
+          level: 4
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Models\Generated\props\materials\tools
+          label: tools
+          level: 5
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Models\Generated\props\materials\tools\toolsblockbullets.tga
+          label: toolsblockbullets.tga
+          level: 6
+          isFolder: 0
+          isContainer: 1
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\Models\Generated\props\materials\tools\toolsblockbullets.tga
+            fullPath: D:\delivery---beyond\Assets\Models\Generated\props\materials\tools\toolsblockbullets.tga
+            projectPath: Assets\Models\Generated\props\materials\tools\toolsblockbullets.tga
+            originalPath: 
+            indexStatus: 1
+            workTreeStatus: 1
+        - path: Assets\Scenes
+          label: Scenes
+          level: 1
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Scenes\level_1.unity
+          label: level_1.unity
+          level: 2
+          isFolder: 0
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\Scenes\level_1.unity
+            fullPath: D:\delivery---beyond\Assets\Scenes\level_1.unity
+            projectPath: Assets\Scenes\level_1.unity
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 3
+        - path: Assets\Scenes\level_1
+          label: level_1
+          level: 2
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Scenes\level_1\NavMesh.asset
+          label: NavMesh.asset
+          level: 3
+          isFolder: 0
+          isContainer: 1
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\Scenes\level_1\NavMesh.asset
+            fullPath: D:\delivery---beyond\Assets\Scenes\level_1\NavMesh.asset
+            projectPath: Assets\Scenes\level_1\NavMesh.asset
+            originalPath: 
+            indexStatus: 1
+            workTreeStatus: 1
+        - path: Assets\Scripts
+          label: Scripts
+          level: 1
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Scripts\Ingame
+          label: Ingame
+          level: 2
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Scripts\Ingame\Entities
+          label: Entities
+          level: 3
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Scripts\Ingame\Entities\map
+          label: map
+          level: 4
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Scripts\Ingame\Entities\map\entity_client_spot.cs
+          label: entity_client_spot.cs
+          level: 5
+          isFolder: 0
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\Scripts\Ingame\Entities\map\entity_client_spot.cs
+            fullPath: D:\delivery---beyond\Assets\Scripts\Ingame\Entities\map\entity_client_spot.cs
+            projectPath: Assets\Scripts\Ingame\Entities\map\entity_client_spot.cs
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 3
+        - path: Assets\Scripts\Ingame\Entities\map\entity_flash_thingy.cs
+          label: entity_flash_thingy.cs
+          level: 5
+          isFolder: 0
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\Scripts\Ingame\Entities\map\entity_flash_thingy.cs
+            fullPath: D:\delivery---beyond\Assets\Scripts\Ingame\Entities\map\entity_flash_thingy.cs
+            projectPath: Assets\Scripts\Ingame\Entities\map\entity_flash_thingy.cs
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 3
         - path: Assets\Templates
           label: Templates
           level: 1
@@ -475,6 +1237,42 @@ MonoBehaviour:
             originalPath: 
             indexStatus: 0
             workTreeStatus: 0
+        - path: Assets\Templates\Core
+          label: Core
+          level: 2
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Templates\Core\CONTROLLERS.prefab
+          label: CONTROLLERS.prefab
+          level: 3
+          isFolder: 0
+          isContainer: 1
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\Templates\Core\CONTROLLERS.prefab
+            fullPath: D:\delivery---beyond\Assets\Templates\Core\CONTROLLERS.prefab
+            projectPath: Assets\Templates\Core\CONTROLLERS.prefab
+            originalPath: 
+            indexStatus: 1
+            workTreeStatus: 1
         - path: Assets\Templates\Entities
           label: Entities
           level: 2
@@ -493,10 +1291,10 @@ MonoBehaviour:
             originalPath: 
             indexStatus: 0
             workTreeStatus: 0
-        - path: Assets\Templates\Entities\Customers
-          label: Customers
+        - path: Assets\Templates\Entities\itm-flash-thingy.prefab
+          label: itm-flash-thingy.prefab
           level: 3
-          isFolder: 1
+          isFolder: 0
           isContainer: 0
           isCollapsed: 0
           isHidden: 0
@@ -505,37 +1303,37 @@ MonoBehaviour:
           checkState: 0
           isLocked: 0
           gitStatusEntry:
-            path: 
-            fullPath: 
-            projectPath: 
+            path: Assets\Templates\Entities\itm-flash-thingy.prefab
+            fullPath: D:\delivery---beyond\Assets\Templates\Entities\itm-flash-thingy.prefab
+            projectPath: Assets\Templates\Entities\itm-flash-thingy.prefab
             originalPath: 
             indexStatus: 0
-            workTreeStatus: 0
-        - path: Assets\Templates\Entities\Customers\customer_tutorial 1.prefab
-          label: customer_tutorial 1.prefab
-          level: 4
-          isFolder: 0
-          isContainer: 1
-          isCollapsed: 0
-          isHidden: 0
-          isActive: 0
-          treeIsCheckable: 1
-          checkState: 0
-          isLocked: 0
-          gitStatusEntry:
-            path: Assets\Templates\Entities\Customers\customer_tutorial 1.prefab
-            fullPath: D:\delivery---beyond\Assets\Templates\Entities\Customers\customer_tutorial
-              1.prefab
-            projectPath: Assets\Templates\Entities\Customers\customer_tutorial 1.prefab
-            originalPath: 
-            indexStatus: 1
-            workTreeStatus: 1
+            workTreeStatus: 3
       folders:
         keys:
         - Assets
+        - Assets\Materials
+        - Assets\Materials\Ingame
+        - Assets\Models
+        - Assets\Models\Generated
+        - Assets\Models\Generated\materials
+        - Assets\Models\Generated\materials\metal
+        - Assets\Models\Generated\props
+        - Assets\Models\Generated\props\materials
+        - Assets\Models\Generated\props\materials\tools
+        - Assets\Scenes
+        - Assets\Scenes\level_1
+        - Assets\Scripts
+        - Assets\Scripts\Ingame
+        - Assets\Scripts\Ingame\Entities
+        - Assets\Scripts\Ingame\Entities\map
         - Assets\Templates
+        - Assets\Templates\Core
         - Assets\Templates\Entities
-        - Assets\Templates\Entities\Customers
+        - map_mdl_gen
+        - map_mdl_gen\vmfs
+        - map_mdl_gen\vmfs\props
+        - Packages
         - UserSettings
         - UserSettings\Layouts
         values:
@@ -557,9 +1355,297 @@ MonoBehaviour:
             originalPath: 
             indexStatus: 0
             workTreeStatus: 0
+        - path: Assets\Materials
+          label: Materials
+          level: 1
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Materials\Ingame
+          label: Ingame
+          level: 2
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Models
+          label: Models
+          level: 1
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Models\Generated
+          label: Generated
+          level: 2
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Models\Generated\materials
+          label: materials
+          level: 3
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Models\Generated\materials\metal
+          label: metal
+          level: 4
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Models\Generated\props
+          label: props
+          level: 3
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Models\Generated\props\materials
+          label: materials
+          level: 4
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Models\Generated\props\materials\tools
+          label: tools
+          level: 5
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Scenes
+          label: Scenes
+          level: 1
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Scenes\level_1
+          label: level_1
+          level: 2
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Scripts
+          label: Scripts
+          level: 1
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Scripts\Ingame
+          label: Ingame
+          level: 2
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Scripts\Ingame\Entities
+          label: Entities
+          level: 3
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Scripts\Ingame\Entities\map
+          label: map
+          level: 4
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
         - path: Assets\Templates
           label: Templates
           level: 1
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Templates\Core
+          label: Core
+          level: 2
           isFolder: 1
           isContainer: 0
           isCollapsed: 0
@@ -593,9 +1679,63 @@ MonoBehaviour:
             originalPath: 
             indexStatus: 0
             workTreeStatus: 0
-        - path: Assets\Templates\Entities\Customers
-          label: Customers
-          level: 3
+        - path: map_mdl_gen
+          label: map_mdl_gen
+          level: 0
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: map_mdl_gen\vmfs
+          label: vmfs
+          level: 1
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: map_mdl_gen\vmfs\props
+          label: props
+          level: 2
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Packages
+          label: Packages
+          level: 0
           isFolder: 1
           isContainer: 0
           isCollapsed: 0
@@ -693,6 +1833,942 @@ MonoBehaviour:
           originalPath: 
           indexStatus: 0
           workTreeStatus: 0
+      - path: Assets\Materials
+        label: Materials
+        level: 1
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\Materials\Ingame
+        label: Ingame
+        level: 2
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\Materials\Ingame\camera_render_texture.renderTexture
+        label: camera_render_texture.renderTexture
+        level: 3
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Materials\Ingame\camera_render_texture.renderTexture
+          fullPath: D:\delivery---beyond\Assets\Materials\Ingame\camera_render_texture.renderTexture
+          projectPath: Assets\Materials\Ingame\camera_render_texture.renderTexture
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\Materials\Ingame\camera_render_texture.renderTexture.meta
+        label: camera_render_texture.renderTexture.meta
+        level: 4
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Materials\Ingame\camera_render_texture.renderTexture.meta
+          fullPath: D:\delivery---beyond\Assets\Materials\Ingame\camera_render_texture.renderTexture.meta
+          projectPath: Assets\Materials\Ingame\camera_render_texture.renderTexture.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\Materials\Ingame\camera_texture.mat
+        label: camera_texture.mat
+        level: 3
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Materials\Ingame\camera_texture.mat
+          fullPath: D:\delivery---beyond\Assets\Materials\Ingame\camera_texture.mat
+          projectPath: Assets\Materials\Ingame\camera_texture.mat
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\Materials\Ingame\camera_texture.mat.meta
+        label: camera_texture.mat.meta
+        level: 4
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Materials\Ingame\camera_texture.mat.meta
+          fullPath: D:\delivery---beyond\Assets\Materials\Ingame\camera_texture.mat.meta
+          projectPath: Assets\Materials\Ingame\camera_texture.mat.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\Models
+        label: Models
+        level: 1
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\Models\Generated
+        label: Generated
+        level: 2
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\Models\Generated\basement.vmf.mtl
+        label: basement.vmf.mtl
+        level: 3
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Models\Generated\basement.vmf.mtl
+          fullPath: D:\delivery---beyond\Assets\Models\Generated\basement.vmf.mtl
+          projectPath: Assets\Models\Generated\basement.vmf.mtl
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\Models\Generated\basement.vmf.mtl.meta
+        label: basement.vmf.mtl.meta
+        level: 4
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Models\Generated\basement.vmf.mtl.meta
+          fullPath: D:\delivery---beyond\Assets\Models\Generated\basement.vmf.mtl.meta
+          projectPath: Assets\Models\Generated\basement.vmf.mtl.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\Models\Generated\basement.vmf.obj
+        label: basement.vmf.obj
+        level: 3
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Models\Generated\basement.vmf.obj
+          fullPath: D:\delivery---beyond\Assets\Models\Generated\basement.vmf.obj
+          projectPath: Assets\Models\Generated\basement.vmf.obj
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\Models\Generated\basement.vmf.obj.meta
+        label: basement.vmf.obj.meta
+        level: 4
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Models\Generated\basement.vmf.obj.meta
+          fullPath: D:\delivery---beyond\Assets\Models\Generated\basement.vmf.obj.meta
+          projectPath: Assets\Models\Generated\basement.vmf.obj.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\Models\Generated\basement_collision.vmf.mtl
+        label: basement_collision.vmf.mtl
+        level: 3
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Models\Generated\basement_collision.vmf.mtl
+          fullPath: D:\delivery---beyond\Assets\Models\Generated\basement_collision.vmf.mtl
+          projectPath: Assets\Models\Generated\basement_collision.vmf.mtl
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\Models\Generated\basement_collision.vmf.mtl.meta
+        label: basement_collision.vmf.mtl.meta
+        level: 4
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Models\Generated\basement_collision.vmf.mtl.meta
+          fullPath: D:\delivery---beyond\Assets\Models\Generated\basement_collision.vmf.mtl.meta
+          projectPath: Assets\Models\Generated\basement_collision.vmf.mtl.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\Models\Generated\basement_collision.vmf.obj
+        label: basement_collision.vmf.obj
+        level: 3
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Models\Generated\basement_collision.vmf.obj
+          fullPath: D:\delivery---beyond\Assets\Models\Generated\basement_collision.vmf.obj
+          projectPath: Assets\Models\Generated\basement_collision.vmf.obj
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\Models\Generated\basement_collision.vmf.obj.meta
+        label: basement_collision.vmf.obj.meta
+        level: 4
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Models\Generated\basement_collision.vmf.obj.meta
+          fullPath: D:\delivery---beyond\Assets\Models\Generated\basement_collision.vmf.obj.meta
+          projectPath: Assets\Models\Generated\basement_collision.vmf.obj.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\Models\Generated\basement_props.vmf.mtl
+        label: basement_props.vmf.mtl
+        level: 3
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Models\Generated\basement_props.vmf.mtl
+          fullPath: D:\delivery---beyond\Assets\Models\Generated\basement_props.vmf.mtl
+          projectPath: Assets\Models\Generated\basement_props.vmf.mtl
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\Models\Generated\basement_props.vmf.mtl.meta
+        label: basement_props.vmf.mtl.meta
+        level: 4
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Models\Generated\basement_props.vmf.mtl.meta
+          fullPath: D:\delivery---beyond\Assets\Models\Generated\basement_props.vmf.mtl.meta
+          projectPath: Assets\Models\Generated\basement_props.vmf.mtl.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\Models\Generated\basement_props.vmf.obj
+        label: basement_props.vmf.obj
+        level: 3
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Models\Generated\basement_props.vmf.obj
+          fullPath: D:\delivery---beyond\Assets\Models\Generated\basement_props.vmf.obj
+          projectPath: Assets\Models\Generated\basement_props.vmf.obj
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\Models\Generated\basement_props.vmf.obj.meta
+        label: basement_props.vmf.obj.meta
+        level: 4
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Models\Generated\basement_props.vmf.obj.meta
+          fullPath: D:\delivery---beyond\Assets\Models\Generated\basement_props.vmf.obj.meta
+          projectPath: Assets\Models\Generated\basement_props.vmf.obj.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\Models\Generated\materials
+        label: materials
+        level: 3
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\Models\Generated\materials\metal
+        label: metal
+        level: 4
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\Models\Generated\materials\metal\metalfloor001a.tga
+        label: metalfloor001a.tga
+        level: 5
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Models\Generated\materials\metal\metalfloor001a.tga
+          fullPath: D:\delivery---beyond\Assets\Models\Generated\materials\metal\metalfloor001a.tga
+          projectPath: Assets\Models\Generated\materials\metal\metalfloor001a.tga
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\Models\Generated\materials\metal\metalfloor001a.tga.meta
+        label: metalfloor001a.tga.meta
+        level: 6
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Models\Generated\materials\metal\metalfloor001a.tga.meta
+          fullPath: D:\delivery---beyond\Assets\Models\Generated\materials\metal\metalfloor001a.tga.meta
+          projectPath: Assets\Models\Generated\materials\metal\metalfloor001a.tga.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\Models\Generated\materials\metal\metalfloor001a_normal.tga
+        label: metalfloor001a_normal.tga
+        level: 5
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Models\Generated\materials\metal\metalfloor001a_normal.tga
+          fullPath: D:\delivery---beyond\Assets\Models\Generated\materials\metal\metalfloor001a_normal.tga
+          projectPath: Assets\Models\Generated\materials\metal\metalfloor001a_normal.tga
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\Models\Generated\materials\metal\metalfloor001a_normal.tga.meta
+        label: metalfloor001a_normal.tga.meta
+        level: 6
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Models\Generated\materials\metal\metalfloor001a_normal.tga.meta
+          fullPath: D:\delivery---beyond\Assets\Models\Generated\materials\metal\metalfloor001a_normal.tga.meta
+          projectPath: Assets\Models\Generated\materials\metal\metalfloor001a_normal.tga.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\Models\Generated\materials\metal\metalroof003a.tga
+        label: metalroof003a.tga
+        level: 5
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Models\Generated\materials\metal\metalroof003a.tga
+          fullPath: D:\delivery---beyond\Assets\Models\Generated\materials\metal\metalroof003a.tga
+          projectPath: Assets\Models\Generated\materials\metal\metalroof003a.tga
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\Models\Generated\materials\metal\metalroof003a.tga.meta
+        label: metalroof003a.tga.meta
+        level: 6
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Models\Generated\materials\metal\metalroof003a.tga.meta
+          fullPath: D:\delivery---beyond\Assets\Models\Generated\materials\metal\metalroof003a.tga.meta
+          projectPath: Assets\Models\Generated\materials\metal\metalroof003a.tga.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\Models\Generated\materials\metal\metalroof003a_normal.tga
+        label: metalroof003a_normal.tga
+        level: 5
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Models\Generated\materials\metal\metalroof003a_normal.tga
+          fullPath: D:\delivery---beyond\Assets\Models\Generated\materials\metal\metalroof003a_normal.tga
+          projectPath: Assets\Models\Generated\materials\metal\metalroof003a_normal.tga
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\Models\Generated\materials\metal\metalroof003a_normal.tga.meta
+        label: metalroof003a_normal.tga.meta
+        level: 6
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Models\Generated\materials\metal\metalroof003a_normal.tga.meta
+          fullPath: D:\delivery---beyond\Assets\Models\Generated\materials\metal\metalroof003a_normal.tga.meta
+          projectPath: Assets\Models\Generated\materials\metal\metalroof003a_normal.tga.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\Models\Generated\office.vmf.mtl
+        label: office.vmf.mtl
+        level: 3
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Models\Generated\office.vmf.mtl
+          fullPath: D:\delivery---beyond\Assets\Models\Generated\office.vmf.mtl
+          projectPath: Assets\Models\Generated\office.vmf.mtl
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 3
+      - path: Assets\Models\Generated\office.vmf.obj
+        label: office.vmf.obj
+        level: 3
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Models\Generated\office.vmf.obj
+          fullPath: D:\delivery---beyond\Assets\Models\Generated\office.vmf.obj
+          projectPath: Assets\Models\Generated\office.vmf.obj
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 3
+      - path: Assets\Models\Generated\office_props.vmf.obj
+        label: office_props.vmf.obj
+        level: 3
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Models\Generated\office_props.vmf.obj
+          fullPath: D:\delivery---beyond\Assets\Models\Generated\office_props.vmf.obj
+          projectPath: Assets\Models\Generated\office_props.vmf.obj
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 3
+      - path: Assets\Models\Generated\props
+        label: props
+        level: 3
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\Models\Generated\props\camera.vmf.mtl
+        label: camera.vmf.mtl
+        level: 4
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Models\Generated\props\camera.vmf.mtl
+          fullPath: D:\delivery---beyond\Assets\Models\Generated\props\camera.vmf.mtl
+          projectPath: Assets\Models\Generated\props\camera.vmf.mtl
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 3
+      - path: Assets\Models\Generated\props\camera.vmf.obj
+        label: camera.vmf.obj
+        level: 4
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Models\Generated\props\camera.vmf.obj
+          fullPath: D:\delivery---beyond\Assets\Models\Generated\props\camera.vmf.obj
+          projectPath: Assets\Models\Generated\props\camera.vmf.obj
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 3
+      - path: Assets\Models\Generated\props\materials
+        label: materials
+        level: 4
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\Models\Generated\props\materials\tools
+        label: tools
+        level: 5
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\Models\Generated\props\materials\tools\toolsblockbullets.tga
+        label: toolsblockbullets.tga
+        level: 6
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Models\Generated\props\materials\tools\toolsblockbullets.tga
+          fullPath: D:\delivery---beyond\Assets\Models\Generated\props\materials\tools\toolsblockbullets.tga
+          projectPath: Assets\Models\Generated\props\materials\tools\toolsblockbullets.tga
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\Models\Generated\props\materials\tools\toolsblockbullets.tga.meta
+        label: toolsblockbullets.tga.meta
+        level: 7
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Models\Generated\props\materials\tools\toolsblockbullets.tga.meta
+          fullPath: D:\delivery---beyond\Assets\Models\Generated\props\materials\tools\toolsblockbullets.tga.meta
+          projectPath: Assets\Models\Generated\props\materials\tools\toolsblockbullets.tga.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\Scenes
+        label: Scenes
+        level: 1
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\Scenes\level_1.meta
+        label: level_1.meta
+        level: 2
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Scenes\level_1.meta
+          fullPath: D:\delivery---beyond\Assets\Scenes\level_1.meta
+          projectPath: Assets\Scenes\level_1.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\Scenes\level_1.unity
+        label: level_1.unity
+        level: 2
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Scenes\level_1.unity
+          fullPath: D:\delivery---beyond\Assets\Scenes\level_1.unity
+          projectPath: Assets\Scenes\level_1.unity
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 3
+      - path: Assets\Scenes\level_1
+        label: level_1
+        level: 2
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\Scenes\level_1\NavMesh.asset
+        label: NavMesh.asset
+        level: 3
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Scenes\level_1\NavMesh.asset
+          fullPath: D:\delivery---beyond\Assets\Scenes\level_1\NavMesh.asset
+          projectPath: Assets\Scenes\level_1\NavMesh.asset
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\Scenes\level_1\NavMesh.asset.meta
+        label: NavMesh.asset.meta
+        level: 4
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Scenes\level_1\NavMesh.asset.meta
+          fullPath: D:\delivery---beyond\Assets\Scenes\level_1\NavMesh.asset.meta
+          projectPath: Assets\Scenes\level_1\NavMesh.asset.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\Scripts
+        label: Scripts
+        level: 1
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\Scripts\Ingame
+        label: Ingame
+        level: 2
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\Scripts\Ingame\Entities
+        label: Entities
+        level: 3
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\Scripts\Ingame\Entities\map
+        label: map
+        level: 4
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\Scripts\Ingame\Entities\map\entity_client_spot.cs
+        label: entity_client_spot.cs
+        level: 5
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Scripts\Ingame\Entities\map\entity_client_spot.cs
+          fullPath: D:\delivery---beyond\Assets\Scripts\Ingame\Entities\map\entity_client_spot.cs
+          projectPath: Assets\Scripts\Ingame\Entities\map\entity_client_spot.cs
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 3
+      - path: Assets\Scripts\Ingame\Entities\map\entity_flash_thingy.cs
+        label: entity_flash_thingy.cs
+        level: 5
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Scripts\Ingame\Entities\map\entity_flash_thingy.cs
+          fullPath: D:\delivery---beyond\Assets\Scripts\Ingame\Entities\map\entity_flash_thingy.cs
+          projectPath: Assets\Scripts\Ingame\Entities\map\entity_flash_thingy.cs
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 3
       - path: Assets\Templates
         label: Templates
         level: 1
@@ -711,6 +2787,96 @@ MonoBehaviour:
           originalPath: 
           indexStatus: 0
           workTreeStatus: 0
+      - path: Assets\Templates\Core
+        label: Core
+        level: 2
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\Templates\Core\CONTROLLERS.prefab
+        label: CONTROLLERS.prefab
+        level: 3
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Templates\Core\CONTROLLERS.prefab
+          fullPath: D:\delivery---beyond\Assets\Templates\Core\CONTROLLERS.prefab
+          projectPath: Assets\Templates\Core\CONTROLLERS.prefab
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\Templates\Core\CONTROLLERS.prefab.meta
+        label: CONTROLLERS.prefab.meta
+        level: 4
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Templates\Core\CONTROLLERS.prefab.meta
+          fullPath: D:\delivery---beyond\Assets\Templates\Core\CONTROLLERS.prefab.meta
+          projectPath: Assets\Templates\Core\CONTROLLERS.prefab.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\Templates\Core\CORE.prefab
+        label: CORE.prefab
+        level: 3
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Templates\Core\CORE.prefab
+          fullPath: D:\delivery---beyond\Assets\Templates\Core\CORE.prefab
+          projectPath: Assets\Templates\Core\CORE.prefab
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 5
+      - path: Assets\Templates\Core\CORE.prefab.meta
+        label: CORE.prefab.meta
+        level: 4
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Templates\Core\CORE.prefab.meta
+          fullPath: D:\delivery---beyond\Assets\Templates\Core\CORE.prefab.meta
+          projectPath: Assets\Templates\Core\CORE.prefab.meta
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 5
       - path: Assets\Templates\Entities
         label: Entities
         level: 2
@@ -729,9 +2895,27 @@ MonoBehaviour:
           originalPath: 
           indexStatus: 0
           workTreeStatus: 0
-      - path: Assets\Templates\Entities\Customers
-        label: Customers
+      - path: Assets\Templates\Entities\itm-flash-thingy.prefab
+        label: itm-flash-thingy.prefab
         level: 3
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Templates\Entities\itm-flash-thingy.prefab
+          fullPath: D:\delivery---beyond\Assets\Templates\Entities\itm-flash-thingy.prefab
+          projectPath: Assets\Templates\Entities\itm-flash-thingy.prefab
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 3
+      - path: map_mdl_gen
+        label: map_mdl_gen
+        level: 0
         isFolder: 1
         isContainer: 0
         isCollapsed: 0
@@ -747,28 +2931,9 @@ MonoBehaviour:
           originalPath: 
           indexStatus: 0
           workTreeStatus: 0
-      - path: Assets\Templates\Entities\Customers\customer_tutorial 1.prefab
-        label: customer_tutorial 1.prefab
-        level: 4
-        isFolder: 0
-        isContainer: 1
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 1
-        checkState: 0
-        isLocked: 0
-        gitStatusEntry:
-          path: Assets\Templates\Entities\Customers\customer_tutorial 1.prefab
-          fullPath: D:\delivery---beyond\Assets\Templates\Entities\Customers\customer_tutorial
-            1.prefab
-          projectPath: Assets\Templates\Entities\Customers\customer_tutorial 1.prefab
-          originalPath: 
-          indexStatus: 1
-          workTreeStatus: 1
-      - path: Assets\Templates\Entities\Customers\customer_tutorial 1.prefab.meta
-        label: customer_tutorial 1.prefab.meta
-        level: 5
+      - path: map_mdl_gen\convert.bat
+        label: convert.bat
+        level: 1
         isFolder: 0
         isContainer: 0
         isCollapsed: 0
@@ -778,13 +2943,354 @@ MonoBehaviour:
         checkState: 0
         isLocked: 0
         gitStatusEntry:
-          path: Assets\Templates\Entities\Customers\customer_tutorial 1.prefab.meta
-          fullPath: D:\delivery---beyond\Assets\Templates\Entities\Customers\customer_tutorial
-            1.prefab.meta
-          projectPath: Assets\Templates\Entities\Customers\customer_tutorial 1.prefab.meta
+          path: map_mdl_gen\convert.bat
+          fullPath: D:\delivery---beyond\map_mdl_gen\convert.bat
+          projectPath: map_mdl_gen\convert.bat
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 3
+      - path: map_mdl_gen\vmfs
+        label: vmfs
+        level: 1
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: map_mdl_gen\vmfs\basement.vmf
+        label: basement.vmf
+        level: 2
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: map_mdl_gen\vmfs\basement.vmf
+          fullPath: D:\delivery---beyond\map_mdl_gen\vmfs\basement.vmf
+          projectPath: map_mdl_gen\vmfs\basement.vmf
           originalPath: 
           indexStatus: 1
           workTreeStatus: 1
+      - path: map_mdl_gen\vmfs\basement.vmx
+        label: basement.vmx
+        level: 2
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: map_mdl_gen\vmfs\basement.vmx
+          fullPath: D:\delivery---beyond\map_mdl_gen\vmfs\basement.vmx
+          projectPath: map_mdl_gen\vmfs\basement.vmx
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: map_mdl_gen\vmfs\basement_collision.vmf
+        label: basement_collision.vmf
+        level: 2
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: map_mdl_gen\vmfs\basement_collision.vmf
+          fullPath: D:\delivery---beyond\map_mdl_gen\vmfs\basement_collision.vmf
+          projectPath: map_mdl_gen\vmfs\basement_collision.vmf
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: map_mdl_gen\vmfs\basement_collision.vmx
+        label: basement_collision.vmx
+        level: 2
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: map_mdl_gen\vmfs\basement_collision.vmx
+          fullPath: D:\delivery---beyond\map_mdl_gen\vmfs\basement_collision.vmx
+          projectPath: map_mdl_gen\vmfs\basement_collision.vmx
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: map_mdl_gen\vmfs\basement_props.vmf
+        label: basement_props.vmf
+        level: 2
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: map_mdl_gen\vmfs\basement_props.vmf
+          fullPath: D:\delivery---beyond\map_mdl_gen\vmfs\basement_props.vmf
+          projectPath: map_mdl_gen\vmfs\basement_props.vmf
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: map_mdl_gen\vmfs\basement_props.vmx
+        label: basement_props.vmx
+        level: 2
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: map_mdl_gen\vmfs\basement_props.vmx
+          fullPath: D:\delivery---beyond\map_mdl_gen\vmfs\basement_props.vmx
+          projectPath: map_mdl_gen\vmfs\basement_props.vmx
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: map_mdl_gen\vmfs\office.vmf
+        label: office.vmf
+        level: 2
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: map_mdl_gen\vmfs\office.vmf
+          fullPath: D:\delivery---beyond\map_mdl_gen\vmfs\office.vmf
+          projectPath: map_mdl_gen\vmfs\office.vmf
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 3
+      - path: map_mdl_gen\vmfs\office.vmx
+        label: office.vmx
+        level: 2
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: map_mdl_gen\vmfs\office.vmx
+          fullPath: D:\delivery---beyond\map_mdl_gen\vmfs\office.vmx
+          projectPath: map_mdl_gen\vmfs\office.vmx
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 3
+      - path: map_mdl_gen\vmfs\office_props.vmf
+        label: office_props.vmf
+        level: 2
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: map_mdl_gen\vmfs\office_props.vmf
+          fullPath: D:\delivery---beyond\map_mdl_gen\vmfs\office_props.vmf
+          projectPath: map_mdl_gen\vmfs\office_props.vmf
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 3
+      - path: map_mdl_gen\vmfs\office_props.vmx
+        label: office_props.vmx
+        level: 2
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: map_mdl_gen\vmfs\office_props.vmx
+          fullPath: D:\delivery---beyond\map_mdl_gen\vmfs\office_props.vmx
+          projectPath: map_mdl_gen\vmfs\office_props.vmx
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 3
+      - path: map_mdl_gen\vmfs\props
+        label: props
+        level: 2
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: map_mdl_gen\vmfs\props\box.vmf
+        label: box.vmf
+        level: 3
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: map_mdl_gen\vmfs\props\box.vmf
+          fullPath: D:\delivery---beyond\map_mdl_gen\vmfs\props\box.vmf
+          projectPath: map_mdl_gen\vmfs\props\box.vmf
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 3
+      - path: map_mdl_gen\vmfs\props\box.vmx
+        label: box.vmx
+        level: 3
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: map_mdl_gen\vmfs\props\box.vmx
+          fullPath: D:\delivery---beyond\map_mdl_gen\vmfs\props\box.vmx
+          projectPath: map_mdl_gen\vmfs\props\box.vmx
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 3
+      - path: map_mdl_gen\vmfs\props\camera.vmf
+        label: camera.vmf
+        level: 3
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: map_mdl_gen\vmfs\props\camera.vmf
+          fullPath: D:\delivery---beyond\map_mdl_gen\vmfs\props\camera.vmf
+          projectPath: map_mdl_gen\vmfs\props\camera.vmf
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 3
+      - path: map_mdl_gen\vmfs\props\camera.vmx
+        label: camera.vmx
+        level: 3
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: map_mdl_gen\vmfs\props\camera.vmx
+          fullPath: D:\delivery---beyond\map_mdl_gen\vmfs\props\camera.vmx
+          projectPath: map_mdl_gen\vmfs\props\camera.vmx
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 3
+      - path: Packages
+        label: Packages
+        level: 0
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Packages\manifest.json
+        label: manifest.json
+        level: 1
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Packages\manifest.json
+          fullPath: D:\delivery---beyond\Packages\manifest.json
+          projectPath: Packages\manifest.json
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 3
+      - path: Packages\packages-lock.json
+        label: packages-lock.json
+        level: 1
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Packages\packages-lock.json
+          fullPath: D:\delivery---beyond\Packages\packages-lock.json
+          projectPath: Packages\packages-lock.json
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 3
       - path: UserSettings
         label: UserSettings
         level: 0
@@ -803,6 +3309,24 @@ MonoBehaviour:
           originalPath: 
           indexStatus: 0
           workTreeStatus: 0
+      - path: UserSettings\EditorUserSettings.asset
+        label: EditorUserSettings.asset
+        level: 1
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: UserSettings\EditorUserSettings.asset
+          fullPath: D:\delivery---beyond\UserSettings\EditorUserSettings.asset
+          projectPath: UserSettings\EditorUserSettings.asset
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 3
       - path: UserSettings\Layouts
         label: Layouts
         level: 1
@@ -859,35 +3383,381 @@ MonoBehaviour:
           indexStatus: 0
           workTreeStatus: 0
     gitStatusEntries:
-    - path: Assets\Templates\Entities\Customers\customer_tutorial 1.prefab
-      fullPath: D:\delivery---beyond\Assets\Templates\Entities\Customers\customer_tutorial
-        1.prefab
-      projectPath: Assets\Templates\Entities\Customers\customer_tutorial 1.prefab
+    - path: Assets\Materials\Ingame\camera_render_texture.renderTexture
+      fullPath: D:\delivery---beyond\Assets\Materials\Ingame\camera_render_texture.renderTexture
+      projectPath: Assets\Materials\Ingame\camera_render_texture.renderTexture
       originalPath: 
       indexStatus: 1
       workTreeStatus: 1
-    - path: Assets\Templates\Entities\Customers\customer_tutorial 1.prefab.meta
-      fullPath: D:\delivery---beyond\Assets\Templates\Entities\Customers\customer_tutorial
-        1.prefab.meta
-      projectPath: Assets\Templates\Entities\Customers\customer_tutorial 1.prefab.meta
+    - path: Assets\Materials\Ingame\camera_render_texture.renderTexture.meta
+      fullPath: D:\delivery---beyond\Assets\Materials\Ingame\camera_render_texture.renderTexture.meta
+      projectPath: Assets\Materials\Ingame\camera_render_texture.renderTexture.meta
       originalPath: 
       indexStatus: 1
       workTreeStatus: 1
+    - path: Assets\Materials\Ingame\camera_texture.mat
+      fullPath: D:\delivery---beyond\Assets\Materials\Ingame\camera_texture.mat
+      projectPath: Assets\Materials\Ingame\camera_texture.mat
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\Materials\Ingame\camera_texture.mat.meta
+      fullPath: D:\delivery---beyond\Assets\Materials\Ingame\camera_texture.mat.meta
+      projectPath: Assets\Materials\Ingame\camera_texture.mat.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\Models\Generated\basement.vmf.mtl
+      fullPath: D:\delivery---beyond\Assets\Models\Generated\basement.vmf.mtl
+      projectPath: Assets\Models\Generated\basement.vmf.mtl
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\Models\Generated\basement.vmf.mtl.meta
+      fullPath: D:\delivery---beyond\Assets\Models\Generated\basement.vmf.mtl.meta
+      projectPath: Assets\Models\Generated\basement.vmf.mtl.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\Models\Generated\basement.vmf.obj
+      fullPath: D:\delivery---beyond\Assets\Models\Generated\basement.vmf.obj
+      projectPath: Assets\Models\Generated\basement.vmf.obj
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\Models\Generated\basement.vmf.obj.meta
+      fullPath: D:\delivery---beyond\Assets\Models\Generated\basement.vmf.obj.meta
+      projectPath: Assets\Models\Generated\basement.vmf.obj.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\Models\Generated\basement_collision.vmf.mtl
+      fullPath: D:\delivery---beyond\Assets\Models\Generated\basement_collision.vmf.mtl
+      projectPath: Assets\Models\Generated\basement_collision.vmf.mtl
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\Models\Generated\basement_collision.vmf.mtl.meta
+      fullPath: D:\delivery---beyond\Assets\Models\Generated\basement_collision.vmf.mtl.meta
+      projectPath: Assets\Models\Generated\basement_collision.vmf.mtl.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\Models\Generated\basement_collision.vmf.obj
+      fullPath: D:\delivery---beyond\Assets\Models\Generated\basement_collision.vmf.obj
+      projectPath: Assets\Models\Generated\basement_collision.vmf.obj
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\Models\Generated\basement_collision.vmf.obj.meta
+      fullPath: D:\delivery---beyond\Assets\Models\Generated\basement_collision.vmf.obj.meta
+      projectPath: Assets\Models\Generated\basement_collision.vmf.obj.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\Models\Generated\basement_props.vmf.mtl
+      fullPath: D:\delivery---beyond\Assets\Models\Generated\basement_props.vmf.mtl
+      projectPath: Assets\Models\Generated\basement_props.vmf.mtl
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\Models\Generated\basement_props.vmf.mtl.meta
+      fullPath: D:\delivery---beyond\Assets\Models\Generated\basement_props.vmf.mtl.meta
+      projectPath: Assets\Models\Generated\basement_props.vmf.mtl.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\Models\Generated\basement_props.vmf.obj
+      fullPath: D:\delivery---beyond\Assets\Models\Generated\basement_props.vmf.obj
+      projectPath: Assets\Models\Generated\basement_props.vmf.obj
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\Models\Generated\basement_props.vmf.obj.meta
+      fullPath: D:\delivery---beyond\Assets\Models\Generated\basement_props.vmf.obj.meta
+      projectPath: Assets\Models\Generated\basement_props.vmf.obj.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\Models\Generated\materials\metal\metalfloor001a.tga
+      fullPath: D:\delivery---beyond\Assets\Models\Generated\materials\metal\metalfloor001a.tga
+      projectPath: Assets\Models\Generated\materials\metal\metalfloor001a.tga
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\Models\Generated\materials\metal\metalfloor001a.tga.meta
+      fullPath: D:\delivery---beyond\Assets\Models\Generated\materials\metal\metalfloor001a.tga.meta
+      projectPath: Assets\Models\Generated\materials\metal\metalfloor001a.tga.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\Models\Generated\materials\metal\metalfloor001a_normal.tga
+      fullPath: D:\delivery---beyond\Assets\Models\Generated\materials\metal\metalfloor001a_normal.tga
+      projectPath: Assets\Models\Generated\materials\metal\metalfloor001a_normal.tga
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\Models\Generated\materials\metal\metalfloor001a_normal.tga.meta
+      fullPath: D:\delivery---beyond\Assets\Models\Generated\materials\metal\metalfloor001a_normal.tga.meta
+      projectPath: Assets\Models\Generated\materials\metal\metalfloor001a_normal.tga.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\Models\Generated\materials\metal\metalroof003a.tga
+      fullPath: D:\delivery---beyond\Assets\Models\Generated\materials\metal\metalroof003a.tga
+      projectPath: Assets\Models\Generated\materials\metal\metalroof003a.tga
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\Models\Generated\materials\metal\metalroof003a.tga.meta
+      fullPath: D:\delivery---beyond\Assets\Models\Generated\materials\metal\metalroof003a.tga.meta
+      projectPath: Assets\Models\Generated\materials\metal\metalroof003a.tga.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\Models\Generated\materials\metal\metalroof003a_normal.tga
+      fullPath: D:\delivery---beyond\Assets\Models\Generated\materials\metal\metalroof003a_normal.tga
+      projectPath: Assets\Models\Generated\materials\metal\metalroof003a_normal.tga
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\Models\Generated\materials\metal\metalroof003a_normal.tga.meta
+      fullPath: D:\delivery---beyond\Assets\Models\Generated\materials\metal\metalroof003a_normal.tga.meta
+      projectPath: Assets\Models\Generated\materials\metal\metalroof003a_normal.tga.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\Models\Generated\office.vmf.mtl
+      fullPath: D:\delivery---beyond\Assets\Models\Generated\office.vmf.mtl
+      projectPath: Assets\Models\Generated\office.vmf.mtl
+      originalPath: 
+      indexStatus: 0
+      workTreeStatus: 3
+    - path: Assets\Models\Generated\office.vmf.obj
+      fullPath: D:\delivery---beyond\Assets\Models\Generated\office.vmf.obj
+      projectPath: Assets\Models\Generated\office.vmf.obj
+      originalPath: 
+      indexStatus: 0
+      workTreeStatus: 3
+    - path: Assets\Models\Generated\office_props.vmf.obj
+      fullPath: D:\delivery---beyond\Assets\Models\Generated\office_props.vmf.obj
+      projectPath: Assets\Models\Generated\office_props.vmf.obj
+      originalPath: 
+      indexStatus: 0
+      workTreeStatus: 3
+    - path: Assets\Models\Generated\props\camera.vmf.mtl
+      fullPath: D:\delivery---beyond\Assets\Models\Generated\props\camera.vmf.mtl
+      projectPath: Assets\Models\Generated\props\camera.vmf.mtl
+      originalPath: 
+      indexStatus: 0
+      workTreeStatus: 3
+    - path: Assets\Models\Generated\props\camera.vmf.obj
+      fullPath: D:\delivery---beyond\Assets\Models\Generated\props\camera.vmf.obj
+      projectPath: Assets\Models\Generated\props\camera.vmf.obj
+      originalPath: 
+      indexStatus: 0
+      workTreeStatus: 3
+    - path: Assets\Models\Generated\props\materials\tools\toolsblockbullets.tga
+      fullPath: D:\delivery---beyond\Assets\Models\Generated\props\materials\tools\toolsblockbullets.tga
+      projectPath: Assets\Models\Generated\props\materials\tools\toolsblockbullets.tga
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\Models\Generated\props\materials\tools\toolsblockbullets.tga.meta
+      fullPath: D:\delivery---beyond\Assets\Models\Generated\props\materials\tools\toolsblockbullets.tga.meta
+      projectPath: Assets\Models\Generated\props\materials\tools\toolsblockbullets.tga.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\Scenes\level_1.meta
+      fullPath: D:\delivery---beyond\Assets\Scenes\level_1.meta
+      projectPath: Assets\Scenes\level_1.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\Scenes\level_1.unity
+      fullPath: D:\delivery---beyond\Assets\Scenes\level_1.unity
+      projectPath: Assets\Scenes\level_1.unity
+      originalPath: 
+      indexStatus: 0
+      workTreeStatus: 3
+    - path: Assets\Scenes\level_1\NavMesh.asset
+      fullPath: D:\delivery---beyond\Assets\Scenes\level_1\NavMesh.asset
+      projectPath: Assets\Scenes\level_1\NavMesh.asset
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\Scenes\level_1\NavMesh.asset.meta
+      fullPath: D:\delivery---beyond\Assets\Scenes\level_1\NavMesh.asset.meta
+      projectPath: Assets\Scenes\level_1\NavMesh.asset.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\Scripts\Ingame\Entities\map\entity_client_spot.cs
+      fullPath: D:\delivery---beyond\Assets\Scripts\Ingame\Entities\map\entity_client_spot.cs
+      projectPath: Assets\Scripts\Ingame\Entities\map\entity_client_spot.cs
+      originalPath: 
+      indexStatus: 0
+      workTreeStatus: 3
+    - path: Assets\Scripts\Ingame\Entities\map\entity_flash_thingy.cs
+      fullPath: D:\delivery---beyond\Assets\Scripts\Ingame\Entities\map\entity_flash_thingy.cs
+      projectPath: Assets\Scripts\Ingame\Entities\map\entity_flash_thingy.cs
+      originalPath: 
+      indexStatus: 0
+      workTreeStatus: 3
+    - path: Assets\Templates\Core\CONTROLLERS.prefab
+      fullPath: D:\delivery---beyond\Assets\Templates\Core\CONTROLLERS.prefab
+      projectPath: Assets\Templates\Core\CONTROLLERS.prefab
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\Templates\Core\CONTROLLERS.prefab.meta
+      fullPath: D:\delivery---beyond\Assets\Templates\Core\CONTROLLERS.prefab.meta
+      projectPath: Assets\Templates\Core\CONTROLLERS.prefab.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\Templates\Core\CORE.prefab
+      fullPath: D:\delivery---beyond\Assets\Templates\Core\CORE.prefab
+      projectPath: Assets\Templates\Core\CORE.prefab
+      originalPath: 
+      indexStatus: 0
+      workTreeStatus: 5
+    - path: Assets\Templates\Core\CORE.prefab.meta
+      fullPath: D:\delivery---beyond\Assets\Templates\Core\CORE.prefab.meta
+      projectPath: Assets\Templates\Core\CORE.prefab.meta
+      originalPath: 
+      indexStatus: 0
+      workTreeStatus: 5
+    - path: Assets\Templates\Entities\itm-flash-thingy.prefab
+      fullPath: D:\delivery---beyond\Assets\Templates\Entities\itm-flash-thingy.prefab
+      projectPath: Assets\Templates\Entities\itm-flash-thingy.prefab
+      originalPath: 
+      indexStatus: 0
+      workTreeStatus: 3
+    - path: map_mdl_gen\convert.bat
+      fullPath: D:\delivery---beyond\map_mdl_gen\convert.bat
+      projectPath: map_mdl_gen\convert.bat
+      originalPath: 
+      indexStatus: 0
+      workTreeStatus: 3
+    - path: map_mdl_gen\vmfs\basement.vmf
+      fullPath: D:\delivery---beyond\map_mdl_gen\vmfs\basement.vmf
+      projectPath: map_mdl_gen\vmfs\basement.vmf
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: map_mdl_gen\vmfs\basement.vmx
+      fullPath: D:\delivery---beyond\map_mdl_gen\vmfs\basement.vmx
+      projectPath: map_mdl_gen\vmfs\basement.vmx
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: map_mdl_gen\vmfs\basement_collision.vmf
+      fullPath: D:\delivery---beyond\map_mdl_gen\vmfs\basement_collision.vmf
+      projectPath: map_mdl_gen\vmfs\basement_collision.vmf
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: map_mdl_gen\vmfs\basement_collision.vmx
+      fullPath: D:\delivery---beyond\map_mdl_gen\vmfs\basement_collision.vmx
+      projectPath: map_mdl_gen\vmfs\basement_collision.vmx
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: map_mdl_gen\vmfs\basement_props.vmf
+      fullPath: D:\delivery---beyond\map_mdl_gen\vmfs\basement_props.vmf
+      projectPath: map_mdl_gen\vmfs\basement_props.vmf
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: map_mdl_gen\vmfs\basement_props.vmx
+      fullPath: D:\delivery---beyond\map_mdl_gen\vmfs\basement_props.vmx
+      projectPath: map_mdl_gen\vmfs\basement_props.vmx
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: map_mdl_gen\vmfs\office.vmf
+      fullPath: D:\delivery---beyond\map_mdl_gen\vmfs\office.vmf
+      projectPath: map_mdl_gen\vmfs\office.vmf
+      originalPath: 
+      indexStatus: 0
+      workTreeStatus: 3
+    - path: map_mdl_gen\vmfs\office.vmx
+      fullPath: D:\delivery---beyond\map_mdl_gen\vmfs\office.vmx
+      projectPath: map_mdl_gen\vmfs\office.vmx
+      originalPath: 
+      indexStatus: 0
+      workTreeStatus: 3
+    - path: map_mdl_gen\vmfs\office_props.vmf
+      fullPath: D:\delivery---beyond\map_mdl_gen\vmfs\office_props.vmf
+      projectPath: map_mdl_gen\vmfs\office_props.vmf
+      originalPath: 
+      indexStatus: 0
+      workTreeStatus: 3
+    - path: map_mdl_gen\vmfs\office_props.vmx
+      fullPath: D:\delivery---beyond\map_mdl_gen\vmfs\office_props.vmx
+      projectPath: map_mdl_gen\vmfs\office_props.vmx
+      originalPath: 
+      indexStatus: 0
+      workTreeStatus: 3
+    - path: map_mdl_gen\vmfs\props\box.vmf
+      fullPath: D:\delivery---beyond\map_mdl_gen\vmfs\props\box.vmf
+      projectPath: map_mdl_gen\vmfs\props\box.vmf
+      originalPath: 
+      indexStatus: 0
+      workTreeStatus: 3
+    - path: map_mdl_gen\vmfs\props\box.vmx
+      fullPath: D:\delivery---beyond\map_mdl_gen\vmfs\props\box.vmx
+      projectPath: map_mdl_gen\vmfs\props\box.vmx
+      originalPath: 
+      indexStatus: 0
+      workTreeStatus: 3
+    - path: map_mdl_gen\vmfs\props\camera.vmf
+      fullPath: D:\delivery---beyond\map_mdl_gen\vmfs\props\camera.vmf
+      projectPath: map_mdl_gen\vmfs\props\camera.vmf
+      originalPath: 
+      indexStatus: 0
+      workTreeStatus: 3
+    - path: map_mdl_gen\vmfs\props\camera.vmx
+      fullPath: D:\delivery---beyond\map_mdl_gen\vmfs\props\camera.vmx
+      projectPath: map_mdl_gen\vmfs\props\camera.vmx
+      originalPath: 
+      indexStatus: 0
+      workTreeStatus: 3
+    - path: Packages\manifest.json
+      fullPath: D:\delivery---beyond\Packages\manifest.json
+      projectPath: Packages\manifest.json
+      originalPath: 
+      indexStatus: 0
+      workTreeStatus: 3
+    - path: Packages\packages-lock.json
+      fullPath: D:\delivery---beyond\Packages\packages-lock.json
+      projectPath: Packages\packages-lock.json
+      originalPath: 
+      indexStatus: 0
+      workTreeStatus: 3
+    - path: UserSettings\EditorUserSettings.asset
+      fullPath: D:\delivery---beyond\UserSettings\EditorUserSettings.asset
+      projectPath: UserSettings\EditorUserSettings.asset
+      originalPath: 
+      indexStatus: 0
+      workTreeStatus: 3
     - path: UserSettings\Layouts\default-2022.dwlt
       fullPath: D:\delivery---beyond\UserSettings\Layouts\default-2022.dwlt
       projectPath: UserSettings\Layouts\default-2022.dwlt
       originalPath: 
       indexStatus: 0
       workTreeStatus: 3
-    changedFilesText: 3 changed files
+    changedFilesText: 61 changed files
     lastCurrentBranchChangedEvent:
-      updatedTimeString: 2022-11-23T22:05:43.285+01:00
+      updatedTimeString: 2022-11-24T19:44:12.443+01:00
       cacheType: 1
     lastStatusEntriesChangedEvent:
-      updatedTimeString: 2022-11-23T22:06:55.727+01:00
+      updatedTimeString: 2022-11-24T19:45:42.688+01:00
       cacheType: 6
     lastLocksChangedEvent:
-      updatedTimeString: 2022-11-23T22:05:44.357+01:00
+      updatedTimeString: 0001-01-01T00:00:00.000+00:00
       cacheType: 7
   historyView:
     currentLogHasUpdate: 0
@@ -6459,13 +9329,13 @@ MonoBehaviour:
     m_Image: {fileID: 0}
     m_Tooltip: Url of the origin remote
   lastCurrentBranchAndRemoteChangedEvent:
-    updatedTimeString: 2022-11-23T17:03:55.126+01:00
+    updatedTimeString: 2022-11-24T16:44:44.282+01:00
     cacheType: 1
   lastTrackingStatusChangedEvent:
-    updatedTimeString: 2022-11-23T17:03:55.348+01:00
+    updatedTimeString: 2022-11-24T16:44:44.507+01:00
     cacheType: 5
   lastStatusEntriesChangedEvent:
-    updatedTimeString: 2022-11-23T17:11:05.614+01:00
+    updatedTimeString: 2022-11-24T19:00:56.780+01:00
     cacheType: 6
   pullButtonContent:
     m_Text: Pull
@@ -6483,12 +9353,12 @@ MonoBehaviour:
     m_Text: Fetch
     m_Image: {fileID: 0}
     m_Tooltip: 
-  repositoryProgressValue: 1
+  repositoryProgressValue: 0.99897116
   repositoryProgressMessage: 
   appManagerProgressValue: 1
   appManagerProgressMessage: 
   primaryConnectionUsername: 
---- !u!114 &14
+--- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6510,7 +9380,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 772
-    width: 1524
+    width: 1518
     height: 227
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
@@ -6529,22 +9399,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Models/Generated/props
+    - Assets/Templates/Entities
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets/Models/Generated/props
+  - Assets/Templates/Entities
   m_LastFoldersGridSize: 96
   m_LastProjectPath: D:\delivery---beyond
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 89}
-    m_SelectedIDs: 38530000
-    m_LastClickedID: 21304
-    m_ExpandedIDs: 000000008c5200008e52000090520000925200009452000096520000985200009a5200009c5200009e520000a0520000a2520000a4520000a6520000a8520000aa520000ac520000ae52000000ca9a3b
+    scrollPos: {x: 0, y: 165}
+    m_SelectedIDs: a4960000
+    m_LastClickedID: 38564
+    m_ExpandedIDs: 000000005a530000f0530000f2530000f8530000fe530000a26e0000a46e0000fc6e0000fe6e000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -6572,7 +9442,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000008c5200008e52000090520000925200009452000096520000985200009a5200009c5200009e520000a0520000a2520000a4520000a6520000a8520000aa520000ac520000ae520000
+    m_ExpandedIDs: 000000005a530000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -6624,11 +9494,11 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 120}
+    m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 96
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 207
---- !u!114 &15
+--- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6648,9 +9518,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1525
+    x: 1519
     y: 73
-    width: 394
+    width: 400
     height: 926
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
@@ -6669,7 +9539,7 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_PreviewWindow: {fileID: 0}
---- !u!114 &16
+--- !u!114 &18
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6691,7 +9561,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 73
-    width: 343
+    width: 242
     height: 678
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
@@ -6700,9 +9570,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 38faffff
-      m_LastClickedID: -1480
-      m_ExpandedIDs: 58faffff34fbffff3c480000
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 783bffffa25fffff3660ffff2c64ffff1069ffff96f7ffff9ef7ffffa2f7ffff72faffff9cfaffffaefaffff224900001e7300005c73000014740000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -6726,7 +9596,7 @@ MonoBehaviour:
       m_IsLocked: 0
     m_CurrentSortingName: TransformSorting
   m_WindowGUID: 4c969a2b90040154d917609493e03593
---- !u!114 &17
+--- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6746,9 +9616,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 344
+    x: 243
     y: 73
-    width: 607
+    width: 653
     height: 678
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
@@ -6880,7 +9750,7 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 0
-      snapOffset: {x: 0, y: 0}
+      snapOffset: {x: 0, y: 25}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: Scene View/Navmesh Display
@@ -6975,7 +9845,7 @@ MonoBehaviour:
       index: 12
       layout: 4
   m_WindowGUID: cc27987af1a868c49b0894db9c0f5429
-  m_Gizmos: 0
+  m_Gizmos: 1
   m_OverrideSceneCullingMask: 6917529027641081856
   m_SceneIsLit: 1
   m_SceneLighting: 1
@@ -6984,9 +9854,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 5.970971, y: 4.2715154, z: -34.74877}
+    m_Target: {x: 6.3435917, y: -1.1473525, z: -37.808098}
     speed: 2
-    m_Value: {x: 5.970971, y: 4.2715154, z: -34.74877}
+    m_Value: {x: 6.3435917, y: -1.1473525, z: -37.808098}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -7032,20 +9902,20 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.009436668, y: 0.8446389, z: -0.5353367, w: 0.01523512}
+    m_Target: {x: 0.49087575, y: -0.05153786, z: 0.02925637, w: 0.8696}
     speed: 2
-    m_Value: {x: 0.008632266, y: 0.8445251, z: -0.5352642, w: 0.013965901}
+    m_Value: {x: 0.23995857, y: 0.02548692, z: -0.00614586, w: 0.97042906}
   m_Size:
-    m_Target: 0.8391783
+    m_Target: 1.3352039
     speed: 2
-    m_Value: 0.8391783
+    m_Value: 1.3352039
   m_Ortho:
     m_Target: 0
     speed: 2
     m_Value: 0
   m_CameraSettings:
-    m_Speed: 0.48075995
-    m_SpeedNormalized: 0.23999998
+    m_Speed: 0.60069996
+    m_SpeedNormalized: 0.29999998
     m_SpeedMin: 0.001
     m_SpeedMax: 2
     m_EasingEnabled: 1
@@ -7063,7 +9933,7 @@ MonoBehaviour:
   m_SceneVisActive: 1
   m_LastLockedObject: {fileID: 0}
   m_ViewIsLockedToObject: 0
---- !u!114 &18
+--- !u!114 &20
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7083,9 +9953,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 953
+    x: 898
     y: 73
-    width: 570
+    width: 619
     height: 678
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
@@ -7097,7 +9967,7 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-  m_TargetSize: {x: 570, y: 657}
+  m_TargetSize: {x: 619, y: 657}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -7117,8 +9987,8 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -285
-    m_HBaseRangeMax: 285
+    m_HBaseRangeMin: -309.5
+    m_HBaseRangeMax: 309.5
     m_VBaseRangeMin: -328.5
     m_VBaseRangeMax: 328.5
     m_HAllowExceedBaseRangeMin: 1
@@ -7138,23 +10008,23 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
-      width: 570
+      width: 619
       height: 657
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 285, y: 328.5}
+    m_Translation: {x: 309.5, y: 328.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -285
+      x: -309.5
       y: -328.5
-      width: 570
+      width: 619
       height: 657
     m_MinimalGUI: 1
   m_defaultScale: 1
-  m_LastWindowPixelSize: {x: 570, y: 678}
+  m_LastWindowPixelSize: {x: 619, y: 678}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
@@ -7162,7 +10032,7 @@ MonoBehaviour:
   m_RenderTexture: {fileID: 0}
   m_showToolbar: 1
   m_showToolbarOnFullscreen: 0
---- !u!114 &19
+--- !u!114 &21
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7184,7 +10054,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 772
-    width: 1524
+    width: 1518
     height: 227
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:

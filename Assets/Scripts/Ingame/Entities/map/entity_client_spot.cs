@@ -65,8 +65,6 @@ public class entity_client_spot : MonoBehaviour {
         if(!isOK) this._spot.deleteItem();
         this._spot.setLocked(!isOK);
 
-        if(newStatus == GAMEPLAY_STATUS.ITEM_RETRIEVE) {
-            this.generateTicket();
-        }
+        if(newStatus == GAMEPLAY_STATUS.ITEM_RETRIEVE) { this.generateTicket(); }
     }
 }

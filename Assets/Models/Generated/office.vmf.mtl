@@ -49,11 +49,3 @@ Ks 0.000 0.000 0.000
 map_Ka materials/vgui/black.tga
 map_Kd materials/vgui/black.tga
 
-
-newmtl dev/dev_measuregeneric01b
-Ka 1.000 1.000 1.000
-Kd 1.000 1.000 1.000
-Ks 0.000 0.000 0.000
-map_Ka materials/dev/dev_measuregeneric01b.tga
-map_Kd materials/dev/dev_measuregeneric01b.tga
-
