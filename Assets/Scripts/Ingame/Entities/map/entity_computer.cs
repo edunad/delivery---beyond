@@ -68,7 +68,7 @@ public class entity_computer : MonoBehaviour {
                     this._audioClips[1],
                     this.transform,
                     1.5f,
-                    3f, 0.2f);
+                    4f, 0.7f);
 
                 util_timer.simple(this.writeCooldown, () => {
                     if(this.OnCMDCompleted != null) OnCMDCompleted.Invoke(this._currentCMD);
@@ -91,7 +91,7 @@ public class entity_computer : MonoBehaviour {
                         this._audioClips[0],
                         this.transform,
                         Random.Range(1f, 1.1f),
-                        3f, 0.2f);
+                        4f, 0.3f);
 
                     if (this._chatIndx < strSize - 1){
                         this._chatIndx += 1;
@@ -111,7 +111,7 @@ public class entity_computer : MonoBehaviour {
                             this._audioClips[0],
                             this.transform,
                             1.5f,
-                            3f, 0.2f);
+                            4f, 0.3f);
                 }
 
                 util_timer.simple(this.writeCooldown, () => {

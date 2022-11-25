@@ -14,6 +14,7 @@ set models=%models%;office_collision.vmf
 
 set models=%models%;basement.vmf
 set models=%models%;basement_props.vmf
+set models=%models%;basement_props_boxes.vmf
 set models=%models%;basement_collision.vmf
 
 REM PROPS------

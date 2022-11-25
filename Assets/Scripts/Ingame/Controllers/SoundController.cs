@@ -15,7 +15,7 @@ public class SoundController : MonoBehaviour {
 
     public SoundController() { Instance = this; }
 
-    public void Play3DSound(AudioClip clip, Transform position, float pitch = 1f, float maxDistance = 10, float volume = 1f) {
+    public entity_sound Play3DSound(AudioClip clip, Transform position, float pitch = 1f, float maxDistance = 10, float volume = 1f) {
         entity_sound snd = this.CreateSound();
 
         snd.SetClip(clip);
@@ -24,9 +24,11 @@ public class SoundController : MonoBehaviour {
         snd.SetVolume(volume);
 
         snd.PlayOnce();
+
+        return snd;
     }
 
-    public void PlaySound(AudioClip clip, float pitch = 1f, float volume = 1f) {
+    public entity_sound PlaySound(AudioClip clip, float pitch = 1f, float volume = 1f) {
         entity_sound snd = this.CreateSound();
         snd.SetClip(clip);
         snd.Set2D();
@@ -34,6 +36,7 @@ public class SoundController : MonoBehaviour {
         snd.SetVolume(volume);
 
         snd.PlayOnce();
+        return snd;
     }
 
     public entity_sound CreateSound() {

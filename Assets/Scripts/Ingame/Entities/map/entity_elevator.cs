@@ -7,6 +7,7 @@ public class entity_elevator : MonoBehaviour {
 
     public entity_button button;
     public entity_elevator teleTo;
+    public entity_item_spot itemSpot;
 
     [HideInInspector]
     public entity_movement elevatorGate;
@@ -15,6 +16,9 @@ public class entity_elevator : MonoBehaviour {
         private entity_teleport _teleport;
         private entity_player _ply;
         private AudioClip[] _audioClips;
+
+        private readonly float _elevatorTime = 4f;
+        private entity_sound _elevatorMoveSnd;
     #endregion
 
     public void Awake() {
@@ -60,13 +64,23 @@ public class entity_elevator : MonoBehaviour {
             this._ply = null;
         } else {
             util_timer.simple(0.25f, () => {
-                this._ply.shakeCamera(12f);
+                this._ply.shakeCamera(this._elevatorTime);
+
+                if(this.itemSpot.hasItem()) {
+                    this.teleTo.itemSpot.deleteItem(); // Clear any item on the other elevator, just in case
+                    this.teleTo.itemSpot.placeItem(this.itemSpot.takeItem(), true);
+                }
+
                 this._teleport.teleport(this.teleTo.transform);
 
                 SoundController.Instance.Play3DSound(this._audioClips[0], this.teleTo.transform);
-                SoundController.Instance.Play3DSound(this._audioClips[1], this.teleTo.transform);
 
-                util_timer.simple(12f, () => {
+                if(this._elevatorMoveSnd != null) this._elevatorMoveSnd.Destroy();
+                this._elevatorMoveSnd = SoundController.Instance.Play3DSound(this._audioClips[1], this.teleTo.transform);
+
+                util_timer.simple(this._elevatorTime, () => {
+                    if(this._elevatorMoveSnd != null) this._elevatorMoveSnd.Destroy();
+
                     // elevator DING sound
                     SoundController.Instance.Play3DSound(this._audioClips[2], this.teleTo.transform);
                     SoundController.Instance.Play3DSound(this._audioClips[3], this.teleTo.transform);

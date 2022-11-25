@@ -7,6 +7,7 @@ public class entity_item : MonoBehaviour {
     [Header("Settings")]
     public string id;
     public bool isBig = false;
+    public bool supportMultiplePickup = false;
     public Vector3 pickupAngle = Vector3.zero;
 
     private GameObject _owner;

@@ -26,15 +26,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8091f70352c44d540be19a12273c8ffe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.1643672
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8091f70352c44d540be19a12273c8ffe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.396
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8091f70352c44d540be19a12273c8ffe, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.1723983
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8091f70352c44d540be19a12273c8ffe, type: 3}
       propertyPath: m_LocalRotation.w
@@ -111,8 +111,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   size: 3
   weight: 0
-  region: 0
   paper: {fileID: 4472906231840273750}
+  region: 0
+  ID: 0
 --- !u!114 &1446414689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,6 +128,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: item_box
   isBig: 1
+  supportMultiplePickup: 0
+  pickupAngle: {x: 0, y: 0, z: 0}
 --- !u!4 &934573545422385367 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8091f70352c44d540be19a12273c8ffe, type: 3}

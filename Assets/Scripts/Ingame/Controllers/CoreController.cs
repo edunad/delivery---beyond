@@ -1,6 +1,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 using Random = UnityEngine.Random;
@@ -53,6 +54,15 @@ public class CoreController : MonoBehaviour {
     public entity_computer computer_client;
     public entity_button button_next_client;
 
+    #if UNITY_EDITOR
+        [Header("DEBUG")]
+        public GAMEPLAY_STATUS debugStatus;
+
+        [EditorButton("Set")]
+        public void Set() => this.setGameStatus(debugStatus);
+    #endif
+
+
     public delegate void onGameStatusUpdated(GAMEPLAY_STATUS oldStatus, GAMEPLAY_STATUS newStatus);
     public event onGameStatusUpdated OnGameStatusUpdated;
 
@@ -61,6 +71,8 @@ public class CoreController : MonoBehaviour {
         public Queue<entity_customer> customerQueue = new Queue<entity_customer>();
         [HideInInspector]
         public Dictionary<GAME_REGIONS, Tuple<List<GAME_COUNTRIES>, Color>> floppyCodes = new Dictionary<GAME_REGIONS, Tuple<List<GAME_COUNTRIES>, Color>>();
+        [HideInInspector]
+        public Dictionary<int, bool> boxCodes = new Dictionary<int, bool>();
         [HideInInspector]
         public entity_customer servingClient;
         [HideInInspector]
@@ -76,6 +88,7 @@ public class CoreController : MonoBehaviour {
     public void Awake() {
         this.generateQUEUE();
         this.generateFloppies();
+        this.generateBoxCodes();
 
         this.setupEvents();
         this.setGameStatus(GAMEPLAY_STATUS.IDLE);
@@ -102,6 +115,8 @@ public class CoreController : MonoBehaviour {
     }
 
     public void proccedEvent() {
+        if(this.servingClient == null) throw new Exception("Missing client");
+
         if(status == GAMEPLAY_STATUS.ITEM_REQUESTED) {
             this.servingClient.chat(ChatType.OK_ITEM);
 
@@ -136,8 +151,7 @@ public class CoreController : MonoBehaviour {
 
             this.setGameStatus(GAMEPLAY_STATUS.COMPLETING);
         } else if(status == GAMEPLAY_STATUS.ITEM_RETRIEVE) {
-            this.computer_client.queueCmd("=--=--=--=--=");
-            this.computer_client.queueCmd("$PLEASE RETRIEVE ITEM ID '"+ this.servingClient.getSetting<int>("box_id") +"'");
+            this.computer_client.queueCmd("ITEM ID '"+ this.servingClient.getSetting<int>("box_id") +"'");
         } else if(status == GAMEPLAY_STATUS.COMPLETING) {
             if(this.servingClient.hasRequestsRemaining()) {
                 this.setGameStatus(GAMEPLAY_STATUS.ITEM_REQUESTED);
@@ -146,6 +160,28 @@ public class CoreController : MonoBehaviour {
                 this.completeClient();
             }
         }
+    }
+
+    public bool validateCountry(GAME_COUNTRIES country, GAME_REGIONS region) {
+        return floppyCodes[region].Item1.Contains(country);
+    }
+
+    public int reserveBoxCode() {
+        var keys = CoreController.Instance.boxCodes.Keys.ToList();
+        int key = keys[Random.Range(0, keys.Count)];
+        while(CoreController.Instance.boxCodes[key]) key = keys[Random.Range(0, keys.Count)];
+
+        CoreController.Instance.boxCodes[key] = true;
+        return key;
+    }
+
+    public void setGameStatus(GAMEPLAY_STATUS status) {
+        if(this.status == status) return;
+
+        if(this.OnGameStatusUpdated != null) this.OnGameStatusUpdated.Invoke(this.status, status);
+        this.status = status;
+
+        Debug.Log("Setting game status to: " + status.ToString());
     }
 
     private void completeClient() {
@@ -158,10 +194,6 @@ public class CoreController : MonoBehaviour {
         // Move client
         this.prop_client.reverse = true;
         this.prop_client.start();
-    }
-
-    public bool validateCountry(GAME_COUNTRIES country, GAME_REGIONS region) {
-        return floppyCodes[region].Item1.Contains(country);
     }
 
     private void setupEvents() {
@@ -200,11 +232,14 @@ public class CoreController : MonoBehaviour {
         }
     }
 
-    private void setGameStatus(GAMEPLAY_STATUS status) {
-        if(this.status == status) return;
+    private void generateBoxCodes() {
+        this.boxCodes.Clear();
 
-        if(this.OnGameStatusUpdated != null) this.OnGameStatusUpdated.Invoke(this.status, status);
-        this.status = status;
+        for(int i = 0; i < 80; i++) {
+            int id = Random.Range(1000,9999);
+            while(this.boxCodes.ContainsKey(id)) id = Random.Range(1000,9999);
+            this.boxCodes.Add(id, false);
+        }
     }
 
     private void generateFloppies() {
@@ -276,12 +311,14 @@ public class CoreController : MonoBehaviour {
                 }
             }
 
-            for(int i = 0; i < dt.Count; i++) this.computer_client.queueCmd("   "+(i+1)+". " + dt[i]);
+            for(int i = 0; i < dt.Count; i++) this.computer_client.queueCmd("   " + (i+1) + ". " + dt[i]);
 
             if(this.servingClient.currentRequest == RequestType.WANT_SEND_BOX) {
                 this.servingClient.chat(ChatType.PLACED_ITEM);
                 this.setGameStatus(GAMEPLAY_STATUS.WEIGHT_ITEM);
             } else if(this.servingClient.currentRequest == RequestType.WANT_RETRIEVE_BOX) {
+                this.computer_client.queueCmd("=--=--=--=--=");
+                this.computer_client.queueCmd("$PLEASE PICKUP DELIVERY TICKET");
                 this.setGameStatus(GAMEPLAY_STATUS.ITEM_RETRIEVE);
             } else {
                 this.setGameStatus(GAMEPLAY_STATUS.ITEM_REQUESTED);

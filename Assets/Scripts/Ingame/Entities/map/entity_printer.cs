@@ -13,7 +13,7 @@ public class entity_printer : MonoBehaviour {
     #endregion
 
     public void Awake() {
-        this._spot = GetComponentInChildren<entity_item_spot>();
+        this._spot = GetComponentInChildren<entity_item_spot>(true);
         this._spot.setLocked(true);
 
         this._audioClips = new AudioClip[] {

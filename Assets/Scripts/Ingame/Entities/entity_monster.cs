@@ -14,16 +14,19 @@ public class entity_monster : MonoBehaviour {
     public Transform startPoint;
 
     #region PRIVATE
+        private ParticleSystem _particles;
         private NavMeshAgent _agent;
         private bool _thinking;
     #endregion
 
     public void Awake() {
+        this._particles = GetComponentInChildren<ParticleSystem>(true);
+
         this._agent = GetComponent<NavMeshAgent>();
         this._agent.updateRotation = false;
         this._agent.speed = this.speed;
 
-        this.pickDestination();
+        CoreController.Instance.OnGameStatusUpdated += this.gameStatusChange;
     }
 
     public void pickDestination() {
@@ -50,5 +53,9 @@ public class entity_monster : MonoBehaviour {
             if(i == this.points.Count - 1) Gizmos.color = new Color(1f, 0f, 1f, 1f);
             Gizmos.DrawCube(this.points[i] + this.startPoint.position, new Vector3(0.1f, 0.1f, 0.1f));
         }
+    }
+
+    private void gameStatusChange(GAMEPLAY_STATUS prevStatus, GAMEPLAY_STATUS newStatus) {
+        this.gameObject.SetActive(newStatus == GAMEPLAY_STATUS.ITEM_RETRIEVE);
     }
 }

@@ -10,7 +10,7 @@ public class entity_floppy_container : MonoBehaviour {
     private void gameStatusChange(GAMEPLAY_STATUS prevStatus, GAMEPLAY_STATUS newStatus) {
         if(prevStatus != GAMEPLAY_STATUS.PREPARING || newStatus != GAMEPLAY_STATUS.IDLE) return;
 
-        entity_floppy[] floppies = GetComponentsInChildren<entity_floppy>();
+        entity_floppy[] floppies = GetComponentsInChildren<entity_floppy>(true);
         var codes = CoreController.Instance.floppyCodes;
 
         for(int i = 0; i < codes.Count; i++) {

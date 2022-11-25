@@ -117,7 +117,7 @@ public class entity_customer : MonoBehaviour {
                     this.settings.Add("box_size", (BoxSize)sizes.GetValue(Random.Range(0, sizes.Length)));
                 }
             } else if(request == RequestType.WANT_RETRIEVE_BOX) {
-                this.settings.Add("box_id", Random.Range(0, 1000));
+                this.settings.Add("box_id", CoreController.Instance.reserveBoxCode());
             }
         }
     }

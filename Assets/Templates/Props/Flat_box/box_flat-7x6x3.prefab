@@ -145,4 +145,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: item_flat_box
   isBig: 1
+  supportMultiplePickup: 0
   pickupAngle: {x: 0, y: 0, z: 0}

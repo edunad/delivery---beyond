@@ -87,20 +87,22 @@ public class entity_item_spot : MonoBehaviour {
         if(!this.canAcceptItem(itm) || (!systemSpawn && this.isLocked())) return false;
 
         this.item = itm;
-        StartCoroutine(this.setItemToGlue(this.item)); // Do it next tick, so affects bounds.extends
+        this.fixPosition();
 
         if(!systemSpawn && OnItemDrop != null) OnItemDrop(itm);
         return true;
     }
 
-    private IEnumerator setItemToGlue(entity_item itm) {
-        Collider collider = itm.gameObject.GetComponent<Collider>();
+    public void fixPosition() {
+        if(this.item == null) return;
+
+        Collider collider = this.item.gameObject.GetComponent<Collider>();
         if(collider == null) throw new System.Exception("Invalid entity_item, missing a collider");
 
-        itm.setOwner(this.gameObject, this.glue.transform);
-        itm.gameObject.transform.localRotation = Quaternion.identity;
+        this.item.setOwner(this.gameObject, this.glue.transform);
+        this.item.gameObject.transform.localRotation = Quaternion.identity;
 
-        yield return new WaitForFixedUpdate();
+        Physics.SyncTransforms();
 
         Vector3 placementPos = Vector3.zero;
         switch(this.placementPosition) {
@@ -112,6 +114,8 @@ public class entity_item_spot : MonoBehaviour {
                 this.glue.transform.localPosition = new Vector3(placementPos.x, size.y + placementPos.y, placementPos.z);
                 break;
         }
+
+        Physics.SyncTransforms();
     }
 
     #if UNITY_EDITOR
@@ -148,7 +152,8 @@ public class entity_item_spot : MonoBehaviour {
 
             if(this.item != null) {
                 Undo.RegisterCompleteObjectUndo(this.item, "Undo setup");
-                EditorCoroutine.addCoroutine(this.setItemToGlue(this.item)); // Do it next tick, so affects bounds.extends
+                this.fixPosition();
+                //EditorCoroutine.addCoroutine(this.setItemToGlue(this.item)); // Do it next tick, so affects bounds.extends
             }
         }
     #endif

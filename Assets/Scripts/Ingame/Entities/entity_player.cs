@@ -26,7 +26,10 @@ public class entity_player : MonoBehaviour {
 	public float sensitivity = 10f;
 
 	[HideInInspector]
-	public entity_item holdingItem; // TODO: Support multiple items?
+	public entity_item big_holding_item;
+
+	[HideInInspector]
+	public entity_item small_holding_item;
 
 	// PRIVATE ---
 	#region PRIVATE
@@ -56,7 +59,7 @@ public class entity_player : MonoBehaviour {
 	public void Awake () {
 		this._controller = GetComponent<CharacterController>();
 
-		this._camera = GetComponentInChildren<Camera>();
+		this._camera = GetComponentInChildren<Camera>(true);
 		this._originalCamZoom = this._camera.fieldOfView;
 
 		// Hide cursor
@@ -91,8 +94,9 @@ public class entity_player : MonoBehaviour {
 				// TODO: Draw highlight on shader
 			}
 
-			if(Input.GetMouseButtonDown(0) && this.holdingItem != null) {
-				this.holdingItem.BroadcastMessage("onPrimaryUse", this, SendMessageOptions.DontRequireReceiver);
+			if(Input.GetMouseButtonDown(0) && this.isHoldingItem()) {
+				if(this.small_holding_item != null) this.small_holding_item.BroadcastMessage("onPrimaryUse", this, SendMessageOptions.DontRequireReceiver);
+				if(this.big_holding_item != null) this.big_holding_item.BroadcastMessage("onPrimaryUse", this, SendMessageOptions.DontRequireReceiver);
 			}
 
 			if(Input.GetMouseButton(1)) {
@@ -148,18 +152,29 @@ public class entity_player : MonoBehaviour {
 	}
 
 	public bool isHoldingItem() {
-		return this.holdingItem != null;
+		return this.big_holding_item != null || this.small_holding_item != null;
+	}
+
+	public bool isHoldingItem(bool big) {
+		if(big) return this.big_holding_item != null;
+		else return this.small_holding_item != null;
 	}
 
 	private void holdObject(entity_item pick) {
-		if(pick == null || this.isHoldingItem()) return;
+		if(pick == null) return;
 
-		this.holdingItem = pick;
+		bool isBig = pick.isBig;
+		if(this.isHoldingItem(isBig)) return;
 
 		Transform pos = small_item_position;
-		if(pick.isBig) pos = big_item_position;
+		if(isBig) {
+			this.big_holding_item = pick;
+			pos = big_item_position;
+		} else {
+ 			this.small_holding_item = pick;
+		}
 
-		this.holdingItem.setOwner(this.gameObject, pos);
+		pick.setOwner(this.gameObject, pos);
 	}
 
 	public void onUse(GameObject obj) {
@@ -170,40 +185,54 @@ public class entity_player : MonoBehaviour {
 			if(spot == null) throw new System.Exception("Invalid entity_item_spot");
 
 			if(spot.hasItem()) {
-				if(this.isHoldingItem()) return;
+				if(this.isHoldingItem() && !spot.item.supportMultiplePickup) return;
+
+				if(this.isHoldingItem(spot.item.isBig)) return;
 				this.holdObject(spot.takeItem());
 			} else {
-				if(!this.isHoldingItem()) return;
-				if(spot.placeItem(this.holdingItem)) this.holdingItem = null;
+				if(this.isHoldingItem(false)) {
+					if(spot.placeItem(this.small_holding_item)) this.small_holding_item = null;
+				}
+
+				if(this.isHoldingItem(true)) {
+					if(spot.placeItem(this.big_holding_item)) this.big_holding_item = null;
+				}
 			}
 		} else if(obj.name.StartsWith("itm-spawner-")) {
-			if(this.isHoldingItem()) return;
-
 			entity_item_spawner spawner = obj.GetComponent<entity_item_spawner>();
 			if(spawner == null) throw new System.Exception("Invalid entity_item_spawner");
-			if(spawner.canSpawnItem()) this.holdObject(spawner.takeItem(this.gameObject));
+			if(spawner.canSpawnItem()) {
+				entity_item itm = spawner.getItem(spawner.template);
+
+				if(this.isHoldingItem() && !itm.supportMultiplePickup) return;
+				if(this.isHoldingItem(itm.isBig)) return;
+
+				this.holdObject(spawner.takeItem(this.gameObject));
+			}
+
 		} else if(obj.name.StartsWith("itm-trash-")) {
 			if(!this.isHoldingItem()) return;
 
 			entity_item_trash trash = obj.GetComponent<entity_item_trash>();
 			if(trash == null) throw new System.Exception("Invalid entity_item_trash");
 
-			if(trash.canTrash(this.holdingItem.id)) trash.trashItem(this.holdingItem);
+			if(trash.canTrash(this.small_holding_item)) {
+				trash.trashItem(this.small_holding_item);
+				this.small_holding_item = null;
+			}
+
+			if(trash.canTrash(this.big_holding_item)) {
+				trash.trashItem(this.big_holding_item);
+				this.big_holding_item = null;
+			}
+
 		} else if(obj.name.StartsWith("btn-")) {
 			if(this.isHoldingItem()) return;
+
 			entity_button btn = obj.GetComponent<entity_button>();
 			if(btn == null) throw new System.Exception("Invalid entity_button");
 
 			btn.onPlayerUse(this);
 		}
 	}
-
-	/* *************
-     * DEBUG
-     ===============*/
-    public void OnDrawGizmos() {
-        Gizmos.color = Color.cyan;
-		//Gizmos.DrawLine(this.transform.position, this.transform.forward * this.maxGrabDistance);
-        Gizmos.color = Color.white;
-    }
 }

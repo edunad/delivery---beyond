@@ -32,11 +32,33 @@ public class entity_client_deliver_spot : MonoBehaviour {
     }
 
     private void onItemDrop(entity_item itm) {
+        if(CoreController.Instance.status != GAMEPLAY_STATUS.ITEM_RETRIEVE || itm.id != "item_box_shipment") return;
 
+        entity_customer client = CoreController.Instance.servingClient;
+        if(client == null) throw new System.Exception("Missing client!");
+
+        entity_box box = itm.gameObject.GetComponent<entity_box>();
+        if(box == null) throw new System.Exception("Invalid box template, missing entity_box");
+
+        this._spot.setLocked(true);
+
+        util_timer.simple(0.5f, () => {
+            this._spot.deleteItem();
+
+            if(box.ID != client.getSetting<int>("box_id")) {
+                CoreController.Instance.penalize("Wrong box delivered");
+            }
+
+            CoreController.Instance.setGameStatus(GAMEPLAY_STATUS.COMPLETING);
+            CoreController.Instance.proccedEvent();
+        });
     }
 
     private void gameStatusChange(GAMEPLAY_STATUS prevStatus, GAMEPLAY_STATUS newStatus) {
-        this._spot.setLocked(newStatus != GAMEPLAY_STATUS.WEIGHT_ITEM && newStatus != GAMEPLAY_STATUS.ITEM_RETRIEVE);
+        bool isOK = newStatus == GAMEPLAY_STATUS.WEIGHT_ITEM || newStatus == GAMEPLAY_STATUS.ITEM_RETRIEVE;
+
+        this._spot.setLocked(!isOK);
+        if(!isOK) this._spot.deleteItem();
 
         if(newStatus == GAMEPLAY_STATUS.WEIGHT_ITEM) {
             entity_customer customer = CoreController.Instance.servingClient;

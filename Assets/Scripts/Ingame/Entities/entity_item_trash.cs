@@ -21,6 +21,11 @@ public class entity_item_trash : MonoBehaviour {
     }
 
     public bool canTrash(string itemId) { return !this.disabled && this.whitelist.Contains(itemId); }
+    public bool canTrash(entity_item itm) {
+        if(itm == null) return false;
+        return this.canTrash(itm.id);
+    }
+
     public bool trashItem(entity_item item) {
         if(!this.canTrash(item.id)) return false;
         DestroyImmediate(item.gameObject);

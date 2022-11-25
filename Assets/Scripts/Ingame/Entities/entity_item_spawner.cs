@@ -26,17 +26,19 @@ public class entity_item_spawner : MonoBehaviour {
     public bool isInfinite() { return this.count == -1; }
     public bool canSpawnItem() { return this.disabled || this.isInfinite() || this.count > 0; }
     public void setDisabled(bool disabled) { this.disabled = disabled; }
-
     public entity_item takeItem(GameObject taker) {
         if(!this.canSpawnItem()) return null;
 
         GameObject instance = GameObject.Instantiate(this.template);
         instance.SetActive(true);
 
-        entity_item itm = instance.GetComponent<entity_item>();
-        if(itm == null) throw new System.Exception("Invalid item template, missing entity_item");
-
         if(!this.isInfinite()) this.count = Mathf.Min(this.count - 1, 0);
+        return this.getItem(instance);
+    }
+
+    public entity_item getItem(GameObject obj) {
+        entity_item itm = obj.GetComponent<entity_item>();
+        if(itm == null) throw new System.Exception("Invalid item template, missing entity_item");
         return itm;
     }
 
