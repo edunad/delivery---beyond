@@ -7,7 +7,7 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 
 [DisallowMultipleComponent]
-[DefaultExecutionOrder(1)]
+[DefaultExecutionOrder(2)]
 public class CoreController : MonoBehaviour {
 	public static CoreController Instance;
 
@@ -59,6 +59,8 @@ public class CoreController : MonoBehaviour {
 
         this.setupEvents();
         this.setGameStatus(GAMEPLAY_STATUS.IDLE);
+
+        Debug.Log("Startup");
     }
 
     public void Update() {

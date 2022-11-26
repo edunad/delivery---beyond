@@ -22,9 +22,6 @@ public class entity_player : MonoBehaviour {
 	public Transform big_item_position;
 	public Transform small_item_position;
 
-	[Header("Camera")]
-	public float sensitivity = 10f;
-
 	[HideInInspector]
 	public entity_item big_holding_item;
 
@@ -47,10 +44,11 @@ public class entity_player : MonoBehaviour {
 		#region CAMERA
 			private float _camRotationY;
 			private float _originalCamZoom;
+			private int _sensitivity;
 		#endregion
 
 		#region OTHER
-			private bool _frozen;
+			private bool _frozen = false;
 		#endregion
 	#endregion
 
@@ -67,6 +65,25 @@ public class entity_player : MonoBehaviour {
 		Cursor.visible = false;
 
 		this.name = "entity_player";
+
+		this._sensitivity = PlayerPrefs.GetInt("sensitivity", 3);
+
+		OptionsController.Instance.OnSettingsUpdated += (string id, object val) => {
+			if(id != "sensitivity") return;
+			this._sensitivity = (int)val;
+		};
+
+		OptionsController.Instance.OnOptionsMenuUpdate += (bool open) => {
+			this._frozen = open;
+
+			if(open) {
+				Cursor.lockState = CursorLockMode.Confined;
+				Cursor.visible = true;
+			} else {
+				Cursor.lockState = CursorLockMode.Locked;
+				Cursor.visible = false;
+			}
+		};
 	}
 
 	public void Update() {
@@ -80,11 +97,11 @@ public class entity_player : MonoBehaviour {
 
 		if(this._camera != null) {
 			// Camera movement
-			_camRotationY += Input.GetAxis("Mouse Y") * sensitivity;
-			_camRotationY = Mathf.Clamp(_camRotationY, -90f, 90f);
+			this._camRotationY += Input.GetAxis("Mouse Y") * this._sensitivity;
+			this._camRotationY = Mathf.Clamp(_camRotationY, -90f, 90f);
 
 			this._camera.transform.localRotation = Quaternion.Euler(-_camRotationY, 0f, 0f);
-			transform.Rotate(0, Input.GetAxis("Mouse X") * sensitivity, 0);
+			this.transform.Rotate(0, Input.GetAxis("Mouse X") * this._sensitivity, 0);
 			// --------------
 
 			// INPUTS
@@ -145,10 +162,6 @@ public class entity_player : MonoBehaviour {
 			this._isCameraShaking = false;
 			this._camera.transform.localPosition = Vector3.zero;
 		});
-	}
-
-	public void freeze(bool set) {
-		this._frozen = set;
 	}
 
 	public bool isHoldingItem() {

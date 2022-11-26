@@ -1,38 +1,66 @@
 
+using TMPro;
 using UnityEngine;
 
+[RequireComponent(typeof(BoxCollider2D))]
+[RequireComponent(typeof(TextMeshPro))]
 public class ui_button : MonoBehaviour {
 
+    [Header("Settings")]
     public string id;
-    public GameObject target;
-    public Camera uiCamera;
-    public Rect clickArea;
+    public GameObject targetObject;
+    public float cooldown = 0.3f;
+    public bool canHoldMouse = false;
 
-    public void Update() {
-        if(!Input.GetMouseButtonDown(0)) return;
+    #region PRIVATE
+        private float _tapCD;
+        private bool _isEnabled;
+        private bool _mouseDown;
+        private TextMeshPro _text;
+        private readonly Color32 _normalColor = new Color32(180, 180, 180, 255);
+    #endregion
 
-        if(this.target == null) return;
-        if(this.uiCamera == null || !this.uiCamera.enabled) return;
+    public void Awake() {
+        this._text = GetComponent<TextMeshPro>();
 
-        Vector2 pos = Input.mousePosition;
-        Vector3 uiStart = this.transform.position + new Vector3(clickArea.x, clickArea.y, 0f);
-
-        Vector2 startPos = this.uiCamera.WorldToScreenPoint(uiStart);
-        Vector2 endPos = this.uiCamera.WorldToScreenPoint(uiStart + new Vector3(clickArea.width, clickArea.height, 0f));
-
-        if (pos.x >= startPos.x && pos.x <= endPos.x && pos.y >= startPos.y && pos.y <= endPos.y) {
-            this.target.SendMessage("OnUIClick", this.id, SendMessageOptions.RequireReceiver);
-        }
+        this.setColor(this._normalColor);
+        this._isEnabled = true;
     }
 
-    public void OnDrawGizmos() {
-        Vector3 col = this.transform.position + new Vector3(clickArea.x, clickArea.y, 0f);
+    public void OnMouseOver() {
+        if (!this._isEnabled) return;
+        this.setColor(Color.white);
+    }
 
-        float offsetX = col.x + clickArea.width / 2;
-        float offsetY = col.y + clickArea.height / 2;
+    public void OnMouseExit() {
+        if (!this._isEnabled) return;
+        this.setColor(this._normalColor);
+    }
 
-        // Draw duck area
-        Gizmos.color = new Color(255, 0, 255, 100);
-        Gizmos.DrawWireCube(new Vector3(offsetX, offsetY, col.z), new Vector3(clickArea.width, clickArea.height, col.z + 0.5f));
+    public void OnMouseDown() {
+        this._mouseDown = true;
+    }
+
+    public void OnMouseUp() {
+        this._mouseDown = false;
+    }
+
+    public void Update() {
+        if (!this._mouseDown || !this._isEnabled) return;
+        if (this._tapCD > Time.time - this.cooldown) return;
+
+        // Stop pressing
+        if (!this.canHoldMouse) this._mouseDown = false;
+
+        this._tapCD = Time.time; // Prevent spamming
+        this.targetObject.SendMessage("OnUIClick", this.id, SendMessageOptions.DontRequireReceiver);
+    }
+
+    public void isEnabled(bool enabled) {
+        this._isEnabled = enabled;
+    }
+
+    private void setColor(Color cl) {
+        this._text.color = cl;
     }
 }

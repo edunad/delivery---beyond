@@ -43,9 +43,7 @@ public class SoundController : MonoBehaviour {
         entity_sound snd = null;
 
         if (this._soundPool.Count <= 0) {
-            GameObject obj = Instantiate<GameObject>(soundTemplate);
-            obj.transform.parent = this.gameObject.transform;
-
+            GameObject obj = Instantiate<GameObject>(soundTemplate, Vector3.zero, Quaternion.identity, this.gameObject.transform);
             snd = obj.GetComponent<entity_sound>();
             if (snd == null)
                 throw new UnityException("Invalid soundTemplate, missing entity_sound");

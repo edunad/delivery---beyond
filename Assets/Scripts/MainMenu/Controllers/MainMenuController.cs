@@ -1,5 +1,6 @@
 
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [DisallowMultipleComponent]
 public class MainMenuController : MonoBehaviour {
@@ -10,11 +11,7 @@ public class MainMenuController : MonoBehaviour {
     #region PRIVATE
     #endregion
 	public static MainMenuController Instance;
-
     public MainMenuController() { Instance = this; }
-    public void Awake() {
-
-	}
 
     public void Update() {
         if(this.sceneCamera == null) return;
@@ -24,10 +21,14 @@ public class MainMenuController : MonoBehaviour {
     }
 
     public void OnUIClick(string id) {
-        if(id == "new_game") {
+        if(id == "newgame") {
+            int sceneID = SceneManager.GetActiveScene().buildIndex;
+
+            PlayerPrefs.SetInt("loading_scene_index", sceneID + 1);
+            SceneManager.LoadScene("loading", LoadSceneMode.Single);
 
         } else if(id == "options") {
-
+            OptionsController.Instance.displayOptions(true);
         } else if(id == "quit") {
             Application.Quit();
         }
