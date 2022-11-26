@@ -1,7 +1,6 @@
 
 using UnityEngine;
 
-[RequireComponent(typeof(SpriteRenderer))]
 public class ui_button : MonoBehaviour {
 
     public string id;
@@ -9,14 +8,8 @@ public class ui_button : MonoBehaviour {
     public Camera uiCamera;
     public Rect clickArea;
 
-    private SpriteRenderer _render;
-
-    public void Awake() {
-        this._render = GetComponent<SpriteRenderer>();
-    }
-
     public void Update() {
-        if(!Input.GetMouseButton(0)) return;
+        if(!Input.GetMouseButtonDown(0)) return;
 
         if(this.target == null) return;
         if(this.uiCamera == null || !this.uiCamera.enabled) return;
@@ -28,7 +21,6 @@ public class ui_button : MonoBehaviour {
         Vector2 endPos = this.uiCamera.WorldToScreenPoint(uiStart + new Vector3(clickArea.width, clickArea.height, 0f));
 
         if (pos.x >= startPos.x && pos.x <= endPos.x && pos.y >= startPos.y && pos.y <= endPos.y) {
-            Debug.Log("click");
             this.target.SendMessage("OnUIClick", this.id, SendMessageOptions.RequireReceiver);
         }
     }

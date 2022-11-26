@@ -17,6 +17,8 @@ set models=%models%;basement_props.vmf
 set models=%models%;basement_props_boxes.vmf
 set models=%models%;basement_collision.vmf
 
+set models=%models%;mainmenu.vmf
+
 REM PROPS------
 
 set models=%models%;props/box.vmf

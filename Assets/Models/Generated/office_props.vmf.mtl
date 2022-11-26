@@ -206,14 +206,6 @@ map_Ka materials/wood/woodwall005a.tga
 map_Kd materials/wood/woodwall005a.tga
 
 
-newmtl delivery_beyond/metalwalkway012_1k_color
-Ka 1.000 1.000 1.000
-Kd 1.000 1.000 1.000
-Ks 0.000 0.000 0.000
-map_Ka materials/delivery_beyond/metalwalkway012_1k_color.tga
-map_Kd materials/delivery_beyond/metalwalkway012_1k_color.tga
-
-
 newmtl metal/metalcombinegrate001a
 Ka 1.000 1.000 1.000
 Kd 1.000 1.000 1.000
@@ -310,4 +302,12 @@ Kd 1.000 1.000 1.000
 Ks 0.000 0.000 0.000
 map_Ka materials/delivery_beyond/speaker.tga
 map_Kd materials/delivery_beyond/speaker.tga
+
+
+newmtl props/metalpanel003a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/props/metalpanel003a.tga
+map_Kd materials/props/metalpanel003a.tga
 

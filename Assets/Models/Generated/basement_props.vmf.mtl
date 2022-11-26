@@ -73,6 +73,14 @@ map_Ka materials/delivery_beyond/paintedmetal016_1k_color.tga
 map_Kd materials/delivery_beyond/paintedmetal016_1k_color.tga
 
 
+newmtl delivery_beyond/tutorial_basement_sign
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/delivery_beyond/tutorial_basement_sign.tga
+map_Kd materials/delivery_beyond/tutorial_basement_sign.tga
+
+
 newmtl metal/metalgrate008a
 Ka 1.000 1.000 1.000
 Kd 1.000 1.000 1.000
