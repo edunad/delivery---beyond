@@ -1,12 +1,12 @@
 # Decompiled with VMF2OBJ v2.0.0 by Dylancyclone
 
 
-newmtl dev/graygrid
+newmtl wood/woodshelf001a
 Ka 1.000 1.000 1.000
 Kd 1.000 1.000 1.000
 Ks 0.000 0.000 0.000
-map_Ka materials/dev/graygrid.tga
-map_Kd materials/dev/graygrid.tga
+map_Ka materials/wood/woodshelf001a.tga
+map_Kd materials/wood/woodshelf001a.tga
 
 
 newmtl delivery_beyond/magazine_pages

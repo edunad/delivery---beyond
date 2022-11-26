@@ -1,0 +1,10 @@
+public enum GAMEPLAY_STATUS {
+    PREPARING = 0,
+    IDLE,
+    SERVING,
+    ITEM_REQUESTED,
+    ITEM_RETRIEVE,
+    THINKING,
+    WEIGHT_ITEM,
+    COMPLETING
+}

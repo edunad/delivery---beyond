@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "6440"
-	"mapversion" "5"
+	"mapversion" "7"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -20,22 +20,22 @@ viewsettings
 world
 {
 	"id" "1"
-	"mapversion" "5"
+	"mapversion" "7"
 	"classname" "worldspawn"
-	"skyname" "sky_day01_01"
-	"maxpropscreenwidth" "-1"
-	"detailvbsp" "detail.vbsp"
 	"detailmaterial" "detail/detailsprites"
+	"detailvbsp" "detail.vbsp"
+	"maxpropscreenwidth" "-1"
+	"skyname" "sky_day01_01"
 	solid
 	{
 		"id" "3"
 		side
 		{
 			"id" "36"
-			"plane" "(-1 33 -16) (1 33 -16) (1 -33 -16)"
-			"material" "DEV/DEV_BLENDMEASURE"
-			"uaxis" "[1 0 0 -72] 0.25"
-			"vaxis" "[0 -1 0 24] 0.25"
+			"plane" "(-1 33 -30) (1 33 -30) (1 -33 -30)"
+			"material" "DELIVERY_BEYOND/METAL038_1K_COLOR"
+			"uaxis" "[1 0 0 -24] 0.25"
+			"vaxis" "[0 -1 0 -48] 0.25"
 			"rotation" "0"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
@@ -43,10 +43,10 @@ world
 		side
 		{
 			"id" "35"
-			"plane" "(-1 -33 -17) (1 -33 -17) (1 33 -17)"
-			"material" "DEV/DEV_BLENDMEASURE"
-			"uaxis" "[1 0 0 -72] 0.25"
-			"vaxis" "[0 -1 0 24] 0.25"
+			"plane" "(-1 -33 -31) (1 -33 -31) (1 33 -31)"
+			"material" "DELIVERY_BEYOND/METAL038_1K_COLOR"
+			"uaxis" "[1 0 0 -24] 0.25"
+			"vaxis" "[0 -1 0 -48] 0.25"
 			"rotation" "0"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
@@ -54,10 +54,10 @@ world
 		side
 		{
 			"id" "34"
-			"plane" "(-1 33 -16) (-1 -33 -16) (-1 -33 -17)"
-			"material" "DEV/DEV_BLENDMEASURE"
+			"plane" "(-1 33 -30) (-1 -33 -30) (-1 -33 -31)"
+			"material" "DELIVERY_BEYOND/METAL038_1K_COLOR"
 			"uaxis" "[0 1 0 -24] 0.25"
-			"vaxis" "[0 0 -1 16] 0.25"
+			"vaxis" "[0 0 -1 -48] 0.25"
 			"rotation" "0"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
@@ -65,10 +65,10 @@ world
 		side
 		{
 			"id" "33"
-			"plane" "(1 33 -17) (1 -33 -17) (1 -33 -16)"
-			"material" "DEV/DEV_BLENDMEASURE"
+			"plane" "(1 33 -31) (1 -33 -31) (1 -33 -30)"
+			"material" "DELIVERY_BEYOND/METAL038_1K_COLOR"
 			"uaxis" "[0 1 0 -24] 0.25"
-			"vaxis" "[0 0 -1 16] 0.25"
+			"vaxis" "[0 0 -1 -48] 0.25"
 			"rotation" "0"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
@@ -76,10 +76,10 @@ world
 		side
 		{
 			"id" "32"
-			"plane" "(1 33 -16) (-1 33 -16) (-1 33 -17)"
-			"material" "DEV/DEV_BLENDMEASURE"
-			"uaxis" "[1 0 0 -72] 0.25"
-			"vaxis" "[0 0 -1 16] 0.25"
+			"plane" "(1 33 -30) (-1 33 -30) (-1 33 -31)"
+			"material" "DELIVERY_BEYOND/METAL038_1K_COLOR"
+			"uaxis" "[1 0 0 -24] 0.25"
+			"vaxis" "[0 0 -1 -48] 0.25"
 			"rotation" "0"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
@@ -87,10 +87,10 @@ world
 		side
 		{
 			"id" "31"
-			"plane" "(1 -33 -17) (-1 -33 -17) (-1 -33 -16)"
-			"material" "DEV/DEV_BLENDMEASURE"
-			"uaxis" "[1 0 0 -72] 0.25"
-			"vaxis" "[0 0 -1 16] 0.25"
+			"plane" "(1 -33 -31) (-1 -33 -31) (-1 -33 -30)"
+			"material" "DELIVERY_BEYOND/METAL038_1K_COLOR"
+			"uaxis" "[1 0 0 -24] 0.25"
+			"vaxis" "[0 0 -1 -48] 0.25"
 			"rotation" "0"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
@@ -109,7 +109,7 @@ world
 		side
 		{
 			"id" "42"
-			"plane" "(0 -32 45) (-1 -32 45) (-1 32 45)"
+			"plane" "(0 -32 31) (-1 -32 31) (-1 32 31)"
 			"material" "DEV/DEV_BLENDMEASURE"
 			"uaxis" "[0 1 0 4] 0.25"
 			"vaxis" "[1 0 0 -60] 0.25"
@@ -120,7 +120,7 @@ world
 		side
 		{
 			"id" "41"
-			"plane" "(0 32 -16) (-1 32 -16) (-1 -32 -16)"
+			"plane" "(0 32 -30) (-1 32 -30) (-1 -32 -30)"
 			"material" "DEV/DEV_BLENDMEASURE"
 			"uaxis" "[0 1 0 4] 0.25"
 			"vaxis" "[1 0 0 -60] 0.25"
@@ -131,10 +131,10 @@ world
 		side
 		{
 			"id" "40"
-			"plane" "(0 -32 -16) (-1 -32 -16) (-1 -32 45)"
+			"plane" "(0 -32 -30) (-1 -32 -30) (-1 -32 31)"
 			"material" "DEV/DEV_BLENDMEASURE"
 			"uaxis" "[-1 0 0 60] 0.25"
-			"vaxis" "[0 0 -1 -120] 0.25"
+			"vaxis" "[0 0 -1 -48] 0.25"
 			"rotation" "0"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
@@ -142,10 +142,10 @@ world
 		side
 		{
 			"id" "39"
-			"plane" "(-1 32 -16) (0 32 -16) (0 32 45)"
+			"plane" "(-1 32 -30) (0 32 -30) (0 32 31)"
 			"material" "DEV/DEV_BLENDMEASURE"
 			"uaxis" "[-1 0 0 60] 0.25"
-			"vaxis" "[0 0 -1 -120] 0.25"
+			"vaxis" "[0 0 -1 -48] 0.25"
 			"rotation" "0"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
@@ -153,10 +153,10 @@ world
 		side
 		{
 			"id" "38"
-			"plane" "(-1 -32 -16) (-1 32 -16) (-1 32 45)"
-			"material" "DEV/DEV_BLENDMEASURE"
-			"uaxis" "[0 1 0 4] 0.25"
-			"vaxis" "[0 0 -1 -120] 0.25"
+			"plane" "(-1 -32 -30) (-1 32 -30) (-1 32 31)"
+			"material" "DELIVERY_BEYOND/METAL038_1K_COLOR"
+			"uaxis" "[0 1 0 -24] 0.25"
+			"vaxis" "[0 0 -1 -48] 0.25"
 			"rotation" "0"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
@@ -164,10 +164,10 @@ world
 		side
 		{
 			"id" "37"
-			"plane" "(0 32 -16) (0 -32 -16) (0 -32 45)"
+			"plane" "(0 32 -30) (0 -32 -30) (0 -32 31)"
 			"material" "DELIVERY_BEYOND/BLACKBOARD_CHALK"
 			"uaxis" "[0 1 0 128] 0.25"
-			"vaxis" "[0 0 -1 188.852] 0.238281"
+			"vaxis" "[0 0 -1 130.098] 0.238281"
 			"rotation" "0"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
@@ -186,10 +186,10 @@ world
 		side
 		{
 			"id" "48"
-			"plane" "(-1 33 45) (1 33 45) (1 32 45)"
-			"material" "DEV/DEV_BLENDMEASURE"
-			"uaxis" "[1 0 0 -72] 0.25"
-			"vaxis" "[0 -1 0 24] 0.25"
+			"plane" "(-1 33 31) (1 33 31) (1 32 31)"
+			"material" "DELIVERY_BEYOND/METAL038_1K_COLOR"
+			"uaxis" "[1 0 0 -24] 0.25"
+			"vaxis" "[0 -1 0 -48] 0.25"
 			"rotation" "0"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
@@ -197,10 +197,10 @@ world
 		side
 		{
 			"id" "47"
-			"plane" "(-1 32 -16) (1 32 -16) (1 33 -16)"
-			"material" "DEV/DEV_BLENDMEASURE"
-			"uaxis" "[1 0 0 -72] 0.25"
-			"vaxis" "[0 -1 0 24] 0.25"
+			"plane" "(-1 32 -30) (1 32 -30) (1 33 -30)"
+			"material" "DELIVERY_BEYOND/METAL038_1K_COLOR"
+			"uaxis" "[1 0 0 -24] 0.25"
+			"vaxis" "[0 -1 0 -48] 0.25"
 			"rotation" "0"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
@@ -208,10 +208,10 @@ world
 		side
 		{
 			"id" "46"
-			"plane" "(-1 33 45) (-1 32 45) (-1 32 -16)"
-			"material" "DEV/DEV_BLENDMEASURE"
+			"plane" "(-1 33 31) (-1 32 31) (-1 32 -30)"
+			"material" "DELIVERY_BEYOND/METAL038_1K_COLOR"
 			"uaxis" "[0 1 0 -24] 0.25"
-			"vaxis" "[0 0 -1 -120] 0.25"
+			"vaxis" "[0 0 -1 -48] 0.25"
 			"rotation" "0"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
@@ -219,10 +219,10 @@ world
 		side
 		{
 			"id" "45"
-			"plane" "(1 33 -16) (1 32 -16) (1 32 45)"
-			"material" "DEV/DEV_BLENDMEASURE"
+			"plane" "(1 33 -30) (1 32 -30) (1 32 31)"
+			"material" "DELIVERY_BEYOND/METAL038_1K_COLOR"
 			"uaxis" "[0 1 0 -24] 0.25"
-			"vaxis" "[0 0 -1 -120] 0.25"
+			"vaxis" "[0 0 -1 -48] 0.25"
 			"rotation" "0"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
@@ -230,10 +230,10 @@ world
 		side
 		{
 			"id" "44"
-			"plane" "(1 33 45) (-1 33 45) (-1 33 -16)"
-			"material" "DEV/DEV_BLENDMEASURE"
-			"uaxis" "[1 0 0 -72] 0.25"
-			"vaxis" "[0 0 -1 -120] 0.25"
+			"plane" "(1 33 31) (-1 33 31) (-1 33 -30)"
+			"material" "DELIVERY_BEYOND/METAL038_1K_COLOR"
+			"uaxis" "[1 0 0 -24] 0.25"
+			"vaxis" "[0 0 -1 -48] 0.25"
 			"rotation" "0"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
@@ -241,10 +241,10 @@ world
 		side
 		{
 			"id" "43"
-			"plane" "(1 32 -16) (-1 32 -16) (-1 32 45)"
-			"material" "DEV/DEV_BLENDMEASURE"
-			"uaxis" "[1 0 0 -72] 0.25"
-			"vaxis" "[0 0 -1 -120] 0.25"
+			"plane" "(1 32 -30) (-1 32 -30) (-1 32 31)"
+			"material" "DELIVERY_BEYOND/METAL038_1K_COLOR"
+			"uaxis" "[1 0 0 -24] 0.25"
+			"vaxis" "[0 0 -1 -48] 0.25"
 			"rotation" "0"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
@@ -263,10 +263,10 @@ world
 		side
 		{
 			"id" "54"
-			"plane" "(-1 -32 45) (1 -32 45) (1 -33 45)"
-			"material" "DEV/DEV_BLENDMEASURE"
-			"uaxis" "[1 0 0 -72] 0.25"
-			"vaxis" "[0 -1 0 20] 0.25"
+			"plane" "(-1 -32 31) (1 -32 31) (1 -33 31)"
+			"material" "DELIVERY_BEYOND/METAL038_1K_COLOR"
+			"uaxis" "[1 0 0 -24] 0.25"
+			"vaxis" "[0 -1 0 -48] 0.25"
 			"rotation" "0"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
@@ -274,10 +274,10 @@ world
 		side
 		{
 			"id" "53"
-			"plane" "(-1 -33 -16) (1 -33 -16) (1 -32 -16)"
-			"material" "DEV/DEV_BLENDMEASURE"
-			"uaxis" "[1 0 0 -72] 0.25"
-			"vaxis" "[0 -1 0 20] 0.25"
+			"plane" "(-1 -33 -30) (1 -33 -30) (1 -32 -30)"
+			"material" "DELIVERY_BEYOND/METAL038_1K_COLOR"
+			"uaxis" "[1 0 0 -24] 0.25"
+			"vaxis" "[0 -1 0 -48] 0.25"
 			"rotation" "0"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
@@ -285,10 +285,10 @@ world
 		side
 		{
 			"id" "52"
-			"plane" "(-1 -32 45) (-1 -33 45) (-1 -33 -16)"
-			"material" "DEV/DEV_BLENDMEASURE"
-			"uaxis" "[0 1 0 -20] 0.25"
-			"vaxis" "[0 0 -1 -120] 0.25"
+			"plane" "(-1 -32 31) (-1 -33 31) (-1 -33 -30)"
+			"material" "DELIVERY_BEYOND/METAL038_1K_COLOR"
+			"uaxis" "[0 1 0 -24] 0.25"
+			"vaxis" "[0 0 -1 -48] 0.25"
 			"rotation" "0"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
@@ -296,10 +296,10 @@ world
 		side
 		{
 			"id" "51"
-			"plane" "(1 -32 -16) (1 -33 -16) (1 -33 45)"
-			"material" "DEV/DEV_BLENDMEASURE"
-			"uaxis" "[0 1 0 -20] 0.25"
-			"vaxis" "[0 0 -1 -120] 0.25"
+			"plane" "(1 -32 -30) (1 -33 -30) (1 -33 31)"
+			"material" "DELIVERY_BEYOND/METAL038_1K_COLOR"
+			"uaxis" "[0 1 0 -24] 0.25"
+			"vaxis" "[0 0 -1 -48] 0.25"
 			"rotation" "0"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
@@ -307,10 +307,10 @@ world
 		side
 		{
 			"id" "50"
-			"plane" "(1 -32 45) (-1 -32 45) (-1 -32 -16)"
-			"material" "DEV/DEV_BLENDMEASURE"
-			"uaxis" "[1 0 0 -72] 0.25"
-			"vaxis" "[0 0 -1 -120] 0.25"
+			"plane" "(1 -32 31) (-1 -32 31) (-1 -32 -30)"
+			"material" "DELIVERY_BEYOND/METAL038_1K_COLOR"
+			"uaxis" "[1 0 0 -24] 0.25"
+			"vaxis" "[0 0 -1 -48] 0.25"
 			"rotation" "0"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
@@ -318,10 +318,10 @@ world
 		side
 		{
 			"id" "49"
-			"plane" "(1 -33 -16) (-1 -33 -16) (-1 -33 45)"
-			"material" "DEV/DEV_BLENDMEASURE"
-			"uaxis" "[1 0 0 -72] 0.25"
-			"vaxis" "[0 0 -1 -120] 0.25"
+			"plane" "(1 -33 -30) (-1 -33 -30) (-1 -33 31)"
+			"material" "DELIVERY_BEYOND/METAL038_1K_COLOR"
+			"uaxis" "[1 0 0 -24] 0.25"
+			"vaxis" "[0 0 -1 -48] 0.25"
 			"rotation" "0"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
@@ -340,10 +340,10 @@ world
 		side
 		{
 			"id" "60"
-			"plane" "(-1 33 46) (1 33 46) (1 -33 46)"
-			"material" "DEV/DEV_BLENDMEASURE"
-			"uaxis" "[1 0 0 -72] 0.25"
-			"vaxis" "[0 -1 0 24] 0.25"
+			"plane" "(-1 33 32) (1 33 32) (1 -33 32)"
+			"material" "DELIVERY_BEYOND/METAL038_1K_COLOR"
+			"uaxis" "[1 0 0 -24] 0.25"
+			"vaxis" "[0 -1 0 -48] 0.25"
 			"rotation" "0"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
@@ -351,10 +351,10 @@ world
 		side
 		{
 			"id" "59"
-			"plane" "(-1 -33 45) (1 -33 45) (1 33 45)"
-			"material" "DEV/DEV_BLENDMEASURE"
-			"uaxis" "[1 0 0 -72] 0.25"
-			"vaxis" "[0 -1 0 24] 0.25"
+			"plane" "(-1 -33 31) (1 -33 31) (1 33 31)"
+			"material" "DELIVERY_BEYOND/METAL038_1K_COLOR"
+			"uaxis" "[1 0 0 -24] 0.25"
+			"vaxis" "[0 -1 0 -48] 0.25"
 			"rotation" "0"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
@@ -362,10 +362,10 @@ world
 		side
 		{
 			"id" "58"
-			"plane" "(-1 33 46) (-1 -33 46) (-1 -33 45)"
-			"material" "DEV/DEV_BLENDMEASURE"
+			"plane" "(-1 33 32) (-1 -33 32) (-1 -33 31)"
+			"material" "DELIVERY_BEYOND/METAL038_1K_COLOR"
 			"uaxis" "[0 1 0 -24] 0.25"
-			"vaxis" "[0 0 -1 -120] 0.25"
+			"vaxis" "[0 0 -1 -48] 0.25"
 			"rotation" "0"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
@@ -373,10 +373,10 @@ world
 		side
 		{
 			"id" "57"
-			"plane" "(1 33 45) (1 -33 45) (1 -33 46)"
-			"material" "DEV/DEV_BLENDMEASURE"
+			"plane" "(1 33 31) (1 -33 31) (1 -33 32)"
+			"material" "DELIVERY_BEYOND/METAL038_1K_COLOR"
 			"uaxis" "[0 1 0 -24] 0.25"
-			"vaxis" "[0 0 -1 -120] 0.25"
+			"vaxis" "[0 0 -1 -48] 0.25"
 			"rotation" "0"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
@@ -384,10 +384,10 @@ world
 		side
 		{
 			"id" "56"
-			"plane" "(1 33 46) (-1 33 46) (-1 33 45)"
-			"material" "DEV/DEV_BLENDMEASURE"
-			"uaxis" "[1 0 0 -72] 0.25"
-			"vaxis" "[0 0 -1 -120] 0.25"
+			"plane" "(1 33 32) (-1 33 32) (-1 33 31)"
+			"material" "DELIVERY_BEYOND/METAL038_1K_COLOR"
+			"uaxis" "[1 0 0 -24] 0.25"
+			"vaxis" "[0 0 -1 -48] 0.25"
 			"rotation" "0"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
@@ -395,10 +395,10 @@ world
 		side
 		{
 			"id" "55"
-			"plane" "(1 -33 45) (-1 -33 45) (-1 -33 46)"
-			"material" "DEV/DEV_BLENDMEASURE"
-			"uaxis" "[1 0 0 -72] 0.25"
-			"vaxis" "[0 0 -1 -120] 0.25"
+			"plane" "(1 -33 31) (-1 -33 31) (-1 -33 32)"
+			"material" "DELIVERY_BEYOND/METAL038_1K_COLOR"
+			"uaxis" "[1 0 0 -24] 0.25"
+			"vaxis" "[0 0 -1 -48] 0.25"
 			"rotation" "0"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"

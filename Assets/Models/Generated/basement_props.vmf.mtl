@@ -33,20 +33,28 @@ map_Ka materials/props/woodcrate003d.tga
 map_Kd materials/props/woodcrate003d.tga
 
 
-newmtl dev/dev_measuregeneric01b
+newmtl delivery_beyond/bricks055_1k_color
 Ka 1.000 1.000 1.000
 Kd 1.000 1.000 1.000
 Ks 0.000 0.000 0.000
-map_Ka materials/dev/dev_measuregeneric01b.tga
-map_Kd materials/dev/dev_measuregeneric01b.tga
+map_Ka materials/delivery_beyond/bricks055_1k_color.tga
+map_Kd materials/delivery_beyond/bricks055_1k_color.tga
 
 
-newmtl dev/dev_blendmeasure
+newmtl tools/toolsnodraw
 Ka 1.000 1.000 1.000
 Kd 1.000 1.000 1.000
 Ks 0.000 0.000 0.000
-map_Ka materials/dev/dev_measuregeneric01b.tga
-map_Kd materials/dev/dev_measuregeneric01b.tga
+map_Ka materials/tools/toolsnodraw.tga
+map_Kd materials/tools/toolsnodraw.tga
+
+
+newmtl delivery_beyond/metal038_1k_color
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/delivery_beyond/metal038_1k_color.tga
+map_Kd materials/delivery_beyond/metal038_1k_color.tga
 
 
 newmtl props/woodcrate001a
@@ -55,4 +63,20 @@ Kd 1.000 1.000 1.000
 Ks 0.000 0.000 0.000
 map_Ka materials/props/woodcrate001a.tga
 map_Kd materials/props/woodcrate001a.tga
+
+
+newmtl delivery_beyond/paintedmetal016_1k_color
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/delivery_beyond/paintedmetal016_1k_color.tga
+map_Kd materials/delivery_beyond/paintedmetal016_1k_color.tga
+
+
+newmtl metal/metalgrate008a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/metal/metalgrate008a.tga
+map_Kd materials/metal/metalgrate008a.tga
 

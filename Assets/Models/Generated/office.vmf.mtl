@@ -1,6 +1,14 @@
 # Decompiled with VMF2OBJ v2.0.0 by Dylancyclone
 
 
+newmtl tools/toolsnodraw
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/tools/toolsnodraw.tga
+map_Kd materials/tools/toolsnodraw.tga
+
+
 newmtl dev/dev_interiorfloorlinoleum01f
 Ka 1.000 1.000 1.000
 Kd 1.000 1.000 1.000
@@ -9,51 +17,34 @@ map_Ka materials/dev/dev_interiorfloorlinoleum01f.tga
 map_Kd materials/dev/dev_interiorfloorlinoleum01f.tga
 
 
-newmtl dev/dev_blendmeasure
+newmtl delivery_beyond/bricks058_1k_color
 Ka 1.000 1.000 1.000
 Kd 1.000 1.000 1.000
 Ks 0.000 0.000 0.000
-map_Ka materials/dev/dev_measuregeneric01b.tga
-map_Kd materials/dev/dev_measuregeneric01b.tga
+map_Ka materials/delivery_beyond/bricks058_1k_color.tga
+map_Kd materials/delivery_beyond/bricks058_1k_color.tga
 
 
-newmtl metal/metaldoor005a
+newmtl tools/toolsblack
 Ka 1.000 1.000 1.000
 Kd 1.000 1.000 1.000
 Ks 0.000 0.000 0.000
-map_Ka materials/metal/metaldoor005a.tga
-map_Kd materials/metal/metaldoor005a.tga
-map_bump materials/metal/metaldoor005a_normal.tga
+map_Ka materials/tools/toolsblack.tga
+map_Kd materials/tools/toolsblack.tga
 
 
-newmtl halflife/black
+newmtl dev/dev_lowermetaldoor02a
 Ka 1.000 1.000 1.000
 Kd 1.000 1.000 1.000
 Ks 0.000 0.000 0.000
-map_Ka materials/halflife/black.tga
-map_Kd materials/halflife/black.tga
+map_Ka materials/dev/dev_lowermetaldoor02a.tga
+map_Kd materials/dev/dev_lowermetaldoor02a.tga
 
 
-newmtl dev/graygrid
+newmtl delivery_beyond/officeceiling001_1k_color
 Ka 1.000 1.000 1.000
 Kd 1.000 1.000 1.000
 Ks 0.000 0.000 0.000
-map_Ka materials/dev/graygrid.tga
-map_Kd materials/dev/graygrid.tga
-
-
-newmtl vgui/black
-Ka 1.000 1.000 1.000
-Kd 1.000 1.000 1.000
-Ks 0.000 0.000 0.000
-map_Ka materials/vgui/black.tga
-map_Kd materials/vgui/black.tga
-
-
-newmtl dev/dev_measuregeneric01b
-Ka 1.000 1.000 1.000
-Kd 1.000 1.000 1.000
-Ks 0.000 0.000 0.000
-map_Ka materials/dev/dev_measuregeneric01b.tga
-map_Kd materials/dev/dev_measuregeneric01b.tga
+map_Ka materials/delivery_beyond/officeceiling001_1k_color.tga
+map_Kd materials/delivery_beyond/officeceiling001_1k_color.tga
 

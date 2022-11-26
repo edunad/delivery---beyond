@@ -1,10 +1,18 @@
 # Decompiled with VMF2OBJ v2.0.0 by Dylancyclone
 
 
-newmtl perftest/loader/crate02
+newmtl delivery_beyond/box
 Ka 1.000 1.000 1.000
 Kd 1.000 1.000 1.000
 Ks 0.000 0.000 0.000
-map_Ka materials/perftest/loader/crate02.tga
-map_Kd materials/perftest/loader/crate02.tga
+map_Ka materials/delivery_beyond/box.tga
+map_Kd materials/delivery_beyond/box.tga
+
+
+newmtl delivery_beyond/cardboard_box
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/delivery_beyond/cardboard_box.tga
+map_Kd materials/delivery_beyond/cardboard_box.tga
 

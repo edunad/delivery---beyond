@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1727663507759918486}
   - component: {fileID: 2726527052466217620}
-  - component: {fileID: 5213562902235119288}
+  - component: {fileID: 2974394132952807312}
   m_Layer: 6
   m_Name: entity_box_pickup
   m_TagString: Untagged
@@ -48,7 +48,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.69612837, y: 0.6886699, z: 0.7373009}
   m_Center: {x: 0.0006763935, y: 0.00047636032, z: 0.0050296783}
---- !u!114 &5213562902235119288
+--- !u!114 &2974394132952807312
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -57,7 +57,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1727663507759918484}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b6a606ee48fdba4b8c74dc327595840, type: 3}
+  m_Script: {fileID: 11500000, guid: 5a057c7e256bb0746a9eeed11369c71c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   text_1: {fileID: 1727663509663452759}

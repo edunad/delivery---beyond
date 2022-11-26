@@ -35,6 +35,8 @@ public class entity_movement : MonoBehaviour {
         if(this.obj == null) throw new System.Exception("Missing game object");
         if(this.points.Count < 2) throw new System.Exception("At least 2 points are needed");
 
+        this.obj.isStatic = false;
+
         this._audioClips = new AudioClip[] {
             AssetsController.GetResource<AudioClip>("Sounds/Ingame/Objects/" + this.startSound),
             AssetsController.GetResource<AudioClip>("Sounds/Ingame/Objects/" + this.stopSound)

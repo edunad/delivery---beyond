@@ -1,21 +1,71 @@
 # Decompiled with VMF2OBJ v2.0.0 by Dylancyclone
 
 
-newmtl dev/dev_measuregeneric01
+newmtl delivery_beyond/paintedmetal016_1k_color
 Ka 1.000 1.000 1.000
 Kd 1.000 1.000 1.000
 Ks 0.000 0.000 0.000
-map_Ka materials/dev/dev_measuregeneric01.tga
-map_Kd materials/dev/dev_measuregeneric01.tga
+map_Ka materials/delivery_beyond/paintedmetal016_1k_color.tga
+map_Kd materials/delivery_beyond/paintedmetal016_1k_color.tga
 
 
-newmtl metal/metalgrate002a
+newmtl cable/cable_back
 Ka 1.000 1.000 1.000
 Kd 1.000 1.000 1.000
 Ks 0.000 0.000 0.000
-map_Ka materials/metal/metalgrate002a.tga
-map_Kd materials/metal/metalgrate002a.tga
+map_Ka materials/cable/dx8cable.tga
+map_Kd materials/cable/dx8cable.tga
+map_bump materials/cable/cablenormalmap.tga
 illum 4
+
+
+newmtl tools/toolsnodraw
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/tools/toolsnodraw.tga
+map_Kd materials/tools/toolsnodraw.tga
+
+
+newmtl metal/metalfloor001a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/metal/metalfloor001a.tga
+map_Kd materials/metal/metalfloor001a.tga
+map_bump materials/metal/metalfloor001a_normal.tga
+
+
+newmtl delivery_beyond/metal025_1k_color
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/delivery_beyond/metal025_1k_color.tga
+map_Kd materials/delivery_beyond/metal025_1k_color.tga
+
+
+newmtl metal/metalwall030a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/metal/metalwall030a.tga
+map_Kd materials/metal/metalwall030a.tga
+
+
+newmtl delivery_beyond/diamondplate005d_1k_color
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/delivery_beyond/diamondplate005d_1k_color.tga
+map_Kd materials/delivery_beyond/diamondplate005d_1k_color.tga
+
+
+newmtl metal/metalshutters001a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/metal/metalshutters001a.tga
+map_Kd materials/metal/metalshutters001a.tga
 
 
 newmtl props/woodcrate003a
@@ -34,28 +84,36 @@ map_Ka materials/props/woodcrate005a.tga
 map_Kd materials/props/woodcrate005a.tga
 
 
-newmtl props/woodcrate003d
+newmtl props/woodcrate003b
 Ka 1.000 1.000 1.000
 Kd 1.000 1.000 1.000
 Ks 0.000 0.000 0.000
-map_Ka materials/props/woodcrate003d.tga
-map_Kd materials/props/woodcrate003d.tga
+map_Ka materials/props/woodcrate003b.tga
+map_Kd materials/props/woodcrate003b.tga
 
 
-newmtl dev/dev_blendmeasure
+newmtl delivery_beyond/metal038_1k_color
 Ka 1.000 1.000 1.000
 Kd 1.000 1.000 1.000
 Ks 0.000 0.000 0.000
-map_Ka materials/dev/dev_measuregeneric01b.tga
-map_Kd materials/dev/dev_measuregeneric01b.tga
+map_Ka materials/delivery_beyond/metal038_1k_color.tga
+map_Kd materials/delivery_beyond/metal038_1k_color.tga
 
 
-newmtl halflife/black
+newmtl tools/toolsblack
 Ka 1.000 1.000 1.000
 Kd 1.000 1.000 1.000
 Ks 0.000 0.000 0.000
-map_Ka materials/halflife/black.tga
-map_Kd materials/halflife/black.tga
+map_Ka materials/tools/toolsblack.tga
+map_Kd materials/tools/toolsblack.tga
+
+
+newmtl wood/woodshelf001a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/wood/woodshelf001a.tga
+map_Kd materials/wood/woodshelf001a.tga
 
 
 newmtl props/woodcrate001a
@@ -64,14 +122,4 @@ Kd 1.000 1.000 1.000
 Ks 0.000 0.000 0.000
 map_Ka materials/props/woodcrate001a.tga
 map_Kd materials/props/woodcrate001a.tga
-
-
-newmtl cable/cable_back
-Ka 1.000 1.000 1.000
-Kd 1.000 1.000 1.000
-Ks 0.000 0.000 0.000
-map_Ka materials/cable/dx8cable.tga
-map_Kd materials/cable/dx8cable.tga
-map_bump materials/cable/cablenormalmap.tga
-illum 4
 

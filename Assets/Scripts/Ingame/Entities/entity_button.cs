@@ -35,6 +35,8 @@ public class entity_button : MonoBehaviour {
     private Vector3 _originalPos;
 
     public void Awake() {
+        this.gameObject.isStatic = false;
+
         this._collision = GetComponent<Collider>();
         this._collision.isTrigger = true;
 

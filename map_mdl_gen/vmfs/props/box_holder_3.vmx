@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "6440"
-	"mapversion" "12"
+	"mapversion" "13"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -20,7 +20,7 @@ viewsettings
 world
 {
 	"id" "1"
-	"mapversion" "12"
+	"mapversion" "13"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -260,9 +260,9 @@ world
 		side
 		{
 			"id" "72"
-			"plane" "(-5.98639 13.0009 15.9545) (-5.98655 -12.9999 15.9546) (-6.96227 -12.9991 16)"
+			"plane" "(-5.12635 13 12.9946) (-5.12639 -13 12.9946) (-5.99943 -13 12.5817)"
 			"material" "DELIVERY_BEYOND/CARDBOARD_BOX"
-			"uaxis" "[-0.998982 0 0.0451064 -218.505] 0.00381871"
+			"uaxis" "[-0.903225 0 -0.429167 251.446] 0.00381871"
 			"vaxis" "[0 -1 0 64.0026] 0.203132"
 			"rotation" "0"
 			"lightmapscale" "16"
@@ -271,9 +271,9 @@ world
 		side
 		{
 			"id" "71"
-			"plane" "(-2.97871 13.0009 0.72664) (-2.97798 -12.9995 0.726356) (-2.00009 -12.9991 0.6823)"
+			"plane" "(4.69039 13 0.967466) (4.69117 -13 0.967558) (5.57523 -13 1.38805)"
 			"material" "DELIVERY_BEYOND/CARDBOARD_BOX"
-			"uaxis" "[-0.998982 0 0.0451064 -18.1196] 0.00382697"
+			"uaxis" "[-0.903225 0 -0.429167 191.502] 0.00382697"
 			"vaxis" "[0 -1 0 64.0084] 0.203144"
 			"rotation" "0"
 			"lightmapscale" "16"
@@ -282,10 +282,10 @@ world
 		side
 		{
 			"id" "70"
-			"plane" "(-2.0061 12.997 0.683248) (-2.00619 -12.9994 0.683) (-5.99038 -12.9991 15.9554)"
+			"plane" "(5.57583 13 1.38691) (5.57595 -13 1.38669) (-5.12748 -13 12.9967)"
 			"material" "DELIVERY_BEYOND/CARDBOARD_BOX"
 			"uaxis" "[0 1 0 127.992] 0.101564"
-			"vaxis" "[0.252389 0 -0.967625 9.46592] 0.123308"
+			"vaxis" "[0.677119 0 -0.735873 -22.3161] 0.123308"
 			"rotation" "0"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
@@ -293,10 +293,10 @@ world
 		side
 		{
 			"id" "69"
-			"plane" "(-2.97814 -12.9991 0.727001) (-2.97887 12.999 0.727286) (-6.96366 13.0009 16)"
+			"plane" "(4.69288 -13 0.966924) (4.6921 13 0.966832) (-5.99809 13 12.5824)"
 			"material" "DELIVERY_BEYOND/CARDBOARD_BOX"
 			"uaxis" "[0 1 0 127.995] 0.101566"
-			"vaxis" "[0.252389 0 -0.967625 11.7999] 0.123316"
+			"vaxis" "[0.677119 0 -0.735873 -19.98] 0.123316"
 			"rotation" "0"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
@@ -304,10 +304,10 @@ world
 		side
 		{
 			"id" "68"
-			"plane" "(-2.98143 13.0018 0.727645) (-2.00185 13.0006 0.683356) (-5.98647 13.0002 15.9546)"
+			"plane" "(4.68867 13 0.966964) (5.57512 13 1.38825) (-5.12661 13 12.9951)"
 			"material" "DELIVERY_BEYOND/CARDBOARD_BOX"
-			"uaxis" "[-0.997564 0 -0.0697562 -128.59] 0.0151591"
-			"vaxis" "[0.0697562 0 -0.997564 6.72935] 0.122052"
+			"uaxis" "[-0.848048 0 -0.529919 104.3] 0.0151591"
+			"vaxis" "[0.529919 0 -0.848048 -14.5548] 0.122052"
 			"rotation" "0"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
@@ -315,10 +315,10 @@ world
 		side
 		{
 			"id" "67"
-			"plane" "(-6.96234 -13 15.9975) (-5.9903 -12.9999 15.9553) (-2.01005 -12.9994 0.682208)"
+			"plane" "(-5.99954 -13 12.5816) (-5.11596 -13 13) (5.57539 -13 1.38774)"
 			"material" "DELIVERY_BEYOND/CARDBOARD_BOX"
-			"uaxis" "[-0.997564 0 -0.0697562 -129.43] 0.0151245"
-			"vaxis" "[0.0697562 0 -0.997564 6.72432] 0.122058"
+			"uaxis" "[-0.848048 0 -0.529919 104.578] 0.0151245"
+			"vaxis" "[0.529919 0 -0.848048 -14.5588] 0.122058"
 			"rotation" "0"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
@@ -630,158 +630,6 @@ world
 		editor
 		{
 			"color" "0 104 101"
-			"visgroupshown" "1"
-			"visgroupautoshown" "1"
-		}
-	}
-	solid
-	{
-		"id" "6"
-		side
-		{
-			"id" "108"
-			"plane" "(-5.59906 -12.6326 16.5462) (-6.24878 13.3667 16.9284) (-5.30891 13.3793 17)"
-			"material" "DELIVERY_BEYOND/CARDBOARD_BOX"
-			"uaxis" "[-0.996741 -0.0247286 -0.0767962 86.9246] 0.101834"
-			"vaxis" "[0.0250022 -1 -0.0146988 113.641] 0.13697"
-			"rotation" "0"
-			"lightmapscale" "16"
-			"smoothing_groups" "0"
-		}
-		side
-		{
-			"id" "107"
-			"plane" "(3.11892 -12.2398 0.993803) (2.46804 13.7361 1.37589) (1.52563 13.7256 1.30309)"
-			"material" "DELIVERY_BEYOND/CARDBOARD_BOX"
-			"uaxis" "[-0.996741 -0.0247286 -0.0767962 86.9246] 0.101834"
-			"vaxis" "[0.0250022 -1 -0.0146988 113.641] 0.13697"
-			"rotation" "0"
-			"lightmapscale" "16"
-			"smoothing_groups" "0"
-		}
-		side
-		{
-			"id" "106"
-			"plane" "(2.46387 13.7422 1.37517) (3.11466 -12.2396 0.99304) (-4.65576 -12.6085 16.6179)"
-			"material" "DELIVERY_BEYOND/CARDBOARD_BOX"
-			"uaxis" "[-0.0958245 0.996009 -0.00197093 120.931] 0.101834"
-			"vaxis" "[0.591458 0.0523255 -0.804636 2.80351] 0.13697"
-			"rotation" "0"
-			"lightmapscale" "16"
-			"smoothing_groups" "0"
-		}
-		side
-		{
-			"id" "105"
-			"plane" "(2.17617 -12.26 0.920865) (1.52616 13.7275 1.30323) (-6.24796 13.3666 16.9281)"
-			"material" "DELIVERY_BEYOND/CARDBOARD_BOX"
-			"uaxis" "[-0.0958245 0.996009 -0.00197093 120.931] 0.101834"
-			"vaxis" "[0.591458 0.0523255 -0.804636 2.80351] 0.13697"
-			"rotation" "0"
-			"lightmapscale" "16"
-			"smoothing_groups" "0"
-		}
-		side
-		{
-			"id" "104"
-			"plane" "(1.52705 13.7265 1.30304) (2.46717 13.74 1.37497) (-5.30669 13.3779 16.9983)"
-			"material" "DELIVERY_BEYOND/CARDBOARD_BOX"
-			"uaxis" "[-0.971991 -0.021426 -0.234042 88.5436] 0.101834"
-			"vaxis" "[0.23366 0.0188742 -0.972135 119.822] 0.13697"
-			"rotation" "0"
-			"lightmapscale" "16"
-			"smoothing_groups" "0"
-		}
-		side
-		{
-			"id" "103"
-			"plane" "(-5.59806 -12.6327 16.5463) (-4.65342 -12.6097 16.6175) (3.11784 -12.2396 0.993247)"
-			"material" "DELIVERY_BEYOND/CARDBOARD_BOX"
-			"uaxis" "[-0.971991 -0.021426 -0.234042 88.5436] 0.101834"
-			"vaxis" "[0.23366 0.0188742 -0.972135 119.822] 0.13697"
-			"rotation" "0"
-			"lightmapscale" "16"
-			"smoothing_groups" "0"
-		}
-		editor
-		{
-			"color" "0 212 245"
-			"visgroupshown" "1"
-			"visgroupautoshown" "1"
-		}
-	}
-	solid
-	{
-		"id" "133"
-		side
-		{
-			"id" "120"
-			"plane" "(-3.88981 -12.3423 16.7662) (-3.66058 13.6669 16.7151) (-2.74736 13.6495 16.9483)"
-			"material" "DELIVERY_BEYOND/CARDBOARD_BOX"
-			"uaxis" "[-0.968737 0.00710206 -0.247991 137.004] 0.101834"
-			"vaxis" "[-0.00881174 -1 0.00197093 112.438] 0.13697"
-			"rotation" "0"
-			"lightmapscale" "16"
-			"smoothing_groups" "0"
-		}
-		side
-		{
-			"id" "119"
-			"plane" "(7.39144 -12.5225 2.95553) (7.6187 13.4633 2.90442) (6.70327 13.483 2.6696)"
-			"material" "DELIVERY_BEYOND/CARDBOARD_BOX"
-			"uaxis" "[-0.968737 0.00710206 -0.247991 137.004] 0.101834"
-			"vaxis" "[-0.00881174 -1 0.00197093 112.438] 0.13697"
-			"rotation" "0"
-			"lightmapscale" "16"
-			"smoothing_groups" "0"
-		}
-		side
-		{
-			"id" "118"
-			"plane" "(7.61495 13.4696 2.90292) (7.38739 -12.5221 2.95404) (-2.97282 -12.3483 17)"
-			"material" "DELIVERY_BEYOND/CARDBOARD_BOX"
-			"uaxis" "[-0.0958245 0.996009 -0.00197093 122.68] 0.101834"
-			"vaxis" "[0.591458 0.0523255 -0.804636 111.893] 0.13697"
-			"rotation" "0"
-			"lightmapscale" "16"
-			"smoothing_groups" "0"
-		}
-		side
-		{
-			"id" "117"
-			"plane" "(6.47534 -12.5126 2.72064) (6.70383 13.4849 2.66981) (-3.65973 13.6668 16.715)"
-			"material" "DELIVERY_BEYOND/CARDBOARD_BOX"
-			"uaxis" "[-0.0958245 0.996009 -0.00197093 122.68] 0.101834"
-			"vaxis" "[0.591458 0.0523255 -0.804636 111.893] 0.13697"
-			"rotation" "0"
-			"lightmapscale" "16"
-			"smoothing_groups" "0"
-		}
-		side
-		{
-			"id" "116"
-			"plane" "(6.7047 13.4838 2.66979) (7.61814 13.4673 2.90332) (-2.74494 13.648 16.9471)"
-			"material" "DELIVERY_BEYOND/CARDBOARD_BOX"
-			"uaxis" "[-0.917101 0.00672351 -0.3986 138.027] 0.101834"
-			"vaxis" "[0.39856 -0.00656922 -0.917119 114.083] 0.13697"
-			"rotation" "0"
-			"lightmapscale" "16"
-			"smoothing_groups" "0"
-		}
-		side
-		{
-			"id" "115"
-			"plane" "(-3.88883 -12.3424 16.7665) (-2.97049 -12.3495 17) (7.39048 -12.5222 2.9548)"
-			"material" "DELIVERY_BEYOND/CARDBOARD_BOX"
-			"uaxis" "[-0.917101 0.00672351 -0.3986 138.027] 0.101834"
-			"vaxis" "[0.39856 -0.00656922 -0.917119 114.083] 0.13697"
-			"rotation" "0"
-			"lightmapscale" "16"
-			"smoothing_groups" "0"
-		}
-		editor
-		{
-			"color" "0 212 245"
 			"visgroupshown" "1"
 			"visgroupautoshown" "1"
 		}

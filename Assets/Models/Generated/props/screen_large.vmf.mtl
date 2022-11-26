@@ -1,12 +1,12 @@
 # Decompiled with VMF2OBJ v2.0.0 by Dylancyclone
 
 
-newmtl tile/tilefloor005a
+newmtl delivery_beyond/metal038_1k_color
 Ka 1.000 1.000 1.000
 Kd 1.000 1.000 1.000
 Ks 0.000 0.000 0.000
-map_Ka materials/tile/tilefloor005a.tga
-map_Kd materials/tile/tilefloor005a.tga
+map_Ka materials/delivery_beyond/metal038_1k_color.tga
+map_Kd materials/delivery_beyond/metal038_1k_color.tga
 
 
 newmtl halflife/black
@@ -15,4 +15,12 @@ Kd 1.000 1.000 1.000
 Ks 0.000 0.000 0.000
 map_Ka materials/halflife/black.tga
 map_Kd materials/halflife/black.tga
+
+
+newmtl tile/tilefloor005a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/tile/tilefloor005a.tga
+map_Kd materials/tile/tilefloor005a.tga
 

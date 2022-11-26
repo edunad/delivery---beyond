@@ -2,7 +2,7 @@ versioninfo
 {
 	"editorversion" "400"
 	"editorbuild" "6440"
-	"mapversion" "21"
+	"mapversion" "25"
 	"formatversion" "100"
 	"prefab" "0"
 }
@@ -20,7 +20,7 @@ viewsettings
 world
 {
 	"id" "1"
-	"mapversion" "21"
+	"mapversion" "25"
 	"classname" "worldspawn"
 	"detailmaterial" "detail/detailsprites"
 	"detailvbsp" "detail.vbsp"
@@ -33,7 +33,7 @@ world
 		{
 			"id" "7"
 			"plane" "(3 3 1.5) (3 1 3) (3 0 3)"
-			"material" "DEV/DEV_MEASUREGENERIC01"
+			"material" "DELIVERY_BEYOND/METAL025_1K_COLOR"
 			"uaxis" "[0 0 -1 20] 0.25"
 			"vaxis" "[0 -1 0 0] 0.25"
 			"rotation" "0"
@@ -44,9 +44,9 @@ world
 		{
 			"id" "8"
 			"plane" "(5 3 0) (5 3 -1.5) (5 1 -3)"
-			"material" "DEV/DEV_MEASUREGENERIC01"
-			"uaxis" "[0 0 -1 20] 0.25"
-			"vaxis" "[0 -1 0 0] 0.25"
+			"material" "LIGHTS/WHITE"
+			"uaxis" "[0 0 -1 0] 0.046875"
+			"vaxis" "[0 -1 0 7] 0.0546875"
 			"rotation" "0"
 			"lightmapscale" "16"
 			"smoothing_groups" "0"
@@ -55,7 +55,7 @@ world
 		{
 			"id" "10"
 			"plane" "(3 3 -1.5) (3 1 -3) (5 1 -3)"
-			"material" "DEV/DEV_MEASUREGENERIC01"
+			"material" "DELIVERY_BEYOND/METAL025_1K_COLOR"
 			"uaxis" "[0 1 0 0] 0.25"
 			"vaxis" "[-1 0 0 16] 0.25"
 			"rotation" "0"
@@ -66,7 +66,7 @@ world
 		{
 			"id" "12"
 			"plane" "(3 -1 -3) (3 -2 -3) (5 -2 -3)"
-			"material" "DEV/DEV_MEASUREGENERIC01"
+			"material" "DELIVERY_BEYOND/METAL025_1K_COLOR"
 			"uaxis" "[0 1 0 0] 0.25"
 			"vaxis" "[-1 0 0 16] 0.25"
 			"rotation" "0"
@@ -77,7 +77,7 @@ world
 		{
 			"id" "13"
 			"plane" "(3 -2 -3) (3 -4 -1.5) (5 -4 -1.5)"
-			"material" "DEV/DEV_MEASUREGENERIC01"
+			"material" "DELIVERY_BEYOND/METAL025_1K_COLOR"
 			"uaxis" "[0 1 0 0] 0.25"
 			"vaxis" "[-1 0 0 16] 0.25"
 			"rotation" "0"
@@ -88,7 +88,7 @@ world
 		{
 			"id" "15"
 			"plane" "(3 -4 3.57628e-007) (3 -4 1.5) (5 -4 1.5)"
-			"material" "DEV/DEV_MEASUREGENERIC01"
+			"material" "DELIVERY_BEYOND/METAL025_1K_COLOR"
 			"uaxis" "[0 0 -1 20] 0.25"
 			"vaxis" "[-1 0 0 16] 0.25"
 			"rotation" "0"
@@ -99,7 +99,7 @@ world
 		{
 			"id" "16"
 			"plane" "(3 -4 1.5) (3 -2 3) (5 -2 3)"
-			"material" "DEV/DEV_MEASUREGENERIC01"
+			"material" "DELIVERY_BEYOND/METAL025_1K_COLOR"
 			"uaxis" "[0 1 0 0] 0.25"
 			"vaxis" "[-1 0 0 16] 0.25"
 			"rotation" "0"
@@ -110,7 +110,7 @@ world
 		{
 			"id" "18"
 			"plane" "(3 0 3) (3 1 3) (5 1 3)"
-			"material" "DEV/DEV_MEASUREGENERIC01"
+			"material" "DELIVERY_BEYOND/METAL025_1K_COLOR"
 			"uaxis" "[0 1 0 0] 0.25"
 			"vaxis" "[-1 0 0 16] 0.25"
 			"rotation" "0"
@@ -121,7 +121,7 @@ world
 		{
 			"id" "19"
 			"plane" "(3 1 3) (3 3 1.5) (5 3 1.5)"
-			"material" "DEV/DEV_MEASUREGENERIC01"
+			"material" "DELIVERY_BEYOND/METAL025_1K_COLOR"
 			"uaxis" "[0 1 0 0] 0.25"
 			"vaxis" "[-1 0 0 16] 0.25"
 			"rotation" "0"
@@ -132,7 +132,7 @@ world
 		{
 			"id" "20"
 			"plane" "(3 3 1.5) (3 3 3.57628e-007) (5 3 0)"
-			"material" "DEV/DEV_MEASUREGENERIC01"
+			"material" "DELIVERY_BEYOND/METAL025_1K_COLOR"
 			"uaxis" "[0 0 -1 20] 0.25"
 			"vaxis" "[-1 0 0 16] 0.25"
 			"rotation" "0"
@@ -153,7 +153,7 @@ world
 		{
 			"id" "209"
 			"plane" "(0 4 6) (0 5 6) (1 5 6)"
-			"material" "DEV/DEV_MEASUREGENERIC01"
+			"material" "DELIVERY_BEYOND/PAINTEDMETAL016_1K_COLOR"
 			"uaxis" "[1 0 0 0] 0.25"
 			"vaxis" "[0 -1 0 4] 0.25"
 			"rotation" "0"
@@ -164,7 +164,7 @@ world
 		{
 			"id" "210"
 			"plane" "(0 5 5) (0 4 5) (1 4 5)"
-			"material" "DEV/DEV_MEASUREGENERIC01"
+			"material" "DELIVERY_BEYOND/PAINTEDMETAL016_1K_COLOR"
 			"uaxis" "[1 0 0 0] 0.25"
 			"vaxis" "[0 -1 0 4] 0.25"
 			"rotation" "0"
@@ -175,7 +175,7 @@ world
 		{
 			"id" "211"
 			"plane" "(0 4 5) (0 5 5) (0 5 6)"
-			"material" "DEV/DEV_MEASUREGENERIC01"
+			"material" "DELIVERY_BEYOND/PAINTEDMETAL016_1K_COLOR"
 			"uaxis" "[0 1 0 -4] 0.25"
 			"vaxis" "[0 0 -1 0] 0.25"
 			"rotation" "0"
@@ -186,7 +186,7 @@ world
 		{
 			"id" "212"
 			"plane" "(1 5 5) (1 4 5) (1 4 6)"
-			"material" "DEV/DEV_MEASUREGENERIC01"
+			"material" "DELIVERY_BEYOND/PAINTEDMETAL016_1K_COLOR"
 			"uaxis" "[0 1 0 -4] 0.25"
 			"vaxis" "[0 0 -1 0] 0.25"
 			"rotation" "0"
@@ -197,7 +197,7 @@ world
 		{
 			"id" "213"
 			"plane" "(0 5 5) (1 5 5) (1 5 6)"
-			"material" "DEV/DEV_MEASUREGENERIC01"
+			"material" "DELIVERY_BEYOND/PAINTEDMETAL016_1K_COLOR"
 			"uaxis" "[1 0 0 0] 0.25"
 			"vaxis" "[0 0 -1 0] 0.25"
 			"rotation" "0"
@@ -208,7 +208,7 @@ world
 		{
 			"id" "214"
 			"plane" "(1 4 5) (0 4 5) (0 4 6)"
-			"material" "DEV/DEV_MEASUREGENERIC01"
+			"material" "DELIVERY_BEYOND/PAINTEDMETAL016_1K_COLOR"
 			"uaxis" "[1 0 0 0] 0.25"
 			"vaxis" "[0 0 -1 0] 0.25"
 			"rotation" "0"
@@ -229,7 +229,7 @@ world
 		{
 			"id" "226"
 			"plane" "(0 -6 6) (0 -5 6) (1 -5 6)"
-			"material" "DEV/DEV_MEASUREGENERIC01"
+			"material" "DELIVERY_BEYOND/PAINTEDMETAL016_1K_COLOR"
 			"uaxis" "[1 0 0 0] 0.25"
 			"vaxis" "[0 -1 0 -40] 0.25"
 			"rotation" "0"
@@ -240,7 +240,7 @@ world
 		{
 			"id" "225"
 			"plane" "(0 -5 5) (0 -6 5) (1 -6 5)"
-			"material" "DEV/DEV_MEASUREGENERIC01"
+			"material" "DELIVERY_BEYOND/PAINTEDMETAL016_1K_COLOR"
 			"uaxis" "[1 0 0 0] 0.25"
 			"vaxis" "[0 -1 0 -40] 0.25"
 			"rotation" "0"
@@ -251,7 +251,7 @@ world
 		{
 			"id" "224"
 			"plane" "(0 -6 5) (0 -5 5) (0 -5 6)"
-			"material" "DEV/DEV_MEASUREGENERIC01"
+			"material" "DELIVERY_BEYOND/PAINTEDMETAL016_1K_COLOR"
 			"uaxis" "[0 1 0 40] 0.25"
 			"vaxis" "[0 0 -1 0] 0.25"
 			"rotation" "0"
@@ -262,7 +262,7 @@ world
 		{
 			"id" "223"
 			"plane" "(1 -5 5) (1 -6 5) (1 -6 6)"
-			"material" "DEV/DEV_MEASUREGENERIC01"
+			"material" "DELIVERY_BEYOND/PAINTEDMETAL016_1K_COLOR"
 			"uaxis" "[0 1 0 40] 0.25"
 			"vaxis" "[0 0 -1 0] 0.25"
 			"rotation" "0"
@@ -273,7 +273,7 @@ world
 		{
 			"id" "222"
 			"plane" "(0 -5 5) (1 -5 5) (1 -5 6)"
-			"material" "DEV/DEV_MEASUREGENERIC01"
+			"material" "DELIVERY_BEYOND/PAINTEDMETAL016_1K_COLOR"
 			"uaxis" "[1 0 0 0] 0.25"
 			"vaxis" "[0 0 -1 0] 0.25"
 			"rotation" "0"
@@ -284,7 +284,7 @@ world
 		{
 			"id" "221"
 			"plane" "(1 -6 5) (0 -6 5) (0 -6 6)"
-			"material" "DEV/DEV_MEASUREGENERIC01"
+			"material" "DELIVERY_BEYOND/PAINTEDMETAL016_1K_COLOR"
 			"uaxis" "[1 0 0 0] 0.25"
 			"vaxis" "[0 0 -1 0] 0.25"
 			"rotation" "0"
@@ -305,7 +305,7 @@ world
 		{
 			"id" "227"
 			"plane" "(0 -6 5) (0 5 5) (1 5 5)"
-			"material" "DEV/DEV_MEASUREGENERIC01"
+			"material" "DELIVERY_BEYOND/PAINTEDMETAL016_1K_COLOR"
 			"uaxis" "[1 0 0 0] 0.25"
 			"vaxis" "[0 -1 0 0] 0.25"
 			"rotation" "0"
@@ -316,7 +316,7 @@ world
 		{
 			"id" "228"
 			"plane" "(0 5 4) (0 -6 4) (1 -6 4)"
-			"material" "DEV/DEV_MEASUREGENERIC01"
+			"material" "DELIVERY_BEYOND/PAINTEDMETAL016_1K_COLOR"
 			"uaxis" "[1 0 0 0] 0.25"
 			"vaxis" "[0 -1 0 0] 0.25"
 			"rotation" "0"
@@ -327,7 +327,7 @@ world
 		{
 			"id" "229"
 			"plane" "(0 -6 4) (0 5 4) (0 5 5)"
-			"material" "DEV/DEV_MEASUREGENERIC01"
+			"material" "DELIVERY_BEYOND/PAINTEDMETAL016_1K_COLOR"
 			"uaxis" "[0 1 0 0] 0.25"
 			"vaxis" "[0 0 -1 -16] 0.25"
 			"rotation" "0"
@@ -338,7 +338,7 @@ world
 		{
 			"id" "230"
 			"plane" "(1 5 4) (1 -6 4) (1 -6 5)"
-			"material" "DEV/DEV_MEASUREGENERIC01"
+			"material" "DELIVERY_BEYOND/PAINTEDMETAL016_1K_COLOR"
 			"uaxis" "[0 1 0 0] 0.25"
 			"vaxis" "[0 0 -1 -16] 0.25"
 			"rotation" "0"
@@ -349,7 +349,7 @@ world
 		{
 			"id" "231"
 			"plane" "(0 5 4) (1 5 4) (1 5 5)"
-			"material" "DEV/DEV_MEASUREGENERIC01"
+			"material" "DELIVERY_BEYOND/PAINTEDMETAL016_1K_COLOR"
 			"uaxis" "[1 0 0 0] 0.25"
 			"vaxis" "[0 0 -1 -16] 0.25"
 			"rotation" "0"
@@ -360,7 +360,7 @@ world
 		{
 			"id" "232"
 			"plane" "(1 -6 4) (0 -6 4) (0 -6 5)"
-			"material" "DEV/DEV_MEASUREGENERIC01"
+			"material" "DELIVERY_BEYOND/PAINTEDMETAL016_1K_COLOR"
 			"uaxis" "[1 0 0 0] 0.25"
 			"vaxis" "[0 0 -1 -16] 0.25"
 			"rotation" "0"
@@ -457,7 +457,7 @@ world
 		{
 			"id" "256"
 			"plane" "(3 6 -4) (3 -7 -4) (3 -7 4)"
-			"material" "DEV/DEV_BLENDMEASURE"
+			"material" "DELIVERY_BEYOND/RUST005_1K_COLOR"
 			"uaxis" "[0 1 0 0] 0.25"
 			"vaxis" "[0 0 -1 -16] 0.25"
 			"rotation" "0"
@@ -468,7 +468,7 @@ world
 		{
 			"id" "255"
 			"plane" "(3 6 4) (-2 6 4) (-2 6 -4)"
-			"material" "DEV/DEV_BLENDMEASURE"
+			"material" "DELIVERY_BEYOND/RUST005_1K_COLOR"
 			"uaxis" "[1 0 0 0] 0.25"
 			"vaxis" "[0 0 -1 -16] 0.25"
 			"rotation" "0"
@@ -479,7 +479,7 @@ world
 		{
 			"id" "254"
 			"plane" "(3 -7 -4) (-2 -7 -4) (-2 -7 4)"
-			"material" "DEV/DEV_BLENDMEASURE"
+			"material" "DELIVERY_BEYOND/RUST005_1K_COLOR"
 			"uaxis" "[1 0 0 0] 0.25"
 			"vaxis" "[0 0 -1 -16] 0.25"
 			"rotation" "0"
@@ -490,7 +490,7 @@ world
 		{
 			"id" "253"
 			"plane" "(-3 -6 4) (-1 -6 4) (-1 -8 4)"
-			"material" "DEV/DEV_BLENDMEASURE"
+			"material" "DELIVERY_BEYOND/RUST005_1K_COLOR"
 			"uaxis" "[1 0 0 0] 0.25"
 			"vaxis" "[0 -1 0 0] 0.25"
 			"rotation" "0"
@@ -501,7 +501,7 @@ world
 		{
 			"id" "252"
 			"plane" "(-3 -8 -4) (-1 -8 -4) (-1 -6 -4)"
-			"material" "DEV/DEV_BLENDMEASURE"
+			"material" "DELIVERY_BEYOND/RUST005_1K_COLOR"
 			"uaxis" "[1 0 0 0] 0.25"
 			"vaxis" "[0 -1 0 0] 0.25"
 			"rotation" "0"
@@ -512,7 +512,7 @@ world
 		{
 			"id" "251"
 			"plane" "(-1 -8 4) (-1 -8 -4) (-1 -6 -4)"
-			"material" "DEV/DEV_BLENDMEASURE"
+			"material" "DELIVERY_BEYOND/RUST005_1K_COLOR"
 			"uaxis" "[0 1 0 0] 0.25"
 			"vaxis" "[0 0 -1 0] 0.25"
 			"rotation" "0"
@@ -534,7 +534,7 @@ world
 		{
 			"id" "280"
 			"plane" "(-2 -6 3) (-2 -6 -3) (-2 5 -3)"
-			"material" "DEV/DEV_MEASUREGENERIC01"
+			"material" "DELIVERY_BEYOND/PAINTEDMETAL016_1K_COLOR"
 			"uaxis" "[0 1 0 0] 0.25"
 			"vaxis" "[0 0 -1 -16] 0.25"
 			"rotation" "0"
@@ -545,7 +545,7 @@ world
 		{
 			"id" "279"
 			"plane" "(-1 -6 -3) (-2 -6 -3) (-2 -6 3)"
-			"material" "DEV/DEV_MEASUREGENERIC01"
+			"material" "DELIVERY_BEYOND/PAINTEDMETAL016_1K_COLOR"
 			"uaxis" "[1 0 0 0] 0.25"
 			"vaxis" "[0 0 -1 0] 0.25"
 			"rotation" "0"
@@ -556,7 +556,7 @@ world
 		{
 			"id" "278"
 			"plane" "(-1 -6 3) (-2 -6 3) (-2 5 3)"
-			"material" "DEV/DEV_MEASUREGENERIC01"
+			"material" "DELIVERY_BEYOND/PAINTEDMETAL016_1K_COLOR"
 			"uaxis" "[1 0 0 0] 0.25"
 			"vaxis" "[0 -1 0 0] 0.25"
 			"rotation" "0"
@@ -567,7 +567,7 @@ world
 		{
 			"id" "277"
 			"plane" "(-1 5 -3) (-1 -6 -3) (-1 -6 3)"
-			"material" "DEV/DEV_MEASUREGENERIC01"
+			"material" "DELIVERY_BEYOND/PAINTEDMETAL016_1K_COLOR"
 			"uaxis" "[0 1 0 0] 0.25"
 			"vaxis" "[0 0 -1 0] 0.25"
 			"rotation" "0"
@@ -578,7 +578,7 @@ world
 		{
 			"id" "276"
 			"plane" "(-2 5 3) (-2 5 -3) (-1 5 -3)"
-			"material" "DEV/DEV_MEASUREGENERIC01"
+			"material" "DELIVERY_BEYOND/PAINTEDMETAL016_1K_COLOR"
 			"uaxis" "[1 0 0 0] 0.25"
 			"vaxis" "[0 0 -1 0] 0.25"
 			"rotation" "0"
@@ -589,7 +589,7 @@ world
 		{
 			"id" "275"
 			"plane" "(-1 -5 2) (-1 4 2) (-4 4 2)"
-			"material" "DEV/DEV_MEASUREGENERIC01"
+			"material" "DELIVERY_BEYOND/PAINTEDMETAL016_1K_COLOR"
 			"uaxis" "[1 0 0 0] 0.25"
 			"vaxis" "[0 -1 0 0] 0.25"
 			"rotation" "0"
@@ -611,7 +611,7 @@ world
 		{
 			"id" "286"
 			"plane" "(-2 -6 3) (-2 -6 -3) (-2 5 -3)"
-			"material" "DEV/DEV_MEASUREGENERIC01"
+			"material" "DELIVERY_BEYOND/PAINTEDMETAL016_1K_COLOR"
 			"uaxis" "[0 1 0 0] 0.25"
 			"vaxis" "[0 0 -1 -16] 0.25"
 			"rotation" "0"
@@ -622,7 +622,7 @@ world
 		{
 			"id" "285"
 			"plane" "(-1 -6 -3) (-2 -6 -3) (-2 -6 3)"
-			"material" "DEV/DEV_MEASUREGENERIC01"
+			"material" "DELIVERY_BEYOND/PAINTEDMETAL016_1K_COLOR"
 			"uaxis" "[1 0 0 0] 0.25"
 			"vaxis" "[0 0 -1 0] 0.25"
 			"rotation" "0"
@@ -633,7 +633,7 @@ world
 		{
 			"id" "284"
 			"plane" "(-2 5 -3) (-2 -6 -3) (-1 -6 -3)"
-			"material" "DEV/DEV_MEASUREGENERIC01"
+			"material" "DELIVERY_BEYOND/PAINTEDMETAL016_1K_COLOR"
 			"uaxis" "[1 0 0 0] 0.25"
 			"vaxis" "[0 -1 0 0] 0.25"
 			"rotation" "0"
@@ -644,7 +644,7 @@ world
 		{
 			"id" "283"
 			"plane" "(-1 5 -3) (-1 -6 -3) (-1 -6 3)"
-			"material" "DEV/DEV_MEASUREGENERIC01"
+			"material" "DELIVERY_BEYOND/PAINTEDMETAL016_1K_COLOR"
 			"uaxis" "[0 1 0 0] 0.25"
 			"vaxis" "[0 0 -1 0] 0.25"
 			"rotation" "0"
@@ -655,7 +655,7 @@ world
 		{
 			"id" "282"
 			"plane" "(-2 5 3) (-2 5 -3) (-1 5 -3)"
-			"material" "DEV/DEV_MEASUREGENERIC01"
+			"material" "DELIVERY_BEYOND/PAINTEDMETAL016_1K_COLOR"
 			"uaxis" "[1 0 0 0] 0.25"
 			"vaxis" "[0 0 -1 0] 0.25"
 			"rotation" "0"
@@ -666,7 +666,7 @@ world
 		{
 			"id" "281"
 			"plane" "(-1 4 -2) (-1 -5 -2) (-4 -5 -2)"
-			"material" "DEV/DEV_MEASUREGENERIC01"
+			"material" "DELIVERY_BEYOND/PAINTEDMETAL016_1K_COLOR"
 			"uaxis" "[1 0 0 0] 0.25"
 			"vaxis" "[0 -1 0 0] 0.25"
 			"rotation" "0"
@@ -688,7 +688,7 @@ world
 		{
 			"id" "292"
 			"plane" "(-2 -6 3) (-2 -6 -3) (-2 5 -3)"
-			"material" "DEV/DEV_MEASUREGENERIC01"
+			"material" "DELIVERY_BEYOND/PAINTEDMETAL016_1K_COLOR"
 			"uaxis" "[0 1 0 0] 0.25"
 			"vaxis" "[0 0 -1 -16] 0.25"
 			"rotation" "0"
@@ -699,7 +699,7 @@ world
 		{
 			"id" "291"
 			"plane" "(-2 5 3) (-2 5 -3) (-1 5 -3)"
-			"material" "DEV/DEV_MEASUREGENERIC01"
+			"material" "DELIVERY_BEYOND/PAINTEDMETAL016_1K_COLOR"
 			"uaxis" "[1 0 0 0] 0.25"
 			"vaxis" "[0 0 -1 0] 0.25"
 			"rotation" "0"
@@ -710,7 +710,7 @@ world
 		{
 			"id" "290"
 			"plane" "(-4 4 2) (-1 4 2) (-1 -5 2)"
-			"material" "DEV/DEV_MEASUREGENERIC01"
+			"material" "DELIVERY_BEYOND/PAINTEDMETAL016_1K_COLOR"
 			"uaxis" "[1 0 0 0] 0.25"
 			"vaxis" "[0 -1 0 0] 0.25"
 			"rotation" "0"
@@ -721,7 +721,7 @@ world
 		{
 			"id" "289"
 			"plane" "(-4 -5 -2) (-1 -5 -2) (-1 4 -2)"
-			"material" "DEV/DEV_MEASUREGENERIC01"
+			"material" "DELIVERY_BEYOND/PAINTEDMETAL016_1K_COLOR"
 			"uaxis" "[1 0 0 0] 0.25"
 			"vaxis" "[0 -1 0 0] 0.25"
 			"rotation" "0"
@@ -732,7 +732,7 @@ world
 		{
 			"id" "288"
 			"plane" "(-1 4 -2) (-1 -5 -2) (-1 -5 2)"
-			"material" "DEV/DEV_MEASUREGENERIC01"
+			"material" "DELIVERY_BEYOND/PAINTEDMETAL016_1K_COLOR"
 			"uaxis" "[0 1 0 0] 0.25"
 			"vaxis" "[0 0 -1 0] 0.25"
 			"rotation" "0"
@@ -743,7 +743,7 @@ world
 		{
 			"id" "287"
 			"plane" "(-4 4 -2) (-4 4 2) (-1 4 2)"
-			"material" "DEV/DEV_MEASUREGENERIC01"
+			"material" "DELIVERY_BEYOND/PAINTEDMETAL016_1K_COLOR"
 			"uaxis" "[1 0 0 0] 0.25"
 			"vaxis" "[0 0 -1 0] 0.25"
 			"rotation" "0"
@@ -765,7 +765,7 @@ world
 		{
 			"id" "298"
 			"plane" "(-2 -6 3) (-2 -6 -3) (-2 5 -3)"
-			"material" "DEV/DEV_MEASUREGENERIC01"
+			"material" "DELIVERY_BEYOND/PAINTEDMETAL016_1K_COLOR"
 			"uaxis" "[0 1 0 0] 0.25"
 			"vaxis" "[0 0 -1 -16] 0.25"
 			"rotation" "0"
@@ -776,7 +776,7 @@ world
 		{
 			"id" "297"
 			"plane" "(-1 -6 -3) (-2 -6 -3) (-2 -6 3)"
-			"material" "DEV/DEV_MEASUREGENERIC01"
+			"material" "DELIVERY_BEYOND/PAINTEDMETAL016_1K_COLOR"
 			"uaxis" "[1 0 0 0] 0.25"
 			"vaxis" "[0 0 -1 0] 0.25"
 			"rotation" "0"
@@ -787,7 +787,7 @@ world
 		{
 			"id" "296"
 			"plane" "(-4 4 2) (-1 4 2) (-1 -5 2)"
-			"material" "DEV/DEV_MEASUREGENERIC01"
+			"material" "DELIVERY_BEYOND/PAINTEDMETAL016_1K_COLOR"
 			"uaxis" "[1 0 0 0] 0.25"
 			"vaxis" "[0 -1 0 0] 0.25"
 			"rotation" "0"
@@ -798,7 +798,7 @@ world
 		{
 			"id" "295"
 			"plane" "(-4 -5 -2) (-1 -5 -2) (-1 4 -2)"
-			"material" "DEV/DEV_MEASUREGENERIC01"
+			"material" "DELIVERY_BEYOND/PAINTEDMETAL016_1K_COLOR"
 			"uaxis" "[1 0 0 0] 0.25"
 			"vaxis" "[0 -1 0 0] 0.25"
 			"rotation" "0"
@@ -809,7 +809,7 @@ world
 		{
 			"id" "294"
 			"plane" "(-1 4 -2) (-1 -5 -2) (-1 -5 2)"
-			"material" "DEV/DEV_MEASUREGENERIC01"
+			"material" "DELIVERY_BEYOND/PAINTEDMETAL016_1K_COLOR"
 			"uaxis" "[0 1 0 0] 0.25"
 			"vaxis" "[0 0 -1 0] 0.25"
 			"rotation" "0"
@@ -820,7 +820,7 @@ world
 		{
 			"id" "293"
 			"plane" "(-4 -5 2) (-4 -5 -2) (-1 -5 -2)"
-			"material" "DEV/DEV_MEASUREGENERIC01"
+			"material" "DELIVERY_BEYOND/PAINTEDMETAL016_1K_COLOR"
 			"uaxis" "[1 0 0 0] 0.25"
 			"vaxis" "[0 0 -1 0] 0.25"
 			"rotation" "0"

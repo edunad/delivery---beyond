@@ -5,30 +5,6 @@ using UnityEngine;
 
 using Random = UnityEngine.Random;
 
-public enum RequestType {
-    WANT_SEND_BOX,
-    WANT_RETRIEVE_BOX,
-    WANT_FLAT_BOX,
-    WANT_MAGAZINES
-}
-
-public enum ChatType {
-    INTRO = 0,
-    WRONG_ITEM,
-    OK_ITEM,
-    OUTRO,
-    PLACED_ITEM,
-}
-
-public class RequestItems {
-    public string id;
-}
-
-public class BoxRequest: RequestItems {
-    public int boxWeight;
-    public BoxSize boxSize;
-}
-
 public class entity_customer : MonoBehaviour {
     [Header("Request settings")]
     public List<RequestType> requestTemplate = new List<RequestType>();

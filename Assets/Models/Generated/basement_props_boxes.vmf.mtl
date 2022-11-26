@@ -10,28 +10,12 @@ map_Kd materials/metal/metalfloor001a.tga
 map_bump materials/metal/metalfloor001a_normal.tga
 
 
-newmtl metal/metalfloor010a
+newmtl delivery_beyond/paintedmetal016_1k_color
 Ka 1.000 1.000 1.000
 Kd 1.000 1.000 1.000
 Ks 0.000 0.000 0.000
-map_Ka materials/metal/metalfloor010a.tga
-map_Kd materials/metal/metalfloor010a.tga
-
-
-newmtl dev/dev_measuregeneric01
-Ka 1.000 1.000 1.000
-Kd 1.000 1.000 1.000
-Ks 0.000 0.000 0.000
-map_Ka materials/dev/dev_measuregeneric01.tga
-map_Kd materials/dev/dev_measuregeneric01.tga
-
-
-newmtl dev/dev_measuregeneric01b
-Ka 1.000 1.000 1.000
-Kd 1.000 1.000 1.000
-Ks 0.000 0.000 0.000
-map_Ka materials/dev/dev_measuregeneric01b.tga
-map_Kd materials/dev/dev_measuregeneric01b.tga
+map_Ka materials/delivery_beyond/paintedmetal016_1k_color.tga
+map_Kd materials/delivery_beyond/paintedmetal016_1k_color.tga
 
 
 newmtl cable/cable_back
@@ -42,4 +26,12 @@ map_Ka materials/cable/dx8cable.tga
 map_Kd materials/cable/dx8cable.tga
 map_bump materials/cable/cablenormalmap.tga
 illum 4
+
+
+newmtl delivery_beyond/metal025_1k_color
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/delivery_beyond/metal025_1k_color.tga
+map_Kd materials/delivery_beyond/metal025_1k_color.tga
 

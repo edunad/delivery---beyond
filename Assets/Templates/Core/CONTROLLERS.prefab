@@ -1,5 +1,65 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &159957003554666196
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8207488367435160216}
+  - component: {fileID: 2281004350967825641}
+  m_Layer: 0
+  m_Name: ConversationController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8207488367435160216
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 159957003554666196}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2702157389173906541}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2281004350967825641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 159957003554666196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 832c17d40a99e2f4b8f85c45eeeb1967, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 2702157389218757620}
+  textBG: {fileID: 2702157390293693610}
+  talkSnd:
+  - {fileID: 8300000, guid: 2a840dd60c1c23049a3152588a5b8da4, type: 3}
+  - {fileID: 8300000, guid: 24876597a81a34f42817d2d780bb8be6, type: 3}
+  - {fileID: 8300000, guid: e52df828207f1c8438800a1dc7c77aa6, type: 3}
+  - {fileID: 8300000, guid: 9e7ad7d9172972443bf586fd2037ca2c, type: 3}
+  - {fileID: 8300000, guid: 7b024c6bfd4b84b4387a16121f82b1d0, type: 3}
+  - {fileID: 8300000, guid: faa5d84b58211674b9c4bb6dfb486741, type: 3}
+  - {fileID: 8300000, guid: 94662bde0069b024d811a25ce1d53e33, type: 3}
+  - {fileID: 8300000, guid: ab4255e113c343f4aa8d4ba98aa3c6be, type: 3}
+  - {fileID: 8300000, guid: 385fdb902e9343340a8661239e68c667, type: 3}
+  - {fileID: 8300000, guid: 58a7b44ce3f3dbc4fb971cefa716b0c0, type: 3}
+  talkSpeed: 0.01
+  cooldown: 0.5
+  speakerPosition: {fileID: 0}
 --- !u!1 &785850733609807648
 GameObject:
   m_ObjectHideFlags: 0
@@ -52,6 +112,7 @@ MonoBehaviour:
   prop_client: {fileID: 0}
   computer_client: {fileID: 0}
   button_next_client: {fileID: 0}
+  debugStatus: 0
   servingClient: {fileID: 0}
   totalClients: 0
   status: 0
@@ -71,7 +132,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8244177798196052973
 Transform:
@@ -116,7 +177,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2702157389173906541
 Transform:
@@ -133,8 +194,9 @@ Transform:
   - {fileID: 3431700653338068239}
   - {fileID: 8244177798196052973}
   - {fileID: 785850733609807650}
+  - {fileID: 8207488367435160216}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2702157389218757626
 GameObject:
@@ -609,7 +671,6 @@ GameObject:
   - component: {fileID: 3431700653338068239}
   - component: {fileID: 4821438701304324357}
   - component: {fileID: 2702157389663840716}
-  - component: {fileID: 2702157389663840719}
   m_Layer: 0
   m_Name: UIController
   m_TagString: Untagged
@@ -688,31 +749,3 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!114 &2702157389663840719
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8085179782427043314}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 832c17d40a99e2f4b8f85c45eeeb1967, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: {fileID: 2702157389218757620}
-  textBG: {fileID: 2702157390293693610}
-  talkSnd:
-  - {fileID: 8300000, guid: 2a840dd60c1c23049a3152588a5b8da4, type: 3}
-  - {fileID: 8300000, guid: 24876597a81a34f42817d2d780bb8be6, type: 3}
-  - {fileID: 8300000, guid: e52df828207f1c8438800a1dc7c77aa6, type: 3}
-  - {fileID: 8300000, guid: 9e7ad7d9172972443bf586fd2037ca2c, type: 3}
-  - {fileID: 8300000, guid: 7b024c6bfd4b84b4387a16121f82b1d0, type: 3}
-  - {fileID: 8300000, guid: faa5d84b58211674b9c4bb6dfb486741, type: 3}
-  - {fileID: 8300000, guid: 94662bde0069b024d811a25ce1d53e33, type: 3}
-  - {fileID: 8300000, guid: ab4255e113c343f4aa8d4ba98aa3c6be, type: 3}
-  - {fileID: 8300000, guid: 385fdb902e9343340a8661239e68c667, type: 3}
-  - {fileID: 8300000, guid: 58a7b44ce3f3dbc4fb971cefa716b0c0, type: 3}
-  talkSpeed: 0.01
-  cooldown: 0.5
-  speakerPosition: {fileID: 0}

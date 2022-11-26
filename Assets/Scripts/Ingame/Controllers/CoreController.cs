@@ -6,38 +6,6 @@ using UnityEngine;
 
 using Random = UnityEngine.Random;
 
-public enum GAMEPLAY_STATUS {
-    PREPARING = 0,
-    IDLE,
-    SERVING,
-    ITEM_REQUESTED,
-    ITEM_RETRIEVE,
-    THINKING,
-    WEIGHT_ITEM,
-    COMPLETING
-}
-
-public enum GAME_COUNTRIES {
-    ZUSTUANIA = 0,
-    PUDROAQUE,
-    YADRYA,
-    UDRUS,
-    SHOIDAL,
-    FLIULAND,
-    OSTRAX,
-    ESCAD,
-    PLUOD_FLINES,
-    CREATURE_LAND
-}
-
-public enum GAME_REGIONS {
-    NORTH = 0,
-    WEST,
-    SOUTH,
-    CENTER,
-    EAST
-}
-
 [DisallowMultipleComponent]
 [DefaultExecutionOrder(1)]
 public class CoreController : MonoBehaviour {
@@ -56,12 +24,11 @@ public class CoreController : MonoBehaviour {
 
     #if UNITY_EDITOR
         [Header("DEBUG")]
-        public GAMEPLAY_STATUS debugStatus;
+        public GAMEPLAY_STATUS debugStatus = GAMEPLAY_STATUS.PREPARING;
 
         [EditorButton("Set")]
         public void Set() => this.setGameStatus(debugStatus);
     #endif
-
 
     public delegate void onGameStatusUpdated(GAMEPLAY_STATUS oldStatus, GAMEPLAY_STATUS newStatus);
     public event onGameStatusUpdated OnGameStatusUpdated;
@@ -109,7 +76,6 @@ public class CoreController : MonoBehaviour {
         if(this.totalFails > this.maxMistakes) {
             // TODO: GAME OVER
         } else {
-            // TODO: Print mistake ticket
             this.computer_client.queueCmd("#" + mistake);
         }
     }

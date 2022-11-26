@@ -1,6 +1,30 @@
 # Decompiled with VMF2OBJ v2.0.0 by Dylancyclone
 
 
+newmtl delivery_beyond/metal025_1k_color
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/delivery_beyond/metal025_1k_color.tga
+map_Kd materials/delivery_beyond/metal025_1k_color.tga
+
+
+newmtl lights/white
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/lights/white.tga
+map_Kd materials/lights/white.tga
+
+
+newmtl delivery_beyond/paintedmetal016_1k_color
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/delivery_beyond/paintedmetal016_1k_color.tga
+map_Kd materials/delivery_beyond/paintedmetal016_1k_color.tga
+
+
 newmtl dev/dev_measuregeneric01
 Ka 1.000 1.000 1.000
 Kd 1.000 1.000 1.000
@@ -18,10 +42,10 @@ map_Kd materials/tools/toolsblockbullets.tga
 illum 4
 
 
-newmtl dev/dev_blendmeasure
+newmtl delivery_beyond/rust005_1k_color
 Ka 1.000 1.000 1.000
 Kd 1.000 1.000 1.000
 Ks 0.000 0.000 0.000
-map_Ka materials/dev/dev_measuregeneric01b.tga
-map_Kd materials/dev/dev_measuregeneric01b.tga
+map_Ka materials/delivery_beyond/rust005_1k_color.tga
+map_Kd materials/delivery_beyond/rust005_1k_color.tga
 
