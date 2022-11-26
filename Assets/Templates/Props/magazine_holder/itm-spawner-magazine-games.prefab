@@ -33,7 +33,7 @@ Transform:
   - {fileID: 6792930612041873717}
   - {fileID: 6471654091438386290}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &6471654091010829511
 BoxCollider:
@@ -121,7 +121,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5757543528659856582, guid: ca13082852c24a0448a5fc7f6f962ae2, type: 2}
+  - {fileID: -5757543528659856582, guid: 9ea75a247125fc54ead86d28b4807047, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -165,8 +165,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: GAMES
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ca13082852c24a0448a5fc7f6f962ae2, type: 2}
-  m_sharedMaterial: {fileID: -5757543528659856582, guid: ca13082852c24a0448a5fc7f6f962ae2, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9ea75a247125fc54ead86d28b4807047, type: 2}
+  m_sharedMaterial: {fileID: -5757543528659856582, guid: 9ea75a247125fc54ead86d28b4807047, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

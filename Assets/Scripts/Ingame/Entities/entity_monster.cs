@@ -47,6 +47,8 @@ public class entity_monster : MonoBehaviour {
     }
 
     public void OnDrawGizmos() {
+        if(this.startPoint == null) return;
+
         Gizmos.color = new Color(1f, 0f, 0f, 1f);
 
         for(int i = 0; i < this.points.Count; i++) {

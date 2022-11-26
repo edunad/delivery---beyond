@@ -1,5 +1,4 @@
 
-using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
@@ -9,7 +8,6 @@ public enum AlignSpot {
     BOTTOM = 1
 }
 
-[ExecuteInEditMode]
 [RequireComponent(typeof(BoxCollider))]
 public class entity_item_spot : MonoBehaviour {
 
@@ -118,26 +116,26 @@ public class entity_item_spot : MonoBehaviour {
         Physics.SyncTransforms();
     }
 
+    /* *************
+    * DEBUG
+    ===============*/
+    public void OnDrawGizmos() {
+        if(this._trigger == null) this._trigger = GetComponent<BoxCollider>();
+
+        Matrix4x4 original = Gizmos.matrix;
+        Gizmos.matrix = Matrix4x4.TRS(this.transform.TransformPoint(this._trigger.center), this.transform.rotation, this.transform.lossyScale);
+        Gizmos.color = Color.white;
+        Gizmos.DrawWireCube(Vector3.zero, this._trigger.size);
+        Gizmos.color = new Color(1f, 0.5f, 0, 0.5f);
+
+        Gizmos.DrawCube(Vector3.zero, this._trigger.size);
+        Gizmos.color = new Color(1f, 0.2f, 0, 1f);
+
+        Gizmos.matrix = original;
+        Gizmos.DrawCube(this.transform.position, new Vector3(0.1f, 0.1f, 0.1f));
+    }
+
     #if UNITY_EDITOR
-        /* *************
-        * DEBUG
-        ===============*/
-        public void OnDrawGizmos() {
-            if(this._trigger == null) return;
-
-            Matrix4x4 original = Gizmos.matrix;
-            Gizmos.matrix = Matrix4x4.TRS(this.transform.TransformPoint(this._trigger.center), this.transform.rotation, this.transform.lossyScale);
-            Gizmos.color = Color.white;
-            Gizmos.DrawWireCube(Vector3.zero, this._trigger.size);
-            Gizmos.color = new Color(1f, 0.5f, 0, 0.5f);
-
-            Gizmos.DrawCube(Vector3.zero, this._trigger.size);
-            Gizmos.color = new Color(1f, 0.2f, 0, 1f);
-
-            Gizmos.matrix = original;
-            Gizmos.DrawCube(this.transform.position, new Vector3(0.1f, 0.1f, 0.1f));
-        }
-
         private void setup() {
             if(transform.childCount != 0) {
                 this.glue = transform.GetChild(0).gameObject;
@@ -153,7 +151,6 @@ public class entity_item_spot : MonoBehaviour {
             if(this.item != null) {
                 Undo.RegisterCompleteObjectUndo(this.item, "Undo setup");
                 this.fixPosition();
-                //EditorCoroutine.addCoroutine(this.setItemToGlue(this.item)); // Do it next tick, so affects bounds.extends
             }
         }
     #endif

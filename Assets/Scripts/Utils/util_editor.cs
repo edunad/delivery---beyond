@@ -1,5 +1,8 @@
+
+#if UNIT_EDITOR
 using System.Collections;
 using System.Collections.Generic;
+
 using UnityEditor;
 
 [InitializeOnLoad]
@@ -23,3 +26,4 @@ public class EditorCoroutine {
         if(!_coroutines[_current].MoveNext()) _coroutines.RemoveAt(_current);
     }
 }
+#endif

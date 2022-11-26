@@ -25,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8873350210211561504}
-  m_LocalRotation: {x: 0, y: 0.024170484, z: 0, w: 0.9997079}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -33,8 +33,8 @@ Transform:
   - {fileID: 8873350210253242539}
   - {fileID: 1603507314837469792}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 2.77, z: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &8873350210211561502
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -121,7 +121,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5757543528659856582, guid: ca13082852c24a0448a5fc7f6f962ae2, type: 2}
+  - {fileID: -5757543528659856582, guid: 9ea75a247125fc54ead86d28b4807047, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -165,8 +165,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: SPORTS
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ca13082852c24a0448a5fc7f6f962ae2, type: 2}
-  m_sharedMaterial: {fileID: -5757543528659856582, guid: ca13082852c24a0448a5fc7f6f962ae2, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9ea75a247125fc54ead86d28b4807047, type: 2}
+  m_sharedMaterial: {fileID: -5757543528659856582, guid: 9ea75a247125fc54ead86d28b4807047, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

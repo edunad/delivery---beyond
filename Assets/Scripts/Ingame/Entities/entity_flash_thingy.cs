@@ -18,10 +18,10 @@ public class entity_flash_thingy : MonoBehaviour {
     #endregion
 
     public void Awake() {
-        this._cam = GetComponentInChildren<Camera>();
+        this._cam = GetComponentInChildren<Camera>(true);
         this._cam.enabled = false;
 
-        this._cam_light = GetComponentInChildren<Light>();
+        this._cam_light = GetComponentInChildren<Light>(true);
         this._cam_light.enabled = false;
 
         this._canFlash = true;
@@ -65,6 +65,7 @@ public class entity_flash_thingy : MonoBehaviour {
     public IEnumerator snapshot(Action onDone) {
         yield return new WaitForEndOfFrame();
 
+        RenderSettings.fog = false;
         RenderTexture.active = this._renderTexture;
 
         this._cam.enabled = true;
@@ -77,10 +78,11 @@ public class entity_flash_thingy : MonoBehaviour {
         result.ReadPixels(new Rect(0, 0, this._cam.pixelWidth, this._cam.pixelHeight), 0, 0, false);
         result.Apply();
 
-        this.cam_material.SetTexture("_MainTex", result);
         this.cam_material.SetColor("_Color", Color.white);
+        this.cam_material.SetTexture("_MainTex", result);
 
         RenderTexture.active = null;
+        RenderSettings.fog = true;
         this._cam.enabled = false;
         this._cam.targetTexture = null;
 

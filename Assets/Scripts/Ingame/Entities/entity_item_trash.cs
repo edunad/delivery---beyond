@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[ExecuteInEditMode]
 [RequireComponent(typeof(BoxCollider))]
 public class entity_item_trash : MonoBehaviour {
 
@@ -37,7 +36,7 @@ public class entity_item_trash : MonoBehaviour {
      * DEBUG
      ===============*/
     public void OnDrawGizmos() {
-        if(this._trigger == null) return;
+        if(this._trigger == null) this._trigger = GetComponent<BoxCollider>();
 
         Matrix4x4 original = Gizmos.matrix;
         Gizmos.matrix = Matrix4x4.TRS(this.transform.TransformPoint(this._trigger.center), this.transform.rotation, this.transform.lossyScale);

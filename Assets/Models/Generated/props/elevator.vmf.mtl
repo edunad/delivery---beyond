@@ -123,3 +123,11 @@ Ks 0.000 0.000 0.000
 map_Ka materials/props/woodcrate001a.tga
 map_Kd materials/props/woodcrate001a.tga
 
+
+newmtl lights/fluorescentwhite001a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/lights/fluorescentwhite001a.tga
+map_Kd materials/lights/fluorescentwhite001a.tga
+

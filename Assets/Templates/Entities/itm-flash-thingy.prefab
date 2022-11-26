@@ -44,8 +44,8 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 5
-  m_Range: 7.8187304
+  m_Intensity: 4
+  m_Range: 9.986202
   m_SpotAngle: 91.661064
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 3444845916765852085}
   - component: {fileID: 3444845916765852087}
   - component: {fileID: 3444845916765852086}
-  - component: {fileID: 3444845916765852080}
+  - component: {fileID: 6625390097859779886}
   m_Layer: 2
   m_Name: itm-flash-thingy
   m_TagString: Untagged
@@ -129,7 +129,7 @@ Transform:
   - {fileID: 1964056116}
   - {fileID: 7466375006650933155}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &3444845916765852087
 BoxCollider:
@@ -160,7 +160,7 @@ MonoBehaviour:
   isBig: 0
   supportMultiplePickup: 0
   pickupAngle: {x: 0, y: -90, z: 0}
---- !u!114 &3444845916765852080
+--- !u!114 &6625390097859779886
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -169,12 +169,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3444845916765852084}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c61e49036f883a14b870d64bba62745a, type: 3}
+  m_Script: {fileID: 11500000, guid: 4b056aa2187d8104fb66eaf41ded87b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rechargeTime: 7.5
-  cam: {fileID: 6118821106966577744}
-  cam_light: {fileID: 1964056117}
+  rechargeTime: 4
   cam_material: {fileID: 2100000, guid: 384ecf38f2f9cfc4ebb1f8932881497b, type: 2}
 --- !u!1 &8473503327925440123
 GameObject:
@@ -244,8 +242,8 @@ Camera:
   m_TargetTexture: {fileID: 8400000, guid: 30449f24d1bcea24f9a75955f0894d17, type: 2}
   m_TargetDisplay: 0
   m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
+  m_HDR: 0
+  m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 0

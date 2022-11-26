@@ -1,7 +1,6 @@
 
 using UnityEngine;
 
-[ExecuteInEditMode]
 [RequireComponent(typeof(entity_item))]
 public class entity_flat_box : MonoBehaviour {
 

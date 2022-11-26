@@ -1,5 +1,6 @@
 
 
+#if UNITY_EDITOR
 using System.Reflection;
 using System.Collections.Generic;
 using UnityEditor;
@@ -27,3 +28,4 @@ public class EditorButton {
         }
     }
 }
+#endif

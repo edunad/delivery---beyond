@@ -30,9 +30,9 @@ public class entity_elevator : MonoBehaviour {
         this.elevatorGate.reverse = false;
         this.elevatorGate.OnMovementFinish += this.onGateMovementFinish;
 
-        this.itemSpot = GetComponentInChildren<entity_item_spot>();
+        this.itemSpot = GetComponentInChildren<entity_item_spot>(true);
 
-        this._button = GetComponentInChildren<entity_button>();
+        this._button = GetComponentInChildren<entity_button>(true);
         this._button.OnUSE += onElevatorButtonUSE;
 
         this._audioClips = new AudioClip[] {

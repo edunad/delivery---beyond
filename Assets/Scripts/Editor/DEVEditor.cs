@@ -1,4 +1,5 @@
 
+#if UNITY_EDITOR
 using UnityEditor;
 using Object = UnityEngine.Object;
 
@@ -15,3 +16,4 @@ public class DEVEditor : Editor {
         this._buttons.Draw(targets);
     }
 }
+#endif

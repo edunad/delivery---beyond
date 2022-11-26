@@ -48,3 +48,30 @@ Ks 0.000 0.000 0.000
 map_Ka materials/delivery_beyond/officeceiling001_1k_color.tga
 map_Kd materials/delivery_beyond/officeceiling001_1k_color.tga
 
+
+newmtl decals/decalstain005a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/decals/decalstain005a.tga
+map_Kd materials/decals/decalstain005a.tga
+illum 4
+
+
+newmtl decals/decalstain006a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/decals/decalstain006a.tga
+map_Kd materials/decals/decalstain006a.tga
+illum 4
+
+
+newmtl decals/decalstain015a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/decals/decalstain015a.tga
+map_Kd materials/decals/decalstain015a.tga
+illum 4
+

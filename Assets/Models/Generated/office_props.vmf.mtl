@@ -76,6 +76,14 @@ map_Kd materials/metal/metalrail013a.tga
 illum 4
 
 
+newmtl delivery_beyond/danger_sign
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/delivery_beyond/danger_sign.tga
+map_Kd materials/delivery_beyond/danger_sign.tga
+
+
 newmtl props/woodcrate003b
 Ka 1.000 1.000 1.000
 Kd 1.000 1.000 1.000
@@ -223,6 +231,14 @@ map_Ka materials/metal/metaldoor044a.tga
 map_Kd materials/metal/metaldoor044a.tga
 
 
+newmtl props/metalpanel020b
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/props/metalpanel020b.tga
+map_Kd materials/props/metalpanel020b.tga
+
+
 newmtl wood/woodfloor007a_c17
 Ka 1.000 1.000 1.000
 Kd 1.000 1.000 1.000
@@ -288,10 +304,10 @@ map_Ka materials/tools/toolsinvisibleladder.tga
 map_Kd materials/tools/toolsinvisibleladder.tga
 
 
-newmtl props/metalpanel020b
+newmtl delivery_beyond/speaker
 Ka 1.000 1.000 1.000
 Kd 1.000 1.000 1.000
 Ks 0.000 0.000 0.000
-map_Ka materials/props/metalpanel020b.tga
-map_Kd materials/props/metalpanel020b.tga
+map_Ka materials/delivery_beyond/speaker.tga
+map_Kd materials/delivery_beyond/speaker.tga
 
