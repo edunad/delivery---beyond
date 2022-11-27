@@ -2294,7 +2294,7 @@ MonoBehaviour:
   writeSpeed: 0.05
   slowWriteSpeed: 0.4
   writeCooldown: 1
-  totalLines: 17
+  totalLines: 22
 --- !u!1 &1220280625
 GameObject:
   m_ObjectHideFlags: 0
@@ -3920,7 +3920,7 @@ Transform:
   - {fileID: 5509743973218139559}
   - {fileID: 1000647841}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8800346394335626839
 GameObject:
