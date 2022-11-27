@@ -49,7 +49,7 @@ public class entity_client_deliver_spot : MonoBehaviour {
                 CoreController.Instance.penalize("Wrong box delivered");
             }
 
-            CoreController.Instance.setGameStatus(GAMEPLAY_STATUS.COMPLETING);
+            CoreController.Instance.setGameStatus(GAMEPLAY_STATUS.ITEM_REQUESTED);
             CoreController.Instance.proccedEvent();
         });
     }

@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 [DisallowMultipleComponent]
-[DefaultExecutionOrder(1)]
+[DefaultExecutionOrder(-1)]
 public class OptionsController : MonoBehaviour {
-	public static OptionsController Instance;
+    public static OptionsController Instance { get; private set; }
 
     [Header("Settings")]
     public TextMeshPro volumeMesh;
@@ -16,9 +16,12 @@ public class OptionsController : MonoBehaviour {
     [Header("Options")]
     public GameObject optionsMenu;
 
-    public static float musicVolume = 1f;
-    public static float effectsVolume = 1f;
-    public static int sensitivity = 10;
+    [HideInInspector]
+    public float musicVolume = 1f;
+    [HideInInspector]
+    public float effectsVolume = 1f;
+    [HideInInspector]
+    public int sensitivity = 10;
 
     public delegate void onSettingsUpdated(string id, object val);
     public event onSettingsUpdated OnSettingsUpdated;
@@ -26,9 +29,12 @@ public class OptionsController : MonoBehaviour {
     public delegate void onOptionsMenuUpdate(bool open);
     public event onOptionsMenuUpdate OnOptionsMenuUpdate;
 
-    public OptionsController() { Instance = this; }
-
     public void Awake () {
+        if (Instance != null && Instance != this) {
+            Destroy(this);
+            return;
+        }else Instance = this;
+
         // Get vars
         musicVolume = PlayerPrefs.GetFloat("musicVolume", 1f);
         effectsVolume = PlayerPrefs.GetFloat("effectsVolume", 1f);

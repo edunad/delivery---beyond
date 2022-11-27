@@ -55,7 +55,10 @@ MonoBehaviour:
   - Awesome, thanks!
   chatOUTRO:
   - Bye
-  chatPLACED_ITEM: []
+  chatPLACED_ITEM:
+  - I've placed the item on the machine
+  chatGAME_OVER:
+  - I want to speak to your manager
   currentRequest: 3
   voice: 0.28544027
   customerName: Lal

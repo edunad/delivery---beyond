@@ -38,8 +38,9 @@ public class entity_client_spot : MonoBehaviour {
         }
 
         if(!isOK) {
-            CoreController.Instance.penalize("Invalid given item");
-            CoreController.Instance.servingClient.chat(ChatType.WRONG_ITEM);
+            if(CoreController.Instance.penalize("Invalid given item")) {
+                CoreController.Instance.servingClient.chat(ChatType.WRONG_ITEM);
+            }
         } else {
             this._spot.setLocked(true);
             CoreController.Instance.proccedEvent();
@@ -48,6 +49,7 @@ public class entity_client_spot : MonoBehaviour {
 
     private void generateTicket() {
          if(this._ticket != null) throw new System.Exception("Already have a ticket template, forgot to delete?");
+
         this._ticket = GameObject.Instantiate(this.ticketTemplate, new Vector3(-300, 0, 0), Quaternion.identity);
         this._spot.placeItem(this._ticket, true);
     }
@@ -61,10 +63,11 @@ public class entity_client_spot : MonoBehaviour {
     }
 
     private void gameStatusChange(GAMEPLAY_STATUS prevStatus, GAMEPLAY_STATUS newStatus) {
-        bool isOK = (newStatus == GAMEPLAY_STATUS.ITEM_REQUESTED || newStatus == GAMEPLAY_STATUS.ITEM_RETRIEVE);
+        bool isOK = (newStatus == GAMEPLAY_STATUS.ITEM_REQUESTED || newStatus == GAMEPLAY_STATUS.ITEM_WAIT_PLY_PICKUP);
+
         if(!isOK) this._spot.deleteItem();
         this._spot.setLocked(!isOK);
 
-        if(newStatus == GAMEPLAY_STATUS.ITEM_RETRIEVE) { this.generateTicket(); }
+        if(newStatus == GAMEPLAY_STATUS.ITEM_WAIT_PLY_PICKUP) { this.generateTicket(); }
     }
 }

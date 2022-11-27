@@ -6,4 +6,5 @@ public enum ChatType {
     OK_ITEM,
     OUTRO,
     PLACED_ITEM,
+    GAME_OVER,
 }

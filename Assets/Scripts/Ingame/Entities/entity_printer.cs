@@ -45,7 +45,6 @@ public class entity_printer : MonoBehaviour {
                 this._spot.placeItem(paperInstance, true);
 
                 this._printing = false;
-                Debug.Log("Done printing");
             }
         });
     }

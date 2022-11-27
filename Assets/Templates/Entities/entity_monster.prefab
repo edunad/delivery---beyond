@@ -52,8 +52,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.4
-  MaxDistance: 1.6
+  MinDistance: 0.13
+  MaxDistance: 4.49
   Pan2D: 0
   rolloffMode: 2
   BypassEffects: 0
@@ -63,8 +63,8 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0.4
-      value: 1
+      time: 0.40282288
+      value: 0.99583054
       inSlope: -2.5009959
       outSlope: -2.5009959
       tangentMode: 0
@@ -72,8 +72,8 @@ AudioSource:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.6701172
-      value: 0.46174622
+      time: 0.66727906
+      value: 0.48257446
       inSlope: -0.62524897
       outSlope: -0.62524897
       tangentMode: 0
@@ -112,7 +112,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.20833333
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -137,6 +137,65 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &3935823943956968273
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 927384922385134194}
+  - component: {fileID: 8395073959732690522}
+  - component: {fileID: 5511430593879159114}
+  m_Layer: 9
+  m_Name: monster_trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &927384922385134194
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3935823943956968273}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8192143383418748322}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &8395073959732690522
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3935823943956968273}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.51288986
+  m_Height: 2.000262
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.9895147, z: -0.012889862}
+--- !u!114 &5511430593879159114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3935823943956968273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 122a4b42efaaa5c4c9ee8c4178bf8a90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8192143383418748320
 GameObject:
   m_ObjectHideFlags: 0
@@ -148,7 +207,6 @@ GameObject:
   - component: {fileID: 8192143383418748322}
   - component: {fileID: 8192143383418748321}
   - component: {fileID: 8192143383418748323}
-  - component: {fileID: 194851048}
   m_Layer: 9
   m_Name: entity_monster
   m_TagString: Untagged
@@ -170,6 +228,7 @@ Transform:
   m_Children:
   - {fileID: 8192143383949173155}
   - {fileID: 1567221759}
+  - {fileID: 927384922385134194}
   m_Father: {fileID: 0}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -229,20 +288,6 @@ MonoBehaviour:
   - {x: 0, y: 0.5, z: 1.27}
   - {x: 0, y: 0.5, z: 3.81}
   startPoint: {fileID: 0}
---- !u!136 &194851048
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8192143383418748320}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.51288986
-  m_Height: 2.000262
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.9895147, z: -0.012889862}
 --- !u!1 &8192143383949173154
 GameObject:
   m_ObjectHideFlags: 0

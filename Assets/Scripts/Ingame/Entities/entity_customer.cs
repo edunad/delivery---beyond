@@ -15,6 +15,7 @@ public class entity_customer : MonoBehaviour {
     public List<string> chatOK_ITEM = new List<string>();
     public List<string> chatOUTRO = new List<string>();
     public List<string> chatPLACED_ITEM = new List<string>();
+    public List<string> chatGAME_OVER = new List<string>(){"I want to talk to the manager"};
 
     [HideInInspector]
     public Dictionary<string, object> settings = new Dictionary<string, object>();
@@ -122,6 +123,10 @@ public class entity_customer : MonoBehaviour {
                 break;
             case ChatType.PLACED_ITEM:
                 list = this.chatPLACED_ITEM;
+                break;
+
+            case ChatType.GAME_OVER:
+                list = this.chatGAME_OVER;
                 break;
         }
 

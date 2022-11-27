@@ -21,7 +21,7 @@ public class entity_scale_machine : MonoBehaviour {
     #endregion
 
     public void Awake() {
-        CoreController.Instance.OnGameStatusUpdated += this.onStatusChange;
+        CoreController.Instance.OnGameStatusUpdated += this.gameStatusChange;
 
         this.item_spot.OnItemDrop += this.onBoxDrop;
         this.item_spot.OnItemPickup += this.onBoxPickup;
@@ -33,6 +33,7 @@ public class entity_scale_machine : MonoBehaviour {
 
         this.btn_print.OnUSE += this.onButtonPress;
         this.btn_print.setButtonLocked(true);
+        this.item_floppy_spot.setLocked(false);
 
         this.computer.OnCMDCompleted += this.onCMDPrinted;
 
@@ -50,16 +51,12 @@ public class entity_scale_machine : MonoBehaviour {
         this.resetCounter();
     }
 
-    private void onStatusChange(GAMEPLAY_STATUS oldStatus, GAMEPLAY_STATUS newStatus) {
+    private void gameStatusChange(GAMEPLAY_STATUS oldStatus, GAMEPLAY_STATUS newStatus) {
         if(newStatus == GAMEPLAY_STATUS.WEIGHT_ITEM) {
-            this.computer.clear();
-
             this.item_spot.setLocked(false);
-            this.item_floppy_spot.setLocked(true);
             this.item_shipment_spot.setLocked(true);
         } else {
             this.item_spot.setLocked(true);
-            this.item_floppy_spot.setLocked(true);
             this.item_shipment_spot.setLocked(true);
 
             this.item_spot.deleteItem();
@@ -85,21 +82,19 @@ public class entity_scale_machine : MonoBehaviour {
         this.setCounter(box.weight);
         this._box = box;
 
-        this.item_spot.setLocked(true);
-        this.item_floppy_spot.setLocked(false);
-
         this.computer.queueCmd("$DETECTED ITEM WEIGHT: " + box.weight + "kg");
         this.computer.queueCmd("PLEASE INSERT REGION FLOPPY AND PRESS BUTTON");
+
+        this.item_spot.setLocked(true);
+        if(this.item_floppy_spot.hasItem()) this.onFloppyDrop(this.item_floppy_spot.item);
     }
 
     private void onFloppyDrop(entity_item itm) {
-        if(this._box == null) return;
-
         entity_floppy floppy = itm.GetComponent<entity_floppy>();
         if(floppy == null) throw new System.Exception("Invalid item, missing entity_floppy");
 
         SoundController.Instance.Play3DSound(this._audioClips[0], this.transform);
-        this.btn_print.setButtonLocked(false);
+        this.btn_print.setButtonLocked(this._box == null);
     }
 
     private void onFloppyPickup(entity_item itm) {

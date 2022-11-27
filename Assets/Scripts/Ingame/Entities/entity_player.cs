@@ -1,5 +1,6 @@
 
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public enum ShakeMode {
     SHAKE_UP = 1,
@@ -7,6 +8,12 @@ public enum ShakeMode {
     SHAKE_LEFT = 3,
     SHAKE_RIGHT = 4,
     SHAKE_ALL = 5
+}
+
+public enum FrozenFlags {
+	NONE = 0,
+	OPTIONS = 1,
+	DEAD = 1 << 1
 }
 
 [RequireComponent(typeof(CharacterController))]
@@ -48,7 +55,7 @@ public class entity_player : MonoBehaviour {
 		#endregion
 
 		#region OTHER
-			private bool _frozen = false;
+			private FrozenFlags _frozen = FrozenFlags.NONE;
 		#endregion
 	#endregion
 
@@ -74,7 +81,7 @@ public class entity_player : MonoBehaviour {
 		};
 
 		OptionsController.Instance.OnOptionsMenuUpdate += (bool open) => {
-			this._frozen = open;
+			this.setFrozen(FrozenFlags.OPTIONS, open);
 
 			if(open) {
 				Cursor.lockState = CursorLockMode.Confined;
@@ -86,8 +93,13 @@ public class entity_player : MonoBehaviour {
 		};
 	}
 
+	public void setFrozen(FrozenFlags flag, bool set) {
+		if(!set) this._frozen &= ~flag;
+		else this._frozen |= flag;
+	}
+
 	public void Update() {
-		if(this._frozen) return;
+		if(this._frozen != FrozenFlags.NONE) return;
 
 		if(this._controller != null) {
 			float speed = Input.GetKey(KeyCode.LeftShift) ? runSpeed : moveSpeed;

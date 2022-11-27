@@ -1,9 +1,13 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 [RequireComponent(typeof(AudioSource))]
 public class entity_sound : MonoBehaviour {
 	[HideInInspector]
 	public AudioSource speaker;
+
+    [HideInInspector]
+    public SoundController controller;
 
 	private float _timeRemaining = -1;
 	private bool _playOnce;
@@ -12,8 +16,15 @@ public class entity_sound : MonoBehaviour {
         this.speaker = GetComponent<AudioSource>();
         this.speaker.loop = false;
         this.speaker.playOnAwake = false;
-        this.speaker.outputAudioMixerGroup = SoundController.Instance.MasterMixer.outputAudioMixerGroup;
 	}
+
+    public void SetController(SoundController ct) {
+        this.controller = ct;
+    }
+
+    public void SetMixer(AudioMixerGroup mixer) {
+        this.speaker.outputAudioMixerGroup = mixer;
+    }
 
     public void SetClip(AudioClip clip) {
         this.Stop();
@@ -77,7 +88,7 @@ public class entity_sound : MonoBehaviour {
         this.SetClip(null);
 
         this._playOnce = false;
-        SoundController.Instance.queueSound(this);
+        this.controller.queueSound(this);
     }
 
     public void Update() {

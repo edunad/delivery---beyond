@@ -68,14 +68,14 @@ public class entity_button : MonoBehaviour {
         if(ply.isHoldingItem()) return;
 
         if(this.locked) {
-            SoundController.Instance.Play3DSound(this._audioClips[0], this.transform, Random.Range(0.80f, 1.10f), 4f, 0.5f);
+            SoundController.Instance.Play3DSound(this._audioClips[0], this.transform, Random.Range(0.80f, 1.10f), 4f, 0.7f);
             return;
         }
 
         this.setButtonLocked(true);
         if(OnUSE != null) OnUSE.Invoke(ply);
 
-        SoundController.Instance.Play3DSound(this._audioClips[1], this.transform, Random.Range(0.80f, 1.10f), 4f, 0.5f);
+        SoundController.Instance.Play3DSound(this._audioClips[1], this.transform, Random.Range(0.80f, 1.10f), 4f, 0.7f);
         if(this.resetCooldown > 0) util_timer.simple(this.resetCooldown, () => {
             this.setButtonLocked(false);
         });

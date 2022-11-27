@@ -13,7 +13,7 @@ public class entity_send_package : MonoBehaviour {
     #endregion
 
     public void Awake() {
-        CoreController.Instance.OnGameStatusUpdated += this.onStatusChange;
+        CoreController.Instance.OnGameStatusUpdated += this.gameStatusChange;
 
         this._elevatorGate = GetComponent<entity_movement>();
         this._elevatorGate.reverse = false;
@@ -27,8 +27,8 @@ public class entity_send_package : MonoBehaviour {
         this._elevatorGate.OnMovementFinish += this.onGateMovementFinish;
     }
 
-    private void onStatusChange(GAMEPLAY_STATUS oldStatus, GAMEPLAY_STATUS newStatus) {
-        if(newStatus == GAMEPLAY_STATUS.COMPLETING) {
+    private void gameStatusChange(GAMEPLAY_STATUS oldStatus, GAMEPLAY_STATUS newStatus) {
+        if(newStatus == GAMEPLAY_STATUS.ITEM_SHIPPING) {
             this.spot.setLocked(false);
         } else {
             this.spot.setLocked(true);
@@ -65,7 +65,6 @@ public class entity_send_package : MonoBehaviour {
         bool isOK = CoreController.Instance.validateCountry(clientCountry, boxRegion);
 
         // TODO: Play elevator sound?
-
         util_timer.simple(2f, () => {
             this.spot.deleteItem();
             this._box = null;

@@ -47,12 +47,14 @@ public class ui_button : MonoBehaviour {
 
     public void Update() {
         if (!this._mouseDown || !this._isEnabled) return;
-        if (this._tapCD > Time.time - this.cooldown) return;
+        if (this._tapCD >= Time.time) return;
 
         // Stop pressing
         if (!this.canHoldMouse) this._mouseDown = false;
 
-        this._tapCD = Time.time; // Prevent spamming
+        if(this.cooldown == -1) this.isEnabled(false);
+        else this._tapCD = Time.time + this.cooldown; // Prevent spamming
+
         this.targetObject.SendMessage("OnUIClick", this.id, SendMessageOptions.DontRequireReceiver);
     }
 

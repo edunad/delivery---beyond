@@ -23,7 +23,7 @@ public class Conversation {
 
 [DisallowMultipleComponent]
 public class ConversationController : MonoBehaviour {
-	public static ConversationController Instance;
+    public static ConversationController Instance { get; private set; }
 
     public TextMeshPro text;
     public TextMeshPro textBG;
@@ -52,11 +52,16 @@ public class ConversationController : MonoBehaviour {
         private string _currentChatID = "default";
     #endregion
 
-    public ConversationController() { Instance = this; }
+    public void Awake() {
+        if (Instance != null && Instance != this) {
+            Destroy(this);
+            return;
+        }else Instance = this;
+    }
 
-    public void clear() {
+    public void clear(bool reset = true) {
         this._talkQueue.Clear();
-        this.reset();
+        if(reset) this.reset();
     }
 
     public void setConversationID(string id) {
@@ -102,7 +107,7 @@ public class ConversationController : MonoBehaviour {
                 this.talkSnd[Random.Range(0, this.talkSnd.Count)],
                 this.speakerPosition,
                 Random.Range(this._currentChat.minPitch, this._currentChat.maxPitch),
-                5f);
+                8f);
 
             if (this._chatIndx < strSize - 1){
                 this._chatIndx += 1;

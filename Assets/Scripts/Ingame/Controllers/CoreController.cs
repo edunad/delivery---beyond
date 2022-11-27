@@ -1,15 +1,19 @@
 
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
+[DefaultExecutionOrder(-1)]
 [DisallowMultipleComponent]
-[DefaultExecutionOrder(2)]
 public class CoreController : MonoBehaviour {
-	public static CoreController Instance;
+    public static CoreController Instance { get; private set; }
+
+    [Header("UI")]
+    public ui_fade fade;
 
     [Header("Level settings")]
     public List<entity_customer> customerTemplates = new List<entity_customer>();
@@ -30,9 +34,6 @@ public class CoreController : MonoBehaviour {
         public void Set() => this.setGameStatus(debugStatus);
     #endif
 
-    public delegate void onGameStatusUpdated(GAMEPLAY_STATUS oldStatus, GAMEPLAY_STATUS newStatus);
-    public event onGameStatusUpdated OnGameStatusUpdated;
-
     #region GAME STATUS
         [HideInInspector]
         public Queue<entity_customer> customerQueue = new Queue<entity_customer>();
@@ -47,12 +48,33 @@ public class CoreController : MonoBehaviour {
         [HideInInspector]
         public GAMEPLAY_STATUS status = GAMEPLAY_STATUS.PREPARING;
         [HideInInspector]
+        public GAMEPLAY_STATUS oldStatus = GAMEPLAY_STATUS.PREPARING;
+        [HideInInspector]
         public int totalFails;
     #endregion
 
-    public CoreController() { Instance = this; }
+    #region EVENTS
+        public delegate void onGameStatusUpdated(GAMEPLAY_STATUS oldStatus, GAMEPLAY_STATUS newStatus);
+        public event onGameStatusUpdated OnGameStatusUpdated;
+    #endregion
+
 
     public void Awake() {
+        if (Instance != null && Instance != this) {
+            Destroy(this);
+            return;
+        }else Instance = this;
+
+        PlayerPrefs.SetInt("current_scene", SceneManager.GetActiveScene().buildIndex); // For gameover
+        StartCoroutine(onLoaded());
+    }
+
+    private IEnumerator onLoaded() {
+        yield return new WaitForEndOfFrame();
+        this.init();
+    }
+
+    public void init() {
         this.generateQUEUE();
         this.generateFloppies();
         this.generateBoxCodes();
@@ -60,7 +82,7 @@ public class CoreController : MonoBehaviour {
         this.setupEvents();
         this.setGameStatus(GAMEPLAY_STATUS.IDLE);
 
-        Debug.Log("Startup");
+        Debug.Log("INIT");
     }
 
     public void Update() {
@@ -71,14 +93,31 @@ public class CoreController : MonoBehaviour {
         util_timer.clear();
     }
 
-    public void penalize(string mistake) {
-        if(this.servingClient == null) return;
+    public bool penalize(string mistake) {
+        if(this.servingClient == null) return false;
+
+        if(this.totalFails >= this.maxMistakes) {
+            this.gameOver(GAMEOVER_TYPE.CLIENT);
+            return false;
+        } else {
+            this.computer_client.queueCmd("#" + mistake + " (" + (this.totalFails + 1) + " / " + this.maxMistakes + ")");
+        }
 
         this.totalFails++;
-        if(this.totalFails > this.maxMistakes) {
-            // TODO: GAME OVER
+        return true;
+    }
+
+    public void gameOver(GAMEOVER_TYPE type) {
+        Debug.Log("GAMEOVER: " + type);
+
+        this.setGameStatus(GAMEPLAY_STATUS.GAMEOVER);
+
+        if(type == GAMEOVER_TYPE.CLIENT) {
+            ConversationController.Instance.clear(false);
+            this.servingClient.chat(ChatType.GAME_OVER);
         } else {
-            this.computer_client.queueCmd("#" + mistake);
+            UIController.Instance.spook.jumpscare();
+            this.fadeToGameOver(1f); // Fast fade
         }
     }
 
@@ -117,16 +156,13 @@ public class CoreController : MonoBehaviour {
             this.computer_client.queueCmd("=--=--=--=--=");
             this.computer_client.queueCmd("PLEASE PLACE ITEM ON THE SHIPPING ELEVATOR");
 
-            this.setGameStatus(GAMEPLAY_STATUS.COMPLETING);
-        } else if(status == GAMEPLAY_STATUS.ITEM_RETRIEVE) {
+            this.setGameStatus(GAMEPLAY_STATUS.ITEM_SHIPPING);
+        } else if(status == GAMEPLAY_STATUS.ITEM_WAIT_PLY_PICKUP) {
             this.computer_client.queueCmd("ITEM ID '"+ this.servingClient.getSetting<int>("box_id") +"'");
-        } else if(status == GAMEPLAY_STATUS.COMPLETING) {
-            if(this.servingClient.hasRequestsRemaining()) {
-                this.setGameStatus(GAMEPLAY_STATUS.ITEM_REQUESTED);
-                this.proccedEvent();
-            } else {
-                this.completeClient();
-            }
+            this.setGameStatus(GAMEPLAY_STATUS.ITEM_RETRIEVE);
+        } else if(status == GAMEPLAY_STATUS.ITEM_SHIPPING) {
+            this.setGameStatus(GAMEPLAY_STATUS.ITEM_REQUESTED);
+            this.proccedEvent();
         }
     }
 
@@ -135,33 +171,35 @@ public class CoreController : MonoBehaviour {
     }
 
     public int reserveBoxCode() {
-        var keys = CoreController.Instance.boxCodes.Keys.ToList();
+        var keys = this.boxCodes.Keys.ToList();
         int key = keys[Random.Range(0, keys.Count)];
-        while(CoreController.Instance.boxCodes[key]) key = keys[Random.Range(0, keys.Count)];
+        while(this.boxCodes[key]) key = keys[Random.Range(0, keys.Count)];
 
-        CoreController.Instance.boxCodes[key] = true;
+        this.boxCodes[key] = true;
         return key;
     }
 
     public void setGameStatus(GAMEPLAY_STATUS status) {
-        if(this.status == status) return;
+        if(status == this.status) return;
 
-        if(this.OnGameStatusUpdated != null) this.OnGameStatusUpdated.Invoke(this.status, status);
+        this.oldStatus = this.status;
         this.status = status;
 
         Debug.Log("Setting game status to: " + status.ToString());
+        if(this.OnGameStatusUpdated != null) this.OnGameStatusUpdated.Invoke(this.oldStatus, this.status);
     }
 
     private void completeClient() {
         this.computer_client.queueCmd("$TASK COMPLETED");
-        this.servingClient.chat(ChatType.OUTRO);
-        this.setGameStatus(GAMEPLAY_STATUS.IDLE);
 
+        this.servingClient.chat(ChatType.OUTRO);
         this.servingClient = null;
 
         // Move client
         this.prop_client.reverse = true;
         this.prop_client.start();
+
+        this.setGameStatus(GAMEPLAY_STATUS.IDLE);
     }
 
     private void setupEvents() {
@@ -287,10 +325,23 @@ public class CoreController : MonoBehaviour {
             } else if(this.servingClient.currentRequest == RequestType.WANT_RETRIEVE_BOX) {
                 this.computer_client.queueCmd("=--=--=--=--=");
                 this.computer_client.queueCmd("$PLEASE PICKUP DELIVERY TICKET");
-                this.setGameStatus(GAMEPLAY_STATUS.ITEM_RETRIEVE);
+                this.setGameStatus(GAMEPLAY_STATUS.ITEM_WAIT_PLY_PICKUP);
             } else {
                 this.setGameStatus(GAMEPLAY_STATUS.ITEM_REQUESTED);
             }
+        } else if(id == "GAME_OVER") {
+            this.fadeToGameOver();
         }
+    }
+
+    private void fadeToGameOver(float speed = 0.8f) {
+        this.fade.fadeIn = true;
+        this.fade.fadeDelay = 0f;
+        this.fade.fadeSpeed = speed;
+        this.fade.play();
+        this.fade.OnFadeComplete += (bool fadein) => {
+            if(!fadein) return;
+            SceneManager.LoadScene("gameover", LoadSceneMode.Single);
+        };
     }
 }

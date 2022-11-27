@@ -7,11 +7,12 @@ public class MainMenuController : MonoBehaviour {
 
     [Header("Settings")]
     public Camera sceneCamera;
+    public ui_fade fade;
 
-    #region PRIVATE
-    #endregion
-	public static MainMenuController Instance;
-    public MainMenuController() { Instance = this; }
+    public void Awake() {
+		Cursor.lockState = CursorLockMode.Confined;
+		Cursor.visible = true;
+    }
 
     public void Update() {
         if(this.sceneCamera == null) return;
@@ -22,11 +23,15 @@ public class MainMenuController : MonoBehaviour {
 
     public void OnUIClick(string id) {
         if(id == "newgame") {
-            int sceneID = SceneManager.GetActiveScene().buildIndex;
+            this.fade.fadeIn = true;
+            this.fade.fadeDelay = 0f;
+            this.fade.play();
+            this.fade.OnFadeComplete += (bool fadein) => {
+                if(!fadein) return;
 
-            PlayerPrefs.SetInt("loading_scene_index", sceneID + 1);
-            SceneManager.LoadScene("loading", LoadSceneMode.Single);
-
+                PlayerPrefs.SetInt("loading_scene_index", SceneManager.GetActiveScene().buildIndex + 1);
+                SceneManager.LoadScene("loading", LoadSceneMode.Single);
+            };
         } else if(id == "options") {
             OptionsController.Instance.displayOptions(true);
         } else if(id == "quit") {

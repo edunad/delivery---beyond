@@ -16,15 +16,21 @@ public class entity_monster : MonoBehaviour {
     #region PRIVATE
         private ParticleSystem _particles;
         private NavMeshAgent _agent;
+        private entity_trigger _trigger;
         private bool _thinking;
     #endregion
 
     public void Awake() {
         this._particles = GetComponentInChildren<ParticleSystem>(true);
 
+        this._trigger = GetComponentInChildren<entity_trigger>(true);
+        this._trigger.OnEnter += this.onPlayerTouch;
+
         this._agent = GetComponent<NavMeshAgent>();
         this._agent.updateRotation = false;
         this._agent.speed = this.speed;
+
+        this._thinking = true;
 
         CoreController.Instance.OnGameStatusUpdated += this.gameStatusChange;
     }
@@ -57,7 +63,20 @@ public class entity_monster : MonoBehaviour {
         }
     }
 
+    private void onPlayerTouch(Collider col) {
+        if(CoreController.Instance.status == GAMEPLAY_STATUS.GAMEOVER) return;
+
+        entity_player ply = col.GetComponent<entity_player>();
+        if(ply == null) throw new System.Exception("Missing entity_player");
+
+        ply.setFrozen(FrozenFlags.DEAD, true);
+        CoreController.Instance.gameOver(GAMEOVER_TYPE.MONSTER);
+    }
+
     private void gameStatusChange(GAMEPLAY_STATUS prevStatus, GAMEPLAY_STATUS newStatus) {
-        this.gameObject.SetActive(newStatus == GAMEPLAY_STATUS.ITEM_RETRIEVE);
+        bool isOK = newStatus == GAMEPLAY_STATUS.ITEM_RETRIEVE;
+
+        this.gameObject.SetActive(isOK);
+        if(isOK && this._thinking) this.pickDestination();
     }
 }

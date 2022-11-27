@@ -53,7 +53,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 2.42
+  MaxDistance: 3.41
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
@@ -5221,6 +5221,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: a7a2c9515ffc73c4ca8031aaf3222a0f, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 60ad1a5055f5eb648aa1695a0d782722, type: 2}
     - target: {fileID: 919132149155446097, guid: a7a2c9515ffc73c4ca8031aaf3222a0f, type: 3}
       propertyPath: m_Name
       value: light_GOOD.vmf

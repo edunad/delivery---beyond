@@ -231,6 +231,14 @@ map_Ka materials/props/metalpanel020b.tga
 map_Kd materials/props/metalpanel020b.tga
 
 
+newmtl props/metalpanel003a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/props/metalpanel003a.tga
+map_Kd materials/props/metalpanel003a.tga
+
+
 newmtl wood/woodfloor007a_c17
 Ka 1.000 1.000 1.000
 Kd 1.000 1.000 1.000
@@ -302,12 +310,4 @@ Kd 1.000 1.000 1.000
 Ks 0.000 0.000 0.000
 map_Ka materials/delivery_beyond/speaker.tga
 map_Kd materials/delivery_beyond/speaker.tga
-
-
-newmtl props/metalpanel003a
-Ka 1.000 1.000 1.000
-Kd 1.000 1.000 1.000
-Ks 0.000 0.000 0.000
-map_Ka materials/props/metalpanel003a.tga
-map_Kd materials/props/metalpanel003a.tga
 
