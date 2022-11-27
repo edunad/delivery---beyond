@@ -36,6 +36,8 @@ public class entity_monster : MonoBehaviour {
     }
 
     public void pickDestination() {
+        if(!this.isActiveAndEnabled) return;
+
         Vector3 pos = points[Random.Range(0, points.Count)] + this.startPoint.position;
         this._agent.SetDestination(pos);
         this._thinking = false;
@@ -43,13 +45,20 @@ public class entity_monster : MonoBehaviour {
         Debug.Log("Moving monster to: " + pos);
     }
 
-    public void Update(){
+    public void Update() {
         if(this._agent == null || this._thinking) return;
-
         if(util_ai.pathFinished(this._agent)) {
             this._thinking = true;
             util_timer.simple(this.thinkTime, this.pickDestination);
         }
+    }
+
+    public void OnDisable() {
+        this._thinking = true;
+    }
+
+    public void OnEnable() {
+        this.pickDestination();
     }
 
     public void OnDrawGizmos() {
@@ -74,9 +83,6 @@ public class entity_monster : MonoBehaviour {
     }
 
     private void gameStatusChange(GAMEPLAY_STATUS prevStatus, GAMEPLAY_STATUS newStatus) {
-        bool isOK = newStatus == GAMEPLAY_STATUS.ITEM_RETRIEVE;
-
-        this.gameObject.SetActive(isOK);
-        if(isOK && this._thinking) this.pickDestination();
+        this.gameObject.SetActive(newStatus == GAMEPLAY_STATUS.ITEM_RETRIEVE);
     }
 }
