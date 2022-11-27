@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1677978819928395104}
   - component: {fileID: 1677978819928395105}
   m_Layer: 0
-  m_Name: customer_test
+  m_Name: customer_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,20 +44,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c169d463612923f489de8c7d8c3edb36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requestTemplate: 030000000100000001000000
+  requestTemplate: 0200000003000000
   chatINTRO:
-  - Hey there
-  - 'I missed my '
+  - Hi
+  - Can i get a %box_size% box?
+  - And a %magazine_type% magazine?
   chatWRONG_ITEM:
-  - Uhh, that's not my item
-  chatOK_ITEM:
-  - Awesome, thanks!
+  - Did you hear anything i said? That's not what i want
+  chatOK_ITEM: []
   chatOUTRO:
-  - Bye
-  chatPLACED_ITEM:
-  - I've placed the item on the machine
+  - Have a nice day
+  chatPLACED_ITEM: []
   chatGAME_OVER:
-  - I want to speak to your manager
-  currentRequest: 1
-  voice: 1.0377305
+  - I want to speak to your manager..
+  currentRequest: 2
+  voice: 1.519695
   customerName: John Swann

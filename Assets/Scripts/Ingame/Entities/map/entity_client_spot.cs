@@ -32,7 +32,7 @@ public class entity_client_spot : MonoBehaviour {
             }
         } else if(customer.currentRequest == RequestType.WANT_MAGAZINES && itm.id == "item_magazine") {
             entity_magazine magazine = itm.GetComponent<entity_magazine>();
-            if(magazine != null && magazine.type == customer.getSetting<MAGAZINE_TYPE>("magazine_type")) {
+            if(magazine != null && magazine.type == customer.getSetting<MAGAZINE_TYPE>("magazine")) {
                 isOK = true;
             }
         }

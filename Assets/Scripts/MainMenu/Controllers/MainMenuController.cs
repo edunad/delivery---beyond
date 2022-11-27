@@ -29,7 +29,7 @@ public class MainMenuController : MonoBehaviour {
             this.fade.OnFadeComplete += (bool fadein) => {
                 if(!fadein) return;
 
-                PlayerPrefs.SetInt("loading_scene_index", SceneManager.GetActiveScene().buildIndex + 1);
+                PlayerPrefs.SetInt("loading_scene_index", SceneManager.GetActiveScene().buildIndex + 2);
                 SceneManager.LoadScene("loading", LoadSceneMode.Single);
             };
         } else if(id == "options") {

@@ -352,13 +352,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fade: {fileID: 8583291489273261154}
   customerTemplates:
-  - {fileID: 1677978819928395105, guid: 62e247122fec7de4b9edaaa22f1298fa, type: 3}
+  - {fileID: 1677978819928395105, guid: 4dd966c3765175c49a0cb64ad9758029, type: 3}
   maxMistakes: 3
   patienceMult: 1
-  maxClients: 10
+  maxClients: 1
   prop_client: {fileID: 0}
   computer_client: {fileID: 0}
   button_next_client: {fileID: 0}
+  manager_position: {fileID: 0}
   debugStatus: 0
   servingClient: {fileID: 0}
   totalClients: 0

@@ -24,6 +24,8 @@ Github gamejam 2022
 -https://freesound.org/people/dster777/sounds/344548/
 +219587__qubodup__light-metal-gate-close
 -https://freesound.org/people/qubodup/sounds/219587/
++273645__gollamar__announcement-08
+-https://freesound.org/people/gollamar/sounds/273645/
 ```
 ----- MUSIC ----
 

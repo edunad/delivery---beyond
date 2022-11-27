@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 902518152901765588}
   - component: {fileID: 902518152901765591}
+  - component: {fileID: 1205086704913639153}
   m_Layer: 0
   m_Name: entity_store_music
   m_TagString: Untagged
@@ -155,3 +156,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1205086704913639153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902518152901765589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e28ba9e3970918449a02ab3cf16dd72b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storeMusic: {fileID: 8300000, guid: 68e205c99cf439b41a1a7403775e7805, type: 3}
+  storeAnnouncement: {fileID: 8300000, guid: bca9af4960a3338408014621162c08f1, type: 3}

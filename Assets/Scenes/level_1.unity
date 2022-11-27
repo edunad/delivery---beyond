@@ -162,6 +162,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5f3b7792102030458dd186b8f3c50a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1000647841 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1000647841, guid: cebb5c45630ea9b4795d6492e5e5b361, type: 3}
+  m_PrefabInstance: {fileID: 5767417983161976014}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1046581971 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3054156658830104827, guid: cebb5c45630ea9b4795d6492e5e5b361, type: 3}
@@ -181,6 +186,11 @@ Camera:
 --- !u!4 &1220280626 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1220280626, guid: cebb5c45630ea9b4795d6492e5e5b361, type: 3}
+  m_PrefabInstance: {fileID: 5767417983161976014}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1294993441 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 361875877, guid: cebb5c45630ea9b4795d6492e5e5b361, type: 3}
   m_PrefabInstance: {fileID: 5767417983161976014}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1914372203
@@ -318,9 +328,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1046581971}
     - target: {fileID: 785850733609807649, guid: db0bfa4a410f17e4aa3b4a8ac69aa48b, type: 3}
+      propertyPath: manager_position
+      value: 
+      objectReference: {fileID: 1000647841}
+    - target: {fileID: 785850733609807649, guid: db0bfa4a410f17e4aa3b4a8ac69aa48b, type: 3}
       propertyPath: button_next_client
       value: 
       objectReference: {fileID: 273362981}
+    - target: {fileID: 785850733609807649, guid: db0bfa4a410f17e4aa3b4a8ac69aa48b, type: 3}
+      propertyPath: customerTemplates.Array.data[0]
+      value: 
+      objectReference: {fileID: 1677978819928395105, guid: 4dd966c3765175c49a0cb64ad9758029, type: 3}
+    - target: {fileID: 2281004350967825641, guid: db0bfa4a410f17e4aa3b4a8ac69aa48b, type: 3}
+      propertyPath: cooldown
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2281004350967825641, guid: db0bfa4a410f17e4aa3b4a8ac69aa48b, type: 3}
+      propertyPath: talkSpeed
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 2281004350967825641, guid: db0bfa4a410f17e4aa3b4a8ac69aa48b, type: 3}
       propertyPath: speakerPosition
       value: 
@@ -447,9 +473,33 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1930909052, guid: cebb5c45630ea9b4795d6492e5e5b361, type: 3}
-      propertyPath: stopSound
-      value: Gate/219587__qubodup__light-metal-gate-close
+    - target: {fileID: 1721558471, guid: cebb5c45630ea9b4795d6492e5e5b361, type: 3}
+      propertyPath: m_text
+      value: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+      objectReference: {fileID: 0}
+    - target: {fileID: 1721558471, guid: cebb5c45630ea9b4795d6492e5e5b361, type: 3}
+      propertyPath: m_margin.w
+      value: 5.388188
+      objectReference: {fileID: 0}
+    - target: {fileID: 1721558471, guid: cebb5c45630ea9b4795d6492e5e5b361, type: 3}
+      propertyPath: m_margin.y
+      value: -0.72345114
+      objectReference: {fileID: 0}
+    - target: {fileID: 1721558471, guid: cebb5c45630ea9b4795d6492e5e5b361, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 1152946630901449363, guid: cebb5c45630ea9b4795d6492e5e5b361, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 1294993441}
+    - target: {fileID: 1152946630901449363, guid: cebb5c45630ea9b4795d6492e5e5b361, type: 3}
+      propertyPath: totalLines
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 3054156658830104827, guid: cebb5c45630ea9b4795d6492e5e5b361, type: 3}
+      propertyPath: totalLines
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 4321798266077915221, guid: cebb5c45630ea9b4795d6492e5e5b361, type: 3}
       propertyPath: m_CurrentCamera

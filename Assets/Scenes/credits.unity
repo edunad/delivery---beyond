@@ -573,7 +573,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.18972778, y: -3.3732657}
+  m_AnchoredPosition: {x: 0.18972778, y: -3.026466}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1309077322
@@ -596,19 +596,20 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Made for GITHUB GameJam 2022\n\n\nGameplay / Programming / Idea / Models
-    / Some textures\n\u2022 Eduardo Fernandes (failcake)\n\nSome Art\n\u2022 Valve\n\nMusic
-    /  Sound effects\n\u2022 https://incompetech.com/\n\u2022 https://freesound.org/"
+  m_text: "<b>Made for GITHUB Game Off 2022</b>\n\n\n\n<b><color=#FFC512>Programming
+    / Models / Textures</color></b>\n\u2022 Eduardo Fernandes (failcake)\n\n<b><color=#FFC512>Some
+    Textures</color></b>\n\u2022 Valve\n\n<b><color=#FFC512>Music / Sound effects</color></b>\n\u2022
+    https://incompetech.com/\n\u2022 https://freesound.org/"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ae1ef8762b36c654992f13ebbc8f96d1, type: 2}
-  m_sharedMaterial: {fileID: -6746775999302960893, guid: ae1ef8762b36c654992f13ebbc8f96d1, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ca13082852c24a0448a5fc7f6f962ae2, type: 2}
+  m_sharedMaterial: {fileID: -5757543528659856582, guid: ca13082852c24a0448a5fc7f6f962ae2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4293519849
-  m_fontColor: {r: 0.9150943, g: 0.9150943, b: 0.9150943, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -625,15 +626,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 4.41
-  m_fontSizeBase: 4.41
+  m_fontSize: 3.65
+  m_fontSizeBase: 3.65
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 32
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -661,7 +662,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 1.9133301, y: 0, z: 2.123352, w: -1.0842311}
+  m_margin: {x: 1.9133301, y: -0.3645687, z: 2.123352, w: -1.0842311}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -690,7 +691,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -6746775999302960893, guid: ae1ef8762b36c654992f13ebbc8f96d1, type: 2}
+  - {fileID: -5757543528659856582, guid: ca13082852c24a0448a5fc7f6f962ae2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -745,7 +746,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cfuStatus: PSXEffects v1.18.4 - version ahead?!
   sections: 01010101
-  customRes: {x: 291, y: 164}
+  customRes: {x: 352, y: 325}
   resolutionFactor: 2
   limitFramerate: 60
   skipFrames: 0
@@ -879,7 +880,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.591034, y: -9.406567}
+  m_AnchoredPosition: {x: 4.631836, y: -9.406567}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1416044604
@@ -946,15 +947,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: MAIN MENU
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ae1ef8762b36c654992f13ebbc8f96d1, type: 2}
-  m_sharedMaterial: {fileID: -6746775999302960893, guid: ae1ef8762b36c654992f13ebbc8f96d1, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ca13082852c24a0448a5fc7f6f962ae2, type: 2}
+  m_sharedMaterial: {fileID: -5757543528659856582, guid: ca13082852c24a0448a5fc7f6f962ae2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4293519849
-  m_fontColor: {r: 0.9150943, g: 0.9150943, b: 0.9150943, a: 1}
+    rgba: 4280690214
+  m_fontColor: {r: 0.1509434, g: 0.1509434, b: 0.1509434, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1036,7 +1037,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -6746775999302960893, guid: ae1ef8762b36c654992f13ebbc8f96d1, type: 2}
+  - {fileID: -5757543528659856582, guid: ca13082852c24a0448a5fc7f6f962ae2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1246,15 +1247,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: CREDITS
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ae1ef8762b36c654992f13ebbc8f96d1, type: 2}
-  m_sharedMaterial: {fileID: -6746775999302960893, guid: ae1ef8762b36c654992f13ebbc8f96d1, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ca13082852c24a0448a5fc7f6f962ae2, type: 2}
+  m_sharedMaterial: {fileID: -5757543528659856582, guid: ca13082852c24a0448a5fc7f6f962ae2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4293519849
-  m_fontColor: {r: 0.9150943, g: 0.9150943, b: 0.9150943, a: 1}
+    rgba: 4279420415
+  m_fontColor: {r: 1, g: 0.7710627, b: 0.07075471, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1336,7 +1337,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -6746775999302960893, guid: ae1ef8762b36c654992f13ebbc8f96d1, type: 2}
+  - {fileID: -5757543528659856582, guid: ca13082852c24a0448a5fc7f6f962ae2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -25,6 +25,7 @@ public class CoreController : MonoBehaviour {
     public entity_movement prop_client;
     public entity_computer computer_client;
     public entity_button button_next_client;
+    public Transform manager_position;
 
     #if UNITY_EDITOR
         [Header("DEBUG")]
@@ -137,28 +138,18 @@ public class CoreController : MonoBehaviour {
                         this.completeClient();
                     } else {
                         this.servingClient.getRequest(); // Fulfill all client requests first
-
-                        if(this.servingClient.currentRequest == RequestType.WANT_SEND_BOX) {
-                            this.servingClient.chat(ChatType.PLACED_ITEM);
-
-                            this.computer_client.queueCmd("=--=--=--=--=");
-                            this.computer_client.queueCmd("PLEASE WEIGHT ITEM");
-
-                            this.setGameStatus(GAMEPLAY_STATUS.WEIGHT_ITEM);
-                        } else {
-                            this.setGameStatus(GAMEPLAY_STATUS.ITEM_REQUESTED);
-                        }
+                        this.clientLogic();
                     }
                 });
             });
         } else if(status == GAMEPLAY_STATUS.WEIGHT_ITEM) {
             this.computer_client.queueCmd("$ITEM WEIGHTED");
-            this.computer_client.queueCmd("=--=--=--=--=");
+            this.computer_client.queueCmd("──────────────────────────────────────────");
             this.computer_client.queueCmd("PLEASE PLACE ITEM ON THE SHIPPING ELEVATOR");
 
             this.setGameStatus(GAMEPLAY_STATUS.ITEM_SHIPPING);
         } else if(status == GAMEPLAY_STATUS.ITEM_WAIT_PLY_PICKUP) {
-            this.computer_client.queueCmd("ITEM ID '"+ this.servingClient.getSetting<int>("box_id") +"'");
+            this.computer_client.queueCmd("PICKUP ITEM ID '"+ this.servingClient.getSetting<int>("box_id") +"'");
             this.setGameStatus(GAMEPLAY_STATUS.ITEM_RETRIEVE);
         } else if(status == GAMEPLAY_STATUS.ITEM_SHIPPING) {
             this.setGameStatus(GAMEPLAY_STATUS.ITEM_REQUESTED);
@@ -214,11 +205,12 @@ public class CoreController : MonoBehaviour {
     }
 
     private void onRequestNextClientBTN(entity_player ply) {
-        if(this.customerQueue == null || this.customerQueue.Count <= 0) return; // Done serving clients
         if(this.servingClient != null) throw new Exception("Already serving a customer!");
 
-        this.servingClient = this.customerQueue.Dequeue();
+        if(this.customerQueue == null) throw new Exception("Missing customer queue");
+        if(this.customerQueue.Count <= 0) return;
 
+        this.servingClient = this.customerQueue.Dequeue();
         this.servingClient.init();
         this.servingClient.getRequest();
 
@@ -291,46 +283,73 @@ public class CoreController : MonoBehaviour {
                 this.computer_client.queueCmd("$CLIENT " + this.totalClients + " / " + this.maxClients);
             });
         } else if(isReverse && this.servingClient == null) {
-            util_timer.simple(0.5f, () => {
-                this.computer_client.queueCmd("CALL NEXT CLIENT");
-                this.button_next_client.setButtonLocked(false);
-            });
+            if(this.customerQueue.Count <= 0) {
+                this.setGameStatus(GAMEPLAY_STATUS.WIN);
+                util_timer.simple(2f, () => {
+                    ConversationController.Instance.speakerPosition = manager_position;
+                    ConversationController.Instance.clear(false);
+                    ConversationController.Instance.setConversationID("WIN");
+                    ConversationController.Instance.queueConversation(new Conversation("WIN", "MANAGER", "GOOD JOB, LOOKS LIKE YOU SURVIVE ANOTHER DAY", 0.45f, 0.6f));
+                });
+            } else {
+                util_timer.simple(0.5f, () => {
+                    this.computer_client.queueCmd("PLEASE CALL NEXT CLIENT");
+                    this.button_next_client.setButtonLocked(false);
+                });
+            }
         }
     }
 
     private void onChatCompleted(string id) {
-        if(this.servingClient == null) return;
-
         if(id == "INTRO") {
+            if(this.servingClient == null) throw new Exception("Missing customer");
             this.computer_client.queueCmd("REQUESTED ITEMS (IN ORDER) :");
 
             List<string> dt = new List<string>();
+            Dictionary<RequestType, int> count = new Dictionary<RequestType, int>();
+
             foreach(RequestType request in this.servingClient.requestTemplate) {
+                if(!count.ContainsKey(request)) count.Add(request, 0);
+                else count[request]++;
+
                 if(request == RequestType.WANT_FLAT_BOX) {
-                    dt.Add("BOX SIZE '" + this.servingClient.getSetting<BoxSize>("box_size").ToString().Replace("_", "") + "'");
+                    dt.Add("BOX SIZE '" + this.servingClient.getSetting<BoxSize>("box_size", count[request]).ToString().Replace("_", "") + "'");
                 } else if(request == RequestType.WANT_MAGAZINES) {
-                    dt.Add("MAGAZINE '" + this.servingClient.getSetting<MAGAZINE_TYPE>("magazine_type").ToString() + "'");
+                    dt.Add("MAGAZINE '" + this.servingClient.getSetting<MAGAZINE_TYPE>("magazine", count[request]).ToString() + "'");
                 } else if(request == RequestType.WANT_SEND_BOX) {
-                    dt.Add("SHIP BOX TO '" + this.servingClient.getSetting<GAME_COUNTRIES>("country").ToString().Replace("_", " ") + "'");
+                    dt.Add("SHIP BOX TO '" + this.servingClient.getSetting<GAME_COUNTRIES>("country", count[request]).ToString().Replace("_", " ") + "'");
                 } else if(request == RequestType.WANT_RETRIEVE_BOX) {
                     dt.Add("RETRIEVE MISSED DELIVERY");
                 }
             }
 
             for(int i = 0; i < dt.Count; i++) this.computer_client.queueCmd("   " + (i+1) + ". " + dt[i]);
+            this.computer_client.queueCmd("¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯");
+            this.computer_client.setReserve(dt.Count + 2); // + Customer count + split
 
-            if(this.servingClient.currentRequest == RequestType.WANT_SEND_BOX) {
-                this.servingClient.chat(ChatType.PLACED_ITEM);
-                this.setGameStatus(GAMEPLAY_STATUS.WEIGHT_ITEM);
-            } else if(this.servingClient.currentRequest == RequestType.WANT_RETRIEVE_BOX) {
-                this.computer_client.queueCmd("=--=--=--=--=");
-                this.computer_client.queueCmd("$PLEASE PICKUP DELIVERY TICKET");
-                this.setGameStatus(GAMEPLAY_STATUS.ITEM_WAIT_PLY_PICKUP);
-            } else {
-                this.setGameStatus(GAMEPLAY_STATUS.ITEM_REQUESTED);
-            }
+            // Check what he wants
+            this.clientLogic();
         } else if(id == "GAME_OVER") {
             this.fadeToGameOver();
+        } else if(id == "WIN") {
+            this.fadeToVictory();
+        }
+    }
+
+    private void clientLogic() {
+        if(this.servingClient == null) throw new Exception("Missing customer");
+
+        if(this.servingClient.currentRequest == RequestType.WANT_SEND_BOX) {
+            this.servingClient.chat(ChatType.PLACED_ITEM);
+            this.computer_client.queueCmd("───────────────────");
+            this.computer_client.queueCmd("PLEASE WEIGHT ITEM");
+            this.setGameStatus(GAMEPLAY_STATUS.WEIGHT_ITEM);
+        } else if(this.servingClient.currentRequest == RequestType.WANT_RETRIEVE_BOX) {
+            this.computer_client.queueCmd("──────────────────────────────");
+            this.computer_client.queueCmd("$PLEASE PICKUP DELIVERY TICKET");
+            this.setGameStatus(GAMEPLAY_STATUS.ITEM_WAIT_PLY_PICKUP);
+        } else {
+            this.setGameStatus(GAMEPLAY_STATUS.ITEM_REQUESTED);
         }
     }
 
@@ -342,6 +361,20 @@ public class CoreController : MonoBehaviour {
         this.fade.OnFadeComplete += (bool fadein) => {
             if(!fadein) return;
             SceneManager.LoadScene("gameover", LoadSceneMode.Single);
+        };
+    }
+
+    private void fadeToVictory() {
+        this.fade.fadeIn = true;
+        this.fade.fadeDelay = 0f;
+        this.fade.fadeSpeed = 0.8f;
+        this.fade.play();
+
+        this.fade.OnFadeComplete += (bool fadein) => {
+            if(!fadein) return;
+
+            PlayerPrefs.SetInt("loading_scene_index", SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene("loading", LoadSceneMode.Single);
         };
     }
 }
