@@ -96,6 +96,12 @@ public class ConversationController : MonoBehaviour {
         this._started = true;
         this._currentChat = this._talkQueue.Dequeue();
 
+        if(string.IsNullOrEmpty(this._currentChat.text)) {
+            if(OnSingleConversationCompleted != null) OnSingleConversationCompleted.Invoke(this._currentChat.id);
+            util_timer.simple(this.cooldown, () => this.getNextConv());
+            return;
+        }
+
         int strSize = this._currentChat.text.Length;
         util_timer.create(strSize, talkSpeed, () => {
             if(this._currentChat == null) return;

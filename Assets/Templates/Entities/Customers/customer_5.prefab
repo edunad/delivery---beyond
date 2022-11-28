@@ -44,21 +44,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c169d463612923f489de8c7d8c3edb36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requestTemplate: 0200000002000000030000000300000000000000
+  requestTemplate: 020000000200000001000000
   chatINTRO:
-  - And  %box_size-0%
-  - And  %box_size-1%
-  - And magazine %magazine-0%
-  - And magazine %magazine-1%
-  - And this one to %country-0%
+  - Wazaaa
+  - Can i get two boxes?
+  - '%box_size-0% and %box_size-1%'
+  - Also, i missed a delivery, here is the ticket
   chatWRONG_ITEM:
-  - That's not what i want..
-  chatOK_ITEM: []
+  - Uh... are you sure this is the correct box?
+  chatOK_ITEM:
+  - Thanks
   chatOUTRO:
-  - "Sch\xF6nen tag noch"
+  - Bye bye!
   chatPLACED_ITEM: []
   chatGAME_OVER:
-  - I want to speak to your manager..
+  - Yea no. Where is your manager?
   currentRequest: 2
   voice: 1.3222153
   customerName: Risa

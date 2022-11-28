@@ -47,9 +47,9 @@ MonoBehaviour:
   requestTemplate: 020000000000000003000000
   chatINTRO:
   - Hey there
-  - Can i get a %box_size% box?
-  - I also want to deliver an item to %country%
-  - And can i get a %magazine_type% magazine?
+  - Can i get a %box_size-0% box?
+  - I also want to deliver an item to %country-0%
+  - And can i get a %magazine-0% magazine?
   chatWRONG_ITEM:
   - Uhh, that's not the item i requested
   chatOK_ITEM:

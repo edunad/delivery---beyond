@@ -48,7 +48,7 @@ public class entity_movement : MonoBehaviour {
     public void start() {
         this.isActive = true;
 
-        SoundController.Instance.Play3DSound(this._audioClips[0], this.transform);
+        SoundController.Instance.Play3DSound(this._audioClips[0], this.transform, Random.Range(0.85f, 1.15f), 2f, 0.5f);
         this.reset();
     }
 
@@ -63,7 +63,7 @@ public class entity_movement : MonoBehaviour {
     private void onFinish(bool reverse) {
         this.isActive = false;
 
-        SoundController.Instance.Play3DSound(this._audioClips[1], this.transform);
+        SoundController.Instance.Play3DSound(this._audioClips[1], this.transform, Random.Range(0.85f, 1.15f), 2f, 0.5f);
         if(OnMovementFinish != null) OnMovementFinish.Invoke(reverse);
     }
 

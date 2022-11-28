@@ -47,8 +47,8 @@ MonoBehaviour:
   requestTemplate: 0200000003000000
   chatINTRO:
   - Hi
-  - Can i get a %box_size% box?
-  - And a %magazine_type% magazine?
+  - Can i get a %box_size-0% box?
+  - And a %magazine-0% magazine?
   chatWRONG_ITEM:
   - Did you hear anything i said? That's not what i want
   chatOK_ITEM: []
@@ -56,7 +56,7 @@ MonoBehaviour:
   - Have a nice day
   chatPLACED_ITEM: []
   chatGAME_OVER:
-  - I want to speak to your manager..
+  - You are definitely not made for this job..
   currentRequest: 2
   voice: 1.519695
   customerName: John Swann

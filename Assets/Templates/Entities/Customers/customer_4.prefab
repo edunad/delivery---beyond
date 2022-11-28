@@ -48,7 +48,7 @@ MonoBehaviour:
   chatINTRO:
   - Hey...
   - I missed my delivery.. here is the paper
-  - Can i also get a %magazine_type% magazine?
+  - And can i get a %magazine-0% magazine
   chatWRONG_ITEM:
   - That's not what i want..
   chatOK_ITEM: []
@@ -56,7 +56,7 @@ MonoBehaviour:
   - "Ich w\xFCnsche ihnen noch einen sch\xF6nen Tag!"
   chatPLACED_ITEM: []
   chatGAME_OVER:
-  - I want to speak to your manager..
+  - I'm tired of this, where is your manager?
   currentRequest: 2
   voice: 1.519695
   customerName: John Swann

@@ -47,9 +47,9 @@ MonoBehaviour:
   requestTemplate: 030000000300000000000000
   chatINTRO:
   - Yo
-  - Can i get a %magazine_type% magazine?
-  - And a %magazine_type% magazine?
-  - I also want to deliver an item to %country%
+  - Can i get two magazines?
+  - '%magazine-0% and %magazine-1%?'
+  - I also want to deliver an item to %country-0%
   chatWRONG_ITEM:
   - Uhh, dude, that's not what i requested
   chatOK_ITEM:
@@ -59,7 +59,7 @@ MonoBehaviour:
   chatPLACED_ITEM:
   - I've placed the package on the thing
   chatGAME_OVER:
-  - I want to speak to your manager..
+  - Manager. Now.
   currentRequest: 2
   voice: 1.519695
   customerName: John Swann

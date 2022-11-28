@@ -63,6 +63,7 @@ public class entity_flash_thingy : MonoBehaviour {
     }
 
     public IEnumerator snapshot(Action onDone) {
+
         yield return new WaitForEndOfFrame();
 
         RenderSettings.fog = false;
@@ -72,6 +73,7 @@ public class entity_flash_thingy : MonoBehaviour {
         this._cam.targetTexture = this._renderTexture;
 
         this._cam.Render(); // Force a render
+        this._cam.Render(); // ???
 
         // Create a new Texture2D
         Texture2D result = new Texture2D(this._cam.pixelWidth, this._cam.pixelHeight, TextureFormat.ARGB32, false);

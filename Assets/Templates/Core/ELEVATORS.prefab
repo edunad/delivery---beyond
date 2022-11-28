@@ -31,7 +31,7 @@ Transform:
   - {fileID: 8980589858963860658}
   - {fileID: 8980589859602498544}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &158166497886793113
 PrefabInstance:
@@ -44,6 +44,14 @@ PrefabInstance:
     - target: {fileID: 108284071, guid: dc7be334f0ea77a4b874a721eac3be16, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1778880766107034, guid: dc7be334f0ea77a4b874a721eac3be16, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 6.979496e-39
+      objectReference: {fileID: 0}
+    - target: {fileID: 1778880766107034, guid: dc7be334f0ea77a4b874a721eac3be16, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: -9.1835e-41
       objectReference: {fileID: 0}
     - target: {fileID: 1142857962619386207, guid: dc7be334f0ea77a4b874a721eac3be16, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -150,7 +158,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 108284071, guid: dc7be334f0ea77a4b874a721eac3be16, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 119
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 500628028, guid: dc7be334f0ea77a4b874a721eac3be16, type: 3}
       propertyPath: itemSpot
@@ -183,6 +191,18 @@ PrefabInstance:
     - target: {fileID: 1658524585, guid: dc7be334f0ea77a4b874a721eac3be16, type: 3}
       propertyPath: m_Center.z
       value: -0.00093078613
+      objectReference: {fileID: 0}
+    - target: {fileID: 1778880766107034, guid: dc7be334f0ea77a4b874a721eac3be16, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 4.484e-42
+      objectReference: {fileID: 0}
+    - target: {fileID: 1778880766107034, guid: dc7be334f0ea77a4b874a721eac3be16, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 7.17e-43
+      objectReference: {fileID: 0}
+    - target: {fileID: 1778880766107034, guid: dc7be334f0ea77a4b874a721eac3be16, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 3.59e-43
       objectReference: {fileID: 0}
     - target: {fileID: 1142857962619386207, guid: dc7be334f0ea77a4b874a721eac3be16, type: 3}
       propertyPath: m_StaticEditorFlags

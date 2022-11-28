@@ -352,10 +352,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fade: {fileID: 8583291489273261154}
   customerTemplates:
-  - {fileID: 1677978819928395105, guid: 4dd966c3765175c49a0cb64ad9758029, type: 3}
+  - {fileID: 1677978819928395105, guid: f73248f661317e240832317fcfdf299d, type: 3}
+  - {fileID: 1677978819928395105, guid: 78f672eb6ef68194fbe94612c4f8c43f, type: 3}
+  - {fileID: 1677978819928395105, guid: 1162b831c2a296542b1253e9f2cd1699, type: 3}
+  - {fileID: 1677978819928395105, guid: 642063f33dda396469a7fcfdacb4ccc5, type: 3}
+  - {fileID: 1677978819928395105, guid: f66414f717893274e94994db61104e97, type: 3}
+  - {fileID: 1677978819928395105, guid: 42e34280caf17c0468a10d55b91c8ba5, type: 3}
+  - {fileID: 1677978819928395105, guid: 2f515c6f26a4233438aeae65dfc94068, type: 3}
+  - {fileID: 1677978819928395105, guid: 6e6a224ee2ce87d47b0cb05afdefeb10, type: 3}
+  - {fileID: 1677978819928395105, guid: 249af667870dcdd41b2886794f30666e, type: 3}
+  - {fileID: 1677978819928395105, guid: e3820e6d1914bb34e9f2d5ddcd3b14fe, type: 3}
   maxMistakes: 3
   patienceMult: 1
-  maxClients: 1
+  maxClients: 5
   prop_client: {fileID: 0}
   computer_client: {fileID: 0}
   button_next_client: {fileID: 0}
