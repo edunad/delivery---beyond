@@ -19,7 +19,7 @@ public class entity_store_speakers : MonoBehaviour {
         this._audio.loop = true;
         this._audio.Play();
 
-        CoreController.Instance.OnGameStatusUpdated += this.gameStatusChange;
+        if(CoreController.Instance != null) CoreController.Instance.OnGameStatusUpdated += this.gameStatusChange;
     }
 
     private void gameStatusChange(GAMEPLAY_STATUS prevStatus, GAMEPLAY_STATUS newStatus) {

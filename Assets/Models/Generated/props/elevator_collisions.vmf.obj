@@ -39,7 +39,7 @@ vt 68.375 64.125
 vt 68.375 71.9375
 vt 68.625 71.9375
 
-usemtl tools/toolsplayerclip
+usemtl tools/toolsnodraw
 f 8/1 7/2 2/3 4/4 
 f 5/5 6/6 3/7 1/8 
 f 3/9 6/10 8/11 4/12 
@@ -84,7 +84,7 @@ vt 59.625 64.125
 vt 59.625 71.9375
 vt 68.375 71.9375
 
-usemtl tools/toolsplayerclip
+usemtl tools/toolsnodraw
 f 10/25 14/26 13/27 12/28 
 f 16/29 9/30 11/31 15/32 
 f 11/33 9/34 10/35 12/36 
@@ -129,7 +129,7 @@ vt 59.625 64.125
 vt 59.625 71.9375
 vt 64.8125 71.9375
 
-usemtl tools/toolsplayerclip
+usemtl tools/toolsnodraw
 f 22/49 19/50 23/51 18/52 
 f 20/53 21/54 17/55 24/56 
 f 17/57 21/58 22/59 18/60 
@@ -174,7 +174,7 @@ vt 59.625 64.125
 vt 59.625 71.9375
 vt 62.625 71.9375
 
-usemtl tools/toolsplayerclip
+usemtl tools/toolsnodraw
 f 27/73 25/74 29/75 31/76 
 f 26/77 28/78 32/79 30/80 
 f 32/81 28/82 27/83 31/84 
@@ -219,7 +219,7 @@ vt 59.625 64.125
 vt 59.625 71.9375
 vt 59.875 71.9375
 
-usemtl tools/toolsplayerclip
+usemtl tools/toolsnodraw
 f 36/97 38/98 33/99 40/100 
 f 39/101 37/102 34/103 35/104 
 f 34/105 37/106 36/107 40/108 
@@ -264,7 +264,7 @@ vt 59.875 64.125
 vt 59.875 71.9375
 vt 68.625 71.9375
 
-usemtl tools/toolsplayerclip
+usemtl tools/toolsnodraw
 f 47/121 43/122 41/123 48/124 
 f 44/125 45/126 46/127 42/128 
 f 46/129 45/130 47/131 48/132 
@@ -309,7 +309,7 @@ vt 65.5 64.125
 vt 65.5 71.9375
 vt 68.625 71.9375
 
-usemtl tools/toolsplayerclip
+usemtl tools/toolsnodraw
 f 56/145 51/146 49/147 53/148 
 f 50/149 54/150 52/151 55/152 
 f 52/153 54/154 56/155 53/156 
@@ -354,7 +354,7 @@ vt 59.625 64.0
 vt 59.625 64.125
 vt 68.625 64.125
 
-usemtl tools/toolsplayerclip
+usemtl tools/toolsnodraw
 f 61/169 59/170 64/171 57/172 
 f 58/173 63/174 60/175 62/176 
 f 60/177 63/178 61/179 57/180 

@@ -31,7 +31,7 @@ Transform:
   - {fileID: 8980589858963860658}
   - {fileID: 8980589859602498544}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &158166497886793113
 PrefabInstance:
@@ -50,6 +50,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1142857963354787698, guid: dc7be334f0ea77a4b874a721eac3be16, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1142857963354787698, guid: dc7be334f0ea77a4b874a721eac3be16, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 119
       objectReference: {fileID: 0}
@@ -65,6 +69,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[12]
       value: 
       objectReference: {fileID: 2100000, guid: 4db768014abc3804995b8f32deac742e, type: 2}
+    - target: {fileID: 8237634176495286187, guid: dc7be334f0ea77a4b874a721eac3be16, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 9119962362252488296, guid: dc7be334f0ea77a4b874a721eac3be16, type: 3}
       propertyPath: m_Name
       value: entity_elevator-basement
@@ -181,6 +189,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1142857963354787698, guid: dc7be334f0ea77a4b874a721eac3be16, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1142857963354787698, guid: dc7be334f0ea77a4b874a721eac3be16, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 119
       objectReference: {fileID: 0}
@@ -192,6 +204,10 @@ PrefabInstance:
       propertyPath: teleTo
       value: 
       objectReference: {fileID: 2849821752471756336}
+    - target: {fileID: 8237634176495286187, guid: dc7be334f0ea77a4b874a721eac3be16, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 9119962362252488296, guid: dc7be334f0ea77a4b874a721eac3be16, type: 3}
       propertyPath: m_Name
       value: entity_elevator_mainfloor

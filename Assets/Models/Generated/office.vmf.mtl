@@ -33,14 +33,6 @@ map_Ka materials/tools/toolsblack.tga
 map_Kd materials/tools/toolsblack.tga
 
 
-newmtl dev/dev_lowermetaldoor02a
-Ka 1.000 1.000 1.000
-Kd 1.000 1.000 1.000
-Ks 0.000 0.000 0.000
-map_Ka materials/dev/dev_lowermetaldoor02a.tga
-map_Kd materials/dev/dev_lowermetaldoor02a.tga
-
-
 newmtl delivery_beyond/officeceiling001_1k_color
 Ka 1.000 1.000 1.000
 Kd 1.000 1.000 1.000
@@ -74,4 +66,13 @@ Ks 0.000 0.000 0.000
 map_Ka materials/decals/decalstain015a.tga
 map_Kd materials/decals/decalstain015a.tga
 illum 4
+
+
+newmtl concrete/concretefloor005a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/concrete/concretefloor005a.tga
+map_Kd materials/concrete/concretefloor005a.tga
+map_bump materials/concrete/concretefloor005a_normal.tga
 

@@ -1,11 +1,10 @@
 # Decompiled with VMF2OBJ v2.0.0 by Dylancyclone
 
 
-newmtl tools/toolsplayerclip
+newmtl tools/toolsnodraw
 Ka 1.000 1.000 1.000
 Kd 1.000 1.000 1.000
 Ks 0.000 0.000 0.000
-map_Ka materials/tools/toolsplayerclip.tga
-map_Kd materials/tools/toolsplayerclip.tga
-illum 4
+map_Ka materials/tools/toolsnodraw.tga
+map_Kd materials/tools/toolsnodraw.tga
 

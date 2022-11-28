@@ -41,20 +41,30 @@ map_Ka materials/delivery_beyond/bricks055_1k_color.tga
 map_Kd materials/delivery_beyond/bricks055_1k_color.tga
 
 
-newmtl tools/toolsnodraw
+newmtl metal/metalpipe002a
 Ka 1.000 1.000 1.000
 Kd 1.000 1.000 1.000
 Ks 0.000 0.000 0.000
-map_Ka materials/tools/toolsnodraw.tga
-map_Kd materials/tools/toolsnodraw.tga
+map_Ka materials/metal/metalpipe002a.tga
+map_Kd materials/metal/metalpipe002a.tga
+map_bump materials/metal/metalpipe003a_normal.tga
 
 
-newmtl delivery_beyond/metal038_1k_color
+newmtl metal/metalwall030a
 Ka 1.000 1.000 1.000
 Kd 1.000 1.000 1.000
 Ks 0.000 0.000 0.000
-map_Ka materials/delivery_beyond/metal038_1k_color.tga
-map_Kd materials/delivery_beyond/metal038_1k_color.tga
+map_Ka materials/metal/metalwall030a.tga
+map_Kd materials/metal/metalwall030a.tga
+
+
+newmtl metal/metalpipe003a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/metal/metalpipe003a.tga
+map_Kd materials/metal/metalpipe003a.tga
+map_bump materials/metal/metalpipe003a_normal.tga
 
 
 newmtl props/woodcrate001a
@@ -63,6 +73,88 @@ Kd 1.000 1.000 1.000
 Ks 0.000 0.000 0.000
 map_Ka materials/props/woodcrate001a.tga
 map_Kd materials/props/woodcrate001a.tga
+
+
+newmtl tools/toolsnodraw
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/tools/toolsnodraw.tga
+map_Kd materials/tools/toolsnodraw.tga
+
+
+newmtl props/metalpanel020b
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/props/metalpanel020b.tga
+map_Kd materials/props/metalpanel020b.tga
+
+
+newmtl props/woodcrate003b
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/props/woodcrate003b.tga
+map_Kd materials/props/woodcrate003b.tga
+
+
+newmtl props/metalcrate002a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/props/metalcrate002a.tga
+map_Kd materials/props/metalcrate002a.tga
+
+
+newmtl props/woodcrate004a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/props/woodcrate004a.tga
+map_Kd materials/props/woodcrate004a.tga
+
+
+newmtl props/metalpanel003a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/props/metalpanel003a.tga
+map_Kd materials/props/metalpanel003a.tga
+
+
+newmtl cable/cable_back
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/cable/dx8cable.tga
+map_Kd materials/cable/dx8cable.tga
+map_bump materials/cable/cablenormalmap.tga
+illum 4
+
+
+newmtl wood/woodshelf001a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/wood/woodshelf001a.tga
+map_Kd materials/wood/woodshelf001a.tga
+
+
+newmtl metal/metalvent001a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/metal/metalvent001a.tga
+map_Kd materials/metal/metalvent001a.tga
+
+
+newmtl delivery_beyond/metal038_1k_color
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/delivery_beyond/metal038_1k_color.tga
+map_Kd materials/delivery_beyond/metal038_1k_color.tga
 
 
 newmtl delivery_beyond/paintedmetal016_1k_color
@@ -81,10 +173,34 @@ map_Ka materials/delivery_beyond/tutorial_basement_sign.tga
 map_Kd materials/delivery_beyond/tutorial_basement_sign.tga
 
 
-newmtl metal/metalgrate008a
+newmtl props/woodcrate003a
 Ka 1.000 1.000 1.000
 Kd 1.000 1.000 1.000
 Ks 0.000 0.000 0.000
-map_Ka materials/metal/metalgrate008a.tga
-map_Kd materials/metal/metalgrate008a.tga
+map_Ka materials/props/woodcrate003a.tga
+map_Kd materials/props/woodcrate003a.tga
+
+
+newmtl metal/metalvent004a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/metal/metalvent004a.tga
+map_Kd materials/metal/metalvent004a.tga
+
+
+newmtl props/metalduct003a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/props/metalduct003a.tga
+map_Kd materials/props/metalduct003a.tga
+
+
+newmtl props/metalfan001a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/props/metalfan001a.tga
+map_Kd materials/props/metalfan001a.tga
 

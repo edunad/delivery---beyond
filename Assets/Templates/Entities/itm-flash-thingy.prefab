@@ -129,7 +129,7 @@ Transform:
   - {fileID: 1964056116}
   - {fileID: 7466375006650933155}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &3444845916765852087
 BoxCollider:
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b056aa2187d8104fb66eaf41ded87b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rechargeTime: 4
+  rechargeTime: 4.5
   cam_material: {fileID: 2100000, guid: 384ecf38f2f9cfc4ebb1f8932881497b, type: 2}
 --- !u!1 &8473503327925440123
 GameObject:
@@ -319,6 +319,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7635826562936255635, guid: 8b823e3894f955a4eafbf99d4b09d821, type: 3}
       propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4db768014abc3804995b8f32deac742e, type: 2}
+    - target: {fileID: -7635826562936255635, guid: 8b823e3894f955a4eafbf99d4b09d821, type: 3}
+      propertyPath: m_Materials.Array.data[4]
       value: 
       objectReference: {fileID: 2100000, guid: 384ecf38f2f9cfc4ebb1f8932881497b, type: 2}
     - target: {fileID: 919132149155446097, guid: 8b823e3894f955a4eafbf99d4b09d821, type: 3}

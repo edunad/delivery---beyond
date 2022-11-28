@@ -172,15 +172,6 @@ map_Ka materials/props/woodcrate001a.tga
 map_Kd materials/props/woodcrate001a.tga
 
 
-newmtl metal/metalpipe002a
-Ka 1.000 1.000 1.000
-Kd 1.000 1.000 1.000
-Ks 0.000 0.000 0.000
-map_Ka materials/metal/metalpipe002a.tga
-map_Kd materials/metal/metalpipe002a.tga
-map_bump materials/metal/metalpipe003a_normal.tga
-
-
 newmtl metal/metalpipe003a
 Ka 1.000 1.000 1.000
 Kd 1.000 1.000 1.000
@@ -196,6 +187,15 @@ Kd 1.000 1.000 1.000
 Ks 0.000 0.000 0.000
 map_Ka materials/delivery_beyond/paintedmetal016_1k_color.tga
 map_Kd materials/delivery_beyond/paintedmetal016_1k_color.tga
+
+
+newmtl metal/metalpipe002a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/metal/metalpipe002a.tga
+map_Kd materials/metal/metalpipe002a.tga
+map_bump materials/metal/metalpipe003a_normal.tga
 
 
 newmtl wood/woodwall005a
@@ -215,12 +215,12 @@ map_Kd materials/metal/metalcombinegrate001a.tga
 illum 4
 
 
-newmtl metal/metaldoor044a
+newmtl dev/dev_lowermetaldoor02a
 Ka 1.000 1.000 1.000
 Kd 1.000 1.000 1.000
 Ks 0.000 0.000 0.000
-map_Ka materials/metal/metaldoor044a.tga
-map_Kd materials/metal/metaldoor044a.tga
+map_Ka materials/dev/dev_lowermetaldoor02a.tga
+map_Kd materials/dev/dev_lowermetaldoor02a.tga
 
 
 newmtl props/metalpanel020b
@@ -237,6 +237,38 @@ Kd 1.000 1.000 1.000
 Ks 0.000 0.000 0.000
 map_Ka materials/props/metalpanel003a.tga
 map_Kd materials/props/metalpanel003a.tga
+
+
+newmtl delivery_beyond/personnel_sign
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/delivery_beyond/personnel_sign.tga
+map_Kd materials/delivery_beyond/personnel_sign.tga
+
+
+newmtl props/metalpanel014a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/props/metalpanel014a.tga
+map_Kd materials/props/metalpanel014a.tga
+
+
+newmtl metal/metalvent001a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/metal/metalvent001a.tga
+map_Kd materials/metal/metalvent001a.tga
+
+
+newmtl delivery_beyond/metalpanel016a-mod
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/delivery_beyond/metalpanel016a-mod.tga
+map_Kd materials/delivery_beyond/metalpanel016a-mod.tga
 
 
 newmtl wood/woodfloor007a_c17
@@ -310,4 +342,21 @@ Kd 1.000 1.000 1.000
 Ks 0.000 0.000 0.000
 map_Ka materials/delivery_beyond/speaker.tga
 map_Kd materials/delivery_beyond/speaker.tga
+
+
+newmtl concrete/concretefloor005a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/concrete/concretefloor005a.tga
+map_Kd materials/concrete/concretefloor005a.tga
+map_bump materials/concrete/concretefloor005a_normal.tga
+
+
+newmtl dev/dev_interiorfloorlinoleum01f
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/dev/dev_interiorfloorlinoleum01f.tga
+map_Kd materials/dev/dev_interiorfloorlinoleum01f.tga
 

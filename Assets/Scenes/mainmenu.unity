@@ -510,7 +510,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cfuStatus: PSXEffects v1.18.4 - version ahead?!
   sections: 01010101
-  customRes: {x: 436, y: 245}
+  customRes: {x: 500, y: 281}
   resolutionFactor: 2
   limitFramerate: 60
   skipFrames: 0
@@ -1957,6 +1957,10 @@ PrefabInstance:
       propertyPath: m_CurrentCamera
       value: 
       objectReference: {fileID: 1522549292}
+    - target: {fileID: 2336886809824691548, guid: 075dc28ce41d777459eef7eb9a4e2eee, type: 3}
+      propertyPath: m_Materials.Array.data[30]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4db768014abc3804995b8f32deac742e, type: 2}
     - target: {fileID: 5013043116223330719, guid: 075dc28ce41d777459eef7eb9a4e2eee, type: 3}
       propertyPath: m_RootOrder
       value: 2
