@@ -1,8 +1,8 @@
 # Delivery & Beyond
 
-For Github gamejam 2022 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀[DOWNLOAD](https://failcake.itch.io/deliverybeyond)
+For Github gamejam 2022 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀[DOWNLOAD](https://failcake.itch.io/deliverybeyond)
 
-![](https://i.rawr.dev/4UJLDv04vu.gif)
+![](https://i.rawr.dev/4UJLDs3-opti.gif)
 
 ## Programming / Models / Textures
 - Eduardo Fernandes (failcake)
