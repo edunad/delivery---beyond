@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c169d463612923f489de8c7d8c3edb36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requestTemplate: 03000000
+  requestTemplate: 020000000000000000000000
   chatINTRO:
   - 1
   chatWRONG_ITEM: []
@@ -54,5 +54,6 @@ MonoBehaviour:
   chatGAME_OVER:
   - I want to speak to your manager
   currentRequest: 2
-  voice: 1.519695
-  customerName: John Swann
+  voice: 0.5579327
+  customerName: Kosh
+  FORCE_SAME_ORDERS: 0

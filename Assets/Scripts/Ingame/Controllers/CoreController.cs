@@ -123,6 +123,7 @@ public class CoreController : MonoBehaviour {
 
     public bool penalize(string mistake) {
         if(this.servingClient == null) return false;
+        Debug.Log("[CORE] Penalize: " + mistake);
 
         if(this.totalMistakes >= this.maxMistakes) {
             this.gameOver(GAMEOVER_TYPE.CLIENT);
@@ -137,7 +138,6 @@ public class CoreController : MonoBehaviour {
 
     public void gameOver(GAMEOVER_TYPE type) {
         Debug.Log("GAMEOVER: " + type);
-
         this.setGameStatus(GAMEPLAY_STATUS.GAMEOVER);
 
         if(type == GAMEOVER_TYPE.CLIENT) {
@@ -176,7 +176,7 @@ public class CoreController : MonoBehaviour {
 
             this.setGameStatus(GAMEPLAY_STATUS.ITEM_SHIPPING);
         } else if(status == GAMEPLAY_STATUS.ITEM_WAIT_PLY_PICKUP) {
-            this.computer_client.queueCmd("PICKUP ITEM ID '"+ this.servingClient.getSetting<int>("box_id") +"' IN THE BASEMENT");
+            this.computer_client.queueCmd("PICKUP ITEM ID '<b>"+ this.servingClient.getSetting<int>("box_id") +"</b>' IN THE BASEMENT");
             this.setGameStatus(GAMEPLAY_STATUS.ITEM_RETRIEVE);
         } else if(status == GAMEPLAY_STATUS.ITEM_SHIPPING) {
             this.setGameStatus(GAMEPLAY_STATUS.ITEM_REQUESTED);
@@ -209,15 +209,29 @@ public class CoreController : MonoBehaviour {
 
     private void completeClient() {
         this.computer_client.queueCmd("$TASK COMPLETED");
-
         this.servingClient.chat(ChatType.OUTRO);
-        this.servingClient = null;
 
-        // Move client
+        // Cleanup
+        DestroyImmediate(this.servingClient.gameObject);
+        this.servingClient = null;
+        // ----
+
+        // Move client back
         this.prop_client.reverse = true;
         this.prop_client.start();
 
-        this.setGameStatus(GAMEPLAY_STATUS.IDLE);
+        if(this.customerQueue.Count <= 0) {
+            this.setGameStatus(GAMEPLAY_STATUS.WIN);
+
+            util_timer.simple(2f, () => {
+                ConversationController.Instance.speakerPosition = manager_position;
+                ConversationController.Instance.clear(false);
+                ConversationController.Instance.setConversationID("WIN");
+                ConversationController.Instance.queueConversation(new Conversation("WIN", "MANAGER", "GOOD JOB, LOOKS LIKE YOU SURVIVE ANOTHER DAY", 0.45f, 0.6f));
+            });
+        } else {
+            this.setGameStatus(GAMEPLAY_STATUS.IDLE);
+        }
     }
 
     private void setupEvents() {
@@ -235,13 +249,15 @@ public class CoreController : MonoBehaviour {
         if(this.servingClient != null) throw new Exception("Already serving a customer!");
 
         if(this.customerQueue == null) throw new Exception("Missing customer queue");
-        if(this.customerQueue.Count <= 0) return;
+        if(this.customerQueue.Count <= 0) throw new Exception("QUEUE Empty! Should have won...");
 
-        this.servingClient = this.customerQueue.Dequeue();
+        this.servingClient = Instantiate(this.customerQueue.Dequeue(), new Vector3(-300, 0, 0), Quaternion.identity);
+        this.servingClient.name = "[CURRENT CLIENT]";
+
         this.servingClient.init();
         this.servingClient.getRequest();
 
-        // Move client
+        // Move client forward
         this.prop_client.reverse = false;
         this.prop_client.start();
 
@@ -253,14 +269,12 @@ public class CoreController : MonoBehaviour {
         this.customerQueue.Clear();
 
         for(int i = 0; i < this.maxClients; i++) {
+            int index = Random.Range(0, this.customerTemplates.Count);
             #if UNITY_EDITOR
-                if(FORCE_CUSTOMER_ORDER) {
-                    this.customerQueue.Enqueue(this.customerTemplates[i % this.customerTemplates.Count]);
-                    continue;
-                }
+                if(FORCE_CUSTOMER_ORDER) index = i % this.customerTemplates.Count;
             #endif
 
-            this.customerQueue.Enqueue(this.customerTemplates[Random.Range(0, this.customerTemplates.Count)]);
+            this.customerQueue.Enqueue(this.customerTemplates[index]);
         }
     }
 
@@ -281,7 +295,7 @@ public class CoreController : MonoBehaviour {
             new Color(19, 140, 130, 255),// rgba(19, 140, 130)
             new Color(240, 238, 205, 255),// rgba(240, 238, 205)
             new Color(241, 156, 51, 255),// rgba(241, 156, 51)
-            new Color(88, 70, 50, 255),// rgba(88, 70, 50)
+            new Color(30, 30, 30, 255),// rgba(30, 30, 30)
             new Color(217, 25, 27, 255),// rgba(217, 25, 27, 255)
         });
 
@@ -317,15 +331,7 @@ public class CoreController : MonoBehaviour {
                 this.computer_client.queueCmd("$CLIENT " + this.totalClients + " / " + this.maxClients);
             });
         } else if(isReverse && this.servingClient == null) {
-            if(this.customerQueue.Count <= 0) {
-                this.setGameStatus(GAMEPLAY_STATUS.WIN);
-                util_timer.simple(2f, () => {
-                    ConversationController.Instance.speakerPosition = manager_position;
-                    ConversationController.Instance.clear(false);
-                    ConversationController.Instance.setConversationID("WIN");
-                    ConversationController.Instance.queueConversation(new Conversation("WIN", "MANAGER", "GOOD JOB, LOOKS LIKE YOU SURVIVE ANOTHER DAY", 0.45f, 0.6f));
-                });
-            } else {
+            if(this.customerQueue.Count > 0) {
                 util_timer.simple(0.5f, () => {
                     this.computer_client.queueCmd("PLEASE CALL NEXT CLIENT");
                     this.button_next_client.setButtonLocked(false);
@@ -335,6 +341,8 @@ public class CoreController : MonoBehaviour {
     }
 
     private void onChatCompleted(string id) {
+        Debug.Log("onChatCompleted: " + id);
+
         if(id == "INTRO") {
             if(this.servingClient == null) throw new Exception("Missing customer");
             this.computer_client.queueCmd("REQUESTED ITEMS (IN ORDER) :");

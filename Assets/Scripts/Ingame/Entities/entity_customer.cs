@@ -78,13 +78,18 @@ public class entity_customer : MonoBehaviour {
     }
 
     public T getSetting<T>(string id, int index) {
+        Debug.Log("[Settings] Get '"+ id +"' - Index : " + index);
+
         if(!this.settings.ContainsKey(id)) return default(T);
         return (T)this.settings[id][index];
     }
 
     public T getSetting<T>(string id) {
+        int index = this.getRequestCount();
+        Debug.Log("[Settings] Get '"+ id +"' - Auto-Index : " + index);
+
         if(!this.settings.ContainsKey(id)) return default(T);
-        return (T)this.settings[id][this.getRequestCount()];
+        return (T)this.settings[id][index];
     }
 
     public bool hasRequest(RequestType type) { return this.requestTemplate.Contains(type); }
@@ -101,7 +106,8 @@ public class entity_customer : MonoBehaviour {
     public int getRequestCount() { return this._requestIndex[this.currentRequest]; }
 
     public void chat(ChatType type) {
-        List<string> list = null;
+        List<string> list = new List<string>(){""};
+
         switch(type) {
             case ChatType.INTRO:
                 list = this.chatINTRO;
@@ -124,10 +130,8 @@ public class entity_customer : MonoBehaviour {
                 break;
         }
 
-        if(list == null || list.Count <= 0) return;
-
+        ConversationController.Instance.setConversationID(type.ToString());
         list.ForEach((chat) => {
-            ConversationController.Instance.setConversationID(type.ToString());
             ConversationController.Instance.queueConversation(new Conversation(type.ToString(), this.customerName, this.fixChat(chat), this.voice - 0.10f, this.voice + 0.10f));
         });
     }
@@ -148,14 +152,17 @@ public class entity_customer : MonoBehaviour {
     private void addSetting(string id, object val) {
         if(!this.settings.ContainsKey(id)) this.settings.Add(id, new List<object>(){ val });
         else this.settings[id].Add(val);
+
+        Debug.Log("[Setting] Add setting id '"+ id +"' = " + val);
     }
 
-    private int hasSetting(string id) {
+    private int settingCount(string id) {
         if(!this.settings.ContainsKey(id)) return 0;
         return this.settings[id].Count;
     }
 
     private void generateRequests() {
+        this._requestIndex.Clear();
         this.settings.Clear();
 
         foreach (RequestType request in this.requestTemplate) {
@@ -178,13 +185,15 @@ public class entity_customer : MonoBehaviour {
                 this.addSetting("magazine", (MAGAZINE_TYPE)magazines.GetValue(Random.Range(0, magazines.Length)));
             } else if(request == RequestType.WANT_SEND_BOX) {
                 Array countries = Enum.GetValues(typeof(GAME_COUNTRIES));
+
                 this.addSetting("box_weight", Random.Range(2, 100));
                 this.addSetting("country", (GAME_COUNTRIES)countries.GetValue(Random.Range(0, countries.Length)));
 
-                if(this.hasSetting("box_size") != this.hasSetting("country")) {
+                if(this.settingCount("box_size") < this.settingCount("country")) {
                     Array sizes = Enum.GetValues(typeof(BoxSize));
                     this.addSetting("box_size", (BoxSize)sizes.GetValue(Random.Range(0, sizes.Length)));
                 }
+
             } else if(request == RequestType.WANT_RETRIEVE_BOX) {
                 this.addSetting("box_id", CoreController.Instance.reserveBoxCode());
             }

@@ -60,3 +60,4 @@ MonoBehaviour:
   currentRequest: 2
   voice: 1.3222153
   customerName: Risa
+  FORCE_SAME_ORDERS: 0

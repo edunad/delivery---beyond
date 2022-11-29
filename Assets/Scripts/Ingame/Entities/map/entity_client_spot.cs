@@ -55,10 +55,9 @@ public class entity_client_spot : MonoBehaviour {
     }
 
     private void onItemPickup(entity_item itm) {
-        entity_customer customer = CoreController.Instance.servingClient;
         if(itm.id != "itm_miss_paper") return;
 
-        DestroyImmediate(itm.gameObject);
+        Destroy(itm.gameObject);
         CoreController.Instance.proccedEvent();
     }
 

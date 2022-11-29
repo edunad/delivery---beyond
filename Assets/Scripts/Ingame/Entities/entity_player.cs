@@ -109,11 +109,11 @@ public class entity_player : MonoBehaviour {
 
 		if(this._camera != null) {
 			// Camera movement
-			this._camRotationY += Input.GetAxis("Mouse Y") * this._sensitivity;
+			this._camRotationY += Input.GetAxis("Mouse Y") * this._sensitivity * 0.25f;
 			this._camRotationY = Mathf.Clamp(_camRotationY, -90f, 90f);
 
 			this._camera.transform.localRotation = Quaternion.Euler(-_camRotationY, 0f, 0f);
-			this.transform.Rotate(0, Input.GetAxis("Mouse X") * this._sensitivity, 0);
+			this.transform.Rotate(0, Input.GetAxis("Mouse X") * this._sensitivity * 0.25f, 0);
 			// --------------
 
 			// INPUTS

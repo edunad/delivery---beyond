@@ -38,7 +38,7 @@ public class OptionsController : MonoBehaviour {
         // Get vars
         musicVolume = PlayerPrefs.GetFloat("musicVolume", 1f);
         effectsVolume = PlayerPrefs.GetFloat("effectsVolume", 1f);
-        sensitivity = PlayerPrefs.GetInt("sensitivity", 3);
+        sensitivity = PlayerPrefs.GetInt("sensitivity", 5);
 
         this.updateText();
     }
