@@ -2,7 +2,7 @@
 using UnityEngine;
 
 public class util_fps : MonoBehaviour {
-    //#if UNITY_EDITOR
+    #if UNITY_EDITOR
         float deltaTime = 0.0f;
 
         public void Update() {
@@ -24,9 +24,9 @@ public class util_fps : MonoBehaviour {
 
             GUI.Label(rect, string.Format("{0:0.0} ms ({1:0.} fps)", msec, fps), style);
         }
-    /*#else
+    #else
         public void Awake() {
             Destroy(this);
         }
-    #endif*/
+    #endif
 }
