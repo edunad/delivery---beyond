@@ -369,12 +369,13 @@ MonoBehaviour:
   computer_client: {fileID: 0}
   button_next_client: {fileID: 0}
   manager_position: {fileID: 0}
-  debugStatus: 0
+  FORCE_CUSTOMER_ORDER: 0
+  FORCE_STATUS: 0
   servingClient: {fileID: 0}
   totalClients: 0
   status: 0
   oldStatus: 0
-  totalFails: 0
+  totalMistakes: 0
 --- !u!1 &1841370591808144292
 GameObject:
   m_ObjectHideFlags: 0
