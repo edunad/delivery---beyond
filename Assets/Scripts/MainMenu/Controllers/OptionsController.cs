@@ -74,7 +74,7 @@ public class OptionsController : MonoBehaviour {
         sensitivity = Mathf.Clamp(sen, 1, 10);
         PlayerPrefs.SetInt("sensitivity", sensitivity);
 
-        if(OnSettingsUpdated != null) OnSettingsUpdated.Invoke("sensitivity", sen);
+        if(OnSettingsUpdated != null) OnSettingsUpdated.Invoke("sensitivity", sensitivity);
     }
 
     public void setEffectsVolume(float vol) {

@@ -41,15 +41,6 @@ map_Ka materials/delivery_beyond/bricks055_1k_color.tga
 map_Kd materials/delivery_beyond/bricks055_1k_color.tga
 
 
-newmtl metal/metalpipe002a
-Ka 1.000 1.000 1.000
-Kd 1.000 1.000 1.000
-Ks 0.000 0.000 0.000
-map_Ka materials/metal/metalpipe002a.tga
-map_Kd materials/metal/metalpipe002a.tga
-map_bump materials/metal/metalpipe003a_normal.tga
-
-
 newmtl metal/metalwall030a
 Ka 1.000 1.000 1.000
 Kd 1.000 1.000 1.000
@@ -64,6 +55,15 @@ Kd 1.000 1.000 1.000
 Ks 0.000 0.000 0.000
 map_Ka materials/metal/metalpipe003a.tga
 map_Kd materials/metal/metalpipe003a.tga
+map_bump materials/metal/metalpipe003a_normal.tga
+
+
+newmtl metal/metalpipe002a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/metal/metalpipe002a.tga
+map_Kd materials/metal/metalpipe002a.tga
 map_bump materials/metal/metalpipe003a_normal.tga
 
 

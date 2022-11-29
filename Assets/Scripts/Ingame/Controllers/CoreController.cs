@@ -189,6 +189,8 @@ public class CoreController : MonoBehaviour {
     }
 
     public int reserveBoxCode() {
+        Random.InitState(System.DateTime.Now.Millisecond); // Re-randomize seed
+
         var keys = this.boxCodes.Keys.ToList();
         int key = keys[Random.Range(0, keys.Count)];
         while(this.boxCodes[key]) key = keys[Random.Range(0, keys.Count)];
@@ -268,6 +270,8 @@ public class CoreController : MonoBehaviour {
     private void generateQUEUE() {
         this.customerQueue.Clear();
 
+        Random.InitState(System.DateTime.Now.Millisecond); // Re-randomize seed
+
         for(int i = 0; i < this.maxClients; i++) {
             int index = Random.Range(0, this.customerTemplates.Count);
             #if UNITY_EDITOR
@@ -280,6 +284,8 @@ public class CoreController : MonoBehaviour {
 
     private void generateBoxCodes() {
         this.boxCodes.Clear();
+
+        Random.InitState(System.DateTime.Now.Millisecond); // Re-randomize seed
 
         for(int i = 0; i < 80; i++) {
             int id = Random.Range(1000,9999);
@@ -303,6 +309,8 @@ public class CoreController : MonoBehaviour {
         Array countries = Enum.GetValues(typeof(GAME_COUNTRIES));
 
         if(regions.Length != rndColors.Count) throw new Exception("Region count does not match color count");
+
+        Random.InitState(System.DateTime.Now.Millisecond); // Re-randomize seed
 
         for(int i = 0; i < regions.Length; i++) {
             int clIndx = Random.Range(0, rndColors.Count);

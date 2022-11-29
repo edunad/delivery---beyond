@@ -3,19 +3,20 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-
-
 public class Conversation {
     public string id;
 
     public string text;
     public float maxPitch;
     public float minPitch;
+    public bool isEmpty;
 
     public Conversation(string id, string author, string text, float minPitch = 1f, float maxPitch = 1f) {
         this.id = id;
 
         this.text = author + ": " + text;
+        this.isEmpty = string.IsNullOrEmpty(text);
+
         this.minPitch = minPitch;
         this.maxPitch = maxPitch;
     }
@@ -96,9 +97,10 @@ public class ConversationController : MonoBehaviour {
         this._started = true;
         this._currentChat = this._talkQueue.Dequeue();
 
-        if(string.IsNullOrEmpty(this._currentChat.text)) {
+        if(this._currentChat.isEmpty) {
             if(OnSingleConversationCompleted != null) OnSingleConversationCompleted.Invoke(this._currentChat.id);
             util_timer.simple(this.cooldown, () => this.getNextConv());
+
             return;
         }
 

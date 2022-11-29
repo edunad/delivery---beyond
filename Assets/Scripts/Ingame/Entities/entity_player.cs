@@ -1,5 +1,6 @@
 
 using UnityEngine;
+using static UnityEngine.InputSystem.InputAction;
 using Random = UnityEngine.Random;
 
 public enum ShakeMode {
@@ -37,6 +38,10 @@ public class entity_player : MonoBehaviour {
 
 	// PRIVATE ---
 	#region PRIVATE
+		#region CONTROLS
+			private Controls _controls;
+		#endregion
+
 		#region SHAKE
 			private bool _isCameraShaking;
 			private ShakeMode _shakemode;
@@ -52,28 +57,54 @@ public class entity_player : MonoBehaviour {
 			private float _camRotationY;
 			private float _originalCamZoom;
 			private int _sensitivity;
+
 		#endregion
 
 		#region OTHER
 			private FrozenFlags _frozen = FrozenFlags.NONE;
+			private bool _sprintDown;
 		#endregion
 	#endregion
 
 
-    // Use this for initialization
-	public void Awake () {
-		this._controller = GetComponent<CharacterController>();
+	private void onPrimaryUse(CallbackContext ctx) {
+		if(!this.isHoldingItem()) return;
 
+		if(this.small_holding_item != null) this.small_holding_item.BroadcastMessage("onPrimaryUse", this, SendMessageOptions.DontRequireReceiver);
+		if(this.big_holding_item != null) this.big_holding_item.BroadcastMessage("onPrimaryUse", this, SendMessageOptions.DontRequireReceiver);
+	}
+
+	private void onUse(CallbackContext ctx) {
+		RaycastHit hit;
+		if (Physics.Raycast(this._camera.ScreenPointToRay(Input.mousePosition), out hit, maxGrabDistance, usableMask)) {
+			this.onUse(hit.collider.gameObject); // USE
+		}
+	}
+
+	private void onZoomStart(CallbackContext ctx) { this._camera.fieldOfView = this._originalCamZoom - this.maxZoom; }
+	private void onZoomEnd(CallbackContext ctx) { this._camera.fieldOfView = this._originalCamZoom; }
+	private void onSprintStart(CallbackContext ctx) { this._sprintDown = true; }
+	private void onSprintEnd(CallbackContext ctx) { this._sprintDown = false; }
+
+	public void Awake () {
+		this._controls = new Controls();
+		this._controls.Gameplay.PrimaryUse.performed += this.onPrimaryUse;
+		this._controls.Gameplay.Use.performed += this.onUse;
+		this._controls.Gameplay.Zoom.performed += this.onZoomStart;
+		this._controls.Gameplay.Zoom.canceled += this.onZoomEnd;
+		this._controls.Gameplay.Sprint.performed += this.onSprintStart;
+		this._controls.Gameplay.Sprint.canceled += this.onSprintEnd;
+
+		this._controller = GetComponent<CharacterController>();
 		this._camera = GetComponentInChildren<Camera>(true);
 		this._originalCamZoom = this._camera.fieldOfView;
+		this._sensitivity = PlayerPrefs.GetInt("sensitivity", 3);
 
 		// Hide cursor
 		Cursor.lockState = CursorLockMode.Locked;
 		Cursor.visible = false;
 
 		this.name = "entity_player";
-
-		this._sensitivity = PlayerPrefs.GetInt("sensitivity", 3);
 
 		OptionsController.Instance.OnSettingsUpdated += (string id, object val) => {
 			if(id != "sensitivity") return;
@@ -93,6 +124,16 @@ public class entity_player : MonoBehaviour {
 		};
 	}
 
+	public void OnEnable() {
+		if(this._controls == null) return;
+		this._controls.Gameplay.Enable();
+	}
+
+	public void OnDisable() {
+		if(this._controls == null) return;
+		this._controls.Gameplay.Disable();
+	}
+
 	public void setFrozen(FrozenFlags flag, bool set) {
 		if(!set) this._frozen &= ~flag;
 		else this._frozen |= flag;
@@ -102,37 +143,23 @@ public class entity_player : MonoBehaviour {
 		if(this._frozen != FrozenFlags.NONE) return;
 
 		if(this._controller != null) {
-			float speed = Input.GetKey(KeyCode.LeftShift) ? runSpeed : moveSpeed;
-			this._controller.Move((transform.forward * Input.GetAxisRaw("Vertical") + transform.right * Input.GetAxisRaw("Horizontal")).normalized * speed * Time.deltaTime);
+			float speed = this._sprintDown ? runSpeed : moveSpeed;
+
+			Vector2 plyMovement = this._controls.Gameplay.Move.ReadValue<Vector2>();
+			this._controller.Move((transform.forward * plyMovement.y + transform.right * plyMovement.x).normalized * speed * Time.deltaTime);
+
 			if (!this._controller.isGrounded) this._controller.Move(Vector3.up * Time.deltaTime * Physics.gravity.y);
 		}
 
 		if(this._camera != null) {
 			// Camera movement
-			this._camRotationY += Input.GetAxis("Mouse Y") * this._sensitivity * 0.25f;
+			Vector2 plyLook = this._controls.Gameplay.Look.ReadValue<Vector2>() * Time.smoothDeltaTime * this._sensitivity * 1f;
+
+			this._camRotationY += plyLook.y;
 			this._camRotationY = Mathf.Clamp(_camRotationY, -90f, 90f);
 
 			this._camera.transform.localRotation = Quaternion.Euler(-_camRotationY, 0f, 0f);
-			this.transform.Rotate(0, Input.GetAxis("Mouse X") * this._sensitivity * 0.25f, 0);
-			// --------------
-
-			// INPUTS
-			RaycastHit hit;
-			if (Physics.Raycast(this._camera.ScreenPointToRay(Input.mousePosition), out hit, maxGrabDistance, usableMask)) {
-				if(Input.GetKeyDown(KeyCode.E)) this.onUse(hit.collider.gameObject); // USE
-				// TODO: Draw highlight on shader
-			}
-
-			if(Input.GetMouseButtonDown(0) && this.isHoldingItem()) {
-				if(this.small_holding_item != null) this.small_holding_item.BroadcastMessage("onPrimaryUse", this, SendMessageOptions.DontRequireReceiver);
-				if(this.big_holding_item != null) this.big_holding_item.BroadcastMessage("onPrimaryUse", this, SendMessageOptions.DontRequireReceiver);
-			}
-
-			if(Input.GetMouseButton(1)) {
-				this._camera.fieldOfView = this._originalCamZoom - this.maxZoom;
-			} else {
-				this._camera.fieldOfView = this._originalCamZoom;
-			}
+			this.transform.Rotate(0, plyLook.x, 0);
 			// --------------
 
 			if (this._isCameraShaking) {

@@ -340,7 +340,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8726326878671875345}
-  - {fileID: 8726326878744278591}
+  - {fileID: 8834656946192428785}
   - {fileID: 8726326878483553084}
   - {fileID: 108284072}
   - {fileID: 1658524583}
@@ -413,7 +413,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.287428, y: 3.253481, z: 3.5887542}
   m_Center: {x: -0.10952282, y: 1.1267405, z: -0.07471824}
---- !u!1001 &9119962360923263444
+--- !u!1001 &9012187542509963546
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -439,7 +439,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6b61d9f5dd6b2a94a96d65ad44051c33, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6b61d9f5dd6b2a94a96d65ad44051c33, type: 3}
       propertyPath: m_LocalPosition.y
@@ -485,21 +485,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: elevator.vmf
       objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 6b61d9f5dd6b2a94a96d65ad44051c33, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 2147483647
-      objectReference: {fileID: 0}
-    - target: {fileID: 8164078558771037576, guid: 6b61d9f5dd6b2a94a96d65ad44051c33, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 119
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b61d9f5dd6b2a94a96d65ad44051c33, type: 3}
---- !u!4 &8726326878744278591 stripped
+--- !u!4 &8834656946192428785 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6b61d9f5dd6b2a94a96d65ad44051c33, type: 3}
-  m_PrefabInstance: {fileID: 9119962360923263444}
+  m_PrefabInstance: {fileID: 9012187542509963546}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9119962360987208442
 PrefabInstance:

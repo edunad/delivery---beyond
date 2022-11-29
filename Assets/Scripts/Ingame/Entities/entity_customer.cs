@@ -70,6 +70,8 @@ public class entity_customer : MonoBehaviour {
     #endregion
 
     public void init() {
+        Random.InitState(System.DateTime.Now.Millisecond); // Re-randomize seed
+
         this.customerName = names[Random.Range(0, names.Count)];
         this.voice = Random.Range(0.25f, 1.85f);
 

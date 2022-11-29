@@ -650,10 +650,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<b>Made for GITHUB Game Off 2022</b>\n\n\n\n<b><color=#FFC512>Programming
-    / Models / Textures</color></b>\n\u2022 Eduardo Fernandes (failcake)\n\n<b><color=#FFC512>Some
-    Textures</color></b>\n\u2022 Valve\n\n<b><color=#FFC512>Music / Sound effects</color></b>\n\u2022
-    https://incompetech.com/\n\u2022 https://freesound.org/"
+  m_text: "<b>Made for GITHUB Game Off 2022</b>\n\n\n<b><color=#FFC512>Programming
+    / Models / Textures</color></b>\n\u2022 Eduardo Fernandes (failcake)\n\n<b><color=#FFC512>Other
+    Textures</color></b>\n\u2022 Valve\n\u2022 https://ambientcg.com/\n\n<b><color=#FFC512>Music
+    / Sound effects</color></b>\n\u2022 https://incompetech.com/\n\u2022 https://freesound.org/"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ca13082852c24a0448a5fc7f6f962ae2, type: 2}
   m_sharedMaterial: {fileID: -5757543528659856582, guid: ca13082852c24a0448a5fc7f6f962ae2, type: 2}
