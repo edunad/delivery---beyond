@@ -29,6 +29,11 @@ public class entity_customer : MonoBehaviour {
     [HideInInspector]
     public string customerName;
 
+    #if UNITY_EDITOR
+        [Header("DEBUG ---------")]
+        public bool FORCE_SAME_ORDERS = false;
+    #endif
+
     #region GENERATORS
         private readonly static List<string> names = new List<string>() {
             "Reptifur",
@@ -154,6 +159,17 @@ public class entity_customer : MonoBehaviour {
         this.settings.Clear();
 
         foreach (RequestType request in this.requestTemplate) {
+            #if UNITY_EDITOR
+                if(FORCE_SAME_ORDERS) {
+                    this.addSetting("box_size", BoxSize._5x5x5);
+                    this.addSetting("magazine", MAGAZINE_TYPE.GAME);
+                    this.addSetting("box_weight", 5);
+                    this.addSetting("country", GAME_COUNTRIES.YADRYA);
+                    this.addSetting("box_id", CoreController.Instance.reserveBoxCode());
+                    continue;
+                }
+            #endif
+
             if(request == RequestType.WANT_FLAT_BOX) {
                 Array sizes = Enum.GetValues(typeof(BoxSize));
                 this.addSetting("box_size", (BoxSize)sizes.GetValue(Random.Range(0, sizes.Length)));

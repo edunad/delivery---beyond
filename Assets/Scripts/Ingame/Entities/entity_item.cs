@@ -10,8 +10,10 @@ public class entity_item : MonoBehaviour {
     public bool supportMultiplePickup = false;
     public Vector3 pickupAngle = Vector3.zero;
 
-    private GameObject _owner;
-    private Collider _collision;
+    #region PRIVATE
+        private GameObject _owner;
+        private Collider _collision;
+    #endregion
 
     public void Awake() {
         this._collision = GetComponent<Collider>();

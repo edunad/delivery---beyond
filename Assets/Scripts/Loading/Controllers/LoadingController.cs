@@ -13,8 +13,8 @@ public class LoadingController : MonoBehaviour {
         StartCoroutine(this.startLoading());
 	}
 
-    private void Update() {
-        util_timer.update();
+    public void FixedUpdate() {
+        util_timer.fixedUpdate();
     }
 
     private void OnDestroy() {

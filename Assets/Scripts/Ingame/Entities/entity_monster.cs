@@ -30,9 +30,9 @@ public class entity_monster : MonoBehaviour {
         this._agent.updateRotation = false;
         this._agent.speed = this.speed;
 
-        this._thinking = true;
-
         CoreController.Instance.OnGameStatusUpdated += this.gameStatusChange;
+
+        this.gameObject.SetActive(false);
     }
 
     public void pickDestination() {

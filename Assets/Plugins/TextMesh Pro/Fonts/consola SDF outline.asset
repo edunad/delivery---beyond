@@ -78,7 +78,7 @@ Material:
     - _Reflectivity: 10
     - _ScaleRatioA: 0.9
     - _ScaleRatioB: 0.73125
-    - _ScaleRatioC: 0.48140225
+    - _ScaleRatioC: 0.73125
     - _ScaleX: 1
     - _ScaleY: 1
     - _ShaderFlags: 0
@@ -92,8 +92,8 @@ Material:
     - _TextureHeight: 1024
     - _TextureWidth: 1024
     - _UnderlayDilate: 0.42
-    - _UnderlayOffsetX: 1
-    - _UnderlayOffsetY: 0
+    - _UnderlayOffsetX: -0.3
+    - _UnderlayOffsetY: -0.24
     - _UnderlaySoftness: 0.099
     - _UseUIAlphaClip: 0
     - _VertexOffsetX: 0
@@ -112,7 +112,7 @@ Material:
     - _ReflectOutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
-    - _UnderlayColor: {r: 0.028301895, g: 0.028301895, b: 0.028301895, a: 1}
+    - _UnderlayColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &11400000
 MonoBehaviour:
@@ -126,9 +126,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: consola SDF outline
   m_EditorClassIdentifier: 
-  hashCode: -1522362110
+  hashCode: -982029790
   material: {fileID: -5757543528659856582}
-  materialHashCode: 961141858
+  materialHashCode: 2047517378
   m_Version: 1.1.0
   m_SourceFontFileGUID: be7b07036d87cea49b3903b5cc2d787c
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: be7b07036d87cea49b3903b5cc2d787c, type: 3}

@@ -64,7 +64,6 @@ public class entity_client_spot : MonoBehaviour {
 
     private void gameStatusChange(GAMEPLAY_STATUS prevStatus, GAMEPLAY_STATUS newStatus) {
         bool isOK = (newStatus == GAMEPLAY_STATUS.ITEM_REQUESTED || newStatus == GAMEPLAY_STATUS.ITEM_WAIT_PLY_PICKUP);
-
         if(!isOK) this._spot.deleteItem();
         this._spot.setLocked(!isOK);
 

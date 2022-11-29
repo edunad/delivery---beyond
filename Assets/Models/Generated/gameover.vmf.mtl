@@ -24,36 +24,3 @@ Ks 0.000 0.000 0.000
 map_Ka materials/tools/toolsblack.tga
 map_Kd materials/tools/toolsblack.tga
 
-
-newmtl decals/blood1
-Ka 1.000 1.000 1.000
-Kd 1.000 1.000 1.000
-Ks 0.000 0.000 0.000
-map_Ka materials/decals/blood1.tga
-map_Kd materials/decals/blood1.tga
-illum 4
-
-
-newmtl decals/blood4model
-Ka 1.000 1.000 1.000
-Kd 1.000 1.000 1.000
-Ks 0.000 0.000 0.000
-map_Ka materials/decals/bloodstain_101.tga
-map_Kd materials/decals/bloodstain_101.tga
-
-
-newmtl decals/bloodstain_002
-Ka 1.000 1.000 1.000
-Kd 1.000 1.000 1.000
-Ks 0.000 0.000 0.000
-map_Ka materials/decals/bloodstain_002.tga
-map_Kd materials/decals/bloodstain_002.tga
-
-
-newmtl decals/bloodstain_003
-Ka 1.000 1.000 1.000
-Kd 1.000 1.000 1.000
-Ks 0.000 0.000 0.000
-map_Ka materials/decals/bloodstain_003.tga
-map_Kd materials/decals/bloodstain_003.tga
-

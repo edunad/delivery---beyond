@@ -35,6 +35,14 @@ map_Ka materials/lights/fluorescentwhite001a.tga
 map_Kd materials/lights/fluorescentwhite001a.tga
 
 
+newmtl delivery_beyond/secure_sign
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/delivery_beyond/secure_sign.tga
+map_Kd materials/delivery_beyond/secure_sign.tga
+
+
 newmtl metal/metalfloor001a
 Ka 1.000 1.000 1.000
 Kd 1.000 1.000 1.000

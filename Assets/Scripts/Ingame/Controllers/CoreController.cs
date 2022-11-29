@@ -25,14 +25,19 @@ public class CoreController : MonoBehaviour {
     public entity_movement prop_client;
     public entity_computer computer_client;
     public entity_button button_next_client;
+
+    #if UNITY_EDITOR
+        [HelpBox("DEBUG AREA --- WILL NOT BE IN RELEASE", HelpBoxType.Warning)]
+    #endif
     public Transform manager_position;
 
     #if UNITY_EDITOR
-        [Header("DEBUG")]
-        public GAMEPLAY_STATUS debugStatus = GAMEPLAY_STATUS.PREPARING;
+        [Header("DEBUG ---------")]
+        public bool FORCE_CUSTOMER_ORDER = false;
+        public GAMEPLAY_STATUS FORCE_STATUS = GAMEPLAY_STATUS.PREPARING;
 
         [EditorButton("Set")]
-        public void Set() => this.setGameStatus(debugStatus);
+        public void Set() => this.setGameStatus(FORCE_STATUS);
     #endif
 
     #region GAME STATUS
@@ -51,7 +56,7 @@ public class CoreController : MonoBehaviour {
         [HideInInspector]
         public GAMEPLAY_STATUS oldStatus = GAMEPLAY_STATUS.PREPARING;
         [HideInInspector]
-        public int totalFails;
+        public int totalMistakes;
     #endregion
 
     #region EVENTS
@@ -72,6 +77,8 @@ public class CoreController : MonoBehaviour {
 
     private IEnumerator onLoaded() {
         yield return new WaitForEndOfFrame();
+        yield return new WaitForEndOfFrame();
+
         this.init();
     }
 
@@ -86,8 +93,28 @@ public class CoreController : MonoBehaviour {
         Debug.Log("INIT");
     }
 
-    public void Update() {
-        util_timer.update();
+    #if DEVELOPMENT_BUILD || UNITY_EDITOR
+        public void OnGUI() {
+            int w = Screen.width, h = Screen.height;
+
+            GUIStyle style = new GUIStyle();
+
+            Rect rect = new Rect(0, 0, w, h * 2 / 100);
+            style.alignment = TextAnchor.UpperLeft;
+            style.fontSize = h * 2 / 100;
+            style.normal.textColor = new Color(0.8f, 0.8f, 0.8f, 1.0f);
+
+            string data = "GAME_STATUS {NEW: " + this.status + " | OLD: " + this.oldStatus + "}";
+            data += "\nMISTAKES: " + this.totalMistakes;
+            data += "\nCLIENT QUEUE: " + this.customerQueue.Count;
+            data += "\n\n" + util_timer.debug();
+
+            GUI.Label(rect, data, style);
+        }
+    #endif
+
+    public void FixedUpdate() {
+        util_timer.fixedUpdate();
     }
 
     public void OnDestroy() {
@@ -97,14 +124,14 @@ public class CoreController : MonoBehaviour {
     public bool penalize(string mistake) {
         if(this.servingClient == null) return false;
 
-        if(this.totalFails >= this.maxMistakes) {
+        if(this.totalMistakes >= this.maxMistakes) {
             this.gameOver(GAMEOVER_TYPE.CLIENT);
             return false;
         } else {
-            this.computer_client.queueCmd("#" + mistake + " (" + (this.totalFails + 1) + " / " + this.maxMistakes + ")");
+            this.computer_client.queueCmd("#" + mistake + " (" + (this.totalMistakes + 1) + " / " + this.maxMistakes + ")");
         }
 
-        this.totalFails++;
+        this.totalMistakes++;
         return true;
     }
 
@@ -149,7 +176,7 @@ public class CoreController : MonoBehaviour {
 
             this.setGameStatus(GAMEPLAY_STATUS.ITEM_SHIPPING);
         } else if(status == GAMEPLAY_STATUS.ITEM_WAIT_PLY_PICKUP) {
-            this.computer_client.queueCmd("PICKUP ITEM ID '"+ this.servingClient.getSetting<int>("box_id") +"'");
+            this.computer_client.queueCmd("PICKUP ITEM ID '"+ this.servingClient.getSetting<int>("box_id") +"' IN THE BASEMENT");
             this.setGameStatus(GAMEPLAY_STATUS.ITEM_RETRIEVE);
         } else if(status == GAMEPLAY_STATUS.ITEM_SHIPPING) {
             this.setGameStatus(GAMEPLAY_STATUS.ITEM_REQUESTED);
@@ -226,6 +253,13 @@ public class CoreController : MonoBehaviour {
         this.customerQueue.Clear();
 
         for(int i = 0; i < this.maxClients; i++) {
+            #if UNITY_EDITOR
+                if(FORCE_CUSTOMER_ORDER) {
+                    this.customerQueue.Enqueue(this.customerTemplates[i % this.customerTemplates.Count]);
+                    continue;
+                }
+            #endif
+
             this.customerQueue.Enqueue(this.customerTemplates[Random.Range(0, this.customerTemplates.Count)]);
         }
     }
@@ -248,7 +282,7 @@ public class CoreController : MonoBehaviour {
             new Color(240, 238, 205, 255),// rgba(240, 238, 205)
             new Color(241, 156, 51, 255),// rgba(241, 156, 51)
             new Color(88, 70, 50, 255),// rgba(88, 70, 50)
-            new Color(217, 75, 37, 255),// rgba(217, 75, 37)
+            new Color(217, 25, 27, 255),// rgba(217, 25, 27, 255)
         });
 
         Array regions = Enum.GetValues(typeof(GAME_REGIONS));

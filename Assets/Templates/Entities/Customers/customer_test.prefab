@@ -44,20 +44,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c169d463612923f489de8c7d8c3edb36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requestTemplate: 030000000100000001000000
+  requestTemplate: 0000000000000000
   chatINTRO:
-  - Hey there
-  - 'I missed my '
+  - A
   chatWRONG_ITEM:
-  - Uhh, that's not my item
-  chatOK_ITEM:
-  - Awesome, thanks!
+  - That's not what i want..
+  chatOK_ITEM: []
   chatOUTRO:
-  - Bye
-  chatPLACED_ITEM:
-  - I've placed the item on the machine
+  - "Ich w\xFCnsche ihnen noch einen sch\xF6nen Tag!"
+  chatPLACED_ITEM: []
   chatGAME_OVER:
-  - I want to speak to your manager
+  - I'm tired of this, where is your manager?
   currentRequest: 1
-  voice: 1.0377305
-  customerName: John Swann
+  voice: 0.29758796
+  customerName: Bromvlieg
+  FORCE_SAME_ORDERS: 1

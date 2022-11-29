@@ -935,6 +935,7 @@ GameObject:
   - component: {fileID: 2702157389663840716}
   - component: {fileID: 2702157389663840725}
   - component: {fileID: 496750360}
+  - component: {fileID: 7213284712395959054}
   m_Layer: 0
   m_Name: UIController
   m_TagString: Untagged
@@ -1028,6 +1029,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spook: {fileID: 64981010}
+--- !u!114 &7213284712395959054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8085179782427043314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b64ac9368f188143a5650d93418b24d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2380511112871424140
 PrefabInstance:
   m_ObjectHideFlags: 0

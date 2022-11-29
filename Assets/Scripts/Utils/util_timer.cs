@@ -6,7 +6,7 @@ using UnityEngine;
 public class util_timer {
 
     #region PRIVATE
-        private static Dictionary<string, util_timer> _timers = new Dictionary<string, util_timer>();
+        public static Dictionary<string, util_timer> timers = new Dictionary<string, util_timer>();
         private static int ID = 0;
 
         #region TIMER
@@ -20,16 +20,11 @@ public class util_timer {
         #endregion
     #endregion
 
-    public static void update() {
-        if(_timers == null || _timers.Count <= 0) return;
-
-        try {
-            foreach (util_timer timer in _timers.Values.ToList()) {
-                if (timer != null) timer.tick();
-                else _timers.Remove(timer._id);
-            }
-        } catch (Exception err) {
-            Debug.LogError(err);
+    public static void fixedUpdate() {
+        if(timers == null || timers.Count <= 0) return;
+        foreach (util_timer timer in timers.Values.ToList()) {
+            if (timer != null) timer.tick();
+            else timers.Remove(timer._id);
         }
     }
 
@@ -51,10 +46,10 @@ public class util_timer {
     }
 
     public static void clear() {
-        foreach (util_timer timer in _timers.Values.ToList())
+        foreach (util_timer timer in timers.Values.ToList())
             if (timer != null) timer.stop();
 
-        _timers.Clear();
+        timers.Clear();
         ID = 0;
     }
 
@@ -70,14 +65,24 @@ public class util_timer {
     }
 
     public void stop() {
-        if(!_timers.ContainsKey(this._id)) return;
-        _timers.Remove(this._id);
+        if(!timers.ContainsKey(this._id)) return;
+        timers.Remove(this._id);
     }
 
     public void start() {
-        if(_timers.ContainsKey(this._id)) throw new Exception("Timer already started");
+        if(timers.ContainsKey(this._id)) throw new Exception("Timer already started");
         this._nextTick = Time.time + this._delay;
 
-        _timers.Add(this._id, this);
+        timers.Add(this._id, this);
     }
+
+    #if DEVELOPMENT_BUILD || UNITY_EDITOR
+        public static string debug() {
+            string data = "\n--------------- ACTIVE TIMERS: " + timers.Count;
+            data += "\nCURRENT ID: " + ID;
+            foreach (util_timer timer in timers.Values.ToList()) data += "\n [" + timer._id +"] DELAY: "+ timer._delay + " | ITERATIONS: " + timer._iterations + " | TIME: " + (timer._nextTick - Time.time) + "s";
+
+            return data;
+        }
+    #endif
 }

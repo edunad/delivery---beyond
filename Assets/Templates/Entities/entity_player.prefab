@@ -334,7 +334,7 @@ GameObject:
   m_Layer: 8
   m_Name: entity_player
   m_TagString: Player
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -355,7 +355,7 @@ Transform:
   - {fileID: 1631936800796515380}
   - {fileID: 1067360581}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1732401392186208437
 MeshFilter:

@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 225627996, guid: ffea41b2ef7376143bee608c897e587a, type: 3}
+  m_Name: blood-Atlas
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: 0bebf0d4b7908d644952505f06f28903, type: 2}
+  regions:
+  - name: blood_1
+    region:
+      serializedVersion: 2
+      x: 0
+      y: 0.49855787
+      width: 0.49946514
+      height: 0.50144213
+  - name: blood_2
+    region:
+      serializedVersion: 2
+      x: 0.499794
+      y: 0.49975258
+      width: 0.500206
+      height: 0.5002474
+  - name: blood_3
+    region:
+      serializedVersion: 2
+      x: 0.49975273
+      y: 0
+      width: 0.50024724
+      height: 0.5001645
