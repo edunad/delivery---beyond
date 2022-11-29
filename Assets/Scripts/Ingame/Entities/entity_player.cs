@@ -68,13 +68,15 @@ public class entity_player : MonoBehaviour {
 
 
 	private void onPrimaryUse(CallbackContext ctx) {
-		if(!this.isHoldingItem()) return;
+		if(this._frozen != FrozenFlags.NONE || !this.isHoldingItem()) return;
 
 		if(this.small_holding_item != null) this.small_holding_item.BroadcastMessage("onPrimaryUse", this, SendMessageOptions.DontRequireReceiver);
 		if(this.big_holding_item != null) this.big_holding_item.BroadcastMessage("onPrimaryUse", this, SendMessageOptions.DontRequireReceiver);
 	}
 
 	private void onUse(CallbackContext ctx) {
+		if(this._frozen != FrozenFlags.NONE) return;
+
 		RaycastHit hit;
 		if (Physics.Raycast(this._camera.ScreenPointToRay(Input.mousePosition), out hit, maxGrabDistance, usableMask)) {
 			this.onUse(hit.collider.gameObject); // USE
@@ -85,6 +87,7 @@ public class entity_player : MonoBehaviour {
 	private void onZoomEnd(CallbackContext ctx) { this._camera.fieldOfView = this._originalCamZoom; }
 	private void onSprintStart(CallbackContext ctx) { this._sprintDown = true; }
 	private void onSprintEnd(CallbackContext ctx) { this._sprintDown = false; }
+	private void onPause(CallbackContext ctx) { OptionsController.Instance.toggleOptions(); }
 
 	public void Awake () {
 		this._controls = new Controls();
@@ -94,6 +97,7 @@ public class entity_player : MonoBehaviour {
 		this._controls.Gameplay.Zoom.canceled += this.onZoomEnd;
 		this._controls.Gameplay.Sprint.performed += this.onSprintStart;
 		this._controls.Gameplay.Sprint.canceled += this.onSprintEnd;
+		this._controls.Gameplay.Pause.performed += this.onPause;
 
 		this._controller = GetComponent<CharacterController>();
 		this._camera = GetComponentInChildren<Camera>(true);

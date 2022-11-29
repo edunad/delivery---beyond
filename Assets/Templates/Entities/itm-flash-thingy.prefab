@@ -158,7 +158,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: itm-flash-thingy
   isBig: 0
-  supportMultiplePickup: 0
+  supportMultiplePickup: 1
   pickupAngle: {x: 0, y: -90, z: 0}
 --- !u!114 &6625390097859779886
 MonoBehaviour:

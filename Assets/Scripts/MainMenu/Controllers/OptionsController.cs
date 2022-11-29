@@ -23,11 +23,13 @@ public class OptionsController : MonoBehaviour {
     [HideInInspector]
     public int sensitivity = 10;
 
-    public delegate void onSettingsUpdated(string id, object val);
-    public event onSettingsUpdated OnSettingsUpdated;
+    #region EVENTS
+        public delegate void onSettingsUpdated(string id, object val);
+        public event onSettingsUpdated OnSettingsUpdated;
 
-    public delegate void onOptionsMenuUpdate(bool open);
-    public event onOptionsMenuUpdate OnOptionsMenuUpdate;
+        public delegate void onOptionsMenuUpdate(bool open);
+        public event onOptionsMenuUpdate OnOptionsMenuUpdate;
+    #endregion
 
     public void Awake () {
         if (Instance != null && Instance != this) {
@@ -51,14 +53,8 @@ public class OptionsController : MonoBehaviour {
         this.optionsMenu.SetActive(set);
         if(OnOptionsMenuUpdate != null) OnOptionsMenuUpdate.Invoke(set);
     }
+    public void toggleOptions() { this.displayOptions(!this.isOptionsOpen()); }
     public bool isOptionsOpen() { return this.optionsMenu.activeInHierarchy; }
-
-    public void Update() {
-        if(CoreController.Instance == null) return; // Not in ingame
-
-        if(!Input.GetKeyDown(KeyCode.Escape)) return;
-        this.displayOptions(!this.isOptionsOpen());
-    }
 
     /* *************
      * VOLUME

@@ -7703,7 +7703,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1565633112
 Transform:
   m_ObjectHideFlags: 0
@@ -7839,7 +7839,7 @@ MonoBehaviour:
   surfaceRotation: 0
   quality: 1
   sharedMesh: {fileID: 0}
-  instanceID: 447774
+  instanceID: -421324
 --- !u!1 &1655875852
 GameObject:
   m_ObjectHideFlags: 0
@@ -8787,8 +8787,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.16021681, y: 0.27107024, z: 0.28403473}
-  m_Center: {x: -0.0336411, y: 0.17879611, z: 0.014156342}
+  m_Size: {x: 0.3093834, y: 0.27107024, z: 0.28403473}
+  m_Center: {x: -0.037537575, y: 0.17879611, z: 0.014156342}
 --- !u!114 &3780774319463318320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8846,7 +8846,7 @@ Transform:
   - {fileID: 2227148187740335429}
   - {fileID: 1565633112}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3780774319900984046
 GameObject:
