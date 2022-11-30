@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonLocked: btn_locked
-  buttonOK: btn_ok
+  buttonOK: btn_ok_single
   locked: 0
   moveDirection: 3
   moveDistance: 0.03
@@ -364,7 +364,7 @@ MonoBehaviour:
   points:
   - {x: -1.6, y: 4.8, z: 0}
   - {x: -1.6, y: 2.45, z: 0}
-  speed: 1.5
+  speed: 0.35
   isActive: 0
   reverse: 0
   loop: 0
@@ -485,6 +485,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: elevator.vmf
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6b61d9f5dd6b2a94a96d65ad44051c33, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6b61d9f5dd6b2a94a96d65ad44051c33, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: 6b61d9f5dd6b2a94a96d65ad44051c33, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: 6b61d9f5dd6b2a94a96d65ad44051c33, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b61d9f5dd6b2a94a96d65ad44051c33, type: 3}
@@ -574,8 +590,16 @@ PrefabInstance:
       value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8164078558771037576, guid: 246682e2fa6ad9648b73b8f93df50e91, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: 246682e2fa6ad9648b73b8f93df50e91, type: 3}
+      propertyPath: m_TagString
+      value: FOOTSTEP/METAL
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: 246682e2fa6ad9648b73b8f93df50e91, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 119
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

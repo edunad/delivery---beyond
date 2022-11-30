@@ -4,8 +4,8 @@ For Github gamejam 2022 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀�
 
 ![](https://i.rawr.dev/4UJLDs3-opti.gif)
 
-## Programming / Models / Textures
-- Eduardo Fernandes (failcake)
+## Created by
+- Eduardo Fernandes (failcake / edunad)
 
 ----------------------
 
@@ -46,6 +46,27 @@ https://freesound.org/people/gollamar/sounds/273645/
 - scare.ogg
 https://www.youtube.com/watch?v=Lk0T2GsvPLM
 
+- metal foosteps
+https://www.youtube.com/watch?v=2d_-xlwjgtw
+
+- tile footsteps
+https://youtu.be/dnRX_bHbYgs
+
+- concrete footsteps
+https://youtu.be/Dnhav5v--O8
+
+-elevator_door_close
+https://freesound.org/people/gamedog74/sounds/432495/
+
+- AND OTHER:
+https://freesound.org/people/ValentinPetiteau/sounds/564408/
+https://freesound.org/people/ValentinPetiteau/sounds/564407/
+https://freesound.org/people/ValentinPetiteau/sounds/564406/
+https://freesound.org/people/kwahmah_02/sounds/244932/
+https://freesound.org/people/cumesoftware/sounds/54517/
+https://freesound.org/people/pfranzen/sounds/328852/
+https://freesound.org/people/TampaJoey/sounds/588504/
+
 ### MUSIC
 
 - "Penumbra" Kevin MacLeod (incompetech.com)
@@ -63,3 +84,8 @@ http://creativecommons.org/licenses/by/4.0/
 ### TEXTURES
 - Valve (Source SDK Singleplayer 2013)
 - https://ambientcg.com/
+
+### SOME MODELS
+- Valve
+- https://sketchfab.com/3d-models/old-dirty-mattress-e914df64a021484a91613b38c28ee538
+- https://sketchfab.com/3d-models/surveillance-cam-3d7f98993ee340179af212e465dd8b4e

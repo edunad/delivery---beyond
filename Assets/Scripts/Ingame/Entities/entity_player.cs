@@ -17,6 +17,7 @@ public enum FrozenFlags {
 	DEAD = 1 << 1
 }
 
+[RequireComponent(typeof(AudioSource))]
 [RequireComponent(typeof(CharacterController))]
 public class entity_player : MonoBehaviour {
 
@@ -26,6 +27,15 @@ public class entity_player : MonoBehaviour {
 	public float maxGrabDistance = 1f;
 	public float maxZoom = 0.25f;
 
+	[Header("Footsteps")]
+	public LayerMask groundMask;
+	public float baseStepSpeed = 0.5f;
+	public float sprintStepSpeed = 0.6f;
+	public AudioClip[] tileClips;
+	public AudioClip[] metalClips;
+	public AudioClip[] concreteClips;
+
+	[Header("Use")]
 	public LayerMask usableMask = 1 << 6;
 	public Transform big_item_position;
 	public Transform small_item_position;
@@ -46,6 +56,7 @@ public class entity_player : MonoBehaviour {
 			private bool _isCameraShaking;
 			private ShakeMode _shakemode;
 			private float _shakePower;
+			private util_timer _shakeTimer;
 		#endregion
 
 		#region OBJS
@@ -57,7 +68,11 @@ public class entity_player : MonoBehaviour {
 			private float _camRotationY;
 			private float _originalCamZoom;
 			private int _sensitivity;
+		#endregion
 
+		#region FOOTSTEP
+			private AudioSource _footstepSnd;
+			private float _footstepTimer = 0f;
 		#endregion
 
 		#region OTHER
@@ -65,29 +80,6 @@ public class entity_player : MonoBehaviour {
 			private bool _sprintDown;
 		#endregion
 	#endregion
-
-
-	private void onPrimaryUse(CallbackContext ctx) {
-		if(this._frozen != FrozenFlags.NONE || !this.isHoldingItem()) return;
-
-		if(this.small_holding_item != null) this.small_holding_item.BroadcastMessage("onPrimaryUse", this, SendMessageOptions.DontRequireReceiver);
-		if(this.big_holding_item != null) this.big_holding_item.BroadcastMessage("onPrimaryUse", this, SendMessageOptions.DontRequireReceiver);
-	}
-
-	private void onUse(CallbackContext ctx) {
-		if(this._frozen != FrozenFlags.NONE) return;
-
-		RaycastHit hit;
-		if (Physics.Raycast(this._camera.ScreenPointToRay(Input.mousePosition), out hit, maxGrabDistance, usableMask)) {
-			this.onUse(hit.collider.gameObject); // USE
-		}
-	}
-
-	private void onZoomStart(CallbackContext ctx) { this._camera.fieldOfView = this._originalCamZoom - this.maxZoom; }
-	private void onZoomEnd(CallbackContext ctx) { this._camera.fieldOfView = this._originalCamZoom; }
-	private void onSprintStart(CallbackContext ctx) { this._sprintDown = true; }
-	private void onSprintEnd(CallbackContext ctx) { this._sprintDown = false; }
-	private void onPause(CallbackContext ctx) { OptionsController.Instance.toggleOptions(); }
 
 	public void Awake () {
 		this._controls = new Controls();
@@ -98,6 +90,10 @@ public class entity_player : MonoBehaviour {
 		this._controls.Gameplay.Sprint.performed += this.onSprintStart;
 		this._controls.Gameplay.Sprint.canceled += this.onSprintEnd;
 		this._controls.Gameplay.Pause.performed += this.onPause;
+
+		this._footstepSnd = GetComponent<AudioSource>();
+		this._footstepSnd.playOnAwake = false;
+		this._footstepSnd.loop = false;
 
 		this._controller = GetComponent<CharacterController>();
 		this._camera = GetComponentInChildren<Camera>(true);
@@ -152,7 +148,34 @@ public class entity_player : MonoBehaviour {
 			Vector2 plyMovement = this._controls.Gameplay.Move.ReadValue<Vector2>();
 			this._controller.Move((transform.forward * plyMovement.y + transform.right * plyMovement.x).normalized * speed * Time.deltaTime);
 
-			if (!this._controller.isGrounded) this._controller.Move(Vector3.up * Time.deltaTime * Physics.gravity.y);
+			// Check if Grounded
+			if(Physics.Raycast(this.transform.position, Vector3.down, out RaycastHit hit, 3f, this.groundMask)) {
+				// Footsteps
+				if(plyMovement != Vector2.zero && this._controller.velocity.magnitude > 0.1f) {
+					if(this._footstepTimer <= Time.time) {
+						this._footstepSnd.pitch = Random.Range(0.7f, 1.3f);
+
+						switch(hit.collider.tag) {
+							case "FOOTSTEP/METAL":
+								this._footstepSnd.PlayOneShot(this.metalClips[Random.Range(0, this.metalClips.Length)]);
+								break;
+
+							case "FOOTSTEP/CONCRETE":
+								this._footstepSnd.PlayOneShot(this.concreteClips[Random.Range(0, this.concreteClips.Length)]);
+								break;
+
+							default:
+							case "FOOTSTEP/TILE":
+								this._footstepSnd.PlayOneShot(this.tileClips[Random.Range(0, this.tileClips.Length)]);
+								break;
+						}
+
+						this._footstepTimer = (this._sprintDown ? this.baseStepSpeed * this.sprintStepSpeed : this.baseStepSpeed) + Time.time;
+					}
+				}
+			} else {
+				this._controller.Move(Vector3.up * Time.deltaTime * Physics.gravity.y);
+			}
 		}
 
 		if(this._camera != null) {
@@ -201,13 +224,14 @@ public class entity_player : MonoBehaviour {
 		this._shakePower = power;
 		this._shakemode = shakemode;
 
-		util_timer.simple(time, () => {
+		if(this._shakeTimer != null) this._shakeTimer.stop();
+		this._shakeTimer = util_timer.simple(time, () => {
 			this._isCameraShaking = false;
 			this._camera.transform.localPosition = Vector3.zero;
 		});
 	}
 
-	public bool isHoldingItem() {
+ 	public bool isHoldingItem() {
 		return this.big_holding_item != null || this.small_holding_item != null;
 	}
 
@@ -215,6 +239,28 @@ public class entity_player : MonoBehaviour {
 		if(big) return this.big_holding_item != null;
 		else return this.small_holding_item != null;
 	}
+
+	private void onPrimaryUse(CallbackContext ctx) {
+		if(this._frozen != FrozenFlags.NONE || !this.isHoldingItem()) return;
+
+		if(this.small_holding_item != null) this.small_holding_item.BroadcastMessage("onPrimaryUse", this, SendMessageOptions.DontRequireReceiver);
+		if(this.big_holding_item != null) this.big_holding_item.BroadcastMessage("onPrimaryUse", this, SendMessageOptions.DontRequireReceiver);
+	}
+
+	private void onUse(CallbackContext ctx) {
+		if(this._frozen != FrozenFlags.NONE) return;
+
+		RaycastHit hit;
+		if (Physics.Raycast(this._camera.ScreenPointToRay(Input.mousePosition), out hit, maxGrabDistance, usableMask)) {
+			this.onUse(hit.collider.gameObject); // USE
+		}
+	}
+
+	private void onZoomStart(CallbackContext ctx) { this._camera.fieldOfView = this._originalCamZoom - this.maxZoom; }
+	private void onZoomEnd(CallbackContext ctx) { this._camera.fieldOfView = this._originalCamZoom; }
+	private void onSprintStart(CallbackContext ctx) { this._sprintDown = true; }
+	private void onSprintEnd(CallbackContext ctx) { this._sprintDown = false; }
+	private void onPause(CallbackContext ctx) { OptionsController.Instance.toggleOptions(); }
 
 	private void holdObject(entity_item pick) {
 		if(pick == null) return;

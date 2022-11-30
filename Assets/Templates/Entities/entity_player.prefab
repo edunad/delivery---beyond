@@ -253,7 +253,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 87
+    m_Bits: 2135
   m_RenderingPath: 1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -287,7 +287,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cfuStatus: PSXEffects v1.18.4 - version ahead?!
   sections: 01010101
-  customRes: {x: 500, y: 281}
+  customRes: {x: 578, y: 325}
   resolutionFactor: 2
   limitFramerate: 60
   skipFrames: 0
@@ -331,6 +331,7 @@ GameObject:
   - component: {fileID: 1732401392186208436}
   - component: {fileID: 1732401392186208439}
   - component: {fileID: 1732401392186208438}
+  - component: {fileID: 3728742573279059525}
   m_Layer: 8
   m_Name: entity_player
   m_TagString: Player
@@ -439,8 +440,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 3
   runSpeed: 5
-  maxGrabDistance: 1.5
+  maxGrabDistance: 1.4
   maxZoom: 22
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 2048
+  baseStepSpeed: 0.6
+  sprintStepSpeed: 0.6
+  tileClips:
+  - {fileID: 8300000, guid: 9f1fe5e620a56524f91c5ce9e005931e, type: 3}
+  - {fileID: 8300000, guid: 72a44d9bed1637d4f9ee6a67966f8483, type: 3}
+  - {fileID: 8300000, guid: 83fd5737e6a9bfd409e88cc3f3a467bd, type: 3}
+  metalClips:
+  - {fileID: 8300000, guid: 260d7ab7619b95f4a8c4ac0ed328b456, type: 3}
+  - {fileID: 8300000, guid: a86fa8b6aaeb724459986f9aa03df02a, type: 3}
+  - {fileID: 8300000, guid: 4fd474ec596ab4d4483a4df990846a70, type: 3}
+  concreteClips:
+  - {fileID: 8300000, guid: 191358dea8fa0e14895a65072d98296b, type: 3}
+  - {fileID: 8300000, guid: 9a7a22eff6b2d59498c4b94bc164731c, type: 3}
+  - {fileID: 8300000, guid: 0735ac70dafb20447853169cb15a8171, type: 3}
   usableMask:
     serializedVersion: 2
     m_Bits: 64
@@ -448,3 +466,99 @@ MonoBehaviour:
   small_item_position: {fileID: 1476811596}
   big_holding_item: {fileID: 0}
   small_holding_item: {fileID: 0}
+--- !u!82 &3728742573279059525
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1732401392186208433}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 2e9620676dac17444a5c7871254b5a6f, type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 0.1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

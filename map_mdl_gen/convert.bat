@@ -8,7 +8,9 @@ set "root=%~dp0"
 set "ASSET_FOLDER=../Assets/Models"
 
 REM MAPS------
-set models=victory.vmf
+set models=office.vmf
+set models=%models%;office_props.vmf
+set models=%models%;office_collision.vmf
 
 for %%a in (%models%) do (
 	echo "Parsing map %%a"

@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - FOOTSTEP/TILE
+  - FOOTSTEP/METAL
+  - FOOTSTEP/CONCRETE
   layers:
   - Default
   - TransparentFX
@@ -16,7 +19,7 @@ TagManager:
   - entity_player
   - entity_monster
   - entity_trigger
-  - 
+  - entity_map_ground
   - 
   - 
   - 

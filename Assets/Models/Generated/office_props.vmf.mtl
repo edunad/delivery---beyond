@@ -215,14 +215,6 @@ map_Kd materials/metal/metalcombinegrate001a.tga
 illum 4
 
 
-newmtl dev/dev_lowermetaldoor02a
-Ka 1.000 1.000 1.000
-Kd 1.000 1.000 1.000
-Ks 0.000 0.000 0.000
-map_Ka materials/dev/dev_lowermetaldoor02a.tga
-map_Kd materials/dev/dev_lowermetaldoor02a.tga
-
-
 newmtl props/metalpanel020b
 Ka 1.000 1.000 1.000
 Kd 1.000 1.000 1.000
@@ -271,12 +263,12 @@ map_Ka materials/delivery_beyond/metalpanel016a-mod.tga
 map_Kd materials/delivery_beyond/metalpanel016a-mod.tga
 
 
-newmtl wood/woodfloor007a_c17
+newmtl dev/dev_lowermetaldoor02a
 Ka 1.000 1.000 1.000
 Kd 1.000 1.000 1.000
 Ks 0.000 0.000 0.000
-map_Ka materials/wood/woodfloor007a.tga
-map_Kd materials/wood/woodfloor007a.tga
+map_Ka materials/dev/dev_lowermetaldoor02a.tga
+map_Kd materials/dev/dev_lowermetaldoor02a.tga
 
 
 newmtl props/metalcrate010a
@@ -285,6 +277,14 @@ Kd 1.000 1.000 1.000
 Ks 0.000 0.000 0.000
 map_Ka materials/props/metalcrate010a.tga
 map_Kd materials/props/metalcrate010a.tga
+
+
+newmtl wood/woodfloor007a_c17
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/wood/woodfloor007a.tga
+map_Kd materials/wood/woodfloor007a.tga
 
 
 newmtl wood/woodfloor005a
@@ -359,4 +359,20 @@ Kd 1.000 1.000 1.000
 Ks 0.000 0.000 0.000
 map_Ka materials/dev/dev_interiorfloorlinoleum01f.tga
 map_Kd materials/dev/dev_interiorfloorlinoleum01f.tga
+
+
+newmtl furniture_detailprops001a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/models/props_c17/furniture_detailprops001a.tga
+map_Kd materials/models/props_c17/furniture_detailprops001a.tga
+
+
+newmtl prison_toilet01
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/models/props_wasteland/prison_toilet01.tga
+map_Kd materials/models/props_wasteland/prison_toilet01.tga
 

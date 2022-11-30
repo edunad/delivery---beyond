@@ -5,7 +5,9 @@ using UnityEngine;
 [RequireComponent(typeof(entity_teleport))]
 public class entity_elevator : MonoBehaviour {
 
+    [Header("Settings")]
     public entity_elevator teleTo;
+    public readonly float elevatorTime = 7f;
 
     [HideInInspector]
     public entity_movement elevatorGate;
@@ -18,8 +20,6 @@ public class entity_elevator : MonoBehaviour {
         private entity_teleport _teleport;
         private entity_player _ply;
         private AudioClip[] _audioClips;
-
-        private readonly float _elevatorTime = 4f;
         private entity_sound _elevatorMoveSnd;
     #endregion
 
@@ -38,7 +38,6 @@ public class entity_elevator : MonoBehaviour {
         this._audioClips = new AudioClip[] {
             AssetsController.GetResource<AudioClip>("Sounds/Ingame/Objects/Elevator/elevator_start"),
             AssetsController.GetResource<AudioClip>("Sounds/Ingame/Objects/Elevator/elevator_moving"),
-            AssetsController.GetResource<AudioClip>("Sounds/Ingame/Objects/Elevator/elevator_bell"),
             AssetsController.GetResource<AudioClip>("Sounds/Ingame/Objects/Elevator/elevator_stop"),
         };
 
@@ -60,6 +59,11 @@ public class entity_elevator : MonoBehaviour {
 
         this.elevatorGate.reverse = false;
         this.elevatorGate.start();
+
+        SoundController.Instance.Play3DSound(this._audioClips[0], this.transform);
+        SoundController.Instance.Play3DSound(this._audioClips[0], this.teleTo.transform);
+
+        this._ply.shakeCamera(2f, 0.002f); // Gate shake
     }
 
     private void onGateMovementFinish(bool isReverse) {
@@ -68,35 +72,33 @@ public class entity_elevator : MonoBehaviour {
             this._button.setButtonLocked(false);
             this._ply = null;
         } else {
-            util_timer.simple(0.25f, () => {
-                this._ply.shakeCamera(this._elevatorTime);
+            // TELEPORT
+            if(this.itemSpot.hasItem()) {
+                this.teleTo.itemSpot.deleteItem(); // Clear any item on the other elevator, just in case
+                this.teleTo.itemSpot.placeItem(this.itemSpot.takeItem(), true);
+            }
 
-                if(this.itemSpot.hasItem()) {
-                    this.teleTo.itemSpot.deleteItem(); // Clear any item on the other elevator, just in case
-                    this.teleTo.itemSpot.placeItem(this.itemSpot.takeItem(), true);
-                }
+            this._teleport.teleport(this.teleTo.transform);
+            // ----
 
-                this._teleport.teleport(this.teleTo.transform);
+            this._ply.shakeCamera(this.elevatorTime);
 
-                SoundController.Instance.Play3DSound(this._audioClips[0], this.teleTo.transform);
+            if(this._elevatorMoveSnd != null) this._elevatorMoveSnd.Destroy();
+            this._elevatorMoveSnd = SoundController.Instance.Play3DSound(this._audioClips[1], this.teleTo.transform);
 
+            util_timer.simple(this.elevatorTime, () => {
                 if(this._elevatorMoveSnd != null) this._elevatorMoveSnd.Destroy();
-                this._elevatorMoveSnd = SoundController.Instance.Play3DSound(this._audioClips[1], this.teleTo.transform);
+                this._ply.shakeCamera(2f, 0.003f); // Gate shake
 
-                util_timer.simple(this._elevatorTime, () => {
-                    if(this._elevatorMoveSnd != null) this._elevatorMoveSnd.Destroy();
+                // Elevator stop
+                SoundController.Instance.Play3DSound(this._audioClips[2], this.teleTo.transform);
 
-                    // elevator DING sound
-                    SoundController.Instance.Play3DSound(this._audioClips[2], this.teleTo.transform);
-                    SoundController.Instance.Play3DSound(this._audioClips[3], this.teleTo.transform);
-
-                    // Open both doors
-                    this.elevatorGate.reverse = true;
-                    this.elevatorGate.start();
-                    this.teleTo.elevatorGate.reverse = true;
-                    this.teleTo.elevatorGate.start();
-                    // ----
-                });
+                // Open both doors
+                this.elevatorGate.reverse = true;
+                this.elevatorGate.start();
+                this.teleTo.elevatorGate.reverse = true;
+                this.teleTo.elevatorGate.start();
+                // ----
             });
         }
     }

@@ -59,11 +59,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1142857963354787698, guid: dc7be334f0ea77a4b874a721eac3be16, type: 3}
       propertyPath: m_Layer
-      value: 2
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1142857963354787698, guid: dc7be334f0ea77a4b874a721eac3be16, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 119
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 1142857963416704092, guid: dc7be334f0ea77a4b874a721eac3be16, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -160,6 +160,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 108284073, guid: dc7be334f0ea77a4b874a721eac3be16, type: 3}
+      propertyPath: buttonLocked
+      value: btn_locked
+      objectReference: {fileID: 0}
     - target: {fileID: 500628028, guid: dc7be334f0ea77a4b874a721eac3be16, type: 3}
       propertyPath: itemSpot
       value: 
@@ -210,11 +214,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1142857963354787698, guid: dc7be334f0ea77a4b874a721eac3be16, type: 3}
       propertyPath: m_Layer
-      value: 2
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1142857963354787698, guid: dc7be334f0ea77a4b874a721eac3be16, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 119
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 1142857963416704092, guid: dc7be334f0ea77a4b874a721eac3be16, type: 3}
       propertyPath: m_StaticEditorFlags
