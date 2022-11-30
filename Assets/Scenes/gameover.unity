@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: 9a2d09605139cd148a47a08201f27c56, type: 2}
-  m_LightingSettings: {fileID: 0}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 64a245ae1a511ad4e8dfafbd274b7e46, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -5670,7 +5670,7 @@ MonoBehaviour:
   surfaceRotation: 0
   quality: 1
   sharedMesh: {fileID: 375117666}
-  instanceID: 34888
+  instanceID: 200576
 --- !u!4 &742264253
 Transform:
   m_ObjectHideFlags: 0
@@ -6218,7 +6218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cfuStatus: PSXEffects v1.18.4 - version ahead?!
   sections: 01010101
-  customRes: {x: 500, y: 281}
+  customRes: {x: 542, y: 305}
   resolutionFactor: 2
   limitFramerate: 60
   skipFrames: 0
@@ -6309,8 +6309,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: GAMEOVER
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ae1ef8762b36c654992f13ebbc8f96d1, type: 2}
-  m_sharedMaterial: {fileID: -6746775999302960893, guid: ae1ef8762b36c654992f13ebbc8f96d1, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a78b2b3dbbc94f2499e0ae4568f033eb, type: 2}
+  m_sharedMaterial: {fileID: -6746775999302960893, guid: a78b2b3dbbc94f2499e0ae4568f033eb, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6399,7 +6399,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -6746775999302960893, guid: ae1ef8762b36c654992f13ebbc8f96d1, type: 2}
+  - {fileID: -6746775999302960893, guid: a78b2b3dbbc94f2499e0ae4568f033eb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

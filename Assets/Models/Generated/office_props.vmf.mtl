@@ -279,6 +279,14 @@ map_Ka materials/props/metalcrate010a.tga
 map_Kd materials/props/metalcrate010a.tga
 
 
+newmtl delivery_beyond/electricity_sign
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/delivery_beyond/electricity_sign.tga
+map_Kd materials/delivery_beyond/electricity_sign.tga
+
+
 newmtl wood/woodfloor007a_c17
 Ka 1.000 1.000 1.000
 Kd 1.000 1.000 1.000

@@ -388,6 +388,53 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 1030555201}
   m_maskType: 0
+--- !u!1 &1458529366
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1458529367}
+  - component: {fileID: 1458529368}
+  m_Layer: 0
+  m_Name: FOGController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1458529367
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458529366}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2702157389173906541}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1458529368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458529366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9472b9736392f74cbb1ef8bd47007fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultFog: 0.27
+  targetFog: 1
+  changeSpeed: 0.6
 --- !u!1 &1780393554
 GameObject:
   m_ObjectHideFlags: 0
@@ -567,11 +614,13 @@ MonoBehaviour:
   button_next_client: {fileID: 0}
   manager_position: {fileID: 0}
   FORCE_CUSTOMER_ORDER: 0
-  FORCE_STATUS: 0
+  FORCE_STATUS: 8
+  FORCE_POWER_STATUS: 1
   servingClient: {fileID: 0}
   totalClients: 0
   status: 0
   oldStatus: 0
+  power: 0
   totalMistakes: 0
 --- !u!1 &1841370591808144292
 GameObject:
@@ -653,6 +702,7 @@ Transform:
   - {fileID: 785850733609807650}
   - {fileID: 8207488367435160216}
   - {fileID: 1780393555}
+  - {fileID: 1458529367}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

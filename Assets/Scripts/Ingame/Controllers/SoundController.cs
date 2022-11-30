@@ -36,6 +36,8 @@ public class SoundController : MonoBehaviour {
     }
 
     public entity_sound Play3DSound(AudioClip clip, Transform position, float pitch = 1f, float maxDistance = 10, float volume = 1f) {
+        if(clip == null) return null;
+
         entity_sound snd = this.CreateSound();
 
         snd.SetMixer(this.effectMixer.FindMatchingGroups("Master")[0]);
@@ -50,6 +52,7 @@ public class SoundController : MonoBehaviour {
     }
 
     public entity_sound PlaySound(AudioClip clip, float pitch = 1f, float volume = 1f) {
+        if(clip == null) return null;
         entity_sound snd = this.CreateSound();
 
         snd.SetMixer(this.musicMixer.FindMatchingGroups("Master")[0]);

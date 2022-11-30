@@ -11,11 +11,16 @@ public class entity_queue_counter : MonoBehaviour {
     #endregion
 
     public void Awake() {
-        CoreController.Instance.OnGameStatusUpdated += this.gameStatusChange;
-
         this._audioClips = new AudioClip[] {
             AssetsController.GetResource<AudioClip>("Sounds/Ingame/Objects/Counter/255156__jmayoff__bell-ding")
         };
+
+        CoreController.Instance.OnGameStatusUpdated += this.gameStatusChange;
+        CoreController.Instance.OnGamePowerStatusChange += this.onPowerChange;
+    }
+
+    private void onPowerChange(GAMEPLAY_POWER_STATUS status) {
+        this.text.enabled = status == GAMEPLAY_POWER_STATUS.HAS_POWER;
     }
 
     private void updateText(int count) {

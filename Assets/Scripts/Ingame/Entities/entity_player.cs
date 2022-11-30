@@ -77,14 +77,20 @@ public class entity_player : MonoBehaviour {
 
 		#region OTHER
 			private FrozenFlags _frozen = FrozenFlags.NONE;
+		#endregion
+
+		#region BUTTONS
+			private bool _pressedUSE;
 			private bool _sprintDown;
+			private GameObject _aimingUSEObject;
 		#endregion
 	#endregion
 
 	public void Awake () {
 		this._controls = new Controls();
+		this._controls.Gameplay.Use.performed += (CallbackContext ctx) => this.onUsePerformed();
+		this._controls.Gameplay.Use.canceled += (CallbackContext ctx) => this.onUseCanceled();
 		this._controls.Gameplay.PrimaryUse.performed += this.onPrimaryUse;
-		this._controls.Gameplay.Use.performed += this.onUse;
 		this._controls.Gameplay.Zoom.performed += this.onZoomStart;
 		this._controls.Gameplay.Zoom.canceled += this.onZoomEnd;
 		this._controls.Gameplay.Sprint.performed += this.onSprintStart;
@@ -149,13 +155,13 @@ public class entity_player : MonoBehaviour {
 			this._controller.Move((transform.forward * plyMovement.y + transform.right * plyMovement.x).normalized * speed * Time.deltaTime);
 
 			// Check if Grounded
-			if(Physics.Raycast(this.transform.position, Vector3.down, out RaycastHit hit, 3f, this.groundMask)) {
+			if(Physics.Raycast(this.transform.position, Vector3.down, out RaycastHit groundHit, 3f, this.groundMask)) {
 				// Footsteps
 				if(plyMovement != Vector2.zero && this._controller.velocity.magnitude > 0.1f) {
 					if(this._footstepTimer <= Time.time) {
 						this._footstepSnd.pitch = Random.Range(0.7f, 1.3f);
 
-						switch(hit.collider.tag) {
+						switch(groundHit.collider.tag) {
 							case "FOOTSTEP/METAL":
 								this._footstepSnd.PlayOneShot(this.metalClips[Random.Range(0, this.metalClips.Length)]);
 								break;
@@ -175,6 +181,13 @@ public class entity_player : MonoBehaviour {
 				}
 			} else {
 				this._controller.Move(Vector3.up * Time.deltaTime * Physics.gravity.y);
+			}
+
+			// Check input
+			if (Physics.Raycast(this._camera.ScreenPointToRay(Input.mousePosition), out RaycastHit useHit, maxGrabDistance, usableMask)) {
+				this._aimingUSEObject = useHit.collider.gameObject;
+			} else {
+				this.onUseCanceled();
 			}
 		}
 
@@ -247,13 +260,22 @@ public class entity_player : MonoBehaviour {
 		if(this.big_holding_item != null) this.big_holding_item.BroadcastMessage("onPrimaryUse", this, SendMessageOptions.DontRequireReceiver);
 	}
 
-	private void onUse(CallbackContext ctx) {
-		if(this._frozen != FrozenFlags.NONE) return;
+	public void onUsePerformed() {
+		if(this._frozen != FrozenFlags.NONE || this._aimingUSEObject == null) return;
 
-		RaycastHit hit;
-		if (Physics.Raycast(this._camera.ScreenPointToRay(Input.mousePosition), out hit, maxGrabDistance, usableMask)) {
-			this.onUse(hit.collider.gameObject); // USE
-		}
+		this._aimingUSEObject.SendMessage("onUseDOWN", SendMessageOptions.DontRequireReceiver);
+		this._pressedUSE = true;
+
+		this.onUse(this._aimingUSEObject);
+	}
+
+	public void onUseCanceled() {
+		if(this._aimingUSEObject == null || !this._pressedUSE) return;
+
+		this._aimingUSEObject.SendMessage("onUseUP", SendMessageOptions.DontRequireReceiver);
+		this._aimingUSEObject = null;
+
+		this._pressedUSE = false;
 	}
 
 	private void onZoomStart(CallbackContext ctx) { this._camera.fieldOfView = this._originalCamZoom - this.maxZoom; }
@@ -300,6 +322,7 @@ public class entity_player : MonoBehaviour {
 					if(spot.placeItem(this.big_holding_item)) this.big_holding_item = null;
 				}
 			}
+
 		} else if(obj.name.StartsWith("itm-spawner-")) {
 			entity_item_spawner spawner = obj.GetComponent<entity_item_spawner>();
 			if(spawner == null) throw new System.Exception("Invalid entity_item_spawner");
@@ -335,6 +358,13 @@ public class entity_player : MonoBehaviour {
 			if(btn == null) throw new System.Exception("Invalid entity_button");
 
 			btn.onPlayerUse(this);
+		} else if(obj.name.StartsWith("switch-")) {
+			if(this.isHoldingItem()) return;
+
+			entity_switch btn = obj.GetComponent<entity_switch>();
+			if(btn == null) throw new System.Exception("Invalid entity_switch");
+
+			btn.onPress(this);
 		}
 	}
 }

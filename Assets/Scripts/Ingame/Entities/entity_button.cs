@@ -16,23 +16,25 @@ public class entity_button : MonoBehaviour {
 
     [Header("Sound")]
     public string buttonLocked = "btn_locked";
-    public string buttonOK = "btn_ok";
+    public string buttonPRESS = "btn_press";
+    public string buttonUNPRESS = "btn_unpress";
 
     [Header("Settings")]
     public bool locked;
     public MoveDirection moveDirection = MoveDirection.DOWN;
     public float moveDistance = 0.4f;
-
     public float resetCooldown = 2f;
 
-    public delegate void onUSE(entity_player ply);
-    public event onUSE OnUSE;
+    #region EVENTS
+        public delegate void onUSE(entity_player ply);
+        public event onUSE OnUSE;
+    #endregion
 
-    // PRIVATE ---
-    private AudioClip[] _audioClips;
-
-    private Collider _collision;
-    private Vector3 _originalPos;
+    #region PRIVATE
+        private AudioClip[] _audioClips;
+        private Collider _collision;
+        private Vector3 _originalPos;
+    #endregion
 
     public void Awake() {
         this.gameObject.isStatic = false;
@@ -44,12 +46,13 @@ public class entity_button : MonoBehaviour {
         this.gameObject.layer = 6;
 
         this._originalPos = transform.localPosition;
-        this.setButtonLocked(this.locked, true);
-
         this._audioClips = new AudioClip[] {
             AssetsController.GetResource<AudioClip>("Sounds/Ingame/Objects/Button/" + this.buttonLocked),
-            AssetsController.GetResource<AudioClip>("Sounds/Ingame/Objects/Button/" + this.buttonOK)
+            AssetsController.GetResource<AudioClip>("Sounds/Ingame/Objects/Button/" + this.buttonPRESS),
+            AssetsController.GetResource<AudioClip>("Sounds/Ingame/Objects/Button/" + this.buttonUNPRESS)
         };
+
+        this.setButtonLocked(this.locked, true);
     }
 
     public void setButtonLocked(bool locked, bool force = false) {
@@ -58,6 +61,10 @@ public class entity_button : MonoBehaviour {
         if(!locked){
             this.locked = false;
             this.transform.localPosition = this._originalPos;
+
+            if(SoundController.Instance != null) {
+                SoundController.Instance.Play3DSound(this._audioClips[2], this.transform, Random.Range(0.80f, 1.10f), 4f, 0.7f);
+            }
         } else {
             this.locked = true;
             this.moveButton(this.moveDirection, this.moveDistance);

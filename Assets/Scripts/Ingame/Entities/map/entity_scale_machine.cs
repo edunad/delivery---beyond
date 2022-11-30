@@ -21,19 +21,19 @@ public class entity_scale_machine : MonoBehaviour {
     #endregion
 
     public void Awake() {
-        CoreController.Instance.OnGameStatusUpdated += this.gameStatusChange;
-
         this.item_spot.OnItemDrop += this.onBoxDrop;
         this.item_spot.OnItemPickup += this.onBoxPickup;
+
         this.item_floppy_spot.OnItemDrop += this.onFloppyDrop;
         this.item_floppy_spot.OnItemPickup += this.onFloppyPickup;
+        this.item_floppy_spot.setLocked(false);
+
         this.item_shipment_spot.OnItemDrop += this.onShipmentDrop;
 
         this.item_spot.setLocked(true);
 
         this.btn_print.OnUSE += this.onButtonPress;
         this.btn_print.setButtonLocked(true);
-        this.item_floppy_spot.setLocked(false);
 
         this.computer.OnCMDCompleted += this.onCMDPrinted;
 
@@ -49,6 +49,18 @@ public class entity_scale_machine : MonoBehaviour {
         };
 
         this.resetCounter();
+
+        CoreController.Instance.OnGameStatusUpdated += this.gameStatusChange;
+        CoreController.Instance.OnGamePowerStatusChange += this.onPowerChange;
+    }
+
+    private void onPowerChange(GAMEPLAY_POWER_STATUS status) {
+        bool power = status == GAMEPLAY_POWER_STATUS.HAS_POWER;
+
+        this.btn_print.resetCooldown = power ? -1f : 1f;
+        this.scaleText.enabled = power;
+
+        if(this._floppyLoadingTimer != null && !power) this._floppyLoadingTimer.stop();
     }
 
     private void gameStatusChange(GAMEPLAY_STATUS oldStatus, GAMEPLAY_STATUS newStatus) {
@@ -125,7 +137,6 @@ public class entity_scale_machine : MonoBehaviour {
         CoreController.Instance.proccedEvent();
     }
 
-
     private void onCMDPrinted(string cmd) {
         if(cmd != "LOADING....") return;
 
@@ -145,6 +156,7 @@ public class entity_scale_machine : MonoBehaviour {
     }
 
     private void onButtonPress(entity_player ply) {
+        if(CoreController.Instance.power == GAMEPLAY_POWER_STATUS.NO_POWER) return;
         if(this._box == null) throw new System.Exception("Missing box");
 
         this.item_floppy_spot.setLocked(true);

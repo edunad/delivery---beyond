@@ -21,6 +21,10 @@ public class CoreController : MonoBehaviour {
     public int patienceMult = 1;
     public int maxClients = 10;
 
+    [Header("Power settings")]
+    public float powerCheckTimer = 8f;
+    public float powerCooldown = 60f;
+
     [Header("Level Entities")]
     public entity_movement prop_client;
     public entity_computer computer_client;
@@ -32,12 +36,18 @@ public class CoreController : MonoBehaviour {
     public Transform manager_position;
 
     #if UNITY_EDITOR
-        [Header("DEBUG ---------")]
+        [Space(50)]
+        [Header("DEBUG")]
         public bool FORCE_CUSTOMER_ORDER = false;
         public GAMEPLAY_STATUS FORCE_STATUS = GAMEPLAY_STATUS.PREPARING;
 
-        [EditorButton("Set")]
-        public void Set() => this.setGameStatus(FORCE_STATUS);
+        [EditorButton("SET STATUS")]
+        public void SET_GAME_STATUS() => this.setGameStatus(FORCE_STATUS);
+
+        public GAMEPLAY_POWER_STATUS FORCE_POWER_STATUS = GAMEPLAY_POWER_STATUS.HAS_POWER;
+
+        [EditorButton("SET POWER STATUS")]
+        public void SET_GAME_POWER_STATUS() => this.setPower(FORCE_POWER_STATUS);
     #endif
 
     #region GAME STATUS
@@ -56,14 +66,22 @@ public class CoreController : MonoBehaviour {
         [HideInInspector]
         public GAMEPLAY_STATUS oldStatus = GAMEPLAY_STATUS.PREPARING;
         [HideInInspector]
+        public GAMEPLAY_POWER_STATUS power = GAMEPLAY_POWER_STATUS.HAS_POWER;
+        [HideInInspector]
         public int totalMistakes;
     #endregion
 
     #region EVENTS
         public delegate void onGameStatusUpdated(GAMEPLAY_STATUS oldStatus, GAMEPLAY_STATUS newStatus);
         public event onGameStatusUpdated OnGameStatusUpdated;
+
+        public delegate void onGamePowerStatusChange(GAMEPLAY_POWER_STATUS hasPower);
+        public event onGamePowerStatusChange OnGamePowerStatusChange;
     #endregion
 
+    #region PRIVATE
+        private float _powerOutageCD;
+    #endregion
 
     public void Awake() {
         if (Instance != null && Instance != this) {
@@ -75,13 +93,6 @@ public class CoreController : MonoBehaviour {
         StartCoroutine(onLoaded());
     }
 
-    private IEnumerator onLoaded() {
-        yield return new WaitForEndOfFrame();
-        yield return new WaitForEndOfFrame();
-
-        this.init();
-    }
-
     public void init() {
         this.generateQUEUE();
         this.generateFloppies();
@@ -89,6 +100,13 @@ public class CoreController : MonoBehaviour {
 
         this.setupEvents();
         this.setGameStatus(GAMEPLAY_STATUS.IDLE);
+
+        util_timer.create(-1, powerCheckTimer, () => {
+            if(power == GAMEPLAY_POWER_STATUS.NO_POWER) return;
+            if(Random.Range(0, 10) != 4 || this._powerOutageCD >= Time.time) return;
+
+            this.setPower(GAMEPLAY_POWER_STATUS.NO_POWER);
+        });
 
         Debug.Log("INIT");
     }
@@ -108,6 +126,7 @@ public class CoreController : MonoBehaviour {
             data += "\nMISTAKES: " + this.totalMistakes;
             data += "\nCLIENT QUEUE: " + this.customerQueue.Count;
             data += "\n\n" + util_timer.debug();
+            data += "\n\n" + util_fade_timer.debug();
 
             GUI.Label(rect, data, style);
         }
@@ -115,10 +134,12 @@ public class CoreController : MonoBehaviour {
 
     public void FixedUpdate() {
         util_timer.fixedUpdate();
+        util_fade_timer.fixedUpdate();
     }
 
     public void OnDestroy() {
         util_timer.clear();
+        util_fade_timer.clear();
     }
 
     public bool penalize(string mistake) {
@@ -209,8 +230,33 @@ public class CoreController : MonoBehaviour {
         if(this.OnGameStatusUpdated != null) this.OnGameStatusUpdated.Invoke(this.oldStatus, this.status);
     }
 
+    public void setPower(GAMEPLAY_POWER_STATUS status) {
+        if(this.power == status) return;
+        this.power = status;
+
+        Debug.Log("Setting game power status to: " + status.ToString());
+        if(this.OnGamePowerStatusChange != null) this.OnGamePowerStatusChange.Invoke(this.power);
+
+        // INTERNAL CHECKS
+        bool hasPOWER = status == GAMEPLAY_POWER_STATUS.HAS_POWER;
+        this.button_next_client.resetCooldown = hasPOWER ? -1 : 1f;
+
+        if(hasPOWER) {
+            this._powerOutageCD = Time.time + this.powerCooldown;
+            Debug.Log("SET POWER COOLDOWN");
+        }
+        // ---
+    }
+
+    private IEnumerator onLoaded() {
+        yield return new WaitForEndOfFrame();
+        yield return new WaitForEndOfFrame();
+
+        this.init();
+    }
+
     private void completeClient() {
-        this.computer_client.queueCmd("$TASK COMPLETED");
+        this.computer_client.queueCmd("+CLIENT COMPLETED");
         this.servingClient.chat(ChatType.OUTRO);
 
         // Cleanup
@@ -229,7 +275,12 @@ public class CoreController : MonoBehaviour {
                 ConversationController.Instance.speakerPosition = manager_position;
                 ConversationController.Instance.clear(false);
                 ConversationController.Instance.setConversationID("WIN");
-                ConversationController.Instance.queueConversation(new Conversation("WIN", "MANAGER", "GOOD JOB, LOOKS LIKE YOU SURVIVE ANOTHER DAY", 0.45f, 0.6f));
+
+                if(power == GAMEPLAY_POWER_STATUS.NO_POWER) {
+                    ConversationController.Instance.queueConversation(new Conversation("WIN", "MANAGER", "GOOD JOB, LOOKS LIKE YOU SURVIVE ANOTHER DAY.. AND FIX THAT POWER NEXT TIME", 0.45f, 0.6f));
+                } else {
+                    ConversationController.Instance.queueConversation(new Conversation("WIN", "MANAGER", "GOOD JOB, LOOKS LIKE YOU SURVIVE ANOTHER DAY", 0.45f, 0.6f));
+                }
             });
         } else {
             this.setGameStatus(GAMEPLAY_STATUS.IDLE);
@@ -248,6 +299,7 @@ public class CoreController : MonoBehaviour {
     }
 
     private void onRequestNextClientBTN(entity_player ply) {
+        if(this.power != GAMEPLAY_POWER_STATUS.HAS_POWER) return;
         if(this.servingClient != null) throw new Exception("Already serving a customer!");
 
         if(this.customerQueue == null) throw new Exception("Missing customer queue");

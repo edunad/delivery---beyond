@@ -66,6 +66,8 @@ https://freesound.org/people/kwahmah_02/sounds/244932/
 https://freesound.org/people/cumesoftware/sounds/54517/
 https://freesound.org/people/pfranzen/sounds/328852/
 https://freesound.org/people/TampaJoey/sounds/588504/
+https://freesound.org/people/RutgerMuller/sounds/51166/
+https://freesound.org/people/Kagateni/sounds/404358/
 
 ### MUSIC
 
@@ -78,6 +80,10 @@ Licensed under Creative Commons: By Attribution 4.0 License
 http://creativecommons.org/licenses/by/4.0/
 
 - "Sheep May Safely Graze - BWV 208" Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 4.0 License
+http://creativecommons.org/licenses/by/4.0/
+
+"The Dread" Kevin MacLeod (incompetech.com)
 Licensed under Creative Commons: By Attribution 4.0 License
 http://creativecommons.org/licenses/by/4.0/
 

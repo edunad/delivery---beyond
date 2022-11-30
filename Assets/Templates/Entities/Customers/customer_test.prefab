@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c169d463612923f489de8c7d8c3edb36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requestTemplate: 03000000
+  requestTemplate: 00000000
   chatINTRO:
   - 
   chatWRONG_ITEM:

@@ -33,10 +33,17 @@ public class entity_computer : MonoBehaviour {
     public void Awake() {
         this._audioClips = new AudioClip[] {
             AssetsController.GetResource<AudioClip>("Sounds/Ingame/Objects/Computer/beep_single"),
-            AssetsController.GetResource<AudioClip>("Sounds/Ingame/Objects/Computer/142608__autistic-lucario__error")
+            AssetsController.GetResource<AudioClip>("Sounds/Ingame/Objects/Computer/142608__autistic-lucario__error"),
+            AssetsController.GetResource<AudioClip>("Sounds/Ingame/Objects/Computer/404358__kagateni__success.ogg")
         };
 
         this.generateCMDLine();
+
+        CoreController.Instance.OnGamePowerStatusChange += this.onPowerChange;
+    }
+
+    private void onPowerChange(GAMEPLAY_POWER_STATUS status) {
+        this.canvas.SetActive(status == GAMEPLAY_POWER_STATUS.HAS_POWER);
     }
 
     public void queueCmd(string cmd) {
@@ -108,17 +115,34 @@ public class entity_computer : MonoBehaviour {
         this._started = true;
 
         string cmd = this._cmds.Dequeue();
-        string niceCMD = cmd.Replace("$", "").Replace("@", "").Replace("#", "");
+        string niceCMD = cmd.Replace("$", "").Replace("@", "").Replace("#", "").Replace("+", "");
         TextMeshPro cmdLineText = this.getNextCmdLine();
 
         if(cmd.StartsWith("#")) {
                 cmdLineText.text += "<mark=#ff000007><color=\"red\">>  " + niceCMD + "  </color></mark>\n";
 
-                SoundController.Instance.Play3DSound(
-                    this._audioClips[1],
-                    this.transform,
-                    1.5f,
-                    4f, 0.7f);
+                if(this.canvas.activeInHierarchy) {
+                    SoundController.Instance.Play3DSound(
+                        this._audioClips[1],
+                        this.transform,
+                        1.5f,
+                        4f, 0.7f);
+                }
+
+                util_timer.simple(this.writeCooldown, () => {
+                    if(this.OnCMDCompleted != null) OnCMDCompleted.Invoke(niceCMD);
+                    this.getNextCMD();
+                });
+        } else if(cmd.StartsWith("+")) {
+                cmdLineText.text += "<mark=#00ff0007><color=\"green\">>  " + niceCMD + "  </color></mark>\n";
+
+                if(this.canvas.activeInHierarchy) {
+                    SoundController.Instance.Play3DSound(
+                        this._audioClips[2],
+                        this.transform,
+                        1.5f,
+                        4f, 0.7f);
+                }
 
                 util_timer.simple(this.writeCooldown, () => {
                     if(this.OnCMDCompleted != null) OnCMDCompleted.Invoke(niceCMD);
@@ -135,11 +159,13 @@ public class entity_computer : MonoBehaviour {
                 this._timer = util_timer.create(strSize, cmd.StartsWith("@") ? this.slowWriteSpeed : this.writeSpeed, () => {
                     cmdLineText.text += niceCMD[this._chatIndx];
 
-                    SoundController.Instance.Play3DSound(
-                        this._audioClips[0],
-                        this.transform,
-                        Random.Range(1f, 1.1f),
-                        4f, 0.3f);
+                    if(this.canvas.activeInHierarchy) {
+                        SoundController.Instance.Play3DSound(
+                            this._audioClips[0],
+                            this.transform,
+                            Random.Range(1f, 1.1f),
+                            4f, 0.3f);
+                    }
 
                     if (this._chatIndx < strSize - 1){
                         this._chatIndx += 1;
@@ -154,7 +180,7 @@ public class entity_computer : MonoBehaviour {
             } else {
                 cmdLineText.text += niceCMD + "\n";
 
-                if(niceCMD != "\n") {
+                if(niceCMD != "\n" && this.canvas.activeInHierarchy) {
                     SoundController.Instance.Play3DSound(
                             this._audioClips[0],
                             this.transform,

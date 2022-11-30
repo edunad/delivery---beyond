@@ -15,7 +15,7 @@ public class util_timer {
             private float _delay;
             private int _iterations;
             private Action _func;
-
+            private bool _paused;
             private bool _infinite;
         #endregion
     #endregion
@@ -55,6 +55,7 @@ public class util_timer {
 
     public void tick() {
         float currTime = Time.time;
+        if (this._paused) return;
         if (currTime < this._nextTick) return;
 
         if (this._func != null) this._func.Invoke();
@@ -62,6 +63,10 @@ public class util_timer {
 
         if (this._iterations == 0) this.stop();
         else this._nextTick = currTime + this._delay;
+    }
+
+    public void setPaused(bool pause) {
+        this._paused = pause;
     }
 
     public void stop() {
@@ -80,7 +85,7 @@ public class util_timer {
         public static string debug() {
             string data = "\n--------------- ACTIVE TIMERS: " + timers.Count;
             data += "\nCURRENT ID: " + ID;
-            foreach (util_timer timer in timers.Values.ToList()) data += "\n [" + timer._id +"] DELAY: "+ timer._delay + " | ITERATIONS: " + timer._iterations + " | TIME: " + (timer._nextTick - Time.time) + "s";
+            foreach (util_timer timer in timers.Values.ToList()) data += "\n [" + timer._id +"] DELAY: "+ timer._delay + " | ITERATIONS: " + timer._iterations + " | PAUSED: " +timer._paused+" | TIME: " + (timer._nextTick - Time.time) + "s";
 
             return data;
         }
