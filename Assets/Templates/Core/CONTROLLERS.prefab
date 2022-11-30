@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 64981009}
   - component: {fileID: 64981011}
   - component: {fileID: 64981010}
+  - component: {fileID: 655351042}
   m_Layer: 5
   m_Name: jumpscare
   m_TagString: Untagged
@@ -27,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 64981007}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.11999512, y: -1.3770001, z: 1}
-  m_LocalScale: {x: 0.37, y: 0.37, z: 0.37}
+  m_LocalPosition: {x: 0.28829956, y: -5.5233, z: 1}
+  m_LocalScale: {x: 0.79999995, y: 0.79999995, z: 0.79999995}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2702157389686341463}
@@ -96,7 +97,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 6e04b16bcf4a4e6499569d1bb6606639, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 1f65d31c486d4be4b84c235c233666cd, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a5a95fdfe8bb7e048acafc62913daa4f, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -195,6 +196,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+--- !u!95 &655351042
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64981007}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1ea7f3b242d58fe41ace7189ff737c73, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1780393554
 GameObject:
   m_ObjectHideFlags: 0
@@ -362,9 +383,13 @@ MonoBehaviour:
   - {fileID: 1677978819928395105, guid: 6e6a224ee2ce87d47b0cb05afdefeb10, type: 3}
   - {fileID: 1677978819928395105, guid: 249af667870dcdd41b2886794f30666e, type: 3}
   - {fileID: 1677978819928395105, guid: e3820e6d1914bb34e9f2d5ddcd3b14fe, type: 3}
+  - {fileID: 1677978819928395105, guid: 922588e944f5fcf4cbdb96c7af81b6b5, type: 3}
+  - {fileID: 1677978819928395105, guid: 0e85b8cfe78d35c4e89c33ff270360f6, type: 3}
+  - {fileID: 1677978819928395105, guid: c38dd90eda80b0f4cb5ff108f498d24b, type: 3}
+  - {fileID: 1677978819928395105, guid: 47b1e88426372d54582989eafe51d510, type: 3}
   maxMistakes: 3
   patienceMult: 1
-  maxClients: 5
+  maxClients: 8
   prop_client: {fileID: 0}
   computer_client: {fileID: 0}
   button_next_client: {fileID: 0}

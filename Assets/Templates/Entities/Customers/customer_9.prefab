@@ -47,7 +47,7 @@ MonoBehaviour:
   requestTemplate: 0000000000000000
   chatINTRO:
   - Hi
-  - Can i ship these two boxes to %country-0% and %country-1%
+  - Can i ship these two items to %country-0% and %country-1%
   chatWRONG_ITEM:
   - 
   chatOK_ITEM:
@@ -60,3 +60,4 @@ MonoBehaviour:
   currentRequest: 2
   voice: 1.3222153
   customerName: Risa
+  FORCE_SAME_ORDERS: 0

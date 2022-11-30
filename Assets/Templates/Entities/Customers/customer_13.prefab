@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1677978819928395104}
   - component: {fileID: 1677978819928395105}
   m_Layer: 0
-  m_Name: customer_5
+  m_Name: customer_13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,21 +44,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c169d463612923f489de8c7d8c3edb36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requestTemplate: 020000000200000001000000
+  requestTemplate: 02000000020000000200000001000000
   chatINTRO:
-  - Wazaaa
-  - Can I get two boxes?
-  - '%box_size-0% and %box_size-1%'
-  - And I missed a delivery, here is the ticket
+  - Hi, i need three boxes. No questions asked
+  - Sizes, %box_size-0%, %box_size-1% and %box_size-2%
+  - And retrieve this body.
+  - I ment box
+  - Make it quick
   chatWRONG_ITEM:
-  - Uh... are you sure this is the correct box?
+  - Buddyyy, you killin me here
   chatOK_ITEM:
-  - Thanks
+  - Good..
   chatOUTRO:
-  - Bye bye!
+  - Thanks buddy
   chatPLACED_ITEM: []
   chatGAME_OVER:
-  - Yea no. Where is your manager?
+  - Hope you are happy, you are getting me killed!
   currentRequest: 2
   voice: 1.3222153
   customerName: Risa

@@ -43,11 +43,12 @@ public class entity_client_deliver_spot : MonoBehaviour {
         this._spot.setLocked(true);
 
         util_timer.simple(0.5f, () => {
-            this._spot.deleteItem();
-
             if(box.ID != client.getSetting<int>("box_id")) {
-                CoreController.Instance.penalize("Wrong box delivered");
+                CoreController.Instance.penalize("Delivered Wrong box ID");
+                // return; // TODO: Should it be harder? Forcing you to go back to basement and get the correct one?
             }
+
+            this._spot.deleteItem();
 
             CoreController.Instance.setGameStatus(GAMEPLAY_STATUS.ITEM_REQUESTED);
             CoreController.Instance.proccedEvent();

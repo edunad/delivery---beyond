@@ -288,8 +288,8 @@ public class CoreController : MonoBehaviour {
         Random.InitState(System.DateTime.Now.Millisecond); // Re-randomize seed
 
         for(int i = 0; i < 80; i++) {
-            int id = Random.Range(1000,9999);
-            while(this.boxCodes.ContainsKey(id)) id = Random.Range(1000,9999);
+            int id = Random.Range(1000, 9999);
+            while(this.boxCodes.ContainsKey(id)) id = Random.Range(1000, 9999);
             this.boxCodes.Add(id, false);
         }
     }
