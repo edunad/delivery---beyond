@@ -17,6 +17,8 @@ public class entity_store_music : MonoBehaviour {
 
     public void Awake() {
         this._speakers = GetComponentsInChildren<entity_store_speakers>(true);
+
+        Random.InitState(System.DateTime.Now.Millisecond); // Re-randomize seed
         this.pickSong();
 
         if(CoreController.Instance != null) {

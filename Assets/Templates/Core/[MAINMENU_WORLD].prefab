@@ -50,7 +50,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1456129933891705323
 Transform:
@@ -325,7 +325,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 119
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &2422161112793864239
 RectTransform:
@@ -567,7 +567,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 119
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &2422161113041959165
 RectTransform:
@@ -763,13 +763,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6978859586809566937}
-  - component: {fileID: 826622985832099680}
+  - component: {fileID: 9049386490481893503}
   m_Layer: 0
   m_Name: entity_store_music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6978859586809566937
 Transform:
@@ -788,7 +788,7 @@ Transform:
   m_Father: {fileID: 2422161113038745673}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &826622985832099680
+--- !u!114 &9049386490481893503
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -797,7 +797,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2503691974598787260}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b39aaf981c5bdc4ab7a412a3f2e7120, type: 3}
+  m_Script: {fileID: 11500000, guid: 352ded637c98cb747a48f692474ad070, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   storeMusic:
@@ -805,8 +805,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8b3a986261009ad4c83338a7a699b843, type: 3}
   - {fileID: 8300000, guid: a02347b68bf330d4fa87b96231e68eef, type: 3}
   - {fileID: 8300000, guid: 7cee0c2dc50a83445b2362361ece34f8, type: 3}
-  storeAnnouncement: {fileID: 0}
-  volume: 0.3
+  storeAnnouncement: {fileID: 8300000, guid: bca9af4960a3338408014621162c08f1, type: 3}
+  volume: 0.45
 --- !u!1 &8142774081683958583
 GameObject:
   m_ObjectHideFlags: 0
@@ -913,6 +913,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: mainmenu.vmf
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2b84869c7b705334dba311410bb6756d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: 2b84869c7b705334dba311410bb6756d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b84869c7b705334dba311410bb6756d, type: 3}
@@ -1007,7 +1015,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8164078558771037576, guid: c4f10e2221d8dac4093549d91b411e57, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 119
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -1072,6 +1080,10 @@ PrefabInstance:
     - target: {fileID: 902518152901765589, guid: 96793fdfeed448e48b77d2d9046832b4, type: 3}
       propertyPath: m_Name
       value: entity_store_speakers
+      objectReference: {fileID: 0}
+    - target: {fileID: 902518152901765589, guid: 96793fdfeed448e48b77d2d9046832b4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -1223,7 +1235,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8164078558771037576, guid: cb42e8cb4781ce44d90c7d6e6ada71ed, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 119
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects:
@@ -1531,6 +1543,10 @@ PrefabInstance:
     - target: {fileID: 902518152901765589, guid: 96793fdfeed448e48b77d2d9046832b4, type: 3}
       propertyPath: m_Name
       value: entity_store_speakers
+      objectReference: {fileID: 0}
+    - target: {fileID: 902518152901765589, guid: 96793fdfeed448e48b77d2d9046832b4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

@@ -609,7 +609,7 @@ MonoBehaviour:
   maxMistakes: 3
   patienceMult: 1
   maxClients: 8
-  powerCheckTimer: 15
+  powerCheckTimer: 20
   powerCooldown: 80
   prop_client: {fileID: 0}
   computer_client: {fileID: 0}

@@ -373,10 +373,6 @@ public class entity_player : MonoBehaviour {
 	}
 
 	private void onPowerChange(GAMEPLAY_POWER_STATUS status) {
-        if(status == GAMEPLAY_POWER_STATUS.NO_POWER) {
 
-        } else {
-
-        }
     }
 }

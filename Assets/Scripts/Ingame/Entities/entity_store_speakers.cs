@@ -12,6 +12,7 @@ public class entity_store_speakers : MonoBehaviour {
         this._audio = GetComponent<AudioSource>();
         this._audio.playOnAwake = false;
         this._audio.loop = false;
+        this._audio.maxDistance = 7f;
 
         if(CoreController.Instance != null) {
             CoreController.Instance.OnGamePowerStatusChange += this.onPowerChange;
