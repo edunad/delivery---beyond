@@ -22,7 +22,7 @@ public class entity_global_soundscape : MonoBehaviour {
             this._ambient.Play();
 
             if(this._timer != null) this._timer.stop();
-            this._timer = util_fade_timer.fade(0.02f, 0.05f, 0.5f, (float volume) => {
+            this._timer = util_fade_timer.fade(0.1f, 0.05f, 1f, (float volume) => {
                 this._ambient.volume = volume;
             });
         }

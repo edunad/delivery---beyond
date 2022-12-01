@@ -77,6 +77,7 @@ public class entity_player : MonoBehaviour {
 
 		#region OTHER
 			private FrozenFlags _frozen = FrozenFlags.NONE;
+			private float _sanity = 1f;
 		#endregion
 
 		#region BUTTONS
@@ -128,6 +129,8 @@ public class entity_player : MonoBehaviour {
 				Cursor.visible = false;
 			}
 		};
+
+        CoreController.Instance.OnGamePowerStatusChange += this.onPowerChange;
 	}
 
 	public void OnEnable() {
@@ -302,7 +305,7 @@ public class entity_player : MonoBehaviour {
 		pick.setOwner(this.gameObject, pos);
 	}
 
-	public void onUse(GameObject obj) {
+	private void onUse(GameObject obj) {
 		if(obj == null) return;
 
 		if(obj.name.StartsWith("itm-spot-")) {
@@ -368,4 +371,12 @@ public class entity_player : MonoBehaviour {
 			btn.onPress(this);
 		}
 	}
+
+	private void onPowerChange(GAMEPLAY_POWER_STATUS status) {
+        if(status == GAMEPLAY_POWER_STATUS.NO_POWER) {
+
+        } else {
+
+        }
+    }
 }
