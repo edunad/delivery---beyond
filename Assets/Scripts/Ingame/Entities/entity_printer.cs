@@ -18,11 +18,15 @@ public class entity_printer : MonoBehaviour {
     public void Awake() {
         this._sound = GetComponent<AudioSource>();
         this._sound.playOnAwake = false;
+        this._sound.volume = 0.8f;
+        this._sound.maxDistance = 10f;
 
         this._spot = GetComponentInChildren<entity_item_spot>(true);
         this._spot.setLocked(true);
 
         CoreController.Instance.OnGamePowerStatusChange += this.onPowerChange;
+
+        util_timer.simple(3f, () => print());
     }
 
     private void onPowerChange(GAMEPLAY_POWER_STATUS status) {
