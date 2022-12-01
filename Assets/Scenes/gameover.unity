@@ -5670,7 +5670,7 @@ MonoBehaviour:
   surfaceRotation: 0
   quality: 1
   sharedMesh: {fileID: 375117666}
-  instanceID: 200576
+  instanceID: 134380
 --- !u!4 &742264253
 Transform:
   m_ObjectHideFlags: 0
@@ -5789,7 +5789,7 @@ GameObject:
   m_Component:
   - component: {fileID: 957430705}
   m_Layer: 0
-  m_Name: AMBIENT
+  m_Name: '[WORLD]'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5826,7 +5826,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1135240976}
   m_Layer: 0
-  m_Name: CORE
+  m_Name: '[CORE]'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6132,7 +6132,7 @@ GameObject:
   - component: {fileID: 1531536183}
   - component: {fileID: 1531536186}
   m_Layer: 0
-  m_Name: camera
+  m_Name: main_camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

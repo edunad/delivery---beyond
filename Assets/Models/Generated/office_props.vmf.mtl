@@ -148,22 +148,6 @@ map_Ka materials/props/metalduct003a.tga
 map_Kd materials/props/metalduct003a.tga
 
 
-newmtl props/metalpanel016b
-Ka 1.000 1.000 1.000
-Kd 1.000 1.000 1.000
-Ks 0.000 0.000 0.000
-map_Ka materials/props/metalpanel016b.tga
-map_Kd materials/props/metalpanel016b.tga
-
-
-newmtl props/metalpanel009a
-Ka 1.000 1.000 1.000
-Kd 1.000 1.000 1.000
-Ks 0.000 0.000 0.000
-map_Ka materials/props/metalpanel009a.tga
-map_Kd materials/props/metalpanel009a.tga
-
-
 newmtl props/woodcrate001a
 Ka 1.000 1.000 1.000
 Kd 1.000 1.000 1.000
@@ -239,6 +223,14 @@ map_Ka materials/delivery_beyond/personnel_sign.tga
 map_Kd materials/delivery_beyond/personnel_sign.tga
 
 
+newmtl props/metalpanel016b
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/props/metalpanel016b.tga
+map_Kd materials/props/metalpanel016b.tga
+
+
 newmtl props/metalpanel014a
 Ka 1.000 1.000 1.000
 Kd 1.000 1.000 1.000
@@ -285,6 +277,22 @@ Kd 1.000 1.000 1.000
 Ks 0.000 0.000 0.000
 map_Ka materials/delivery_beyond/electricity_sign.tga
 map_Kd materials/delivery_beyond/electricity_sign.tga
+
+
+newmtl props/metallockers003b
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/props/metallockers003b.tga
+map_Kd materials/props/metallockers003b.tga
+
+
+newmtl props/metallockers003a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/props/metallockers003a.tga
+map_Kd materials/props/metallockers003a.tga
 
 
 newmtl wood/woodfloor007a_c17
@@ -367,6 +375,14 @@ Kd 1.000 1.000 1.000
 Ks 0.000 0.000 0.000
 map_Ka materials/dev/dev_interiorfloorlinoleum01f.tga
 map_Kd materials/dev/dev_interiorfloorlinoleum01f.tga
+
+
+newmtl props/metalpanel009a
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/props/metalpanel009a.tga
+map_Kd materials/props/metalpanel009a.tga
 
 
 newmtl furniture_detailprops001a

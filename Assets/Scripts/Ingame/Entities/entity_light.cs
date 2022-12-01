@@ -19,11 +19,12 @@ public class entity_light : MonoBehaviour {
         this._lightParticles = GetComponentInChildren<ParticleSystem>(true);
 
         this._sndClip = new AudioClip[] {
-            AssetsController.GetResource<AudioClip>("Sounds/Ingame/Objects/Light/door_latch1"),
-            AssetsController.GetResource<AudioClip>("Sounds/Ingame/Objects/Light/door_latch1"),
+            AssetsController.GetResource<AudioClip>("Sounds/Ingame/Objects/Light/stalk_poweroff_on_17_10")
         };
 
-        CoreController.Instance.OnGamePowerStatusChange += this.onPowerChange;
+        if(CoreController.Instance != null) {
+            CoreController.Instance.OnGamePowerStatusChange += this.onPowerChange;
+        }
     }
 
     private void onPowerChange(GAMEPLAY_POWER_STATUS status) {
@@ -36,6 +37,7 @@ public class entity_light : MonoBehaviour {
             this._light.enabled = false;
             this._lightBeam.enabled = false;
             this._lightParticles.Stop();
+            this._lightParticles.Clear();
 
             this._audio.Stop();
             SoundController.Instance.Play3DSound(this._sndClip[0], this.transform, Random.Range(0.75f, 1.25f), 10f, 0.5f);
@@ -49,7 +51,7 @@ public class entity_light : MonoBehaviour {
             this._lightParticles.Play();
 
             this._audio.Play();
-            SoundController.Instance.Play3DSound(this._sndClip[1], this.transform, Random.Range(0.75f, 1.25f), 10f, 0.5f);
+            SoundController.Instance.Play3DSound(this._sndClip[0], this.transform, Random.Range(0.75f, 1.25f), 10f, 0.5f);
         });
     }
 }

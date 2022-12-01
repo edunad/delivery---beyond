@@ -270,12 +270,13 @@ public class entity_player : MonoBehaviour {
 	}
 
 	public void onUseCanceled() {
-		if(this._aimingUSEObject == null || !this._pressedUSE) return;
+		if(this._aimingUSEObject == null) return;
+		if(this._pressedUSE) {
+			this._aimingUSEObject.SendMessage("onUseUP", SendMessageOptions.DontRequireReceiver);
+			this._pressedUSE = false;
+		}
 
-		this._aimingUSEObject.SendMessage("onUseUP", SendMessageOptions.DontRequireReceiver);
 		this._aimingUSEObject = null;
-
-		this._pressedUSE = false;
 	}
 
 	private void onZoomStart(CallbackContext ctx) { this._camera.fieldOfView = this._originalCamZoom - this.maxZoom; }

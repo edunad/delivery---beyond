@@ -15,6 +15,7 @@ public class util_timer {
             private float _delay;
             private int _iterations;
             private Action _func;
+            private float _pausedTime;
             private bool _paused;
             private bool _infinite;
         #endregion
@@ -55,6 +56,7 @@ public class util_timer {
 
     public void tick() {
         float currTime = Time.time;
+
         if (this._paused) return;
         if (currTime < this._nextTick) return;
 
@@ -67,6 +69,13 @@ public class util_timer {
 
     public void setPaused(bool pause) {
         this._paused = pause;
+
+        if(pause) {
+            this._pausedTime = Time.time;
+        } else {
+            this._nextTick += (Time.time - this._pausedTime);
+            this._pausedTime = 0;
+        }
     }
 
     public void stop() {
@@ -83,9 +92,11 @@ public class util_timer {
 
     #if DEVELOPMENT_BUILD || UNITY_EDITOR
         public static string debug() {
-            string data = "\n--------------- ACTIVE TIMERS: " + timers.Count;
-            data += "\nCURRENT ID: " + ID;
-            foreach (util_timer timer in timers.Values.ToList()) data += "\n [" + timer._id +"] DELAY: "+ timer._delay + " | ITERATIONS: " + timer._iterations + " | PAUSED: " +timer._paused+" | TIME: " + (timer._nextTick - Time.time) + "s";
+            string data = "\n--------------- ACTIVE TIMERS: " + timers.Count + " | ID : " + ID;
+
+            foreach (util_timer timer in timers.Values.ToList()) {
+                data += "\n [" + timer._id +"] DELAY: "+ timer._delay + " | ITERATIONS: " + timer._iterations + " | PAUSED: " + timer._paused + " | TIME: " + (timer._nextTick - Time.time) + "s";
+            }
 
             return data;
         }

@@ -168,5 +168,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e28ba9e3970918449a02ab3cf16dd72b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  storeMusic: {fileID: 8300000, guid: 68e205c99cf439b41a1a7403775e7805, type: 3}
+  storeMusic:
+  - {fileID: 8300000, guid: 8d215e09552b472478dad1ecf5b46568, type: 3}
+  - {fileID: 8300000, guid: 8b3a986261009ad4c83338a7a699b843, type: 3}
+  - {fileID: 8300000, guid: a02347b68bf330d4fa87b96231e68eef, type: 3}
+  - {fileID: 8300000, guid: 7cee0c2dc50a83445b2362361ece34f8, type: 3}
   storeAnnouncement: {fileID: 8300000, guid: bca9af4960a3338408014621162c08f1, type: 3}
+  volume: 0.3

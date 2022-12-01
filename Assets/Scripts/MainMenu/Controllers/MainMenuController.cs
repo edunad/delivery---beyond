@@ -14,6 +14,14 @@ public class MainMenuController : MonoBehaviour {
 		Cursor.visible = true;
     }
 
+    public void FixedUpdate() {
+        util_timer.fixedUpdate();
+    }
+
+    public void OnDestroy() {
+        util_timer.clear();
+    }
+
     public void Update() {
         if(this.sceneCamera == null) return;
 

@@ -74,9 +74,12 @@ public class util_fade_timer {
 
     #if DEVELOPMENT_BUILD || UNITY_EDITOR
         public static string debug() {
-            string data = "\n--------------- ACTIVE FADE TIMERS: " + timers.Count;
+            string data = "\n--------------- ACTIVE FADE TIMERS: " + timers.Count + " | ID : " + ID;
             data += "\nCURRENT ID: " + ID;
-            foreach (util_fade_timer timer in timers.Values.ToList()) data += "\n [" + timer._id +"] VALUE: "+ timer._targetValue + " | SPEED: " + timer._speed;
+
+            foreach (util_fade_timer timer in timers.Values.ToList()) {
+                data += "\n [" + timer._id +"] VALUE: "+ timer._targetValue + " | SPEED: " + timer._speed;
+            }
 
             return data;
         }
