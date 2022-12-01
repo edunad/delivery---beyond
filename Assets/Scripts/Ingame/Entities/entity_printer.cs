@@ -25,8 +25,6 @@ public class entity_printer : MonoBehaviour {
         this._spot.setLocked(true);
 
         CoreController.Instance.OnGamePowerStatusChange += this.onPowerChange;
-
-        util_timer.simple(3f, () => print());
     }
 
     private void onPowerChange(GAMEPLAY_POWER_STATUS status) {
