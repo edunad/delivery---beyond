@@ -9,6 +9,7 @@ set "ASSET_FOLDER=../Assets/Models"
 
 REM MAPS------
 set models=office.vmf
+
 set models=%models%;office_props.vmf
 set models=%models%;office_collision.vmf
 
@@ -60,6 +61,7 @@ set models=%models%;props/camera_holder.vmf
 
 set models=%models%;props/light_BROKEN.vmf
 set models=%models%;props/light_GOOD.vmf
+set models=%models%;props/light_wall.vmf
 set models=%models%;props/light_switch.vmf
 
 set models=%models%;props/creepy_client.vmf
