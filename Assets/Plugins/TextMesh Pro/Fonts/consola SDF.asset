@@ -139,6 +139,7 @@ MonoBehaviour:
     m_StyleName: Regular
     m_PointSize: 90
     m_Scale: 1
+    m_UnitsPerEM: 0
     m_LineHeight: 105.38086
     m_AscentLine: 66.84082
     m_CapLine: 58
@@ -575,6 +576,21 @@ MonoBehaviour:
     m_Scale: 1
     m_AtlasIndex: 0
     m_ClassDefinitionType: 0
+  - m_Index: 91
+    m_Metrics:
+      m_Width: 47.0625
+      m_Height: 73.703125
+      m_HorizontalBearingX: 0
+      m_HorizontalBearingY: 72.90625
+      m_HorizontalAdvance: 49.484375
+    m_GlyphRect:
+      m_X: 608
+      m_Y: 269
+      m_Width: 48
+      m_Height: 74
+    m_Scale: 1
+    m_AtlasIndex: 0
+    m_ClassDefinitionType: 0
   - m_Index: 131
     m_Metrics:
       m_Width: 36.390625
@@ -977,6 +993,21 @@ MonoBehaviour:
       m_Y: 167
       m_Width: 48
       m_Height: 62
+    m_Scale: 1
+    m_AtlasIndex: 0
+    m_ClassDefinitionType: 0
+  - m_Index: 329
+    m_Metrics:
+      m_Width: 36.25
+      m_Height: 15.546875
+      m_HorizontalBearingX: 0
+      m_HorizontalBearingY: 59.671875
+      m_HorizontalAdvance: 49.484375
+    m_GlyphRect:
+      m_X: 780
+      m_Y: 286
+      m_Width: 37
+      m_Height: 16
     m_Scale: 1
     m_AtlasIndex: 0
     m_ClassDefinitionType: 0
@@ -1520,51 +1551,6 @@ MonoBehaviour:
     m_Scale: 1
     m_AtlasIndex: 0
     m_ClassDefinitionType: 0
-  - m_Index: 2628
-    m_Metrics:
-      m_Width: 41.484375
-      m_Height: 41.484375
-      m_HorizontalBearingX: 4
-      m_HorizontalBearingY: 41.484375
-      m_HorizontalAdvance: 49.484375
-    m_GlyphRect:
-      m_X: 655
-      m_Y: 179
-      m_Width: 42
-      m_Height: 42
-    m_Scale: 1
-    m_AtlasIndex: 0
-    m_ClassDefinitionType: 0
-  - m_Index: 91
-    m_Metrics:
-      m_Width: 47.0625
-      m_Height: 73.703125
-      m_HorizontalBearingX: 0
-      m_HorizontalBearingY: 72.90625
-      m_HorizontalAdvance: 49.484375
-    m_GlyphRect:
-      m_X: 608
-      m_Y: 269
-      m_Width: 48
-      m_Height: 74
-    m_Scale: 1
-    m_AtlasIndex: 0
-    m_ClassDefinitionType: 0
-  - m_Index: 329
-    m_Metrics:
-      m_Width: 36.25
-      m_Height: 15.546875
-      m_HorizontalBearingX: 0
-      m_HorizontalBearingY: 59.671875
-      m_HorizontalAdvance: 49.484375
-    m_GlyphRect:
-      m_X: 780
-      m_Y: 286
-      m_Width: 37
-      m_Height: 16
-    m_Scale: 1
-    m_AtlasIndex: 0
-    m_ClassDefinitionType: 0
   - m_Index: 873
     m_Metrics:
       m_Width: 49.484375
@@ -1592,6 +1578,21 @@ MonoBehaviour:
       m_Y: 362
       m_Width: 50
       m_Height: 8
+    m_Scale: 1
+    m_AtlasIndex: 0
+    m_ClassDefinitionType: 0
+  - m_Index: 2628
+    m_Metrics:
+      m_Width: 41.484375
+      m_Height: 41.484375
+      m_HorizontalBearingX: 4
+      m_HorizontalBearingY: 41.484375
+      m_HorizontalAdvance: 49.484375
+    m_GlyphRect:
+      m_X: 655
+      m_Y: 179
+      m_Width: 42
+      m_Height: 42
     m_Scale: 1
     m_AtlasIndex: 0
     m_ClassDefinitionType: 0
@@ -1953,6 +1954,14 @@ MonoBehaviour:
     m_GlyphIndex: 374
     m_Scale: 1
   - m_ElementType: 1
+    m_Unicode: 175
+    m_GlyphIndex: 329
+    m_Scale: 1
+  - m_ElementType: 1
+    m_Unicode: 214
+    m_GlyphIndex: 91
+    m_Scale: 1
+  - m_ElementType: 1
     m_Unicode: 8226
     m_GlyphIndex: 380
     m_Scale: 1
@@ -1961,24 +1970,16 @@ MonoBehaviour:
     m_GlyphIndex: 349
     m_Scale: 1
   - m_ElementType: 1
-    m_Unicode: 9633
-    m_GlyphIndex: 2628
-    m_Scale: 1
-  - m_ElementType: 1
-    m_Unicode: 214
-    m_GlyphIndex: 91
-    m_Scale: 1
-  - m_ElementType: 1
-    m_Unicode: 175
-    m_GlyphIndex: 329
+    m_Unicode: 9472
+    m_GlyphIndex: 891
     m_Scale: 1
   - m_ElementType: 1
     m_Unicode: 9608
     m_GlyphIndex: 873
     m_Scale: 1
   - m_ElementType: 1
-    m_Unicode: 9472
-    m_GlyphIndex: 891
+    m_Unicode: 9633
+    m_GlyphIndex: 2628
     m_Scale: 1
   m_AtlasTextures:
   - {fileID: 2906015485611364475}
@@ -2784,7 +2785,8 @@ Texture2D:
   m_MipCount: 1
   m_IsReadable: 1
   m_IsPreProcessed: 0
-  m_IgnoreMasterTextureLimit: 0
+  m_IgnoreMipmapLimit: 0
+  m_MipmapLimitGroupName: 
   m_StreamingMipmaps: 0
   m_StreamingMipmapsPriority: 0
   m_VTOnly: 0

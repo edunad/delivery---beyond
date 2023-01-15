@@ -40,7 +40,7 @@ public class CoreController : MonoBehaviour
     [Space(50)]
     [Header("DEBUG")]
     public bool FORCE_CUSTOMER_ORDER = false;
-    public GAMEPLAY_STATUS FORCE_STATUS = GAMEPLAY_STATUS.PREPARING;
+    public GAMEPLAY_STATUS FORCE_STATUS = GAMEPLAY_STATUS.ITEM_RETRIEVE;
 
     [EditorButton("SET STATUS")]
     public void SET_GAME_STATUS() => this.setGameStatus(FORCE_STATUS);
@@ -84,8 +84,7 @@ public class CoreController : MonoBehaviour
     private float _powerOutageCD;
     #endregion
 
-    public void Awake()
-    {
+    public void Awake() {
         if (Instance != null && Instance != this)
         {
             Destroy(this);
@@ -97,8 +96,7 @@ public class CoreController : MonoBehaviour
         StartCoroutine(onLoaded());
     }
 
-    public void init()
-    {
+    public void init() {
         this.generateQUEUE();
         this.generateFloppies();
         this.generateBoxCodes();
@@ -109,7 +107,7 @@ public class CoreController : MonoBehaviour
         util_timer.create(-1, powerCheckTimer, () =>
         {
             if (power == GAMEPLAY_POWER_STATUS.NO_POWER) return;
-            if (this.totalClients < 1) return;
+            if (this.totalClients < 2) return;
             if (Random.Range(0, 12) != 4 || this._powerOutageCD >= Time.time) return;
 
             this.setPower(GAMEPLAY_POWER_STATUS.NO_POWER);
@@ -119,8 +117,7 @@ public class CoreController : MonoBehaviour
     }
 
 #if DEVELOPMENT_BUILD || UNITY_EDITOR
-    public void OnGUI()
-    {
+    public void OnGUI() {
         int w = Screen.width, h = Screen.height;
 
         GUIStyle style = new GUIStyle();
@@ -140,20 +137,17 @@ public class CoreController : MonoBehaviour
     }
 #endif
 
-    public void FixedUpdate()
-    {
+    public void FixedUpdate() {
         util_timer.fixedUpdate();
         util_fade_timer.fixedUpdate();
     }
 
-    public void OnDestroy()
-    {
+    public void OnDestroy() {
         util_timer.clear();
         util_fade_timer.clear();
     }
 
-    public bool penalize(string mistake)
-    {
+    public bool penalize(string mistake) {
         if (this.servingClient == null) return false;
         Debug.Log("[CORE] Penalize: " + mistake);
 
@@ -171,8 +165,7 @@ public class CoreController : MonoBehaviour
         return true;
     }
 
-    public void gameOver(GAMEOVER_TYPE type)
-    {
+    public void gameOver(GAMEOVER_TYPE type) {
         Debug.Log("GAMEOVER: " + type);
         this.setGameStatus(GAMEPLAY_STATUS.GAMEOVER);
 
@@ -188,12 +181,10 @@ public class CoreController : MonoBehaviour
         }
     }
 
-    public void proccedEvent()
-    {
+    public void proccedEvent() {
         if (this.servingClient == null) throw new Exception("Missing client");
 
-        if (status == GAMEPLAY_STATUS.ITEM_REQUESTED)
-        {
+        if (status == GAMEPLAY_STATUS.ITEM_REQUESTED) {
             this.servingClient.chat(ChatType.OK_ITEM);
 
             util_timer.simple(0.5f, () =>

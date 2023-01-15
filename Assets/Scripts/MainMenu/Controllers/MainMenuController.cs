@@ -36,9 +36,7 @@ public class MainMenuController : MonoBehaviour {
             this.fade.play();
             this.fade.OnFadeComplete += (bool fadein) => {
                 if(!fadein) return;
-
-                PlayerPrefs.SetInt("loading_scene_index", SceneManager.GetActiveScene().buildIndex + 2);
-                SceneManager.LoadScene("loading", LoadSceneMode.Single);
+                SceneManager.LoadScene("tutorial", LoadSceneMode.Single);
             };
         } else if(id == "options") {
             OptionsController.Instance.displayOptions(true);

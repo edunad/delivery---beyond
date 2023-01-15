@@ -13,6 +13,10 @@ set models=office.vmf
 set models=%models%;office_props.vmf
 set models=%models%;office_collision.vmf
 
+set models=%models%;tutorial.vmf
+set models=%models%;tutorial_props.vmf
+set models=%models%;tutorial_collision.vmf
+
 set models=%models%;basement.vmf
 set models=%models%;basement_props.vmf
 set models=%models%;basement_props_boxes.vmf
@@ -23,6 +27,7 @@ set models=%models%;gameover.vmf
 set models=%models%;victory.vmf
 
 REM PROPS------
+set models=%models%;props/button.vmf
 
 set models=%models%;props/box.vmf
 set models=%models%;props/box_flat.vmf

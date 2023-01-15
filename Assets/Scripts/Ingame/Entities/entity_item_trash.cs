@@ -9,7 +9,14 @@ public class entity_item_trash : MonoBehaviour {
     public bool disabled = false;
     public List<string> whitelist = new List<string>();
 
-    private BoxCollider _trigger;
+    #region EVENTS
+        public delegate void onItemTrashed(entity_item item);
+        public event onItemTrashed OnItemTrashed;
+    #endregion
+
+    #region PRIVATE
+        private BoxCollider _trigger;
+    #endregion
 
     public void Awake() {
         this._trigger = GetComponent<BoxCollider>();
@@ -27,6 +34,8 @@ public class entity_item_trash : MonoBehaviour {
 
     public bool trashItem(entity_item item) {
         if(!this.canTrash(item.id)) return false;
+
+        if(OnItemTrashed != null) OnItemTrashed.Invoke(item);
         DestroyImmediate(item.gameObject);
 
         return true;

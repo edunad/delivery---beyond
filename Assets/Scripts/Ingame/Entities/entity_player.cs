@@ -129,8 +129,6 @@ public class entity_player : MonoBehaviour {
 				Cursor.visible = false;
 			}
 		};
-
-        CoreController.Instance.OnGamePowerStatusChange += this.onPowerChange;
 	}
 
 	public void OnEnable() {
@@ -240,11 +238,13 @@ public class entity_player : MonoBehaviour {
 		this._shakePower = power;
 		this._shakemode = shakemode;
 
-		if(this._shakeTimer != null) this._shakeTimer.stop();
-		this._shakeTimer = util_timer.simple(time, () => {
-			this._isCameraShaking = false;
-			this._camera.transform.localPosition = Vector3.zero;
-		});
+		if(time > 0) {
+			if(this._shakeTimer != null) this._shakeTimer.stop();
+			this._shakeTimer = util_timer.simple(time, () => {
+				this._isCameraShaking = false;
+				this._camera.transform.localPosition = Vector3.zero;
+			});
+		}
 	}
 
  	public bool isHoldingItem() {
@@ -371,8 +371,4 @@ public class entity_player : MonoBehaviour {
 			btn.onPress(this);
 		}
 	}
-
-	private void onPowerChange(GAMEPLAY_POWER_STATUS status) {
-
-    }
 }

@@ -15,6 +15,7 @@ public class util_fade_timer {
             private float _initial;
             private float _targetValue;
             private float _timer;
+            private float _currentValue;
             private Action<float> _onTick;
             private Action<float> _onComplete;
         #endregion
@@ -53,9 +54,10 @@ public class util_fade_timer {
     }
 
     public void tick() {
-        this._timer += this._speed * Time.deltaTime;
+        this._timer += this._speed * Time.fixedDeltaTime;
+        this._currentValue = Mathf.Lerp(this._initial, this._targetValue, this._timer);
 
-        if(this._onTick != null) this._onTick.Invoke(Mathf.Lerp(this._initial, this._targetValue, this._timer));
+        if(this._onTick != null) this._onTick.Invoke(this._currentValue);
         if(this._timer >= 1f) {
             this.stop();
             if(this._onComplete != null) this._onComplete.Invoke(this._targetValue);
@@ -78,7 +80,7 @@ public class util_fade_timer {
             data += "\nCURRENT ID: " + ID;
 
             foreach (util_fade_timer timer in timers.Values.ToList()) {
-                data += "\n [" + timer._id +"] VALUE: "+ timer._targetValue + " | SPEED: " + timer._speed;
+                data += "\n [" + timer._id +"] VALUE: " + timer._currentValue + " | TARGET: "+ timer._targetValue + " | SPEED: " + timer._speed;
             }
 
             return data;

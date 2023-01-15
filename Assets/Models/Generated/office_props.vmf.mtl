@@ -295,6 +295,30 @@ map_Ka materials/props/metallockers003a.tga
 map_Kd materials/props/metallockers003a.tga
 
 
+newmtl delivery_beyond/clock_time
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/delivery_beyond/clock_time.tga
+map_Kd materials/delivery_beyond/clock_time.tga
+
+
+newmtl dev/dev_blendmeasure
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/dev/dev_measuregeneric01b.tga
+map_Kd materials/dev/dev_measuregeneric01b.tga
+
+
+newmtl delivery_beyond/metal025_1k_color
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/delivery_beyond/metal025_1k_color.tga
+map_Kd materials/delivery_beyond/metal025_1k_color.tga
+
+
 newmtl wood/woodfloor007a_c17
 Ka 1.000 1.000 1.000
 Kd 1.000 1.000 1.000
@@ -383,6 +407,14 @@ Kd 1.000 1.000 1.000
 Ks 0.000 0.000 0.000
 map_Ka materials/props/metalpanel009a.tga
 map_Kd materials/props/metalpanel009a.tga
+
+
+newmtl delivery_beyond/rust005_1k_color
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+map_Ka materials/delivery_beyond/rust005_1k_color.tga
+map_Kd materials/delivery_beyond/rust005_1k_color.tga
 
 
 newmtl furniture_detailprops001a

@@ -9,6 +9,11 @@ For Github gamejam 2022 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀�
 
 ----------------------
 
+## SPECIAL THANKS
+- AvalonJay
+- D3lta
+- Reptifur & Kooda :3
+
 ## COPYRIGHTS:
 
 ### SOUND EFFECTS
@@ -68,6 +73,7 @@ https://freesound.org/people/pfranzen/sounds/328852/
 https://freesound.org/people/TampaJoey/sounds/588504/
 https://freesound.org/people/RutgerMuller/sounds/51166/
 https://freesound.org/people/Kagateni/sounds/404358/
+https://www.youtube.com/watch?v=XfMHU9YEaec
 
 ### MUSIC
 
