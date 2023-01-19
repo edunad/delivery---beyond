@@ -26,7 +26,7 @@ public class tutorial_button : entity_tutorial_zone {
         base.activateArea();
 
         util_timer.simple(1f, () => {
-            ConversationController.Instance.queueConversation(new Conversation("tutorial_", "????", "You are finally awake..", 0.75f, 0.8f));
+            ConversationController.Instance.queueConversation(new Conversation("tutorial_", "????", "Welcome Employee ████ to your training.", 0.75f, 0.8f));
             ConversationController.Instance.queueConversation(new Conversation("tutorial_btn", "????", "Press the button (E)", 0.75f, 0.8f));
         });
     }

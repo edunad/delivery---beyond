@@ -6,9 +6,6 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class ui_jumpscare : MonoBehaviour {
 
-    [Header("Settings")]
-    public float speed = 0.1f;
-
     #region PRIVATE
         private AudioSource _audio;
         private SpriteRenderer _sprite;
@@ -23,14 +20,14 @@ public class ui_jumpscare : MonoBehaviour {
 
         this._audio = GetComponent<AudioSource>();
         this._audio.playOnAwake = false;
-        this._audio.volume = 1f;
-        this._audio.outputAudioMixerGroup = null;
     }
 
-    public void jumpscare() {
+    public void jumpscare(bool die = true) {
         this._sprite.enabled = true;
 
         this._animator.SetBool("start", true);
+        this._animator.SetBool("die", die);
+
         this._audio.Play();
     }
 }

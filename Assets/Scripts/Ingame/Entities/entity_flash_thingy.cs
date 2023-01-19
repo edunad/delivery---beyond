@@ -9,12 +9,18 @@ public class entity_flash_thingy : MonoBehaviour {
     public float rechargeTime = 2f;
     public Material cam_material;
 
+    #region EVENTS
+        public delegate void onFLASH();
+        public event onFLASH OnFLASH;
+    #endregion
+
     #region PRIVATE
         private Camera _cam;
         private Light _cam_light;
         private RenderTexture _renderTexture;
         private AudioClip[] _audioClips;
         private bool _canFlash;
+        private bool _locked;
     #endregion
 
     public void Awake() {
@@ -39,15 +45,22 @@ public class entity_flash_thingy : MonoBehaviour {
         this.cam_material.SetColor("_Color", Color.black);
     }
 
+    public void setLocked(bool locked) {
+        this._locked = locked;
+    }
+
     public void onPrimaryUse(entity_player ply) {
         if(ply == null) return;
-        if(!this._canFlash) {
+
+        if(!this._canFlash || this._locked) {
             SoundController.Instance.Play3DSound(this._audioClips[2], this.transform, 1, 2, 0.5f);
             return;
         }
 
         this._canFlash = false;
         this._cam_light.enabled = true;
+
+        if(this.OnFLASH != null) OnFLASH.Invoke();
 
         StartCoroutine(snapshot(() => {
             SoundController.Instance.Play3DSound(this._audioClips[0], this.transform, 1, 2, 0.5f);
