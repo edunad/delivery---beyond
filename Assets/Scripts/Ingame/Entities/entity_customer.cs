@@ -38,6 +38,7 @@ public class entity_customer : MonoBehaviour {
         private readonly static List<string> names = new List<string>() {
             "Reptifur",
             "Kooda",
+            "AvalonJay",
             "D3lta",
             "Gathilo",
             "Bromvlieg",

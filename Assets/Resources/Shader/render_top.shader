@@ -13,8 +13,10 @@ Shader "Custom/render_top"
         Tags {
             "RenderType"="Opaque"
             "Queue"="Overlay+1"
+            "IgnoreProjector"="True"
         }
         ZTest Always
+        ZWrite Off
         LOD 200
 
         CGPROGRAM

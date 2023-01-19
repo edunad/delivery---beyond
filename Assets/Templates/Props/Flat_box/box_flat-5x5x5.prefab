@@ -165,4 +165,5 @@ MonoBehaviour:
   id: item_flat_box
   isBig: 0
   supportMultiplePickup: 0
+  renderTop: 1
   pickupAngle: {x: 0, y: 0, z: 0}

@@ -64,7 +64,7 @@ public class entity_flash_thingy : MonoBehaviour {
 
         StartCoroutine(snapshot(() => {
             SoundController.Instance.Play3DSound(this._audioClips[0], this.transform, 1, 2, 0.5f);
-            util_timer.simple(0.1f, () => {
+            util_timer.simple(0.15f, () => {
                 this._cam_light.enabled = false;
             });
         }));

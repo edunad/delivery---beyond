@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: 109fec50cf3997749b337c7d4d6dbc56, type: 2}
-  m_LightingSettings: {fileID: 0}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 64a245ae1a511ad4e8dfafbd274b7e46, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -425,6 +425,7 @@ MonoBehaviour:
   id: item-tutorial-box
   isBig: 0
   supportMultiplePickup: 0
+  renderTop: 1
   pickupAngle: {x: 0, y: 0, z: 0}
 --- !u!65 &64988036
 BoxCollider:
@@ -7957,6 +7958,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3444845916765852086, guid: 1a897fb3ae95e0143b1f8247fb17737d, type: 3}
+      propertyPath: renderTop
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8234,7 +8239,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ab4255e113c343f4aa8d4ba98aa3c6be, type: 3}
   - {fileID: 8300000, guid: 385fdb902e9343340a8661239e68c667, type: 3}
   - {fileID: 8300000, guid: 58a7b44ce3f3dbc4fb971cefa716b0c0, type: 3}
-  talkSpeed: 0.07
+  talkSpeed: 0.04
   cooldown: 2
   speakerPosition: {fileID: 1056856312}
 --- !u!1 &1045736825

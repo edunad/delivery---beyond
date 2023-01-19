@@ -127,7 +127,7 @@ Transform:
   m_Children:
   - {fileID: 1006778057396349503}
   - {fileID: 1964056116}
-  - {fileID: 7466375006650933155}
+  - {fileID: 4346672697790595987}
   m_Father: {fileID: 0}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -139,9 +139,17 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3444845916765852084}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Size: {x: 0.15480042, y: 0.26664925, z: 0.29006958}
   m_Center: {x: -0.03178978, y: 0.04357463, z: 0.007106781}
 --- !u!114 &3444845916765852086
@@ -159,6 +167,7 @@ MonoBehaviour:
   id: itm-flash-thingy
   isBig: 0
   supportMultiplePickup: 1
+  renderTop: 1
   pickupAngle: {x: 0, y: -90, z: 0}
 --- !u!114 &6625390097859779886
 MonoBehaviour:
@@ -220,9 +229,17 @@ Camera:
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -249,12 +266,12 @@ Camera:
   m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!1001 &6924106305962899528
+--- !u!1001 &4312410723772785784
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 3444845916765852085}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 8b823e3894f955a4eafbf99d4b09d821, type: 3}
@@ -318,10 +335,6 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7635826562936255635, guid: 8b823e3894f955a4eafbf99d4b09d821, type: 3}
-      propertyPath: m_Materials.Array.data[1]
-      value: 
-      objectReference: {fileID: 2100000, guid: 4db768014abc3804995b8f32deac742e, type: 2}
-    - target: {fileID: -7635826562936255635, guid: 8b823e3894f955a4eafbf99d4b09d821, type: 3}
       propertyPath: m_Materials.Array.data[4]
       value: 
       objectReference: {fileID: 2100000, guid: 384ecf38f2f9cfc4ebb1f8932881497b, type: 2}
@@ -330,10 +343,12 @@ PrefabInstance:
       value: camera.vmf
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b823e3894f955a4eafbf99d4b09d821, type: 3}
---- !u!4 &7466375006650933155 stripped
+--- !u!4 &4346672697790595987 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8b823e3894f955a4eafbf99d4b09d821, type: 3}
-  m_PrefabInstance: {fileID: 6924106305962899528}
+  m_PrefabInstance: {fileID: 4312410723772785784}
   m_PrefabAsset: {fileID: 0}

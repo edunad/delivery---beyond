@@ -8,6 +8,7 @@ public class entity_item : MonoBehaviour {
     public string id;
     public bool isBig = false;
     public bool supportMultiplePickup = false;
+    public bool renderTop = true;
     public Vector3 pickupAngle = Vector3.zero;
 
     #region PRIVATE
@@ -54,14 +55,12 @@ public class entity_item : MonoBehaviour {
     }
 
     private void setRenderTop(bool top) {
-        if(this._renderTop == top) return;
+        if(this._renderTop == top || !this.renderTop) return;
 
         foreach(MeshRenderer mesh in this._meshRenders) {
-            mesh.rendererPriority = top ? mesh.rendererPriority + 1000 : mesh.rendererPriority - 1000;
-            mesh.sortingOrder = top ? mesh.sortingOrder + 1000 : mesh.sortingOrder - 1000;
-            /*foreach(Material mat in mesh.materials) {
+            foreach(Material mat in mesh.materials) {
                 mat.shader = top ? this._frontShader : this._originalShader;
-            }*/
+            }
         }
 
         this._renderTop = top;

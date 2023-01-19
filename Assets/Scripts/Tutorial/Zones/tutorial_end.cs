@@ -9,7 +9,10 @@ public class tutorial_end : entity_tutorial_zone {
         ConversationController.Instance.clear();
         ConversationController.Instance.OnSingleConversationCompleted += (string id) => {
             if(id != "tutorial_end") return;
-            this.nextArea();
+
+            util_timer.simple(1f, () => {
+                this.nextArea();
+            });
         };
     }
 

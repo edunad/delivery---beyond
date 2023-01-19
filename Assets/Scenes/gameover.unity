@@ -104,7 +104,7 @@ NavMeshSettings:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_BuildSettings:
-    serializedVersion: 2
+    serializedVersion: 3
     agentTypeID: 0
     agentRadius: 0.5
     agentHeight: 2
@@ -117,7 +117,7 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualTileSize: 0
     tileSize: 256
-    accuratePlacement: 0
+    buildHeightMesh: 0
     maxJobWorkers: 0
     preserveTilesOutsideBounds: 0
     debug:
@@ -128,7 +128,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 1566239562}
     m_Modifications:
     - target: {fileID: 5936316013257225304, guid: 0ce9fbbb99459a1429f1e5b93db47c5b, type: 3}
@@ -184,7 +184,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ce9fbbb99459a1429f1e5b93db47c5b, type: 3}
 --- !u!114 &53581133 stripped
 MonoBehaviour:
@@ -197,13 +199,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f51192147e0f774ba469c1655b571bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!43 &375117666
+--- !u!43 &275751502
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Decal Mesh
+  m_Name: Decal Mesh(Clone)
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -246,15 +248,15 @@ Mesh:
       format: 0
       dimension: 3
     - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
       offset: 24
       format: 0
       dimension: 4
     - stream: 0
       offset: 40
-      format: 0
-      dimension: 4
-    - stream: 0
-      offset: 56
       format: 0
       dimension: 2
     - stream: 0
@@ -293,8 +295,8 @@ Mesh:
       offset: 0
       format: 0
       dimension: 0
-    m_DataSize: 576
-    _typelessdata: fdffffbe87ef72bd180000bf000000000000803ffeffff33cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd0000803f0000803f0000803f0000803f97dfff3e0000000027649f3496ef72bd190000bf000000000000803ffeffff33cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd0000803f0000803f0000803f0000803fe6f73f3f000000000d00003fa6ef72bd230000bf000000000000803ffeffff33cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd0000803f0000803f0000803f0000803f0000803f00000000f9ffffbe8aef72bd0c17a1b5000000000000803ffeffff33cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd0000803f0000803f0000803f0000803f97dfff3ec80a803e7200b3349aef72bd130da8b5000000000000803ffeffff33cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd0000803f0000803f0000803f0000803fe6f73f3fc80a803e0a00003fa9ef72bdce58abb5000000000000803ffeffff33cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd0000803f0000803f0000803f0000803f0000803fc80a803e010000bf8def72bdf2ffff3e000000000000803ffeffff33cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd0000803f0000803f0000803f0000803f97dfff3ec80a003f018dbb349def72bddeffff3e000000000000803ffeffff33cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd0000803f0000803f0000803f0000803fe6f73f3fc80a003f0a00003facef72bdddffff3e000000000000803ffeffff33cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd0000803f0000803f0000803f0000803f0000803fc80a003f
+    m_DataSize: 432
+    _typelessdata: fdffffbe87ef72bd180000bf000000000000803ffeffff330000803f0000803f0000803f0000803f97dfff3e0000000027649f3496ef72bd190000bf000000000000803ffeffff330000803f0000803f0000803f0000803fe6f73f3f000000000d00003fa6ef72bd230000bf000000000000803ffeffff330000803f0000803f0000803f0000803f0000803f00000000f9ffffbe8aef72bd0c17a1b5000000000000803ffeffff330000803f0000803f0000803f0000803f97dfff3ec80a803e7200b3349aef72bd130da8b5000000000000803ffeffff330000803f0000803f0000803f0000803fe6f73f3fc80a803e0a00003fa9ef72bdce58abb5000000000000803ffeffff330000803f0000803f0000803f0000803f0000803fc80a803e010000bf8def72bdf2ffff3e000000000000803ffeffff330000803f0000803f0000803f0000803f97dfff3ec80a003f018dbb349def72bddeffff3e000000000000803ffeffff330000803f0000803f0000803f0000803fe6f73f3fc80a003f0a00003facef72bdddffff3e000000000000803ffeffff330000803f0000803f0000803f0000803f0000803fc80a003f
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -770,6 +772,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
+        m_ColorSpace: -1
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
       minGradient:
@@ -799,6 +802,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
+        m_ColorSpace: -1
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
     startSize:
@@ -1859,6 +1863,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
+        m_ColorSpace: -1
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
       minGradient:
@@ -1888,6 +1893,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
+        m_ColorSpace: -1
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
   UVModule:
@@ -4108,6 +4114,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
+        m_ColorSpace: -1
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
       minGradient:
@@ -4137,6 +4144,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
+        m_ColorSpace: -1
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
@@ -4557,6 +4565,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
+        m_ColorSpace: -1
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
       minGradient:
@@ -4586,6 +4595,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
+        m_ColorSpace: -1
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
     widthOverTrail:
@@ -4673,6 +4683,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
+        m_ColorSpace: -1
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
       minGradient:
@@ -4702,6 +4713,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
+        m_ColorSpace: -1
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
   CustomDataModule:
@@ -4740,6 +4752,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
+        m_ColorSpace: -1
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
       minGradient:
@@ -4769,6 +4782,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
+        m_ColorSpace: -1
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
     colorLabel0: Color
@@ -5022,6 +5036,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
+        m_ColorSpace: -1
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
       minGradient:
@@ -5051,6 +5066,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
+        m_ColorSpace: -1
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
     colorLabel1: Color
@@ -5407,6 +5423,7 @@ MonoBehaviour:
     atime6: 0
     atime7: 0
     m_Mode: 0
+    m_ColorSpace: -1
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   intensityFromLight: 0
@@ -5492,7 +5509,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 692774039}
-  m_Mesh: {fileID: 375117666}
+  m_Mesh: {fileID: 275751502}
 --- !u!23 &692774042
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -5669,8 +5686,8 @@ MonoBehaviour:
     m_RotationOrder: 4
   surfaceRotation: 0
   quality: 1
-  sharedMesh: {fileID: 375117666}
-  instanceID: 40660
+  sharedMesh: {fileID: 275751502}
+  instanceID: 77198
 --- !u!4 &742264253
 Transform:
   m_ObjectHideFlags: 0
@@ -5750,9 +5767,17 @@ Camera:
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -6027,7 +6052,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 957430705}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 9d1e78138f9c5724a89ef43fb3dba02b, type: 3}
@@ -6107,7 +6132,9 @@ PrefabInstance:
       value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d1e78138f9c5724a89ef43fb3dba02b, type: 3}
 --- !u!4 &1369075746 stripped
 Transform:
@@ -6160,9 +6187,17 @@ Camera:
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -6218,7 +6253,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cfuStatus: PSXEffects v1.18.4 - version ahead?!
   sections: 01010101
-  customRes: {x: 542, y: 305}
+  customRes: {x: 498, y: 280}
   resolutionFactor: 2
   limitFramerate: 60
   skipFrames: 0
@@ -6519,7 +6554,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TransformParent: {fileID: 957430705}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 0e714ad7fe5731043b44f5c3377d0275, type: 3}
@@ -6595,7 +6630,9 @@ PrefabInstance:
       value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e714ad7fe5731043b44f5c3377d0275, type: 3}
 --- !u!4 &2090445438 stripped
 Transform:
@@ -6668,6 +6705,25 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
