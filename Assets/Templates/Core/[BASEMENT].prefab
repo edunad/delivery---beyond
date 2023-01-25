@@ -1089,7 +1089,7 @@ MonoBehaviour:
   surfaceRotation: 0
   quality: 1
   sharedMesh: {fileID: 0}
-  instanceID: -3488
+  instanceID: -14246
 --- !u!1 &406653848
 GameObject:
   m_ObjectHideFlags: 0
@@ -6145,7 +6145,7 @@ MonoBehaviour:
   surfaceRotation: 0
   quality: 0
   sharedMesh: {fileID: 0}
-  instanceID: -3448
+  instanceID: -14206
 --- !u!1 &843086114
 GameObject:
   m_ObjectHideFlags: 0
@@ -6298,7 +6298,7 @@ MonoBehaviour:
   surfaceRotation: 0
   quality: 0
   sharedMesh: {fileID: 0}
-  instanceID: -3388
+  instanceID: -14146
 --- !u!1 &971032583
 GameObject:
   m_ObjectHideFlags: 0
@@ -6664,7 +6664,7 @@ MonoBehaviour:
   surfaceRotation: 0
   quality: 1
   sharedMesh: {fileID: 0}
-  instanceID: -3408
+  instanceID: -14166
 --- !u!1 &1017539720
 GameObject:
   m_ObjectHideFlags: 0
@@ -7643,7 +7643,7 @@ MonoBehaviour:
   surfaceRotation: 0
   quality: 0
   sharedMesh: {fileID: 0}
-  instanceID: -3468
+  instanceID: -14226
 --- !u!1 &1550977267
 GameObject:
   m_ObjectHideFlags: 0
@@ -7829,7 +7829,7 @@ MonoBehaviour:
   surfaceRotation: 0
   quality: 0
   sharedMesh: {fileID: 0}
-  instanceID: -3428
+  instanceID: -14186
 --- !u!1 &1565633111
 GameObject:
   m_ObjectHideFlags: 0
@@ -7982,7 +7982,7 @@ MonoBehaviour:
   surfaceRotation: 0
   quality: 1
   sharedMesh: {fileID: 0}
-  instanceID: -3508
+  instanceID: -14266
 --- !u!1 &1655875852
 GameObject:
   m_ObjectHideFlags: 0
@@ -8220,7 +8220,7 @@ MonoBehaviour:
   surfaceRotation: 0
   quality: 0
   sharedMesh: {fileID: 0}
-  instanceID: -3368
+  instanceID: -14126
 --- !u!1 &1840224409
 GameObject:
   m_ObjectHideFlags: 0
@@ -18765,6 +18765,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3444845916765852085, guid: 1a897fb3ae95e0143b1f8247fb17737d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3444845916765852086, guid: 1a897fb3ae95e0143b1f8247fb17737d, type: 3}
+      propertyPath: renderTop
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

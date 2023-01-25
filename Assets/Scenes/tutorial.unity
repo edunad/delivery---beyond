@@ -1082,8 +1082,8 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   intensityFromLight: 0
   intensityModeAdvanced: 0
-  intensityInside: 0.09
-  intensityOutside: 0.09
+  intensityInside: 0.02
+  intensityOutside: 0.02
   intensityMultiplier: 1
   hdrpExposureWeight: 0
   blendingMode: 0
@@ -1893,7 +1893,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8164078558771037576, guid: 3a32b64187c2a724888ff98d0d20c7f6, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 109
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7674,8 +7674,8 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   intensityFromLight: 0
   intensityModeAdvanced: 0
-  intensityInside: 0.09
-  intensityOutside: 0.09
+  intensityInside: 0.02
+  intensityOutside: 0.02
   intensityMultiplier: 1
   hdrpExposureWeight: 0
   blendingMode: 0
@@ -8463,8 +8463,8 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   intensityFromLight: 0
   intensityModeAdvanced: 0
-  intensityInside: 0.09
-  intensityOutside: 0.09
+  intensityInside: 0.02
+  intensityOutside: 0.02
   intensityMultiplier: 1
   hdrpExposureWeight: 0
   blendingMode: 0
@@ -9710,8 +9710,8 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   intensityFromLight: 0
   intensityModeAdvanced: 0
-  intensityInside: 0.09
-  intensityOutside: 0.09
+  intensityInside: 0.02
+  intensityOutside: 0.02
   intensityMultiplier: 1
   hdrpExposureWeight: 0
   blendingMode: 0
